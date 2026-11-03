@@ -12,20 +12,21 @@ Angaben gemäß Section 43 des südafrikanischen Electronic Communications and T
 
 **Be My Guest Lodge (Pty) Ltd**
 Private Company (vergleichbar einer GmbH) nach dem Recht der Republik Südafrika
-Registernummer (CIPC): {{TODO: Registernummer}}
-Geschäftsführung (Directors): {{TODO: Namen der Directors}}
-Umsatzsteuer-Nr. (VAT): {{TODO: VAT-Nummer, oder Zeile löschen, falls nicht registriert}}
+Registernummer: 2018/273860/07 (Companies and Intellectual Property Commission, CIPC, Südafrika)
+Sitz (Registered Office): 4 Lakeland, Kapstadt, Western Cape, 7945, Südafrika
+Geschäftsführung (Directors): Jan Paul Bierewirtz, Bernd Osterhorn
+Nicht umsatzsteuerpflichtig registriert (keine VAT-Nummer).
 
-## Anschrift und Kontakt
+## Anschrift des Gästehauses und Kontakt
 
 51 Porterfield Rd, Bloubergrant, Table View, Kapstadt, 7441, Südafrika
-Diese Anschrift ist zugleich unsere Zustellanschrift für rechtliche Mitteilungen.
+Rechtliche Mitteilungen können an unseren Sitz (siehe oben) zugestellt werden.
 
 Telefon und WhatsApp: [+27 72 838 4490](tel:+27728384490)
 E-Mail: [info@bemyguestlodge.co.za](mailto:info@bemyguestlodge.co.za)
 Website: https://bemyguestlodge.co.za
 
-Information Officer (Datenschutzverantwortliche/r nach POPIA): {{TODO: Name}}, erreichbar über die E-Mail-Adresse oben.
+Information Officer (Datenschutzverantwortlicher nach POPIA): Jan Paul Bierewirtz, erreichbar über die E-Mail-Adresse oben.
 
 ## Unser Angebot
 

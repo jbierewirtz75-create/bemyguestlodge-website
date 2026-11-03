@@ -10,9 +10,9 @@ Der Schutz deiner Daten ist uns wichtig. Hier erklären wir, welche Daten wir ve
 
 ## 1. Verantwortlich
 
-**Be My Guest Lodge (Pty) Ltd**, 51 Porterfield Rd, Bloubergrant, Table View, Kapstadt, 7441, Südafrika
+**Be My Guest Lodge (Pty) Ltd** (Reg. No. 2018/273860/07), 51 Porterfield Rd, Bloubergrant, Table View, Kapstadt, 7441, Südafrika
 E-Mail: [info@bemyguestlodge.co.za](mailto:info@bemyguestlodge.co.za) · Telefon/WhatsApp: +27 72 838 4490
-Information Officer: {{TODO: Name des Information Officers}}
+Information Officer: Jan Paul Bierewirtz
 
 Wir sind „Responsible Party“ nach dem südafrikanischen Datenschutzgesetz Protection of Personal Information Act 4 of 2013 (POPIA). Soweit die EU-Datenschutz-Grundverordnung (DSGVO) anwendbar ist, etwa für Gäste aus der Europäischen Union, sind wir „Verantwortlicher“ im Sinne der DSGVO und beachten auch sie.
 
