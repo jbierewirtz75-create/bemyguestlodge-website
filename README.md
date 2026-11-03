@@ -12,6 +12,8 @@ Live-Adresse: https://bemyguestlodge.co.za
 | Veranstaltungen („What's on“, `/en/events/`, `/de/events/`) | `content/events/events.json` |
 | Link-in-Bio-Seite für Social Media | `/hello/` (wird automatisch erzeugt, DE/EN nach Browsersprache) |
 | Vereinbarung mit dem Marketing-Projekt | `docs/marketing-schnittstelle.md` |
+| Impressum / Datenschutz (EN, DE) | `content/legal/en/`, `content/legal/de/` (Markdown; offene Angaben sind als `{{TODO: …}}` markiert und erscheinen gelb) |
+| Schriften | selbst gehostet in `public/fonts/` (keine Verbindung zu Google Fonts) |
 | Regeln für die Marketing-Agenten | `AGENTS.md` |
 | Kernseiten (Startseite, Zimmer) | `core/` – erzeugt aus `source/index.html` |
 | Bilder, Video, CSS, JS der Kernseiten | `public/` |

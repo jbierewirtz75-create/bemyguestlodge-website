@@ -75,9 +75,9 @@ Required: a title, `start`, `location`. `end`, `url`, `walk_min`, descriptions a
 - Pets welcome in the Family Cottage (more than one pet on request) · discount for longer stays on request
 - **Taxi service** on request – there is **no airport shuttle** · baby cot and high chair on request
 - **Do not advertise backup power** (not installed yet)
-- Direct booking: use the booking button/placeholder (the link is maintained centrally in `site.config.json`) · WhatsApp +27 72 838 4490 · info@bemyguestlodge.co.za
+- Direct booking: use the booking button/placeholder (the link is maintained centrally in `site.config.json`; currently https://book.nightsbridge.com/28083 – the `?nbid=` variant does not work) · WhatsApp +27 72 838 4490 · info@bemyguestlodge.co.za
 - Slogan: "Home away from home"
-- German address form on the website: **"ihr/euch"** (decision pending on "du" – follow Jan's instruction)
+- German address form: informal singular **"du/dich/dein"** (website and blog)
 - Do not invent prices, discounts, awards or guest quotes.
 
 ## Test locally (optional)

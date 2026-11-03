@@ -37,3 +37,6 @@
 .srcq select{font:inherit;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:#fff;color:#15303C}
 .srcq-thanks{font-weight:700}
 .art-book{margin:8px 0}
+.legal .art-body h2{font-size:1.35rem}
+.legal mark{background:#FDE7A6;padding:0 4px;border-radius:4px}
+.legal-links a{color:inherit}

@@ -50,9 +50,9 @@ const T = {
     ctaP: "Book directly with Jan & Leona, or ask us anything on WhatsApp.", blogTitle: "Blog: stories and tips from Cape Town & Bloubergstrand", draft: "Draft", future: "Scheduled",
     preview: "Preview – not live. Drafts and scheduled posts are visible here only.", rss: "RSS feed", locale: "en-GB" },
   de: { book: "Jetzt direkt buchen", walk: (n) => `${n} Min. zu Fuß von der Lodge`, all: "Alle", allPosts: "Alle Artikel →", whatsOn: "Veranstaltungen in Kapstadt →", whatsOnH1: "Veranstaltungen in Kapstadt & Blouberg", whatsOnTitle: "Veranstaltungen in Kapstadt & Bloubergstrand",
-    whatsOnLede: "Events, Festivals und Sport rund um die Be My Guest Lodge in Table View, Bloubergstrand. Ihr plant einen Besuch? Bucht euren Aufenthalt direkt bei uns.", whatsOnDesc: "Aktuelle Veranstaltungen, Festivals und Sport in Kapstadt, Table View und Bloubergstrand, nahe der Be My Guest Lodge.",
-    noEvents: "Gerade sind keine Termine eingetragen. Fragt uns per WhatsApp, was während eures Aufenthalts los ist.", more: "Mehr Infos", read: (n) => `${n} Min. Lesezeit`, ctaH: "Übernachtet bei uns in Bloubergstrand",
-    ctaP: "Bucht direkt bei Jan & Leona oder fragt uns per WhatsApp.", blogTitle: "Blog: Geschichten und Tipps aus Kapstadt & Bloubergstrand", draft: "Entwurf", future: "Geplant",
+    whatsOnLede: "Events, Festivals und Sport rund um die Be My Guest Lodge in Table View, Bloubergstrand. Du planst einen Besuch? Buch deinen Aufenthalt direkt bei uns.", whatsOnDesc: "Aktuelle Veranstaltungen, Festivals und Sport in Kapstadt, Table View und Bloubergstrand, nahe der Be My Guest Lodge.",
+    noEvents: "Gerade sind keine Termine eingetragen. Frag uns per WhatsApp, was während deines Aufenthalts los ist.", more: "Mehr Infos", read: (n) => `${n} Min. Lesezeit`, ctaH: "Übernachte bei uns in Bloubergstrand",
+    ctaP: "Buch direkt bei Jan & Leona oder frag uns per WhatsApp.", blogTitle: "Blog: Geschichten und Tipps aus Kapstadt & Bloubergstrand", draft: "Entwurf", future: "Geplant",
     preview: "Vorschau – nicht live. Entwürfe und geplante Beiträge sind nur hier sichtbar.", rss: "RSS-Feed", locale: "de-DE" },
 };
 const HOME_LINKS = {
@@ -61,7 +61,7 @@ const HOME_LINKS = {
 };
 
 const SRCQ = {
-  q: { en: "How did you hear about us?", de: "Wie habt ihr von uns erfahren?", af: "Hoe het julle van ons gehoor?", fr: "Comment nous avez-vous connus ?", es: "¿Cómo nos conociste?", zh: "您是如何了解到我们的？" },
+  q: { en: "How did you hear about us?", de: "Wie hast du von uns erfahren?", af: "Hoe het julle van ons gehoor?", fr: "Comment nous avez-vous connus ?", es: "¿Cómo nos conociste?", zh: "您是如何了解到我们的？" },
   opt: { en: "optional", de: "optional", af: "opsioneel", fr: "facultatif", es: "opcional", zh: "可选" },
   thanks: { en: "Thank you!", de: "Danke!", af: "Dankie!", fr: "Merci !", es: "¡Gracias!", zh: "谢谢！" },
   answers: [
@@ -69,7 +69,7 @@ const SRCQ = {
     ["portal", { en: "Booking.com, Airbnb or another portal", de: "Booking.com, Airbnb oder anderes Portal", af: "Booking.com, Airbnb of 'n ander portaal", fr: "Booking.com, Airbnb ou autre plateforme", es: "Booking.com, Airbnb u otro portal", zh: "Booking.com、Airbnb 或其他平台" }],
     ["friends", { en: "Recommendation from friends", de: "Empfehlung von Freunden", af: "Aanbeveling van vriende", fr: "Recommandation d'amis", es: "Recomendación de amigos", zh: "朋友推荐" }],
     ["partner", { en: "Partner (kite school, agent …)", de: "Partner (Kite-Schule, Makler …)", af: "Vennoot (kiteskool, agent …)", fr: "Partenaire (école de kite, agence …)", es: "Socio (escuela de kite, agencia …)", zh: "合作伙伴（风筝冲浪学校、中介等）" }],
-    ["returning", { en: "We've stayed here before", de: "Wir waren schon mal hier", af: "Ons was al voorheen hier", fr: "Nous sommes déjà venus", es: "Ya hemos estado aquí", zh: "以前入住过" }],
+    ["returning", { en: "We've stayed here before", de: "Ich war schon mal hier", af: "Ons was al voorheen hier", fr: "Nous sommes déjà venus", es: "Ya hemos estado aquí", zh: "以前入住过" }],
     ["other", { en: "Other", de: "Sonstiges", af: "Ander", fr: "Autre", es: "Otro", zh: "其他" }],
   ],
 };
@@ -344,6 +344,35 @@ ${evs.length ? `<ol class="events">${evs.join("")}</ol>` : `<p class="empty">${e
   sitemap.push({ loc: url, alts: pairs, xdef: abs("en", "events/") });
 }
 
+/* ---------------- legal pages (content/legal/{en,de}/*.md) ---------------- */
+const LEGAL_LABELS = { en: ["Legal notice", "Privacy policy"], de: ["Impressum", "Datenschutz"], af: ["Wetlike kennisgewing", "Privaatheidsbeleid"],
+  fr: ["Mentions légales", "Confidentialité"], es: ["Aviso legal", "Privacidad"], zh: ["法律声明", "隐私政策"] };
+const legalPages = [];
+for (const lang of BLOG_LANGS) {
+  const dir = path.join(CONTENT, "legal", lang);
+  if (!fs.existsSync(dir)) continue;
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".md"))) {
+    const { data, content } = matter(fs.readFileSync(path.join(dir, file), "utf8"));
+    legalPages.push({ lang, slug: String(data.slug), pair: String(data.pair), title: String(data.title), description: String(data.description || ""), body: content, file: `content/legal/${lang}/${file}` });
+  }
+}
+const legalPath = (lang, pair) => { const p = legalPages.find((x) => x.lang === lang && x.pair === pair) || legalPages.find((x) => x.lang === "en" && x.pair === pair); return p ? `${p.lang}/${p.slug}/` : null; };
+for (const lp of legalPages) {
+  const lang = lp.lang, P = "../../", url = abs(lang, `${lp.slug}/`);
+  const todos = [...lp.body.matchAll(/\{\{TODO:([^}]*)\}\}/g)].map((m) => m[1].trim());
+  if (todos.length) warnings.push(`${lp.file}: ${todos.length} open item(s) – ${todos.join("; ")}`);
+  const body = new Marked({ gfm: true, breaks: true }).parse(lp.body.replace(/\{\{TODO:([^}]*)\}\}/g, (m, t) => `<mark>[${t.trim()}]</mark>`));
+  const other = legalPages.find((x) => x.pair === lp.pair && x.lang !== lang);
+  const pairs = [[lang, url]]; if (other) pairs.push([other.lang, abs(other.lang, `${other.slug}/`)]);
+  const items = [[DATA.ui[lang].home, `${P}${lang}/${S}`], [lp.title, url]];
+  const bodyS = body.replace(/href="(\.\.\/[^"#]*\/)"/g, (m, u) => `href="${u}${S}"`);
+  const main = `<div class="wrap">${crumbsHtml(items)}<article class="article legal"><h1>${esc(lp.title)}</h1><div class="art-body">${bodyS}</div></article></div>`;
+  const head = [`<link rel="canonical" href="${url}">`, alternates(pairs, other ? abs("en", `${(lang === "en" ? lp : other).slug}/`) : null), ld([crumbsLd([[DATA.ui[lang].home, abs(lang, "")], [lp.title, url]])])].join("\n");
+  const enPath = lang === "en" ? `${lp.slug}/` : other ? `${other.slug}/` : "", dePath = lang === "de" ? `${lp.slug}/` : other ? `${other.slug}/` : "";
+  write(`${lang}/${lp.slug}/index.html`, page({ lang, depth: 2, title: `${lp.title} | Be My Guest Lodge (Pty) Ltd`, desc: lp.description, head, main, langTargets: langTargetsFor(P, enPath, dePath) }));
+  sitemap.push({ loc: url, alts: pairs, xdef: other ? abs("en", `${(lang === "en" ? lp : other).slug}/`) : null });
+}
+
 /* ---------------- core pages (with latest posts on the home page) ---------------- */
 for (const lang of LANGS) {
   for (const pth of CORE_PAGES) {
@@ -421,7 +450,7 @@ footer{text-align:center;color:#5b6b72;font-size:.8rem;margin-top:10px}footer a{
 <div class="sw" role="group" aria-label="Language"><button type="button" data-sw="en" aria-pressed="true">EN</button><button type="button" data-sw="de" aria-pressed="false">DE</button></div></div>
 ${await block("en")}
 ${await block("de")}
-<footer>51 Porterfield Rd, Bloubergrant, Table View, Cape Town · <a href="mailto:${CFG.email}">${CFG.email}</a></footer>
+<footer>Be My Guest Lodge (Pty) Ltd · 51 Porterfield Rd, Bloubergrant, Table View, Cape Town · <a href="mailto:${CFG.email}">${CFG.email}</a><br><!--LEGAL_LINKS--></footer>
 </main>
 <script>(function(){var q=new URLSearchParams(location.search).get("lang"),l=q||((navigator.language||"").slice(0,2)==="de"?"de":"en");
 function set(x){document.querySelectorAll("section[data-l]").forEach(function(s){s.hidden=s.getAttribute("data-l")!==x});document.documentElement.lang=x;
@@ -576,6 +605,8 @@ if (fs.existsSync(path.join(ROOT, "redirects.txt"))) fs.copyFileSync(path.join(R
     const pos = rel.startsWith("hello/") ? "hello-top" : /\/blog\/[^/]+\/index\.html$/.test(rel) ? "blog-footer" : /\/blog\/index\.html$/.test(rel) ? "blog-index"
       : /\/events\//.test(rel) ? "events-page" : /\/accommodation\//.test(rel) ? "room-page" : "home";
     let html = fs.readFileSync(f, "utf8").replace(/https:\/\/book\.nightsbridge\.com\/28083(?:\?[^"\s<]*)?/g, BOOK);
+    const seg = rel.split("/")[0], lang = LANGS.includes(seg) ? seg : "en", P = "../".repeat(rel.split("/").length - 1);
+    html = html.replace("<!--LEGAL_LINKS-->", () => ["legal", "privacy"].map((pair, i) => { const lp = legalPath(lang, pair); return lp ? `<a href="${P}${lp}${S}"${lp.startsWith(lang + "/") ? "" : ' hreflang="en"'}>${LEGAL_LABELS[lang][i]}</a>` : ""; }).filter(Boolean).join(" · "));
     const headerEnd = html.indexOf("</header>");
     html = html.replace(/<a\b[^>]*>/g, (tag, offset) => {
       const href = (tag.match(/\shref="([^"]*)"/) || [])[1] || "";
