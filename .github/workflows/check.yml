@@ -1,0 +1,24 @@
+# Builds and checks the website for every pull request and every change on main.
+# A red ✗ means: do not merge – the build log lists the problem (e.g. a missing frontmatter field).
+name: Build & check
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build (live version)
+        run: npm run build
+      - name: Check links, metadata, feeds
+        run: npm run check
+      - name: Build preview version (drafts visible)
+        run: npm run build:preview

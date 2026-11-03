@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Be My Guest Lodge | Family-Run Guesthouse in Bloubergstrand, Cape Town</title>
+<meta name="description" content="Be My Guest Lodge in Table View, Cape Town: six rooms in three room types, warm German-South African host family, quiet location near the beach, kitesurf spots and the city.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a postcard of the Blouberg view of Table Mountain opens the page; below it, calm sections on cool sand-white, each anchored by a large serif heading and an Atlantic-blue band for the family story. */
+:root{
+  --paper:#F3F5F2;
+  --card:#FFFFFF;
+  --ink:#15303C;
+  --muted:#586E73;
+  --sea:#3D6A80;
+  --protea:#C23F64;
+  --sun:#E39B33;
+  --line:#D8E0DD;
+  --band:#1E3846;
+  --band-ink:#EAF1EF;
+  --display:"Young Serif", Georgia, "Times New Roman", serif;
+  --body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand:"Caveat", "Segoe Script", cursive;
+  --r:14px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0C1C21; --card:#132A31; --ink:#E6EEEC; --muted:#9DB2B5;
+    --sea:#8FB4C8; --protea:#EE7A9A; --sun:#F0B45A; --line:#24414A;
+    --band:#081418; --band-ink:#E6EEEC; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0C1C21; --card:#132A31; --ink:#E6EEEC; --muted:#9DB2B5;
+  --sea:#8FB4C8; --protea:#EE7A9A; --sun:#F0B45A; --line:#24414A;
+  --band:#081418; --band-ink:#E6EEEC; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%;display:block}
+a{color:var(--sea)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,4.2vw,3.1rem)}
+h3{font-size:1.45rem}
+p{margin:0}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--protea)}
+.lede{color:var(--muted);max-width:62ch;font-size:1.08rem}
+section{padding:96px 0}
+.sec-head{display:grid;gap:14px;margin-bottom:44px}
+
+/* draft notice */
+.draft{background:var(--sun);color:#1C1406;font-size:.88rem;padding:8px 0}
+.draft .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.draft button{background:transparent;border:1px solid #1C1406;color:#1C1406;border-radius:999px;padding:2px 12px;font:inherit;cursor:pointer}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-family:var(--display);font-size:1.3rem;white-space:nowrap}
+.brand small{font-family:var(--body);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+.nav ul a:hover{color:var(--protea)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 22px;font-weight:700;text-decoration:none;font-size:.96rem;border:2px solid transparent;cursor:pointer;font-family:var(--body);transition:transform .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-book{background:var(--protea);color:#fff}
+.btn-ghost{border-color:currentColor;color:var(--ink);background:transparent}
+.btn-wa{background:#1F8F55;color:#fff}
+@media (max-width:960px){.nav ul{display:none}.nav .btn-book{margin-left:auto}}
+
+/* hero */
+.hero{position:relative;padding:0;overflow:hidden;background:#F6C68A}
+.hero svg.scene{width:100%;height:auto;min-height:620px}
+.hero-copy{position:absolute;inset:0;display:flex;align-items:flex-start}
+.hero-copy .wrap{padding-top:clamp(40px,8vw,110px)}
+.hero h1{font-size:clamp(2.6rem,7vw,5.6rem);color:#10303A;max-width:13ch}
+.hero h1 em{font-style:normal;color:#A82E52}
+.hero p.sub{margin-top:18px;max-width:46ch;color:#1B3D47;font-size:1.15rem;font-weight:500}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .btn-ghost{color:#10303A}
+.hero .hand{font-family:var(--hand);font-size:1.6rem;color:#A82E52;margin-top:22px;display:block}
+@media (max-width:640px){.hero svg.scene{min-height:760px;width:auto;max-width:none;height:760px;margin-left:-55%}}
+.kite{transform-box:fill-box;transform-origin:center;animation:drift 7s ease-in-out infinite}
+.kite.k2{animation-duration:9s;animation-delay:-3s}
+@keyframes drift{0%,100%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(14px,-10px) rotate(5deg)}}
+
+/* facts strip */
+.facts{padding:0;background:var(--band);color:var(--band-ink)}
+.facts ul{list-style:none;margin:0;padding:26px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.facts li{display:grid;gap:2px}
+.facts b{font-family:var(--display);font-weight:400;font-size:1.9rem;font-variant-numeric:tabular-nums}
+.facts span{font-size:.9rem;opacity:.8}
+@media (max-width:760px){.facts ul{grid-template-columns:repeat(2,1fr)}}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:14px}
+.ph{position:relative;border-radius:var(--r);overflow:hidden;display:flex;align-items:flex-end;padding:16px;color:#fff;isolation:isolate}
+.ph svg.ico{position:absolute;right:16px;top:16px;width:46px;height:46px;opacity:.9}
+.ph .cap{font-weight:600;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.25)}
+.ph .tag{position:absolute;left:14px;top:14px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.28);padding:3px 9px;border-radius:999px}
+.g1{grid-column:span 3;grid-row:span 2}.g2{grid-column:span 3}.g3{grid-column:span 2}.g4{grid-column:span 1}.g5{grid-column:span 2}.g6{grid-column:span 2}.g7{grid-column:span 2}.g8{grid-column:span 3;grid-row:span 2}.g9{grid-column:span 3;grid-row:span 2}
+@media (max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.gallery>*{grid-column:span 1!important;grid-row:span 1!important}.g1{grid-column:span 2!important;grid-row:span 2!important}}
+.video{margin-top:14px;border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:21/8;background:linear-gradient(120deg,#1F6F78,#10303A 70%);display:grid;place-items:center;color:#fff;text-align:center;padding:20px}
+.video .play{width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.7);display:grid;place-items:center;margin:0 auto 12px}
+@media (max-width:640px){.video{aspect-ratio:4/3}}
+
+/* rooms */
+.rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:22px}
+.room{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.room .top{height:190px;position:relative;display:flex;align-items:flex-end;padding:18px;color:#fff}
+.room .top .no{position:absolute;top:14px;right:18px;font-family:var(--display);font-size:3.2rem;line-height:1;opacity:.35}
+.room .top h3{font-size:1.7rem}
+.room .body{padding:20px 20px 22px;display:grid;gap:14px;flex:1;align-content:start}
+.room .meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.8rem;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted)}
+.room ul{margin:0;padding-left:18px;color:var(--muted);font-size:.95rem}
+.room .act{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:6px}
+.room .act a.more{font-weight:700;text-decoration:none}
+
+/* location */
+.loc{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.map{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.dist{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:0}
+.dist li{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
+.dist li b{font-variant-numeric:tabular-nums;color:var(--sea)}
+.safe{margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.safe div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.94rem}
+.safe strong{display:block;font-size:1rem}
+@media (max-width:900px){.loc{grid-template-columns:1fr}}
+
+/* family band */
+.family{background:var(--band);color:var(--band-ink)}
+.family .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.family .lede{color:color-mix(in srgb,var(--band-ink) 78%,transparent)}
+.family .eyebrow{color:var(--sun)}
+.portrait{aspect-ratio:4/5;border-radius:var(--r);background:linear-gradient(160deg,#E39B33,#C23F64 60%,#5B2440);position:relative;display:flex;align-items:flex-end;padding:22px;color:#fff}
+.portrait .tag{position:absolute;top:16px;left:16px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.25);padding:3px 9px;border-radius:999px}
+.sig{font-family:var(--hand);font-size:2.2rem;color:var(--sun);margin-top:22px}
+.promise{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.promise div{border-top:2px solid var(--sun);padding-top:12px;font-size:.95rem}
+.promise strong{display:block;font-family:var(--display);font-weight:400;font-size:1.15rem;margin-bottom:4px}
+.lang{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.lang span{border:1px solid color-mix(in srgb,var(--band-ink) 35%,transparent);border-radius:999px;padding:3px 12px;font-size:.85rem}
+@media (max-width:900px){.family .grid{grid-template-columns:1fr}.portrait{aspect-ratio:16/10}.promise{grid-template-columns:1fr}}
+
+/* blog */
+.blog{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:22px}
+.post{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.post .art{height:170px}
+.post.feature .art{height:260px}
+.post .txt{padding:20px;display:grid;gap:10px}
+.post .kicker{font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sea)}
+.post h3{font-size:1.3rem}
+.post.feature h3{font-size:1.7rem}
+.post p{color:var(--muted);font-size:.95rem}
+.post .read{font-size:.85rem;color:var(--muted)}
+@media (max-width:900px){.blog{grid-template-columns:1fr}}
+
+/* partners portfolio */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.filters button{font:inherit;font-size:.9rem;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 16px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.partners{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.partner{border-radius:var(--r);overflow:hidden;position:relative;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;color:#fff;isolation:isolate}
+.partner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(8,20,24,.78));z-index:-1}
+.partner .cat{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;opacity:.9}
+.partner h3{font-size:1.4rem;margin:4px 0 6px}
+.partner p{font-size:.92rem;opacity:.9}
+.partner .perk{margin-top:12px;font-size:.82rem;font-weight:700;background:rgba(255,255,255,.18);border-radius:999px;padding:4px 12px;align-self:flex-start}
+.partner svg.bg{position:absolute;inset:0;width:100%;height:100%;z-index:-2}
+.partner[hidden]{display:none}
+
+/* reviews */
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:30px}
+@media (max-width:760px){.platforms{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.platforms{grid-template-columns:1fr}}
+#reviewsWidget:empty{display:none}
+.plat{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:0}
+.plat .mark{font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+.plat .score{white-space:nowrap;margin-left:auto;font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+.plat .score .of{font-family:var(--body);font-size:.8rem;color:var(--muted);margin-left:2px}
+a.plat{text-decoration:none;color:inherit;transition:transform .15s ease}
+a.plat:hover{transform:translateY(-2px)}
+.plat .score small{font-family:var(--body);font-size:.75rem;color:var(--muted);display:block;text-align:right}
+.reviews{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:14px;border-top:4px solid var(--c,var(--sea))}
+.rev blockquote{margin:0;font-family:var(--display);font-size:1.12rem;line-height:1.45}
+.rev .who{display:flex;justify-content:space-between;gap:10px;font-size:.88rem;color:var(--muted);flex-wrap:wrap}
+.rev .src{font-weight:700;color:var(--c)}
+.ph-note{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--protea)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.cta-card{background:var(--protea);color:#fff;border-radius:var(--r);padding:36px;display:grid;gap:16px;align-content:start}
+.cta-card h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+.cta-card .btn-book{background:#fff;color:var(--protea)}
+.cta-card .btn-ghost{color:#fff}
+.side{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px;display:grid;gap:16px;align-content:start}
+.side dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:.96rem}
+.side dt{color:var(--muted)}
+.side dd{margin:0;font-weight:600}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+
+footer{padding:40px 0 110px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* photo slots: real image covers the placeholder once uploaded */
+.ph img.real,.slot img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.ph:has(img.real) .tag,.ph:has(img.real) svg.ico{display:none}
+.ph .cap{position:relative;z-index:2}
+.ph:has(img.real)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(transparent,rgba(0,0,0,.5));z-index:1;pointer-events:none}
+.portrait.ph::after{display:none}
+
+/* hero slideshow */
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hero-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+.hero-slides img.on{opacity:1}
+.hero-copy{z-index:2}
+
+.hero.has-photo h1,.hero.has-photo p.sub{color:#fff}
+.hero.has-photo h1 em,.hero.has-photo .hand,.hero.has-photo .eyebrow{color:#F6C68A!important}
+.hero.has-photo .btn-ghost{color:#fff}
+.hero-dots{display:flex;gap:8px}
+.hero-dots button{width:11px;height:11px;border-radius:50%;border:2px solid #fff;background:transparent;padding:0;cursor:pointer}
+.hero-dots button[aria-pressed="true"]{background:#fff}
+
+/* surroundings */
+.area{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
+.area .a1{grid-column:span 2;grid-row:span 2}
+@media (max-width:760px){.area{grid-template-columns:1fr 1fr;grid-auto-rows:160px}.area .a1{grid-column:span 2;grid-row:span 1}}
+
+/* accommodation type cards */
+.types{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.type{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .2s ease, box-shadow .2s ease}
+.type:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(16,48,58,.14)}
+.type .ph{height:240px;border-radius:0}
+.type .body{padding:22px;display:grid;gap:12px;flex:1;align-content:start}
+.type .count{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sea)}
+.type p{color:var(--muted);font-size:.96rem}
+.type .go{margin-top:auto;font-weight:700;color:var(--protea)}
+@media (max-width:900px){.types{grid-template-columns:1fr}}
+
+/* sub pages */
+#sub{padding-bottom:40px}
+.crumbs{font-size:.9rem;color:var(--muted);padding:26px 0 0;display:flex;gap:8px;flex-wrap:wrap}
+.crumbs a{color:var(--muted)}
+.sub-head{padding:30px 0 40px;display:grid;gap:14px}
+.sub-head h1{font-size:clamp(2.4rem,5.5vw,4.2rem)}
+.type-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:start}
+.type-hero .ph{height:420px}
+.type-info{display:grid;gap:18px}
+.type-info ul{margin:0;padding-left:18px;color:var(--muted)}
+.type-nav{display:flex;gap:8px;flex-wrap:wrap}
+.type-nav a{font-size:.88rem;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:6px 14px;text-decoration:none;color:var(--ink);background:var(--card)}
+.type-nav a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+@media (max-width:900px){.type-hero{grid-template-columns:1fr}.type-hero .ph{height:280px}}
+.unit{padding:56px 0 0}
+.unit-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.unit-head h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+.rgal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:12px}
+.rgal .ph:first-child{grid-column:span 2;grid-row:span 2}
+.rgal .ph{cursor:zoom-in;border:0;font:inherit;text-align:left;color:#fff}
+.rgal .ph:has(img.real) .cap{display:none}
+@media (max-width:760px){.rgal{grid-template-columns:1fr 1fr;grid-auto-rows:140px}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(5,14,17,.92);display:grid;place-items:center;padding:20px}
+.lb[hidden]{display:none}
+.lb img{max-height:84vh;max-width:min(1200px,100%);border-radius:10px}
+.lb .cap{color:#fff;margin-top:10px;text-align:center}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;width:48px;height:48px;font-size:1.4rem;cursor:pointer}
+.lb .x{top:18px;right:18px}.lb .prev{left:18px;top:50%}.lb .next{right:18px;top:50%}
+
+/* whatsapp float */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;align-items:center;gap:10px;background:#1F8F55;color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 18px 12px 14px;box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.wa-float svg{width:26px;height:26px}
+@media (max-width:520px){.wa-float span{display:none}.wa-float{padding:14px}}
+
+/* video, shade, controls, language */
+#heroVid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:opacity 1.2s ease;background:#10303A}
+#heroVid.off{opacity:0;pointer-events:none}
+.hero-shade{position:absolute;inset:0;z-index:2;display:none;background:linear-gradient(90deg,rgba(8,20,24,.72),rgba(8,20,24,.25) 60%,transparent)}
+.hero.has-photo .hero-shade{display:block}
+.hero-copy{z-index:3}
+.hero-ctrl{position:absolute;right:24px;bottom:22px;z-index:4;display:flex;gap:12px;align-items:center}
+.snd{font:inherit;font-size:.85rem;font-weight:600;color:#fff;background:rgba(8,20,24,.45);border:1px solid rgba(255,255,255,.6);border-radius:999px;padding:6px 14px;cursor:pointer}
+.snd[hidden]{display:none}
+.lang-sel select{font:inherit;font-size:.86rem;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 10px;cursor:pointer}
+.nav ul{margin-left:auto;gap:16px}
+.nav ul a{white-space:nowrap;font-size:.9rem}
+.btn{white-space:nowrap}
+@media (max-width:1180px){.nav ul{display:none}.lang-sel{margin-left:auto}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:960px){.lang-sel{margin-left:auto}.nav .btn-book{margin-left:0}}
+@media (max-width:520px){.nav .btn-book{padding:10px 14px;font-size:.85rem}.brand small{display:none}}
+.portrait.ph{display:flex}
+.brand img{width:46px;height:46px;flex:none}
+.brand>span{display:flex;align-items:baseline;gap:8px}
+@media (max-width:520px){.brand>span{display:none}}
+.foot-brand{display:flex;align-items:center;gap:14px}
+.nav .wrap{gap:18px}
+@media (max-width:1400px){.brand small{display:none}}
+@media (max-width:1300px){.nav ul{gap:13px}.nav ul a{font-size:.86rem}}
+.maps-link{color:var(--ink);text-decoration:none}
+.maps-cta{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:.88rem;font-weight:700;color:var(--sea)}
+.maps-cta::before{content:"";width:14px;height:14px;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z'/%3E%3C/svg%3E") center/contain no-repeat}
+.maps-link:hover .maps-cta{text-decoration:underline}
+.map{position:relative}
+.map-btn{margin-top:16px;width:100%;justify-content:center}
+.side dt{white-space:nowrap}
+.intro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.intro-text{display:grid;gap:18px;color:var(--muted);font-size:1.08rem;max-width:68ch}
+.intro-text p:first-child{color:var(--ink);font-size:1.18rem}
+.acc-text{display:grid;gap:14px;color:var(--muted);font-size:1.05rem;max-width:72ch}
+@media (max-width:900px){.intro-grid{grid-template-columns:1fr;gap:20px}}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.svc-col{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px}
+.svc-col h3{margin-bottom:14px}
+.svc{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.svc li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.svc li::before{content:"";width:18px;height:18px;margin-top:4px;border-radius:50%;background:var(--sea);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 14.2-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 14.2-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z'/%3E%3C/svg%3E") center/contain no-repeat}
+@media (max-width:760px){.svc-grid{grid-template-columns:1fr}}
+.article{max-width:760px;margin:0 auto;padding:30px 0 20px;display:grid;gap:16px}
+.article h1{font-size:clamp(2.1rem,5vw,3.4rem)}
+.art-hero{height:260px;border-radius:var(--r);margin:10px 0}
+.art-body{display:grid;gap:16px;font-size:1.08rem;line-height:1.7}
+.art-body h3{font-size:1.5rem;margin-top:14px}
+.art-body p{max-width:68ch}
+.faq{display:grid;gap:10px;max-width:860px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.faq summary{cursor:pointer;font-weight:700;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--display);font-size:1.4rem;line-height:1;color:var(--protea)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:10px;color:var(--muted);max-width:72ch}
+.ct-float{position:fixed;right:20px;bottom:84px;z-index:30;display:flex;align-items:center;gap:8px;height:44px;padding:0 12px;border-radius:999px;background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.14);text-decoration:none;font-weight:600;font-size:.88rem}
+.ct-float svg{width:20px;height:20px;flex:none;color:var(--sea)}
+.ct-float:hover{border-color:var(--sea)}
+@media (max-width:520px){.ct-float{bottom:86px;right:24px;width:48px;height:48px;padding:0;justify-content:center}.ct-float .ct-label{display:none}}
+</style>
+</head>
+<body>
+
+<div class="draft" id="draft">
+  <div class="wrap">
+    <span data-i18n="draft"></span>
+    <button type="button" id="draftClose" data-i18n="draftBtn"></button>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#home"><img src="img/logo-180.png" width="46" height="46" alt="Be My Guest Lodge Logo"><span>Be My Guest <small>Lodge · Table View</small></span></a>
+    <ul>
+      <li><a href="#accommodation" data-i18n="navAcc"></a></li>
+      <li><a href="#umgebung" data-i18n="navArea"></a></li>
+      <li><a href="#lage" data-i18n="navLoc"></a></li>
+      <li><a href="#familie" data-i18n="navHosts"></a></li>
+      <li><a href="#erleben" data-i18n="navExp"></a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#bewertungen" data-i18n="navRev"></a></li>
+    </ul>
+    <label class="lang-sel"><span class="sr" data-i18n="langLabel"></span>
+      <select id="lang">
+        <option value="en">EN · English</option>
+        <option value="de">DE · Deutsch</option>
+        <option value="af">AF · Afrikaans</option>
+        <option value="fr">FR · Français</option>
+        <option value="es">ES · Español</option>
+        <option value="zh">中文</option>
+      </select>
+    </label>
+    <a class="btn btn-book book-link" href="#" target="_blank" rel="noopener" data-i18n="navBook"></a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" id="hero" aria-label="Welcome">
+  <svg class="scene" viewBox="0 -300 1600 1060" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Table Mountain seen across Table Bay from Table View at sunset">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7D7A8"/><stop offset=".55" stop-color="#F3B57C"/><stop offset="1" stop-color="#EE9A72"/></linearGradient>
+      <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E8E97"/><stop offset="1" stop-color="#1F5E69"/></linearGradient>
+      <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBCB9E"/><stop offset="1" stop-color="#D9AE7A"/></linearGradient>
+    </defs>
+    <rect y="-300" width="1600" height="1060" fill="url(#sky)"/>
+    <circle cx="1240" cy="380" r="70" fill="#FBE6C2" opacity=".9"/>
+    <path d="M560 520 L700 420 L770 360 L815 395 L860 352 L1180 348 L1225 380 L1290 440 L1330 470 L1385 430 L1420 405 L1450 420 L1500 470 L1560 520 Z" fill="#8F6A7A"/>
+    <path d="M560 520 L700 420 L770 360 L815 395 L860 352 L1180 348 L1225 380 L1290 440 L1330 470 L1385 430 L1420 405 L1450 420 L1500 470 L1560 520 Z" fill="#6E4F66" opacity=".35" transform="translate(0,14)"/>
+    <path d="M300 530 Q600 505 900 515 T1600 520 L1600 535 L300 535Z" fill="#7F6378" opacity=".55"/>
+    <rect y="525" width="1600" height="150" fill="url(#sea)"/>
+    <g stroke="#F7D2A4" stroke-width="3" stroke-linecap="round" opacity=".55"><line x1="1150" y1="550" x2="1330" y2="550"/><line x1="1190" y1="568" x2="1290" y2="568"/><line x1="1120" y1="590" x2="1360" y2="590"/><line x1="1210" y1="612" x2="1270" y2="612"/><line x1="300" y1="575" x2="380" y2="575"/><line x1="720" y1="600" x2="800" y2="600"/></g>
+    <path d="M0 655 Q400 625 800 650 T1600 640 L1600 760 L0 760Z" fill="url(#sand)"/>
+    <path d="M0 680 Q300 660 640 690 T1600 680" fill="none" stroke="#F4F0E6" stroke-width="5" opacity=".7"/>
+    <g fill="#5C7A5A"><ellipse cx="80" cy="700" rx="70" ry="24"/><ellipse cx="190" cy="712" rx="60" ry="18"/><ellipse cx="1500" cy="705" rx="80" ry="26"/></g>
+    <g fill="#C23F64"><circle cx="70" cy="682" r="7"/><circle cx="1490" cy="684" r="8"/><circle cx="1525" cy="690" r="6"/></g>
+    <g class="kite"><path d="M960 250 Q1010 220 1060 252 L1050 262 Q1010 238 970 262Z" fill="#C23F64"/><path d="M965 260 L1005 560 M1055 258 L1005 560" stroke="#2A2A2A" stroke-width="1.2"/><circle cx="1005" cy="566" r="5" fill="#10303A"/></g>
+    <g class="kite k2"><path d="M650 300 Q690 276 732 302 L724 310 Q690 290 658 310Z" fill="#E39B33"/><path d="M654 308 L690 580 M728 306 L690 580" stroke="#2A2A2A" stroke-width="1"/><circle cx="690" cy="585" r="4" fill="#10303A"/></g>
+    <g fill="none" stroke="#6E4F66" stroke-width="2.4" stroke-linecap="round"><path d="M1080 180 q10 -10 20 0 q10 -10 20 0"/><path d="M1140 210 q8 -8 16 0 q8 -8 16 0"/></g>
+  </svg>
+  <div class="hero-slides" id="heroSlides"></div>
+  <video id="heroVid" muted autoplay playsinline webkit-playsinline preload="auto" poster="video/poster.jpg"></video>
+  <div class="hero-shade"></div>
+  <div class="hero-copy">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#A82E52" data-i18n="heroEyebrow"></p>
+      <h1 data-i18n="heroH1"></h1>
+      <p class="sub" data-i18n="heroSub"></p>
+      <div class="ctas">
+        <a class="btn btn-book book-link" href="#" target="_blank" rel="noopener" data-i18n="heroCta1"></a>
+        <a class="btn btn-ghost wa-link" href="#" target="_blank" rel="noopener" data-i18n="heroCta2"></a>
+      </div>
+      <span class="hand" data-i18n="heroHand"></span>
+    </div>
+  </div>
+  <div class="hero-ctrl">
+    <button type="button" class="snd" id="vidSound" hidden></button>
+    <button type="button" class="snd" id="vidReplay" hidden></button>
+    <div class="hero-dots" id="heroDots" role="group"></div>
+  </div>
+</section>
+
+<section class="facts">
+  <div class="wrap">
+    <ul>
+      <li><b>6</b><span data-i18n="f1"></span></li>
+      <li><b data-i18n="f2b"></b><span data-i18n="f2"></span></li>
+      <li><b data-i18n="f3b"></b><span data-i18n="f3"></span></li>
+      <li><b>Kite</b><span data-i18n="f4"></span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="willkommen" class="intro">
+  <div class="wrap intro-grid">
+    <div>
+      <p class="eyebrow" data-i18n="introEyebrow"></p>
+      <h2 data-i18n="introH2"></h2>
+    </div>
+    <div class="intro-text">
+      <p data-i18n="intro1"></p>
+      <p data-i18n="intro2"></p>
+      <p data-i18n="intro3"></p>
+    </div>
+  </div>
+</section>
+
+<section id="umgebung" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="areaEyebrow"></p>
+      <h2 data-i18n="areaH2"></h2>
+      <p class="lede" data-i18n="areaLede"></p>
+    </div>
+    <div class="area" id="area"></div>
+  </div>
+</section>
+
+<section id="haus" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="houseEyebrow"></p>
+      <h2 data-i18n="houseH2"></h2>
+      <p class="lede" data-i18n="houseLede"></p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section id="zimmer" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="navAcc"></p>
+      <h2 data-i18n="accH2"></h2>
+      <div class="acc-text"><p data-i18n="acc1"></p><p data-i18n="acc2"></p><p data-i18n="acc3"></p></div>
+    </div>
+    <div class="types" id="typesHome"></div>
+    <p style="margin-top:26px"><a class="btn btn-ghost" href="#accommodation" data-i18n="accAll"></a></p>
+  </div>
+</section>
+
+<section id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="svcEyebrow"></p>
+      <h2 data-i18n="svcH2"></h2>
+      <p class="lede" data-i18n="svcLede"></p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-col"><h3 data-i18n="svcA"></h3><ul class="svc" id="svcAmen"></ul></div>
+      <div class="svc-col"><h3 data-i18n="svcS"></h3><ul class="svc" id="svcServ"></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="lage" style="padding-top:0">
+  <div class="wrap loc">
+    <div>
+      <p class="eyebrow" data-i18n="navLoc"></p>
+      <h2 data-i18n="locH2"></h2>
+      <p class="lede" style="margin-top:14px" data-i18n="locLede"></p>
+      <ul class="dist" id="dist"></ul>
+      <div class="safe" id="safe"></div>
+    </div>
+    <div class="map">
+      <svg viewBox="0 0 520 560" role="img" aria-label="Map">
+        <rect width="520" height="560" rx="10" fill="#DCEBEA"/>
+        <path d="M150 0 C170 80 200 120 190 190 C180 260 230 300 250 360 C270 420 330 450 340 560 L520 560 L520 0Z" fill="#EFE7D6"/>
+        <path d="M190 190 C180 260 230 300 250 360 C270 420 330 450 340 560" fill="none" stroke="#C9B48E" stroke-width="3"/>
+        <ellipse cx="70" cy="300" rx="28" ry="18" fill="#EFE7D6" stroke="#C9B48E" stroke-width="2"/>
+        <text x="70" y="336" font-family="Figtree,sans-serif" font-size="13" fill="#586E73" text-anchor="middle">Robben Island</text>
+        <text x="60" y="140" font-family="Young Serif,serif" font-size="20" fill="#1F6F78" opacity=".7" data-i18n="mapBay"></text>
+        <path d="M262 470 L300 452 L360 452 L392 476" fill="none" stroke="#8F6A7A" stroke-width="8" stroke-linejoin="round"/>
+        <text x="330" y="500" font-family="Figtree,sans-serif" font-size="13" fill="#6E4F66" text-anchor="middle" data-i18n="mapMtn"></text>
+        <g font-family="Figtree,sans-serif" font-size="14" fill="#10303A">
+          <circle cx="196" cy="110" r="7" fill="#E39B33"/><text x="210" y="105">Big Bay</text>
+          <circle cx="194" cy="165" r="7" fill="#E39B33"/><text x="208" y="160">Kite Beach</text>
+          <circle cx="232" cy="300" r="7" fill="#E39B33"/><text x="246" y="296" data-i18n="mapBeach"></text>
+          <circle cx="282" cy="420" r="7" fill="#1F6F78"/><text x="296" y="416" data-i18n="mapCity"></text>
+          <circle cx="455" cy="440" r="7" fill="#1F6F78"/><text x="440" y="470" text-anchor="middle" data-i18n="mapAir"></text>
+          <circle cx="440" cy="200" r="7" fill="#1F6F78"/><text x="440" y="230" text-anchor="middle">Durbanville</text>
+        </g>
+        <g transform="translate(262 260)"><circle r="22" fill="#C23F64" opacity=".18"/><circle r="11" fill="#C23F64"/><text x="20" y="-18" font-family="Young Serif,serif" font-size="17" fill="#C23F64">Be My Guest</text></g>
+      </svg>
+      <a class="btn btn-book map-btn" href="https://www.google.com/maps/search/?api=1&amp;query=51+Porterfield+Rd%2C+Bloubergrant%2C+Cape+Town%2C+7441" target="_blank" rel="noopener" data-i18n="mapsCta"></a>
+    </div>
+  </div>
+</section>
+
+<section id="familie" class="family">
+  <div class="wrap grid">
+    <div class="portrait ph" style="padding:22px">
+      <img class="real" src="img/house/family.jpg" alt="">
+      <span class="tag" data-i18n="famTag"></span>
+      <span class="cap" style="font-family:var(--display);font-size:1.5rem" data-i18n="famCap"></span>
+    </div>
+    <div>
+      <p class="eyebrow" data-i18n="navHosts"></p>
+      <h2 data-i18n="famH2"></h2>
+      <p class="lede" style="margin-top:16px" data-i18n="famLede"></p>
+      <div class="promise" id="promise"></div>
+      <div class="lang"><span>English</span><span>Deutsch</span><span>Afrikaans</span></div>
+      <p class="sig" data-i18n="famSig"></p>
+    </div>
+  </div>
+</section>
+
+<section id="erleben">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="expEyebrow"></p>
+      <h2 data-i18n="expH2"></h2>
+      <p class="lede" data-i18n="expLede"></p>
+    </div>
+    <div class="filters" role="group" id="filters"></div>
+    <div class="partners" id="partners"></div>
+  </div>
+</section>
+
+<section id="blog" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="blogEyebrow"></p>
+      <h2 data-i18n="blogH2"></h2>
+      <p class="lede" data-i18n="blogLede"></p>
+    </div>
+    <div class="blog" id="posts"></div>
+  </div>
+</section>
+
+<section id="bewertungen" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow" data-i18n="revEyebrow"></p>
+      <h2 data-i18n="revH2"></h2>
+      <p class="ph-note" data-i18n="revNote"></p>
+    </div>
+    <div class="platforms" id="platforms"></div>
+    <div class="reviews" id="reviews"></div>
+    <!-- Live review widget (e.g. Tripadvisor Widget Center or a multi-platform review tool): paste embed code here on the live site -->
+    <div id="reviewsWidget" style="margin-top:24px"></div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow" id="faqEyebrow"></p><h2 id="faqH2"></h2></div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<section id="kontakt" style="padding-top:0">
+  <div class="wrap contact">
+    <div class="cta-card">
+      <p class="eyebrow" style="color:#fff;opacity:.85" data-i18n="ctEyebrow"></p>
+      <h2 data-i18n="ctH2"></h2>
+      <p data-i18n="ctP"></p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px">
+        <a class="btn btn-book book-link" href="#" target="_blank" rel="noopener" data-i18n="ctBtn1"></a>
+        <a class="btn btn-ghost wa-link" href="#" target="_blank" rel="noopener" data-i18n="ctBtn2"></a>
+      </div>
+    </div>
+    <div class="side">
+      <h3 data-i18n="ctH3"></h3>
+      <dl>
+        <dt data-i18n="ctAddr"></dt><dd><a class="maps-link" href="https://www.google.com/maps/search/?api=1&amp;query=51+Porterfield+Rd%2C+Bloubergrant%2C+Cape+Town%2C+7441" target="_blank" rel="noopener">51 Porterfield Rd, Bloubergrant, Table View, Cape Town, 7441<span class="maps-cta" data-i18n="mapsCta"></span></a></dd>
+        <dt>WhatsApp</dt><dd>+27 72 838 4490</dd>
+        <dt>E-Mail</dt><dd><a class="maps-link" href="mailto:info@bemyguestlodge.co.za">info@bemyguestlodge.co.za</a></dd>
+        <dt>Check-in</dt><dd data-i18n="ctIn"></dd>
+        <dt>Check-out</dt><dd data-i18n="ctOut"></dd>
+      </dl>
+      <p style="color:var(--muted);font-size:.9rem" data-i18n="ctNote"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<main id="sub" hidden></main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true">
+  <button type="button" class="x" id="lbX" aria-label="Close">×</button>
+  <button type="button" class="prev" id="lbP" aria-label="Previous">‹</button>
+  <div><img id="lbImg" alt=""><p class="cap" id="lbCap"></p></div>
+  <button type="button" class="next" id="lbN" aria-label="Next">›</button>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img src="img/logo-180.png" width="64" height="64" alt="Be My Guest Lodge Logo"><span>© 2026 Be My Guest Lodge · B&amp;B &amp; Self Catering<br>Table View, Cape Town, South Africa</span></span>
+    <span data-i18n="legal"></span>
+  </div>
+</footer>
+
+<a class="ct-float" href="#kontakt" aria-label="Contact">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm-1 1 9 7 9-7"/></svg>
+  <span class="ct-label" data-i18n="ctFloat"></span>
+</a>
+<a class="wa-float wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5l-.1-.1z"/></svg>
+  <span data-i18n="waFloat"></span>
+</a>
+
+<script>
+/* ============ SETTINGS (replace placeholders) ============ */
+const CONFIG = {
+  book: "https://book.nightsbridge.com/28083",
+  wa: "27728384490",
+  video: "video/hero.mp4",
+  slides: 20            /* tries img/slides/1.jpg … 20.jpg, missing ones are skipped */
+};
+
+/* ============ RATINGS (update manually: score, scale, number of reviews, link to your listing) ============ */
+const RATINGS = [
+  {n:"Agoda",       c:"#6A3FA0", score:9.5,  d:1, scale:10, count:null, url:""},
+  {n:"Expedia",     c:"#1E3A8A", score:9.4,  d:1, scale:10, count:null, url:""},
+  {n:"Booking.com", c:"#1A4FA0", score:8.7,  d:1, scale:10, count:null, url:""},
+  {n:"Airbnb",      c:"#E0405A", score:4.88, d:2, scale:5,  count:null, url:""},
+  {n:"LekkeSlaap",  c:"#D9731F", score:4.6,  d:1, scale:5,  count:null, url:""},
+  {n:"Tripadvisor", c:"#00AA6C", score:4.4,  d:1, scale:5,  count:null, url:""}
+];
+
+/* ============ TEXT (EN = main language, DE complete; AF/FR/ES/ZH to follow) ============ */
+const DICT = {
+en:{
+  draft:"<strong>Draft:</strong> Reviews and partner offers are still placeholders.",
+  draftBtn:"Hide", langLabel:"Language",
+  navAcc:"Our Accommodation", navArea:"Surroundings", navLoc:"Location", navHosts:"Your Hosts", navExp:"Experiences", navRev:"Reviews", navBook:"Book now",
+  heroEyebrow:"Guesthouse in Table View · Cape Town",
+  heroH1:"Your home <em>at the Cape</em>, away from home.",
+  heroSub:"Five comfort rooms and a family cottage in a quiet neighbourhood, minutes from the beach, with the best view of Table Mountain in town.",
+  heroCta1:"Check availability", heroCta2:"Ask on WhatsApp", heroHand:"Welcome, welkom, willkommen!",
+  soundOn:"Sound on", soundOff:"Sound off", replay:"Play video",
+  f1:"rooms in 3 room types", f2b:"approx. 25 min", f2:"to the city & V&amp;A Waterfront", f3b:"approx. 5 min", f3:"to Table View beach", f4:"Kite Beach &amp; Big Bay nearby",
+  introEyebrow:"Welcome to Bloubergstrand", introH2:"Let\'s make Be My Guest your home in Cape Town.",
+  intro1:"Be My Guest Lodge is a family-run guesthouse in Bloubergrant, Table View, part of the popular seaside area of Bloubergstrand on Cape Town\'s Atlantic coast. Robben Island lies just across the bay, the beach is minutes away, and Cape Town International Airport is about a 20-minute drive.",
+  intro2:"Your hosts Jan &amp; Leona welcome up to 16 guests in five comfort rooms and a spacious family cottage, on a B&amp;B or self-catering basis. From here, Cape Town\'s highlights are easy to reach: the V&amp;A Waterfront, Table Mountain and the Cape Peninsula. For a day trip up the West Coast to Langebaan or Lambert\'s Bay, the R27 coastal road starts right on our doorstep.",
+  intro3:"Whether you\'re planning a family holiday, a kitesurfing trip or a business stay, Bloubergstrand is the place to be. As the afternoon wind picks up, the beachfront becomes a playground for kitesurfers, joggers and beachcombers. And there\'s no better view of Table Mountain than from Blouberg beach: at sunset the mountain glows in shades of blue and violet, which gave the area its name, “Blouberg”, Afrikaans for “blue mountain”. It\'s the time of day when families gather on the beach, and when you get hungry, plenty of restaurants line the beachfront.",
+  acc1:"Be My Guest Lodge sleeps up to 16 guests on a B&amp;B or self-catering basis: three Comfort Double Rooms, two Comfort Twin Rooms and our spacious two-storey Family Cottage. Every room has its own bathroom, a private entrance and a patio opening onto the garden.",
+  acc2:"In each room you\'ll find air conditioning that cools in summer and heats in winter, a ceiling fan, a flat-screen TV with DStv, free Wi-Fi, a mini fridge, a microwave and tea and coffee making facilities. The Family Cottage adds its own fully equipped kitchen, two bathrooms and a large terrace by the pool.",
+  acc3:"Outside, the lush garden and swimming pool are yours to enjoy. Two braais (barbecues) are available to all guests, perfect for a relaxed South African evening by the pool with family and friends. See rates and availability directly in our booking system.",
+  areaEyebrow:"Around Table View", areaH2:"Between the Atlantic and Table Mountain.",
+  areaLede:"Long sandy beaches, the classic view of Table Mountain, steady wind for kitesurfers and wine estates just inland: it all starts at our front door.",
+  area:["Table Mountain from the beach","Kitesurfers at sunset","Table Mountain &amp; Table Bay","Evening on the beach","The famous “tablecloth”","Durbanville wine estates","Cape Town city"],
+  houseEyebrow:"The Lodge", houseH2:"Arrive, breathe, stay a while.",
+  houseLede:"Garden, terrace, a shared breakfast table, plus a pool and two braais that all guests are welcome to use on warm evenings. Our common areas are made for feeling at home and for meeting fellow travellers.",
+  house:["Pool &amp; sun loungers","Garden terrace","Courtyard","Under the palm","Patio lounge","Shady corners","Garden path","Lunch in the garden","Hanging gardens"],
+  accH2:"Three room types, six places to unwind.",
+  accLede:"Three Comfort Double Rooms, two Comfort Twin Rooms and our Family Cottage. All with private bathroom, own entrance and patio, air conditioning, Wi-Fi and quality linen. Pool and two braais are shared by all guests. See rates and availability directly in our booking system.",
+  accAll:"View all accommodation", accH1:"Choose your room.",
+  accSubLede:"Six units in three types. Choose a room type to see the photo gallery of each room.",
+  details:"Photos &amp; details →", priceNote:"Rates and availability in our booking system.", backAll:"← All room types", home:"Home", photo:"Photo",
+  types:{
+    "comfort-double":{n:"Comfort Double Room",count:"3 rooms",short:"Three individually styled double rooms for two, each with its own entrance and patio onto the garden. Calm, light-filled and practical, ideal for couples and solo travellers. Room 4 is a spacious studio with its own kitchenette and dining nook.",f:["Double bed for 2 guests","Private bathroom","Own entrance &amp; patio","Air conditioning (cooling &amp; heating)","Ceiling fan","Free Wi-Fi &amp; flat-screen TV with DStv","Mini fridge &amp; microwave","Tea and coffee station"]},
+    "comfort-twin":{n:"Comfort Twin Room",count:"2 rooms",short:"Two twin rooms with two single beds each, perfect for friends, colleagues or kite buddies. Both open onto the garden through their own entrance, and Room 6 adds a large private terrace among the palms.",f:["Two single beds for 2 guests","Private bathroom","Own entrance &amp; patio (Room 6: large terrace)","Air conditioning (cooling &amp; heating)","Ceiling fan","Free Wi-Fi &amp; flat-screen TV with DStv","Mini fridge &amp; microwave","Tea and coffee station"]},
+    "family-cottage":{n:"Family Cottage",count:"1 cottage · approx. 85 m²",short:"Your own two-storey house by the pool: around 85 m² with a loft bedroom under timber beams, an open-plan living and dining area, a full kitchen, two bathrooms and a terrace facing the pool. Sleeps up to six, ideal for families and small groups.",f:["Approx. 85 m² on two floors","6 beds for up to 6 guests","Own kitchen for self catering","2 bathrooms","Own entrance &amp; large terrace","Air conditioning (cooling &amp; heating)","Free Wi-Fi &amp; flat-screen TV with DStv"]}
+  },
+  units:{
+    "Room 2":"Crisp navy and white set the tone in Room 2, finished with blue Delft-style tiles at the basin and slate-grey curtains. The double bed with its navy throw invites you to sink in after a day at the beach, while the ceiling fan, writing desk and door to the garden make the room as practical as it is cosy.",
+    "Room 3":"Room 3 is light and serene: soft white walls, turquoise and gold ginkgo prints and a leaf-patterned rug give it a gentle botanical feel. Hand-painted turquoise and yellow tiles at the basin add a cheerful touch, and the quiet outlook to the garden makes it an easy place to unwind.",
+    "Room 4":"Lush greens define Room 4, our studio: tropical palm wallpaper, a leafy rug, an emerald-tiled bathroom and a pink flamingo print set a relaxed holiday mood. With its own kitchenette, dining nook and extra space, it is made for longer stays and guests who like to cook a little.",
+    "Room 5":"A deep royal-blue feature wall and dark wooden headboards give Room 5 a warm, classic character, with vintage bicycle prints and clock-pattern cushions as playful details. Soft throws, a cosy reading corner and a patio among the greenery make it a calm retreat; the bathroom features bold black-and-white tiles.",
+    "Room 6":"Room 6 brings a touch of safari: a charcoal feature wall with zebra art, black-and-white prints, red accents and exposed timber beams. Wicker armchairs invite you to linger, and the large private terrace among palms and bougainvillea is perfect for slow breakfasts and sundowners.",
+    "Family Cottage":"Exposed brick, warm terracotta and teal tones, African portrait art and a vibrant kilim rug give the cottage a relaxed, homely feel. Upstairs, the loft bedroom sits under timber beams; downstairs, sofas, a long dining table and the kitchen bring everyone together, with the pool just outside the door."
+  },
+  svcEyebrow:"Amenities &amp; services", svcH2:"Everything you need for a relaxed stay.",
+  svcLede:"Be My Guest Lodge is close to shops, restaurants and the beach, and the best of Cape Town is within easy reach. Here is what we offer at the lodge and what we are happy to organise for you.",
+  svcA:"At the lodge", svcS:"Our services",
+  amen:["Free unlimited Wi-Fi","Swimming pool and sun loungers in a lush garden","Two braais (barbecues) for all guests","Air conditioning in every room, cooling in summer and heating in winter","Flat-screen TV with DStv","Mini fridge, microwave, tea &amp; coffee in every room","Private entrance and patio for every room","Secure off-street parking","Safe, quiet residential neighbourhood","Card payments accepted"],
+  serv:["Taxi service","Laundry service","Baby cot and high chair on request","Day trip planning and excursions","Booking of whale watching trips","Booking of shark cage diving","Late check-in on request"],
+  locH2:"Quiet living, everything within reach.",
+  locLede:"Table View lies on the Atlantic coast north of Cape Town. From here you see Table Mountain in its full width across the bay, with Robben Island on the horizon. Our lodge is on a quiet residential street: birdsong in the morning, calm in the evening, and the beach, restaurants and the city are close by.",
+  dist:[["Table View &amp; Bloubergstrand beach","approx. 5 min"],["Kite Beach &amp; Big Bay (kitesurfing, wing foil, surfing)","approx. 10 min"],["Cape Town city &amp; V&amp;A Waterfront","approx. 25 min"],["Durbanville Wine Valley","approx. 25 min"],["Cape Town International Airport","approx. 20 min"]],
+  safe:[["Secure parking","Parking right on the property."],["Quiet neighbourhood","A family-friendly residential area."],["Hosts on site","We live here and are there for you."],["Local advice","We tell you where and when to go."]],
+  mapBay:"Table Bay", mapMtn:"Table Mountain", mapBeach:"Table View beach", mapCity:"City &amp; Waterfront", mapAir:"Airport",
+  famTag:"Family photo", famCap:"Your hosts Jan &amp; Leona",
+  famH2:"German reliability, South African warmth.",
+  famLede:"We are a German-South African family and run Be My Guest Lodge ourselves, on site and with all our heart. We know both worlds: the wish for everything to be clean and dependable, and the joy of taking time for each other. With us you get both. We welcome you personally, share our favourite places and are always happy to chat, over breakfast or at the braai.",
+  promise:[["A personal welcome","No key box: we are there when you arrive."],["Insider tips","From the best kite session to the quietest wine estate."],["Quick to reach","Questions on WhatsApp, usually answered within minutes."]],
+  famSig:"See you soon!",
+  expEyebrow:"Experiences with our partners", expH2:"The Cape, hand-picked.",
+  expLede:"We work with these providers. We book for you, know the people personally, and as our guest you often get a little extra.",
+  all:"All", sugg:"Partner suggestion",
+  cats:{water:"Water sports",nature:"Nature",food:"Food &amp; wine",trips:"Day trips"},
+  partners:[
+    ["Kite &amp; wing foil school","Lessons for beginners and advanced riders at Kite Beach, gear included.","10% off for lodge guests"],
+    ["Table Mountain Aerial Cableway","Ride the cable car up Table Mountain. We tell you which days have the best views.","Tickets through us"],
+    ["Durbanville wine estates","Sauvignon Blanc with a sea breeze: tastings at small family estates nearby.","Table reservations"],
+    ["Surf lessons at Big Bay","Gentle waves for your first ride, with local instructors.","Pick-up available"],
+    ["Table Bay boat trip","Robben Island, seals and, with luck, dolphins: Table Mountain from the sea.","Packed lunch from us"],
+    ["Cape Peninsula &amp; Boulders Beach","Day trip to the Cape of Good Hope and the penguins of Simon's Town.","Driver on request"]],
+  blogEyebrow:"Blog · Cape Town &amp; surroundings", blogH2:"Stories and tips from the Cape.",
+  blogLede:"What we tell our guests at breakfast, we write down here: excursions, seasons, beaches and small discoveries around Table View.",
+  posts:[
+    ["Beach &amp; sea","Why Table Mountain looks best from Table View","Everyone knows the postcard view, but when is the light best, and where exactly should you stand? Our little photo guide for sunsets on the beach.","5 min read"],
+    ["Kitesurfing","Kite season at the Cape: wind, spots and timing","The south-easterly wind, known locally as the Cape Doctor, makes the area one of the best-known kite destinations in the world. What beginners should know.","6 min read"],
+    ["Day trips","A day on the West Coast: from Blouberg to Langebaan","Seafood restaurants on the beach, wildflowers in spring and lagoons with flamingos: our favourite route north.","4 min read"]],
+  revEyebrow:"What our guests say", revH2:"Rated on the platforms you know.",
+  revNote:"Placeholder: guest quotes below will be replaced with real reviews.",
+  revPh:"Placeholder", revQuote:"A real guest quote from {p} goes here, for example about the personal welcome, the breakfast or the view of Table Mountain.",
+  revWho:"First name, country · Month year", revScore:"Guest rating", revCount:"reviews",
+  ctEyebrow:"Book direct", ctH2:"Booking direct is the most personal way.",
+  ctP:"Our booking system shows available rooms in real time and lets you book without detours. For questions about arrival, kitesurfing or longer stays, just message us on WhatsApp.",
+  ctBtn1:"Go to booking system", ctBtn2:"Open WhatsApp chat", ctH3:"Contact", ctAddr:"Address",
+  ctIn:"2 pm – 7 pm", ctOut:"until 10 am", ctNote:"Arriving later? Late check-in is possible, just let us know in advance via WhatsApp or email.",
+  mapsCta:"Open in Google Maps", legal:"Imprint · Privacy · Booking terms", waFloat:"Questions? WhatsApp", ctFloat:"Contact",
+  waText:"Hello Be My Guest Lodge, I'm interested in a stay."
+},
+de:{
+  draft:"<strong>Entwurf:</strong> Bewertungen und Partnerangebote sind noch Platzhalter.",
+  draftBtn:"Ausblenden", langLabel:"Sprache",
+  navAcc:"Our Accommodation", navArea:"Umgebung", navLoc:"Lage", navHosts:"Gastgeber", navExp:"Erleben", navRev:"Bewertungen", navBook:"Jetzt buchen",
+  heroEyebrow:"Gästehaus in Table View · Kapstadt",
+  heroH1:"Euer Zuhause <em>am Kap</em>, fern von Zuhause.",
+  heroSub:"Fünf Komfortzimmer und ein Family Cottage in ruhiger Lage, wenige Minuten vom Strand, mit dem schönsten Blick der Stadt auf den Tafelberg.",
+  heroCta1:"Verfügbarkeit prüfen", heroCta2:"Per WhatsApp fragen", heroHand:"Herzlich willkommen, welkom, welcome!",
+  soundOn:"Ton an", soundOff:"Ton aus", replay:"Video abspielen",
+  f1:"Unterkünfte in 3 Zimmertypen", f2b:"ca. 25 Min.", f2:"bis in die City (V&amp;A Waterfront)", f3b:"ca. 5 Min.", f3:"zum Strand von Table View", f4:"Kite Beach &amp; Big Bay in der Nähe",
+  introEyebrow:"Willkommen in Bloubergstrand", introH2:"Euer Zuhause in Kapstadt: Be My Guest Lodge.",
+  intro1:"Die Be My Guest Lodge ist ein familiengeführtes Gästehaus in Bloubergrant, Table View, im beliebten Küstenort Bloubergstrand an der Atlantikküste von Kapstadt. Robben Island liegt direkt gegenüber in der Bucht, der Strand ist nur wenige Minuten entfernt, und zum Flughafen Cape Town International sind es rund 20 Autominuten.",
+  intro2:"Eure Gastgeber Jan &amp; Leona empfangen bis zu 16 Gäste in fünf Komfortzimmern und einem geräumigen Family Cottage, wahlweise mit Frühstück (B&amp;B) oder als Selbstversorger. Kapstadts Highlights sind schnell erreicht: die V&amp;A Waterfront, der Tafelberg und die Kap-Halbinsel. Für einen Tagesausflug an die Westküste nach Langebaan oder Lambert\'s Bay beginnt die Küstenstraße R27 direkt vor unserer Haustür.",
+  intro3:"Ob Familienurlaub, Kitesurf-Trip oder Geschäftsreise, Bloubergstrand ist der perfekte Ausgangspunkt. Wenn am Nachmittag der Wind auffrischt, wird die Strandpromenade zum Spielplatz für Kitesurfer, Jogger und Strandspaziergänger. Und nirgends ist der Blick auf den Tafelberg schöner als vom Strand in Blouberg: Bei Sonnenuntergang leuchtet der Berg in Blau- und Violetttönen. Daher kommt auch der Name „Blouberg“, Afrikaans für „blauer Berg“. Dann zieht es Familien an den Strand, und wer hungrig wird, findet an der Promenade zahlreiche Restaurants.",
+  acc1:"Die Be My Guest Lodge bietet Platz für bis zu 16 Gäste, wahlweise mit Frühstück (B&amp;B) oder als Selbstversorger: drei Comfort Double Rooms, zwei Comfort Twin Rooms und unser geräumiges Family Cottage auf zwei Etagen. Jedes Zimmer hat ein eigenes Bad, einen separaten Eingang und ein Patio zum Garten.",
+  acc2:"In allen Zimmern erwarten euch eine Klimaanlage, die im Sommer kühlt und im Winter heizt, ein Deckenventilator, Flachbild-TV mit DStv, kostenloses WLAN, Minikühlschrank, Mikrowelle sowie Kaffee und Tee. Das Family Cottage hat zusätzlich eine eigene, voll ausgestattete Küche, zwei Bäder und eine große Terrasse am Pool.",
+  acc3:"Draußen gehören der grüne Garten und der Pool euch. Zwei Braais (Grillplätze) stehen allen Gästen zur Verfügung, ideal für einen entspannten südafrikanischen Grillabend am Pool mit Familie und Freunden. Preise und freie Termine seht ihr direkt im Buchungssystem.",
+  areaEyebrow:"Rund um Table View", areaH2:"Zwischen Atlantik und Tafelberg.",
+  areaLede:"Lange Sandstrände, der beste Blick auf den Tafelberg, Wind für Kitesurfer und die Weingüter im Hinterland: Das alles liegt direkt vor unserer Haustür.",
+  area:["Tafelberg-Blick vom Strand","Kitesurfer im Sonnenuntergang","Tafelberg &amp; Tafelbucht","Abendstimmung am Strand","Das berühmte „Tischtuch“","Weingüter Durbanville","Kapstadt City"],
+  houseEyebrow:"Das Haus", houseH2:"Ankommen, durchatmen, bleiben.",
+  houseLede:"Garten, Terrasse, ein gemeinsamer Frühstückstisch, dazu ein Pool und zwei Braais, die alle Gäste für laue Abende nutzen können. Unsere Gemeinschaftsräume sind dafür gemacht, dass sich Gäste wohlfühlen und gern ins Gespräch kommen.",
+  house:["Pool &amp; Sonnenliegen","Gartenterrasse","Innenhof","Unter der Palme","Patio-Lounge","Schattige Ecken","Gartenweg","Mittagstisch im Garten","Hängende Gärten"],
+  accH2:"Drei Zimmertypen, sechs Rückzugsorte.",
+  accLede:"Drei Comfort Double Rooms, zwei Comfort Twin Rooms und unser Family Cottage. Alle mit eigenem Bad, eigenem Eingang und Patio, Klimaanlage, WLAN und hochwertiger Bettwäsche. Pool und zwei Braais stehen allen Gästen zur Verfügung. Preise und freie Termine seht ihr direkt im Buchungssystem.",
+  accAll:"Alle Unterkünfte ansehen", accH1:"Wählt euer Zimmer.",
+  accSubLede:"Sechs Unterkünfte in drei Typen. Wählt einen Zimmertyp, um die Fotogalerien der einzelnen Zimmer zu sehen.",
+  details:"Fotos &amp; Details ansehen →", priceNote:"Preise und freie Termine im Buchungssystem.", backAll:"← Alle Zimmertypen", home:"Home", photo:"Foto",
+  types:{
+    "comfort-double":{n:"Comfort Double Room",count:"3 Zimmer",short:"Drei individuell gestaltete Doppelzimmer für zwei, jedes mit eigenem Eingang und Patio zum Garten. Ruhig, hell und praktisch, ideal für Paare und Alleinreisende. Room 4 ist ein geräumiges Studio mit eigener Küchenzeile und Essecke.",f:["Doppelbett für 2 Gäste","Eigenes Bad","Eigener Eingang &amp; Patio","Klimaanlage (kühlt &amp; heizt)","Deckenventilator","Kostenloses WLAN &amp; Flachbild-TV mit DStv","Minikühlschrank &amp; Mikrowelle","Kaffee- und Teestation"]},
+    "comfort-twin":{n:"Comfort Twin Room",count:"2 Zimmer",short:"Zwei Twin-Zimmer mit jeweils zwei Einzelbetten, perfekt für Freunde, Kollegen oder Kite-Buddies. Beide öffnen sich über einen eigenen Eingang zum Garten, Room 6 hat zusätzlich eine große eigene Terrasse unter Palmen.",f:["Zwei Einzelbetten für 2 Gäste","Eigenes Bad","Eigener Eingang &amp; Patio (Room 6: große Terrasse)","Klimaanlage (kühlt &amp; heizt)","Deckenventilator","Kostenloses WLAN &amp; Flachbild-TV mit DStv","Minikühlschrank &amp; Mikrowelle","Kaffee- und Teestation"]},
+    "family-cottage":{n:"Family Cottage",count:"1 Cottage · ca. 85 m²",short:"Euer eigenes Haus auf zwei Etagen direkt am Pool: rund 85 m² mit Schlafgalerie unter Holzbalken, offenem Wohn- und Essbereich, voll ausgestatteter Küche, zwei Bädern und Terrasse zum Pool. Platz für bis zu sechs Gäste, ideal für Familien und kleine Gruppen.",f:["Ca. 85 m² auf zwei Etagen","6 Betten für bis zu 6 Gäste","Eigene Küche für Selbstversorger","2 Badezimmer","Eigener Eingang &amp; große Terrasse","Klimaanlage (kühlt &amp; heizt)","Kostenloses WLAN &amp; Flachbild-TV mit DStv"]}
+  },
+  units:{
+    "Room 2":"Klares Marineblau und Weiß prägen Room 2, ergänzt durch blaue Fliesen im Delfter Stil am Waschtisch und schiefergraue Vorhänge. Das Doppelbett mit marineblauer Decke lädt nach einem Strandtag zum Versinken ein, Deckenventilator, Schreibtisch und die Tür zum Garten machen das Zimmer so praktisch wie gemütlich.",
+    "Room 3":"Room 3 ist hell und ruhig: zarte weiße Wände, Ginkgo-Bilder in Türkis und Gold und ein Teppich mit Blattmuster sorgen für ein sanftes, botanisches Flair. Handbemalte Fliesen in Türkis und Gelb am Waschtisch setzen fröhliche Akzente, der ruhige Blick in den Garten lädt zum Abschalten ein.",
+    "Room 4":"Sattes Grün bestimmt Room 4, unser Studio: tropische Palmentapete, ein Teppich mit Blattmotiv, ein Bad mit smaragdgrünen Fliesen und ein Flamingo-Bild in Rosa sorgen für Urlaubsstimmung. Mit eigener Küchenzeile, Essecke und viel Platz ist es ideal für längere Aufenthalte und Gäste, die gern selbst etwas kochen.",
+    "Room 5":"Eine tiefblaue Akzentwand und dunkle Holzkopfteile geben Room 5 einen warmen, klassischen Charakter, Vintage-Fahrradbilder und Kissen mit Uhrenmotiv sind verspielte Details. Kuschelige Decken, eine gemütliche Leseecke und ein Patio im Grünen machen es zum ruhigen Rückzugsort; im Bad setzen schwarz-weiße Fliesen einen starken Akzent.",
+    "Room 6":"Room 6 bringt einen Hauch Safari: eine anthrazitfarbene Akzentwand mit Zebra-Kunst, schwarz-weiße Muster, rote Akzente und sichtbare Holzbalken. Korbsessel laden zum Verweilen ein, und die große eigene Terrasse zwischen Palmen und Bougainvillea ist perfekt für ein entspanntes Frühstück und den Sundowner.",
+    "Family Cottage":"Sichtbares Mauerwerk, warme Terrakotta- und Petroltöne, afrikanische Porträtkunst und ein farbenfroher Kelim-Teppich geben dem Cottage eine entspannte, wohnliche Atmosphäre. Oben liegt die Schlafgalerie unter Holzbalken, unten bringen Sofas, ein langer Esstisch und die Küche alle zusammen, und der Pool liegt direkt vor der Tür."
+  },
+  svcEyebrow:"Ausstattung &amp; Service", svcH2:"Alles für einen entspannten Aufenthalt.",
+  svcLede:"Die Be My Guest Lodge liegt nah an Geschäften, Restaurants und dem Strand, und Kapstadts Highlights sind schnell erreicht. Das bieten wir euch in der Lodge, und das organisieren wir gern für euch.",
+  svcA:"In der Lodge", svcS:"Unser Service",
+  amen:["Kostenloses, unbegrenztes WLAN","Pool mit Sonnenliegen im grünen Garten","Zwei Braais (Grillplätze) für alle Gäste","Klimaanlage in jedem Zimmer, kühlt im Sommer und heizt im Winter","Flachbild-TV mit DStv","Minikühlschrank, Mikrowelle, Kaffee &amp; Tee in jedem Zimmer","Eigener Eingang und Patio für jedes Zimmer","Sichere Parkplätze auf dem Grundstück","Sichere, ruhige Wohngegend","Kartenzahlung möglich"],
+  serv:["Taxi-Service","Wäscheservice","Kinderbett und Hochstuhl auf Wunsch","Planung von Tagesausflügen","Buchung von Walbeobachtungstouren","Buchung von Haikäfig-Tauchen","Late Check-in nach Absprache"],
+  locH2:"Ruhig wohnen, alles in Reichweite.",
+  locLede:"Table View liegt an der Atlantikküste nördlich von Kapstadt. Von hier seht ihr den Tafelberg in seiner ganzen Breite über die Bucht, mit Robben Island am Horizont. Unsere Lodge liegt in einer ruhigen Wohnstraße: morgens Vogelstimmen, abends Stille, und trotzdem sind Strand, Restaurants und die City schnell erreicht.",
+  dist:[["Strand von Table View &amp; Bloubergstrand","ca. 5 Min."],["Kite Beach &amp; Big Bay (Kitesurfen, Wingfoil, Surfen)","ca. 10 Min."],["Kapstadt City &amp; V&amp;A Waterfront","ca. 25 Min."],["Weingüter im Durbanville Wine Valley","ca. 25 Min."],["Flughafen Cape Town International","ca. 20 Min."]],
+  safe:[["Sicher parken","Stellplätze direkt auf dem Grundstück."],["Ruhige Nachbarschaft","Familienfreundliches Wohnviertel."],["Persönlich erreichbar","Wir wohnen vor Ort und sind für euch da."],["Tipps vom Gastgeber","Wir sagen euch, wo und wann es sich lohnt."]],
+  mapBay:"Tafelbucht", mapMtn:"Tafelberg", mapBeach:"Strand Table View", mapCity:"City &amp; Waterfront", mapAir:"Flughafen",
+  famTag:"Familienfoto", famCap:"Eure Gastgeber Jan &amp; Leona",
+  famH2:"Deutsche Gründlichkeit, südafrikanische Herzlichkeit.",
+  famLede:"Wir sind eine deutsch-südafrikanische Familie und führen die Be My Guest Lodge selbst, vor Ort und mit ganzem Herzen. Wir kennen beide Welten: die Erwartung, dass alles sauber und verlässlich ist, und die Lust, sich Zeit füreinander zu nehmen. Bei uns bekommt ihr beides. Wir begrüßen euch persönlich, geben euch unsere Lieblingsplätze mit auf den Weg und haben immer ein offenes Ohr, ob beim Frühstück oder am Braai.",
+  promise:[["Persönlich empfangen","Kein Schlüsselkasten: Wir sind da, wenn ihr ankommt."],["Insider-Tipps","Von der besten Kite-Session bis zum ruhigsten Weingut."],["Schnell erreichbar","Fragen per WhatsApp, Antwort meist innerhalb von Minuten."]],
+  famSig:"Bis bald bei uns!",
+  expEyebrow:"Erleben mit unseren Partnern", expH2:"Das Kap, handverlesen.",
+  expLede:"Mit diesen Anbietern arbeiten wir zusammen. Wir buchen für euch, kennen die Ansprechpartner persönlich, und als unsere Gäste bekommt ihr oft einen kleinen Vorteil dazu.",
+  all:"Alle", sugg:"Partnervorschlag",
+  cats:{water:"Wassersport",nature:"Natur",food:"Genuss",trips:"Ausflüge"},
+  partners:[
+    ["Kite- &amp; Wingfoil-Schule","Kurse für Einsteiger und Fortgeschrittene an Kite Beach, Material inklusive.","10 % für Lodge-Gäste"],
+    ["Table Mountain Aerial Cableway","Mit der Seilbahn auf den Tafelberg. Wir sagen euch, an welchen Tagen sich der Blick lohnt.","Tickets über uns"],
+    ["Weingüter Durbanville","Sauvignon Blanc mit Meeresbrise: Weinproben in kleinen Familienbetrieben ganz in der Nähe.","Tisch-Reservierung"],
+    ["Surfstunden Big Bay","Sanfte Wellen für den ersten Ritt, mit lokalen Surflehrern.","Abholung möglich"],
+    ["Bootstour Tafelbucht","Robben Island, Robben und mit Glück Delfine: der Tafelberg von der Seeseite.","Lunchpaket von uns"],
+    ["Kap-Halbinsel &amp; Boulders Beach","Tagestour zum Kap der Guten Hoffnung und zu den Pinguinen von Simon's Town.","Fahrer auf Anfrage"]],
+  blogEyebrow:"Blog · Kapstadt &amp; Umgebung", blogH2:"Geschichten und Tipps von vor Ort.",
+  blogLede:"Was wir unseren Gästen am Frühstückstisch erzählen, schreiben wir hier auf: Ausflüge, Jahreszeiten, Strände und kleine Entdeckungen rund um Table View.",
+  posts:[
+    ["Strand &amp; Meer","Warum der Tafelberg von Table View am schönsten ist","Die Postkartenansicht kennt jeder, aber wann ist das Licht am besten, und wo steht ihr dafür genau? Unser kleiner Fotoguide für Sonnenuntergänge am Strand.","5 Min. Lesezeit"],
+    ["Kitesurfen","Der Kitesurf-Sommer am Kap: Wind, Spots und Saison","Der Südost-Wind, im Volksmund Cape Doctor, macht die Region zu einem der bekanntesten Kite-Reviere der Welt. Was Einsteiger wissen sollten.","6 Min. Lesezeit"],
+    ["Ausflüge","Ein Tag an der Westküste: Von Blouberg bis Langebaan","Fischrestaurants am Strand, Wildblumen im Frühling und Lagunen mit Flamingos: unsere Lieblingsroute nach Norden.","4 Min. Lesezeit"]],
+  revEyebrow:"Was unsere Gäste sagen", revH2:"Bewertet auf den Portalen, die ihr kennt.",
+  revNote:"Platzhalter: Die Gästezitate unten werden durch echte Bewertungen ersetzt.",
+  revPh:"Platzhalter", revQuote:"Hier steht ein echtes Gästezitat von {p}, zum Beispiel über den persönlichen Empfang, das Frühstück oder den Blick auf den Tafelberg.",
+  revWho:"Vorname, Herkunftsland · Monat Jahr", revScore:"Gästebewertung", revCount:"Bewertungen",
+  ctEyebrow:"Direkt buchen", ctH2:"Direkt bei uns gebucht ist am persönlichsten.",
+  ctP:"Über unser Buchungssystem seht ihr freie Zimmer in Echtzeit und bucht ohne Umwege. Bei Fragen zu Anreise, Kitesurfen oder längeren Aufenthalten schreibt uns einfach per WhatsApp.",
+  ctBtn1:"Zum Buchungssystem", ctBtn2:"WhatsApp-Chat öffnen", ctH3:"Kontakt", ctAddr:"Adresse",
+  ctIn:"14:00 – 19:00 Uhr", ctOut:"bis 10:00 Uhr", ctNote:"Ihr kommt später an? Late Check-in ist möglich, sagt uns einfach vorab per WhatsApp oder E-Mail Bescheid.",
+  mapsCta:"In Google Maps öffnen", legal:"Impressum · Datenschutz · Buchungsbedingungen", waFloat:"Fragen? WhatsApp", ctFloat:"Kontakt",
+  waText:"Hallo Be My Guest Lodge, ich interessiere mich für einen Aufenthalt."
+}
+};
+
+/* additional languages + blog articles */
+Object.assign(DICT.en,{"readMore": "Read article →", "backBlog": "← All articles", "artNote": "", "articles": {"table-mountain-view": ["<p>There are thousands of photos of Table Mountain, but the most famous one, the mountain stretched out across the bay with the sea in front, is taken from right here: the beaches of Table View and Bloubergstrand. From the city you stand at the foot of the mountain. From Blouberg you see it whole, flanked by Devil's Peak on the left and Lion's Head on the right, with Robben Island out on the water.</p>", "<h3>When the light is best</h3>", "<p>Late afternoon and sunset are the magic hours. As the sun drops into the Atlantic behind you, the mountain catches the last light and turns from grey-blue to soft pink and violet. That colour change is where Blouberg (\"blue mountain\" in Afrikaans) gets its name. In the Cape summer the sun sets around 8 pm, in winter around 6 pm, so plan to be on the beach about an hour before.</p>", "<p>On windy summer days, the south-easter often pours a layer of cloud over the summit, the famous \"tablecloth\". It is worth a photo in itself, and it usually means the kitesurfers are out in front of you too.</p>", "<h3>Where to stand</h3>", "<p>Our favourite spots are along the beachfront between Table View and Bloubergstrand. Walk down to the waterline at low tide and you get reflections of the mountain in the wet sand. A little further north, around Big Bay, you can frame the mountain with kites and surfers. A wide-angle lens is nice, but a phone does the job beautifully.</p>", "<h3>Our tip</h3>", "<p>Take a blanket, something to drink and the family, and stay until the lights of the city come on across the bay. From Be My Guest Lodge the beach is only a few minutes away, so you can be back at the braai by the pool before dark. Ask us at breakfast where the light should be best that day.</p>"], "kitesurfing-cape-town": ["<p>Cape Town is one of the best-known kitesurfing destinations in the world, and Bloubergstrand is at the heart of it. Every summer, kiters from Europe and beyond come for the reliable wind, the waves and that unbeatable view of Table Mountain while riding.</p>", "<h3>The wind: meet the Cape Doctor</h3>", "<p>The main kite season runs roughly from November to March. During these months the south-easterly wind, nicknamed the \"Cape Doctor\", blows strongly on many afternoons. It usually picks up after lunch and is often at its best in the late afternoon. Mornings are frequently calmer, which leaves time for the beach, a hike or a lazy breakfast.</p>", "<h3>The spots near our lodge</h3>", "<p><strong>Kite Beach</strong> in Bloubergstrand, about 10 minutes from us, is the classic: waves, a cross-shore wind and the mountain behind you. It is best suited to riders who are already confident. <strong>Big Bay</strong>, a little further north, is popular for wave riding and surfing. Beginners often head up the West Coast to the flat, shallow <strong>Langebaan Lagoon</strong>, about an hour's drive along the R27, which is ideal for first lessons.</p>", "<h3>What beginners should know</h3>", "<p>The Atlantic here is cold, even in summer, so a good wetsuit (a 4/3 mm or thicker) is a must. The wind can be strong and gusty, so take lessons with a certified local school rather than going out alone. Many schools rent out complete gear, so you do not need to bring your own.</p>", "<h3>Kiting from Be My Guest Lodge</h3>", "<p>Our rooms have private entrances and patios where you can rinse and dry your gear, and you are only minutes from the spots. Our Comfort Twin Rooms are popular with kite buddies travelling together. Message us on WhatsApp and we will gladly help you find lessons or rental gear.</p>"], "west-coast-day-trip": ["<p>Most visitors head south from Cape Town, to the Cape Peninsula and Cape Point. But just north of us lies a quieter side of the Western Cape: the West Coast, with wide beaches, fishing villages, fresh seafood and, in spring, carpets of wildflowers. The best part: the R27 coastal road starts right on our doorstep.</p>", "<h3>Langebaan and the lagoon</h3>", "<p>About an hour's drive north, the town of Langebaan sits on a huge, turquoise lagoon. The shallow, calm water is perfect for families, swimming and learning to kitesurf, and it is home to many water birds, including flamingos. Have lunch at one of the relaxed restaurants overlooking the water.</p>", "<h3>West Coast National Park</h3>", "<p>The West Coast National Park surrounds the lagoon and is ideal for a scenic drive with plenty of stops. Look out for antelope, ostriches and tortoises. In late winter and spring, usually around August and September, the park's Postberg section bursts into colour with wildflowers, one of the most beautiful sights in South Africa.</p>", "<h3>Paternoster</h3>", "<p>If you have a little more time, continue to Paternoster, a picturesque fishing village with white cottages, granite rocks and some excellent seafood restaurants. It is around an hour and a half from Blouberg.</p>", "<h3>Our tip</h3>", "<p>Leave after breakfast, take the coast road and be back in time for sunset over Table Mountain on Blouberg beach. We are happy to help you plan the route and suggest our favourite places for lunch.</p>"]}});
+Object.assign(DICT.de,{"readMore": "Artikel lesen →", "backBlog": "← Alle Artikel", "artNote": "", "articles": {"table-mountain-view": ["<p>Es gibt Tausende Fotos vom Tafelberg, aber das berühmteste, der Berg in voller Breite über der Bucht, mit dem Meer davor, entsteht genau hier: an den Stränden von Table View und Bloubergstrand. In der Stadt steht man am Fuß des Bergs. Von Blouberg aus seht ihr ihn ganz, eingerahmt von Devil's Peak links und Lion's Head rechts, mit Robben Island draußen auf dem Wasser.</p>", "<h3>Wann das Licht am schönsten ist</h3>", "<p>Später Nachmittag und Sonnenuntergang sind die magischen Stunden. Wenn die Sonne hinter euch im Atlantik versinkt, fängt der Berg das letzte Licht ein und wechselt von Graublau zu zartem Rosa und Violett. Daher hat Blouberg (Afrikaans für „blauer Berg“) seinen Namen. Im Kapstädter Sommer geht die Sonne gegen 20 Uhr unter, im Winter gegen 18 Uhr. Plant also, etwa eine Stunde vorher am Strand zu sein.</p>", "<p>An windigen Sommertagen legt der Südostwind oft eine Wolkendecke über den Gipfel, das berühmte „Tischtuch“. Das ist ein eigenes Foto wert und bedeutet meist, dass auch die Kitesurfer vor euch auf dem Wasser sind.</p>", "<h3>Wo ihr am besten steht</h3>", "<p>Unsere Lieblingsplätze liegen an der Strandpromenade zwischen Table View und Bloubergstrand. Geht bei Ebbe bis an die Wasserlinie, dann spiegelt sich der Berg im nassen Sand. Etwas weiter nördlich, rund um Big Bay, könnt ihr den Berg mit Kites und Surfern im Vordergrund fotografieren. Ein Weitwinkel ist schön, aber auch das Handy macht großartige Bilder.</p>", "<h3>Unser Tipp</h3>", "<p>Nehmt eine Decke, etwas zu trinken und die Familie mit und bleibt, bis gegenüber in der Stadt die Lichter angehen. Von der Be My Guest Lodge sind es nur wenige Minuten bis zum Strand, ihr seid also vor der Dunkelheit wieder am Braai am Pool. Fragt uns beim Frühstück, wo das Licht an diesem Tag am besten sein wird.</p>"], "kitesurfing-cape-town": ["<p>Kapstadt gehört zu den bekanntesten Kitesurf-Revieren der Welt, und Bloubergstrand ist mittendrin. Jeden Sommer kommen Kiter aus Europa und aller Welt wegen des zuverlässigen Winds, der Wellen und des unschlagbaren Blicks auf den Tafelberg beim Fahren.</p>", "<h3>Der Wind: der „Cape Doctor“</h3>", "<p>Die Hauptsaison läuft etwa von November bis März. In diesen Monaten weht an vielen Nachmittagen kräftig der Südostwind, den die Einheimischen „Cape Doctor“ nennen. Er frischt meist nach dem Mittag auf und ist am späten Nachmittag oft am besten. Die Vormittage sind häufig ruhiger, es bleibt also Zeit für Strand, Wandern oder ein entspanntes Frühstück.</p>", "<h3>Die Spots in der Nähe der Lodge</h3>", "<p><strong>Kite Beach</strong> in Bloubergstrand, rund 10 Minuten von uns, ist der Klassiker: Wellen, sideshore Wind und der Berg im Rücken. Er eignet sich vor allem für Kiter, die schon sicher fahren. <strong>Big Bay</strong>, etwas weiter nördlich, ist beliebt zum Wellenreiten und Surfen. Einsteiger fahren oft die Westküste hinauf zur flachen <strong>Langebaan-Lagune</strong>, etwa eine Stunde über die R27, ideal für die ersten Stunden.</p>", "<h3>Was Einsteiger wissen sollten</h3>", "<p>Der Atlantik ist hier auch im Sommer kalt, ein guter Neoprenanzug (4/3 mm oder dicker) ist Pflicht. Der Wind kann stark und böig sein, nehmt also Unterricht bei einer zertifizierten Schule vor Ort, statt allein loszuziehen. Viele Schulen verleihen komplettes Material, ihr müsst also nichts mitbringen.</p>", "<h3>Kiten mit der Be My Guest Lodge</h3>", "<p>Unsere Zimmer haben eigene Eingänge und Patios, wo ihr euer Material abspülen und trocknen könnt, und die Spots sind nur Minuten entfernt. Unsere Comfort Twin Rooms sind bei Kite-Buddies besonders beliebt. Schreibt uns per WhatsApp, wir helfen gern bei der Suche nach Kursen oder Leihmaterial.</p>"], "west-coast-day-trip": ["<p>Die meisten Besucher fahren von Kapstadt aus nach Süden, auf die Kap-Halbinsel und zum Kap der Guten Hoffnung. Doch direkt nördlich von uns liegt eine ruhigere Seite des Westkaps: die Westküste, mit weiten Stränden, Fischerdörfern, frischem Seafood und im Frühling Teppichen aus Wildblumen. Das Beste: Die Küstenstraße R27 beginnt direkt vor unserer Haustür.</p>", "<h3>Langebaan und die Lagune</h3>", "<p>Rund eine Autostunde nördlich liegt Langebaan an einer riesigen, türkisfarbenen Lagune. Das flache, ruhige Wasser ist perfekt für Familien, zum Baden und zum Kitesurfen-Lernen, und hier leben viele Wasservögel, darunter Flamingos. Zum Mittagessen bietet sich eines der entspannten Restaurants mit Blick aufs Wasser an.</p>", "<h3>West Coast National Park</h3>", "<p>Der West Coast National Park umschließt die Lagune und eignet sich wunderbar für eine Rundfahrt mit vielen Stopps. Haltet Ausschau nach Antilopen, Straußen und Schildkröten. Im späten Winter und Frühling, meist im August und September, verwandelt sich der Parkteil Postberg in ein Meer aus Wildblumen, einer der schönsten Anblicke Südafrikas.</p>", "<h3>Paternoster</h3>", "<p>Wer etwas mehr Zeit hat, fährt weiter nach Paternoster, ein malerisches Fischerdorf mit weißen Häuschen, Granitfelsen und einigen hervorragenden Seafood-Restaurants. Es liegt rund anderthalb Stunden von Blouberg entfernt.</p>", "<h3>Unser Tipp</h3>", "<p>Fahrt nach dem Frühstück los, nehmt die Küstenstraße und seid rechtzeitig zum Sonnenuntergang über dem Tafelberg zurück am Strand von Blouberg. Wir helfen euch gern bei der Routenplanung und verraten euch unsere Lieblingsplätze fürs Mittagessen.</p>"]}});
+DICT.af={"ctFloat": "Kontak", "draft": "<strong>Konsep:</strong> Resensies en vennootaanbiedinge is nog plekhouers.", "draftBtn": "Versteek", "langLabel": "Taal", "navAcc": "Ons verblyf", "navArea": "Omgewing", "navLoc": "Ligging", "navHosts": "Julle gashere", "navExp": "Belewenisse", "navRev": "Resensies", "navBook": "Bespreek nou", "heroEyebrow": "Gastehuis in Table View · Kaapstad", "heroH1": "Julle tuiste <em>aan die Kaap</em>, ver van die huis.", "heroSub": "Vyf gemaklike kamers en 'n gesinshuisie in 'n rustige buurt, net minute van die strand, met die mooiste uitsig op Tafelberg.", "heroCta1": "Kyk beskikbaarheid", "heroCta2": "Vra op WhatsApp", "heroHand": "Welkom, welcome, willkommen!", "soundOn": "Klank aan", "soundOff": "Klank af", "replay": "Speel video", "f1": "eenhede in 3 kamertipes", "f2b": "ongeveer 25 min", "f2": "na die stad en V&amp;A Waterfront", "f3b": "ongeveer 5 min", "f3": "na Table View-strand", "f4": "Kite Beach en Big Bay naby", "introEyebrow": "Welkom in Bloubergstrand", "introH2": "Maak Be My Guest julle tuiste in Kaapstad.", "intro1": "Be My Guest Lodge is 'n familiebestuurde gastehuis in Bloubergrant, Table View, deel van die gewilde kusgebied Bloubergstrand aan Kaapstad se Atlantiese kus. Robbeneiland lê reg oorkant die baai, die strand is minute weg, en Kaapstad Internasionale Lughawe is sowat 20 minute se ry.", "intro2": "Julle gashere Jan &amp; Leona verwelkom tot 16 gaste in vyf gemaklike kamers en 'n ruim gesinshuisie, op 'n B&amp;B- of selfsorgbasis. Van hier is Kaapstad se hoogtepunte maklik bereikbaar: die V&amp;A Waterfront, Tafelberg en die Kaapse Skiereiland. Vir 'n dagrit Weskus toe na Langebaan of Lambertsbaai begin die R27-kusroete reg voor ons deur.", "intro3": "Of julle 'n gesinsvakansie, 'n kitesurf-reis of 'n sakebesoek beplan, Bloubergstrand is die plek om te wees. Wanneer die middagwind opsteek, word die strandfront 'n speelplek vir kitesurfers, drawwers en strandlopers. En daar is geen beter uitsig op Tafelberg as van Blouberg-strand nie: met sonsondergang gloei die berg in skakerings van blou en pers, vandaar die naam Blouberg. Dis die tyd van die dag wanneer gesinne op die strand bymekaarkom, en daar is talle restaurante langs die strandfront.", "acc1": "Be My Guest Lodge huisves tot 16 gaste op 'n B&amp;B- of selfsorgbasis: drie Comfort Double Rooms, twee Comfort Twin Rooms en ons ruim dubbelverdieping-Family Cottage. Elke kamer het sy eie badkamer, 'n privaat ingang en 'n patio wat op die tuin uitkyk.", "acc2": "In elke kamer is daar lugversorging wat in die somer verkoel en in die winter verwarm, 'n plafonwaaier, 'n platskerm-TV met DStv, gratis Wi-Fi, 'n kroegyskassie, 'n mikrogolfoond en tee- en koffiegeriewe. Die Family Cottage het boonop 'n volledig toegeruste kombuis, twee badkamers en 'n groot terras by die swembad.", "acc3": "Buite is die weelderige tuin en swembad julle s'n om te geniet. Twee braaiplekke is beskikbaar vir alle gaste, perfek vir 'n ontspanne Suid-Afrikaanse aand by die swembad saam met familie en vriende. Kyk tariewe en beskikbaarheid direk in ons besprekingstelsel.", "areaEyebrow": "Rondom Table View", "areaH2": "Tussen die Atlantiese Oseaan en Tafelberg.", "areaLede": "Lang sandstrande, die klassieke uitsig op Tafelberg, betroubare wind vir kitesurfers en wynlandgoedere net binnelands: dit begin alles by ons voordeur.", "area": ["Tafelberg van die strand af", "Kitesurfers met sonsondergang", "Tafelberg en Tafelbaai", "Aand op die strand", "Die bekende \"tafeldoek\"", "Durbanville-wynlandgoedere", "Kaapstad-middestad"], "houseEyebrow": "Die gastehuis", "houseH2": "Kom aan, ontspan, bly 'n bietjie.", "houseLede": "Tuin, terras, 'n gedeelde ontbyttafel, plus 'n swembad en twee braaiplekke wat alle gaste op warm aande kan gebruik. Ons gemeenskaplike areas is gemaak om tuis te voel en mede-reisigers te ontmoet.", "house": ["Swembad en sonstoele", "Tuinterras", "Binnehof", "Onder die palm", "Patio-sitkamer", "Koel hoekies", "Tuinpaadjie", "Middagete in die tuin", "Hangende tuine"], "accH2": "Drie kamertipes, ses wegkruipplekke.", "accAll": "Sien alle verblyf", "accH1": "Kies julle kamer.", "accSubLede": "Ses eenhede in drie tipes. Kies 'n kamertipe om die fotogalery van elke kamer te sien.", "details": "Foto's en besonderhede →", "priceNote": "Tariewe en beskikbaarheid in ons besprekingstelsel.", "backAll": "← Alle kamertipes", "home": "Tuis", "photo": "Foto", "types": {"comfort-double": {"n": "Comfort Double Room", "count": "3 kamers", "short": "Drie individueel ingerigte dubbelkamers vir twee, elk met 'n eie ingang en patio na die tuin. Rustig, lig en prakties, ideaal vir paartjies en alleenreisigers. Room 4 is 'n ruim ateljee met 'n kombuisie en eetplek.", "f": ["Dubbelbed vir 2 gaste", "Privaat badkamer", "Eie ingang en patio", "Lugversorging (koel en verwarm)", "Plafonwaaier", "Gratis Wi-Fi en platskerm-TV met DStv", "Kroegyskassie en mikrogolfoond", "Tee- en koffiegeriewe"]}, "comfort-twin": {"n": "Comfort Twin Room", "count": "2 kamers", "short": "Twee kamers met elk twee enkelbeddens, perfek vir vriende, kollegas of kite-maats. Albei open deur 'n eie ingang na die tuin, en Room 6 het 'n groot privaat terras tussen die palms.", "f": ["Twee enkelbeddens vir 2 gaste", "Privaat badkamer", "Eie ingang en patio (Room 6: groot terras)", "Lugversorging (koel en verwarm)", "Plafonwaaier", "Gratis Wi-Fi en platskerm-TV met DStv", "Kroegyskassie en mikrogolfoond", "Tee- en koffiegeriewe"]}, "family-cottage": {"n": "Family Cottage", "count": "1 huisie · ongeveer 85 m²", "short": "Julle eie dubbelverdiepinghuis by die swembad: sowat 85 m² met 'n solderslaapkamer onder houtbalke, 'n oopplan-sit-en-eetarea, 'n volledige kombuis, twee badkamers en 'n terras na die swembad. Slaap tot ses, ideaal vir gesinne en klein groepe.", "f": ["Ongeveer 85 m² oor twee verdiepings", "6 beddens vir tot 6 gaste", "Eie kombuis vir selfsorg", "2 badkamers", "Eie ingang en groot terras", "Lugversorging (koel en verwarm)", "Gratis Wi-Fi en platskerm-TV met DStv"]}}, "units": {"Room 2": "Vars vlootblou en wit stel die toon in Room 2, afgerond met blou Delft-styl teëls by die wasbak en leiklipgrys gordyne. Die dubbelbed met sy vlootblou kombers nooi julle uit om na 'n strand-dag weg te sak, terwyl die plafonwaaier, skryftafel en tuindeur die kamer net so prakties as gesellig maak.", "Room 3": "Room 3 is lig en rustig: sagte wit mure, turkoois-en-goue ginkgo-prente en 'n mat met 'n blaarpatroon gee dit 'n sagte botaniese gevoel. Handgeverfde turkoois en geel teëls by die wasbak voeg 'n vrolike aksent by, en die stil uitsig op die tuin maak dit maklik om te ontspan.", "Room 4": "Welige groen definieer Room 4, ons ateljee: tropiese palmplakpapier, 'n blaarmat, 'n badkamer met smaraggroen teëls en 'n pienk flamink-prent skep 'n vakansiestemming. Met sy eie kombuisie, eetplek en ekstra ruimte is dit ideaal vir langer verblyf.", "Room 5": "'n Diep koningsblou muur en donker houtkopstukke gee Room 5 'n warm, klassieke karakter, met vintage fiets-prente en kussings met horlosiepatrone as speelse detail. Sagte komberse, 'n gesellige leeshoekie en 'n patio tussen die groen maak dit 'n rustige toevlug; die badkamer het opvallende swart-en-wit teëls.", "Room 6": "Room 6 bring 'n tikkie safari: 'n houtskoolgrys muur met sebra-kuns, swart-en-wit patrone, rooi aksente en sigbare houtbalke. Rottangstoele nooi julle uit om te talm, en die groot privaat terras tussen palms en bougainvillea is perfek vir rustige ontbyte en sononder-drankies.", "Family Cottage": "Kaal baksteen, warm terracotta- en blougroen tone, Afrika-portretkuns en 'n kleurryke kelim-mat gee die huisie 'n ontspanne, huislike gevoel. Bo is die solderslaapkamer onder houtbalke; onder bring banke, 'n lang eettafel en die kombuis almal bymekaar, met die swembad net buite die deur."}, "svcEyebrow": "Geriewe en dienste", "svcH2": "Alles vir 'n ontspanne verblyf.", "svcLede": "Be My Guest Lodge is naby winkels, restaurante en die strand, en die beste van Kaapstad is maklik bereikbaar. Hier is wat ons by die gastehuis bied en wat ons graag vir julle reël.", "svcA": "By die gastehuis", "svcS": "Ons dienste", "amen": ["Gratis, onbeperkte Wi-Fi", "Swembad en sonstoele in 'n weelderige tuin", "Twee braaiplekke vir alle gaste", "Lugversorging in elke kamer, koel in die somer en warm in die winter", "Platskerm-TV met DStv", "Kroegyskassie, mikrogolfoond, tee en koffie in elke kamer", "Eie ingang en patio vir elke kamer", "Veilige parkering op die perseel", "Veilige, rustige woonbuurt", "Kaartbetalings aanvaar"], "serv": ["Taxidiens", "Wasgoeddiens","Bababedjie en hoëstoel op versoek", "Beplanning van dagritte", "Bespreking van walvisbesigtiging", "Bespreking van haaihokduik", "Laat inklok op versoek"], "locH2": "Rustig woon, alles binne bereik.", "locLede": "Table View lê aan die Atlantiese kus noord van Kaapstad. Van hier sien julle Tafelberg in sy volle breedte oorkant die baai, met Robbeneiland op die horison. Ons gastehuis is in 'n rustige woonstraat: voëlgesang in die oggend, stilte in die aand, en die strand, restaurante en stad is naby.", "dist": [["Table View- en Bloubergstrand-strand", "ongeveer 5 min"], ["Kite Beach en Big Bay (kitesurf, wing foil, branderplank)", "ongeveer 10 min"], ["Kaapstad-middestad en V&amp;A Waterfront", "ongeveer 25 min"], ["Durbanville-wynvallei", "ongeveer 25 min"], ["Kaapstad Internasionale Lughawe", "ongeveer 20 min"]], "safe": [["Veilige parkering", "Parkering op die perseel self."], ["Rustige buurt", "'n Gesinsvriendelike woonbuurt."], ["Gashere op die perseel", "Ons woon hier en is daar vir julle."], ["Plaaslike raad", "Ons sê vir julle waar en wanneer om te gaan."]], "mapBay": "Tafelbaai", "mapMtn": "Tafelberg", "mapBeach": "Table View-strand", "mapCity": "Stad en Waterfront", "mapAir": "Lughawe", "famTag": "Gesinsfoto", "famCap": "Julle gashere Jan &amp; Leona", "famH2": "Duitse betroubaarheid, Suid-Afrikaanse hartlikheid.", "famLede": "Ons is 'n Duits-Suid-Afrikaanse gesin en bestuur Be My Guest Lodge self, op die perseel en met ons hele hart. Ons ken albei wêrelde: die verwagting dat alles skoon en betroubaar is, en die vreugde daarvan om tyd vir mekaar te maak. By ons kry julle albei. Ons verwelkom julle persoonlik, deel ons gunstelingplekke en is altyd beskikbaar vir 'n gesels, by ontbyt of om die braai.", "promise": [["'n Persoonlike verwelkoming", "Geen sleutelkassie nie: ons is daar wanneer julle aankom."], ["Insider-wenke", "Van die beste kite-sessie tot die stilste wynlandgoed."], ["Vinnig bereikbaar", "Vrae op WhatsApp, gewoonlik binne minute beantwoord."]], "famSig": "Sien julle binnekort!", "expEyebrow": "Belewenisse saam met ons vennote", "expH2": "Die Kaap, met sorg gekies.", "expLede": "Ons werk saam met hierdie verskaffers. Ons bespreek vir julle, ken die mense persoonlik, en as ons gaste kry julle dikwels 'n klein ekstra.", "all": "Alles", "sugg": "Vennootvoorstel", "cats": {"water": "Watersport", "nature": "Natuur", "food": "Kos en wyn", "trips": "Dagritte"}, "partners": [["Kite- en wing foil-skool", "Lesse vir beginners en gevorderdes by Kite Beach, toerusting ingesluit.", "10% afslag vir ons gaste"], ["Tafelberg-kabelkar", "Ry met die kabelkar Tafelberg op. Ons sê vir julle watter dae die beste uitsig het.", "Kaartjies deur ons"], ["Durbanville-wynlandgoedere", "Sauvignon Blanc met 'n seebries: proeë by klein familielandgoedere naby.", "Tafelbesprekings"], ["Branderplanklesse by Big Bay", "Sagte branders vir julle eerste rit, met plaaslike instrukteurs.", "Oplaai beskikbaar"], ["Bootrit in Tafelbaai", "Robbeneiland, robbe en met geluk dolfyne: Tafelberg van die see af.", "Padkos van ons"], ["Kaapse Skiereiland en Boulders Beach", "Dagrit na Kaappunt en die pikkewyne van Simonstad.", "Bestuurder op versoek"]], "blogEyebrow": "Blog · Kaapstad en omgewing", "blogH2": "Stories en wenke van die Kaap.", "blogLede": "Wat ons ons gaste by ontbyt vertel, skryf ons hier neer: uitstappies, seisoene, strande en klein ontdekkings rondom Table View.", "posts": [["Strand en see", "Hoekom Tafelberg die mooiste van Table View af lyk", "Almal ken die poskaartuitsig, maar wanneer is die lig die beste, en waar moet julle staan? Ons klein fotogids vir sonsondergange op die strand.", "5 min lees"], ["Kitesurf", "Kite-seisoen aan die Kaap: wind, plekke en tyd", "Die suidoostewind, bekend as die \"Cape Doctor\", maak die gebied een van die bekendste kite-bestemmings ter wêreld. Wat beginners moet weet.", "6 min lees"], ["Dagritte", "'n Dag aan die Weskus: van Blouberg tot Langebaan", "Seekosrestaurante op die strand, veldblomme in die lente en strandmere met flaminke: ons gunstelingroete noord.", "4 min lees"]], "revEyebrow": "Wat ons gaste sê", "revH2": "Gegradeer op die platforms wat julle ken.", "revNote": "Plekhouer: die aanhalings hieronder word met regte resensies vervang.", "revPh": "Plekhouer", "revQuote": "Hier kom 'n regte gaste-aanhaling van {p}, byvoorbeeld oor die persoonlike verwelkoming, die ontbyt of die uitsig op Tafelberg.", "revWho": "Voornaam, land · Maand jaar", "revScore": "Gastegradering", "revCount": "resensies", "ctEyebrow": "Bespreek direk", "ctH2": "Direk bespreek is die persoonlikste.", "ctP": "Ons besprekingstelsel wys beskikbare kamers intyds en laat julle sonder omweë bespreek. Vir vrae oor aankoms, kitesurf of langer verblyf, stuur vir ons 'n WhatsApp.", "ctBtn1": "Na die besprekingstelsel", "ctBtn2": "Maak WhatsApp-klets oop", "ctH3": "Kontak", "ctAddr": "Adres", "ctIn": "14:00 – 19:00", "ctOut": "tot 10:00", "ctNote": "Kom julle later aan? Laat inklok is moontlik, laat weet ons net vooraf per WhatsApp of e-pos.", "mapsCta": "Maak oop in Google Maps", "legal": "Wetlike inligting · Privaatheid · Besprekingsvoorwaardes", "waFloat": "Vrae? WhatsApp", "waText": "Hallo Be My Guest Lodge, ek stel belang in 'n verblyf.", "readMore": "Lees artikel →", "backBlog": "← Alle artikels", "artNote": "Hierdie artikel is tans in Engels beskikbaar."};
+DICT.fr={"ctFloat": "Contact", "draft": "<strong>Version de travail :</strong> les avis et les offres partenaires sont encore provisoires.", "draftBtn": "Masquer", "langLabel": "Langue", "navAcc": "Nos hébergements", "navArea": "Les environs", "navLoc": "Situation", "navHosts": "Vos hôtes", "navExp": "Activités", "navRev": "Avis", "navBook": "Réserver", "heroEyebrow": "Maison d'hôtes à Table View · Le Cap", "heroH1": "Votre maison <em>au Cap</em>, loin de chez vous.", "heroSub": "Cinq chambres confort et un cottage familial dans un quartier calme, à quelques minutes de la plage, avec la plus belle vue sur la Montagne de la Table.", "heroCta1": "Voir les disponibilités", "heroCta2": "Nous écrire sur WhatsApp", "heroHand": "Bienvenue, welkom, welcome !", "soundOn": "Activer le son", "soundOff": "Couper le son", "replay": "Lire la vidéo", "f1": "hébergements, 3 types de chambres", "f2b": "env. 25 min", "f2": "du centre-ville et du V&amp;A Waterfront", "f3b": "env. 5 min", "f3": "de la plage de Table View", "f4": "Kite Beach et Big Bay tout proches", "introEyebrow": "Bienvenue à Bloubergstrand", "introH2": "Faites de Be My Guest votre maison au Cap.", "intro1": "Be My Guest Lodge est une maison d'hôtes familiale située à Bloubergrant, Table View, dans le célèbre quartier balnéaire de Bloubergstrand, sur la côte atlantique du Cap. Robben Island se trouve juste en face, la plage est à quelques minutes et l'aéroport international du Cap à environ 20 minutes en voiture.", "intro2": "Vos hôtes Jan &amp; Leona accueillent jusqu'à 16 personnes dans cinq chambres confort et un spacieux cottage familial, en chambre d'hôtes (B&amp;B) ou en formule indépendante. Les incontournables du Cap sont tout proches : le V&amp;A Waterfront, la Montagne de la Table et la péninsule du Cap. Pour une excursion sur la West Coast, vers Langebaan ou Lambert's Bay, la route côtière R27 commence juste devant notre porte.", "intro3": "Vacances en famille, séjour de kitesurf ou voyage d'affaires : Bloubergstrand est l'endroit idéal. Quand le vent se lève l'après-midi, la promenade devient le terrain de jeu des kitesurfeurs, des joggeurs et des promeneurs. Et nulle part la vue sur la Montagne de la Table n'est plus belle que depuis la plage de Blouberg : au coucher du soleil, la montagne se teinte de bleu et de violet, d'où le nom « Blouberg », « montagne bleue » en afrikaans. C'est l'heure où les familles se retrouvent sur la plage, et de nombreux restaurants bordent le front de mer.", "acc1": "Be My Guest Lodge accueille jusqu'à 16 personnes en B&amp;B ou en formule indépendante : trois Comfort Double Rooms, deux Comfort Twin Rooms et notre spacieux Family Cottage sur deux niveaux. Chaque chambre dispose de sa propre salle de bain, d'une entrée privée et d'un patio donnant sur le jardin.", "acc2": "Dans chaque chambre : climatisation réversible (fraîcheur en été, chauffage en hiver), ventilateur de plafond, télévision à écran plat avec DStv, Wi-Fi gratuit, mini-réfrigérateur, micro-ondes, thé et café. Le Family Cottage dispose en plus d'une cuisine entièrement équipée, de deux salles de bain et d'une grande terrasse au bord de la piscine.", "acc3": "Le jardin luxuriant et la piscine sont à votre disposition. Deux braais (barbecues) sont accessibles à tous les hôtes, parfaits pour une soirée sud-africaine au bord de la piscine en famille ou entre amis. Tarifs et disponibilités directement dans notre système de réservation.", "areaEyebrow": "Autour de Table View", "areaH2": "Entre l'Atlantique et la Montagne de la Table.", "areaLede": "De longues plages de sable, la vue classique sur la Montagne de la Table, un vent régulier pour les kitesurfeurs et des domaines viticoles dans l'arrière-pays : tout commence à notre porte.", "area": ["La Montagne de la Table depuis la plage", "Kitesurfeurs au coucher du soleil", "Montagne de la Table et Table Bay", "Soirée sur la plage", "La célèbre « nappe »", "Domaines viticoles de Durbanville", "Centre-ville du Cap"], "houseEyebrow": "La maison", "houseH2": "Arriver, respirer, rester.", "houseLede": "Jardin, terrasse, table du petit-déjeuner partagée, ainsi qu'une piscine et deux braais à disposition de tous pour les douces soirées. Nos espaces communs sont faits pour se sentir chez soi et rencontrer d'autres voyageurs.", "house": ["Piscine et transats", "Terrasse du jardin", "Cour intérieure", "Sous le palmier", "Salon de patio", "Coins ombragés", "Allée du jardin", "Déjeuner au jardin", "Jardins suspendus"], "accH2": "Trois types de chambres, six refuges.", "accAll": "Voir tous les hébergements", "accH1": "Choisissez votre chambre.", "accSubLede": "Six hébergements, trois types. Choisissez un type de chambre pour voir la galerie photo de chaque chambre.", "details": "Photos et détails →", "priceNote": "Tarifs et disponibilités dans notre système de réservation.", "backAll": "← Tous les types de chambres", "home": "Accueil", "photo": "Photo", "types": {"comfort-double": {"n": "Comfort Double Room", "count": "3 chambres", "short": "Trois chambres doubles décorées individuellement, chacune avec entrée privée et patio sur le jardin. Calmes, lumineuses et pratiques, idéales pour les couples et les voyageurs seuls. La Room 4 est un studio spacieux avec kitchenette et coin repas.", "f": ["Lit double pour 2 personnes", "Salle de bain privée", "Entrée privée et patio", "Climatisation réversible", "Ventilateur de plafond", "Wi-Fi gratuit et TV écran plat avec DStv", "Mini-réfrigérateur et micro-ondes", "Thé et café"]}, "comfort-twin": {"n": "Comfort Twin Room", "count": "2 chambres", "short": "Deux chambres avec deux lits simples chacune, parfaites pour des amis, des collègues ou des kitesurfeurs. Toutes deux s'ouvrent sur le jardin par une entrée privée, et la Room 6 dispose d'une grande terrasse privée sous les palmiers.", "f": ["Deux lits simples pour 2 personnes", "Salle de bain privée", "Entrée privée et patio (Room 6 : grande terrasse)", "Climatisation réversible", "Ventilateur de plafond", "Wi-Fi gratuit et TV écran plat avec DStv", "Mini-réfrigérateur et micro-ondes", "Thé et café"]}, "family-cottage": {"n": "Family Cottage", "count": "1 cottage · env. 85 m²", "short": "Votre propre maison sur deux niveaux au bord de la piscine : environ 85 m² avec une chambre mansardée sous les poutres, un séjour ouvert avec coin repas, une cuisine complète, deux salles de bain et une terrasse face à la piscine. Jusqu'à six personnes, idéal pour les familles et les petits groupes.", "f": ["Env. 85 m² sur deux niveaux", "6 lits pour 6 personnes maximum", "Cuisine équipée", "2 salles de bain", "Entrée privée et grande terrasse", "Climatisation réversible", "Wi-Fi gratuit et TV écran plat avec DStv"]}}, "units": {"Room 2": "Le bleu marine et le blanc donnent le ton de la Room 2, avec des carreaux bleus façon Delft au lavabo et des rideaux gris ardoise. Le lit double et son plaid marine invitent à la détente après une journée à la plage, tandis que le ventilateur, le bureau et la porte sur le jardin rendent la chambre aussi pratique que chaleureuse.", "Room 3": "La Room 3 est lumineuse et sereine : murs blancs, gravures de ginkgo turquoise et or et tapis à motif de feuilles lui donnent une douce note botanique. Les carreaux peints à la main turquoise et jaune ajoutent une touche gaie, et la vue calme sur le jardin invite à se ressourcer.", "Room 4": "Le vert luxuriant domine la Room 4, notre studio : papier peint aux palmiers, tapis à feuillage, salle de bain aux carreaux émeraude et une affiche de flamant rose pour une ambiance de vacances. Avec sa kitchenette, son coin repas et son espace supplémentaire, elle est idéale pour les longs séjours.", "Room 5": "Un mur bleu roi profond et des têtes de lit en bois sombre donnent à la Room 5 un caractère chaleureux et classique, avec des affiches de vélos vintage et des coussins à motif d'horloges. Plaids douillets, coin lecture et patio dans la verdure en font un refuge paisible ; la salle de bain arbore des carreaux noir et blanc.", "Room 6": "La Room 6 a un air de safari : mur anthracite avec art zébré, motifs noir et blanc, touches de rouge et poutres apparentes. Les fauteuils en osier invitent à s'attarder, et la grande terrasse privée entre palmiers et bougainvilliers est parfaite pour les petits-déjeuners tranquilles et l'apéritif au coucher du soleil.", "Family Cottage": "Briques apparentes, tons terre cuite et bleu pétrole, portraits d'art africain et tapis kilim coloré donnent au cottage une atmosphère détendue et chaleureuse. À l'étage, la chambre mansardée sous les poutres ; au rez-de-chaussée, canapés, grande table et cuisine réunissent tout le monde, avec la piscine juste devant la porte."}, "svcEyebrow": "Équipements et services", "svcH2": "Tout pour un séjour détendu.", "svcLede": "Be My Guest Lodge est proche des commerces, des restaurants et de la plage, et le meilleur du Cap est facilement accessible. Voici ce que nous offrons sur place et ce que nous organisons volontiers pour vous.", "svcA": "À la maison d'hôtes", "svcS": "Nos services", "amen": ["Wi-Fi gratuit et illimité", "Piscine et transats dans un jardin luxuriant", "Deux braais (barbecues) pour tous les hôtes", "Climatisation dans chaque chambre, fraîcheur en été et chauffage en hiver", "TV écran plat avec DStv", "Mini-réfrigérateur, micro-ondes, thé et café dans chaque chambre", "Entrée privée et patio pour chaque chambre", "Parking sécurisé sur la propriété", "Quartier résidentiel sûr et calme", "Paiement par carte accepté"], "serv": ["Service de taxi", "Service de blanchisserie","Lit bébé et chaise haute sur demande", "Organisation d'excursions à la journée", "Réservation d'observation des baleines", "Réservation de plongée en cage avec les requins", "Arrivée tardive sur demande"], "locH2": "Le calme, avec tout à portée de main.", "locLede": "Table View se trouve sur la côte atlantique au nord du Cap. D'ici, vous voyez la Montagne de la Table dans toute sa largeur, avec Robben Island à l'horizon. Notre maison est située dans une rue résidentielle calme : chants d'oiseaux le matin, silence le soir, et la plage, les restaurants et le centre-ville tout proches.", "dist": [["Plages de Table View et Bloubergstrand", "env. 5 min"], ["Kite Beach et Big Bay (kitesurf, wing foil, surf)", "env. 10 min"], ["Centre du Cap et V&amp;A Waterfront", "env. 25 min"], ["Vignobles de Durbanville", "env. 25 min"], ["Aéroport international du Cap", "env. 20 min"]], "safe": [["Parking sécurisé", "Stationnement directement sur la propriété."], ["Quartier calme", "Un quartier résidentiel familial."], ["Hôtes sur place", "Nous vivons ici et sommes là pour vous."], ["Conseils locaux", "Nous vous disons où et quand aller."]], "mapBay": "Table Bay", "mapMtn": "Montagne de la Table", "mapBeach": "Plage de Table View", "mapCity": "Centre-ville et Waterfront", "mapAir": "Aéroport", "famTag": "Photo de famille", "famCap": "Vos hôtes Jan &amp; Leona", "famH2": "Rigueur allemande, chaleur sud-africaine.", "famLede": "Nous sommes une famille germano-sud-africaine et gérons nous-mêmes Be My Guest Lodge, sur place et avec tout notre cœur. Nous connaissons les deux mondes : l'exigence de propreté et de fiabilité, et le plaisir de prendre le temps. Chez nous, vous avez les deux. Nous vous accueillons personnellement, partageons nos adresses préférées et sommes toujours disponibles, au petit-déjeuner ou autour du braai.", "promise": [["Un accueil personnel", "Pas de boîte à clés : nous sommes là à votre arrivée."], ["Bons plans locaux", "De la meilleure session de kite au domaine viticole le plus paisible."], ["Joignables rapidement", "Questions sur WhatsApp, réponse en général en quelques minutes."]], "famSig": "À très bientôt !", "expEyebrow": "Activités avec nos partenaires", "expH2": "Le Cap, sélectionné pour vous.", "expLede": "Nous travaillons avec ces prestataires. Nous réservons pour vous, connaissons les gens personnellement, et nos hôtes bénéficient souvent d'un petit plus.", "all": "Tout", "sugg": "Suggestion de partenaire", "cats": {"water": "Sports nautiques", "nature": "Nature", "food": "Gastronomie et vin", "trips": "Excursions"}, "partners": [["École de kite et wing foil", "Cours pour débutants et confirmés à Kite Beach, matériel inclus.", "10 % pour nos hôtes"], ["Téléphérique de la Montagne de la Table", "Montez au sommet en téléphérique. Nous vous disons quels jours offrent la meilleure vue.", "Billets par notre intermédiaire"], ["Vignobles de Durbanville", "Sauvignon blanc et brise marine : dégustations dans de petits domaines familiaux.", "Réservation de table"], ["Cours de surf à Big Bay", "Des vagues douces pour vos premiers essais, avec des moniteurs locaux.", "Prise en charge possible"], ["Sortie en bateau dans Table Bay", "Robben Island, otaries et, avec de la chance, dauphins : la Montagne de la Table vue de la mer.", "Pique-nique préparé par nous"], ["Péninsule du Cap et Boulders Beach", "Excursion au cap de Bonne-Espérance et aux manchots de Simon's Town.", "Chauffeur sur demande"]], "blogEyebrow": "Blog · Le Cap et ses environs", "blogH2": "Histoires et conseils du Cap.", "blogLede": "Ce que nous racontons à nos hôtes au petit-déjeuner, nous l'écrivons ici : excursions, saisons, plages et petites découvertes autour de Table View.", "posts": [["Plage et mer", "Pourquoi la Montagne de la Table est plus belle depuis Table View", "Tout le monde connaît la vue de carte postale, mais quand la lumière est-elle la plus belle, et où se placer ? Notre petit guide photo du coucher de soleil sur la plage.", "5 min de lecture"], ["Kitesurf", "La saison du kite au Cap : vent, spots et période", "Le vent du sud-est, surnommé le « Cape Doctor », fait de la région l'une des destinations de kite les plus connues au monde. Ce que les débutants doivent savoir.", "6 min de lecture"], ["Excursions", "Une journée sur la West Coast : de Blouberg à Langebaan", "Restaurants de fruits de mer sur la plage, fleurs sauvages au printemps et lagunes avec flamants roses : notre itinéraire préféré vers le nord.", "4 min de lecture"]], "revEyebrow": "L'avis de nos hôtes", "revH2": "Notés sur les plateformes que vous connaissez.", "revNote": "Provisoire : les citations ci-dessous seront remplacées par de vrais avis.", "revPh": "Provisoire", "revQuote": "Ici, une vraie citation d'un hôte sur {p}, par exemple sur l'accueil personnel, le petit-déjeuner ou la vue sur la Montagne de la Table.", "revWho": "Prénom, pays · Mois année", "revScore": "Note des hôtes", "revCount": "avis", "ctEyebrow": "Réservez en direct", "ctH2": "Réserver en direct, c'est plus personnel.", "ctP": "Notre système de réservation affiche les chambres disponibles en temps réel et vous permet de réserver sans détour. Pour toute question sur l'arrivée, le kitesurf ou les longs séjours, écrivez-nous simplement sur WhatsApp.", "ctBtn1": "Vers le système de réservation", "ctBtn2": "Ouvrir le chat WhatsApp", "ctH3": "Contact", "ctAddr": "Adresse", "ctIn": "de 14 h à 19 h", "ctOut": "jusqu'à 10 h", "ctNote": "Vous arrivez plus tard ? Une arrivée tardive est possible, prévenez-nous simplement à l'avance par WhatsApp ou e-mail.", "mapsCta": "Ouvrir dans Google Maps", "legal": "Mentions légales · Confidentialité · Conditions de réservation", "waFloat": "Des questions ? WhatsApp", "waText": "Bonjour Be My Guest Lodge, je suis intéressé(e) par un séjour.", "readMore": "Lire l'article →", "backBlog": "← Tous les articles", "artNote": "Cet article est pour l'instant disponible en anglais."};
+DICT.es={"ctFloat": "Contacto", "draft": "<strong>Borrador:</strong> las opiniones y las ofertas de socios aún son provisionales.", "draftBtn": "Ocultar", "langLabel": "Idioma", "navAcc": "Alojamiento", "navArea": "Alrededores", "navLoc": "Ubicación", "navHosts": "Anfitriones", "navExp": "Experiencias", "navRev": "Opiniones", "navBook": "Reservar", "heroEyebrow": "Casa de huéspedes en Table View · Ciudad del Cabo", "heroH1": "Tu hogar <em>en el Cabo</em>, lejos de casa.", "heroSub": "Cinco habitaciones confort y una casita familiar en un barrio tranquilo, a pocos minutos de la playa, con la mejor vista de la Montaña de la Mesa.", "heroCta1": "Ver disponibilidad", "heroCta2": "Escríbenos por WhatsApp", "heroHand": "¡Bienvenidos, welkom, welcome!", "soundOn": "Activar sonido", "soundOff": "Silenciar", "replay": "Ver vídeo", "f1": "alojamientos en 3 tipos de habitación", "f2b": "aprox. 25 min", "f2": "al centro y al V&amp;A Waterfront", "f3b": "aprox. 5 min", "f3": "a la playa de Table View", "f4": "Kite Beach y Big Bay muy cerca", "introEyebrow": "Bienvenidos a Bloubergstrand", "introH2": "Haz de Be My Guest tu hogar en Ciudad del Cabo.", "intro1": "Be My Guest Lodge es una casa de huéspedes familiar en Bloubergrant, Table View, dentro de la popular zona costera de Bloubergstrand, en la costa atlántica de Ciudad del Cabo. Robben Island está justo al otro lado de la bahía, la playa a pocos minutos y el aeropuerto internacional de Ciudad del Cabo a unos 20 minutos en coche.", "intro2": "Tus anfitriones Jan &amp; Leona reciben hasta 16 huéspedes en cinco habitaciones confort y una amplia casita familiar, en régimen de B&amp;B o con cocina propia. Desde aquí llegas fácilmente a lo mejor de Ciudad del Cabo: el V&amp;A Waterfront, la Montaña de la Mesa y la península del Cabo. Para una excursión por la West Coast hasta Langebaan o Lambert's Bay, la carretera costera R27 empieza justo en nuestra puerta.", "intro3": "Tanto si planeas unas vacaciones en familia, un viaje de kitesurf o una estancia de trabajo, Bloubergstrand es el lugar ideal. Cuando sube el viento por la tarde, el paseo marítimo se convierte en el patio de recreo de kitesurfistas, corredores y paseantes. Y no hay mejor vista de la Montaña de la Mesa que desde la playa de Blouberg: al atardecer la montaña se tiñe de azul y violeta, de ahí el nombre «Blouberg», «montaña azul» en afrikáans. Es la hora en que las familias se reúnen en la playa, y el paseo está lleno de restaurantes.", "acc1": "Be My Guest Lodge tiene capacidad para 16 huéspedes en régimen de B&amp;B o con cocina propia: tres Comfort Double Rooms, dos Comfort Twin Rooms y nuestro amplio Family Cottage de dos plantas. Cada habitación tiene baño propio, entrada privada y patio al jardín.", "acc2": "En cada habitación encontrarás aire acondicionado que enfría en verano y calienta en invierno, ventilador de techo, televisión de pantalla plana con DStv, Wi-Fi gratis, minibar, microondas y té y café. El Family Cottage tiene además cocina completa, dos baños y una gran terraza junto a la piscina.", "acc3": "Fuera te esperan el jardín frondoso y la piscina. Dos braais (barbacoas) están a disposición de todos los huéspedes, perfectas para una tarde sudafricana junto a la piscina con familia y amigos. Consulta precios y disponibilidad directamente en nuestro sistema de reservas.", "areaEyebrow": "Alrededor de Table View", "areaH2": "Entre el Atlántico y la Montaña de la Mesa.", "areaLede": "Largas playas de arena, la vista clásica de la Montaña de la Mesa, viento constante para el kitesurf y bodegas en el interior: todo empieza en nuestra puerta.", "area": ["La Montaña de la Mesa desde la playa", "Kitesurfistas al atardecer", "Montaña de la Mesa y Table Bay", "Tarde en la playa", "El famoso «mantel»", "Bodegas de Durbanville", "Centro de Ciudad del Cabo"], "houseEyebrow": "La casa", "houseH2": "Llegar, respirar, quedarse.", "houseLede": "Jardín, terraza, una mesa de desayuno compartida, además de piscina y dos braais para todos los huéspedes en las noches cálidas. Nuestras zonas comunes están pensadas para sentirse como en casa y conocer a otros viajeros.", "house": ["Piscina y tumbonas", "Terraza del jardín", "Patio interior", "Bajo la palmera", "Salón del patio", "Rincones con sombra", "Sendero del jardín", "Almuerzo en el jardín", "Jardines colgantes"], "accH2": "Tres tipos de habitación, seis refugios.", "accAll": "Ver todo el alojamiento", "accH1": "Elige tu habitación.", "accSubLede": "Seis alojamientos en tres tipos. Elige un tipo de habitación para ver la galería de fotos de cada una.", "details": "Fotos y detalles →", "priceNote": "Precios y disponibilidad en nuestro sistema de reservas.", "backAll": "← Todos los tipos de habitación", "home": "Inicio", "photo": "Foto", "types": {"comfort-double": {"n": "Comfort Double Room", "count": "3 habitaciones", "short": "Tres habitaciones dobles decoradas individualmente, cada una con entrada propia y patio al jardín. Tranquilas, luminosas y prácticas, ideales para parejas y viajeros solos. La Room 4 es un estudio amplio con cocina americana y comedor.", "f": ["Cama doble para 2 personas", "Baño privado", "Entrada propia y patio", "Aire acondicionado (frío y calor)", "Ventilador de techo", "Wi-Fi gratis y TV de pantalla plana con DStv", "Minibar y microondas", "Té y café"]}, "comfort-twin": {"n": "Comfort Twin Room", "count": "2 habitaciones", "short": "Dos habitaciones con dos camas individuales cada una, perfectas para amigos, compañeros de trabajo o kitesurfistas. Ambas dan al jardín por una entrada propia, y la Room 6 añade una gran terraza privada entre palmeras.", "f": ["Dos camas individuales para 2 personas", "Baño privado", "Entrada propia y patio (Room 6: gran terraza)", "Aire acondicionado (frío y calor)", "Ventilador de techo", "Wi-Fi gratis y TV de pantalla plana con DStv", "Minibar y microondas", "Té y café"]}, "family-cottage": {"n": "Family Cottage", "count": "1 casita · aprox. 85 m²", "short": "Tu propia casa de dos plantas junto a la piscina: unos 85 m² con dormitorio abuhardillado bajo vigas de madera, salón-comedor abierto, cocina completa, dos baños y terraza frente a la piscina. Hasta seis personas, ideal para familias y grupos pequeños.", "f": ["Aprox. 85 m² en dos plantas", "6 camas para hasta 6 personas", "Cocina propia equipada", "2 baños", "Entrada propia y gran terraza", "Aire acondicionado (frío y calor)", "Wi-Fi gratis y TV de pantalla plana con DStv"]}}, "units": {"Room 2": "El azul marino y el blanco marcan el tono de la Room 2, con azulejos azules estilo Delft en el lavabo y cortinas gris pizarra. La cama doble con su manta azul invita a descansar después de un día de playa, y el ventilador, el escritorio y la puerta al jardín la hacen tan práctica como acogedora.", "Room 3": "La Room 3 es luminosa y serena: paredes blancas, láminas de ginkgo en turquesa y dorado y una alfombra con hojas le dan un suave aire botánico. Los azulejos pintados a mano en turquesa y amarillo aportan alegría, y la tranquila vista al jardín invita a desconectar.", "Room 4": "El verde intenso define la Room 4, nuestro estudio: papel pintado de palmeras, alfombra de hojas, baño con azulejos esmeralda y un cuadro de flamenco rosa para un ambiente vacacional. Con cocina americana, comedor y más espacio, es ideal para estancias largas.", "Room 5": "Una pared azul real y cabeceros de madera oscura dan a la Room 5 un carácter cálido y clásico, con láminas de bicicletas vintage y cojines con relojes como detalles divertidos. Mantas suaves, un rincón de lectura y un patio entre la vegetación la convierten en un refugio tranquilo; el baño tiene llamativos azulejos en blanco y negro.", "Room 6": "La Room 6 tiene un toque safari: pared antracita con arte de cebras, estampados en blanco y negro, acentos rojos y vigas de madera vistas. Los sillones de mimbre invitan a quedarse, y la gran terraza privada entre palmeras y buganvillas es perfecta para desayunos tranquilos y atardeceres.", "Family Cottage": "Ladrillo visto, tonos terracota y verde petróleo, retratos de arte africano y una alfombra kilim llena de color dan a la casita un ambiente relajado y hogareño. Arriba, el dormitorio bajo las vigas; abajo, sofás, una larga mesa de comedor y la cocina reúnen a todos, con la piscina justo delante de la puerta."}, "svcEyebrow": "Servicios e instalaciones", "svcH2": "Todo para una estancia relajada.", "svcLede": "Be My Guest Lodge está cerca de tiendas, restaurantes y la playa, y lo mejor de Ciudad del Cabo queda a mano. Esto es lo que ofrecemos en la casa y lo que organizamos con gusto para ti.", "svcA": "En la casa", "svcS": "Nuestros servicios", "amen": ["Wi-Fi gratis e ilimitado", "Piscina y tumbonas en un jardín frondoso", "Dos braais (barbacoas) para todos los huéspedes", "Aire acondicionado en cada habitación, frío en verano y calor en invierno", "TV de pantalla plana con DStv", "Minibar, microondas, té y café en cada habitación", "Entrada propia y patio en cada habitación", "Aparcamiento seguro dentro de la propiedad", "Barrio residencial seguro y tranquilo", "Se acepta pago con tarjeta"], "serv": ["Servicio de taxi", "Servicio de lavandería","Cuna y trona bajo petición", "Organización de excursiones de un día", "Reserva de avistamiento de ballenas", "Reserva de buceo en jaula con tiburones", "Llegada tardía previa consulta"], "locH2": "Tranquilidad, con todo a mano.", "locLede": "Table View está en la costa atlántica, al norte de Ciudad del Cabo. Desde aquí ves la Montaña de la Mesa en toda su anchura, con Robben Island en el horizonte. Nuestra casa está en una calle residencial tranquila: pájaros por la mañana, calma por la noche, y la playa, los restaurantes y el centro muy cerca.", "dist": [["Playas de Table View y Bloubergstrand", "aprox. 5 min"], ["Kite Beach y Big Bay (kitesurf, wing foil, surf)", "aprox. 10 min"], ["Centro de Ciudad del Cabo y V&amp;A Waterfront", "aprox. 25 min"], ["Bodegas de Durbanville", "aprox. 25 min"], ["Aeropuerto internacional de Ciudad del Cabo", "aprox. 20 min"]], "safe": [["Aparcamiento seguro", "Plazas dentro de la propiedad."], ["Barrio tranquilo", "Una zona residencial familiar."], ["Anfitriones en casa", "Vivimos aquí y estamos para ayudarte."], ["Consejos locales", "Te decimos adónde ir y cuándo."]], "mapBay": "Table Bay", "mapMtn": "Montaña de la Mesa", "mapBeach": "Playa de Table View", "mapCity": "Centro y Waterfront", "mapAir": "Aeropuerto", "famTag": "Foto familiar", "famCap": "Tus anfitriones Jan &amp; Leona", "famH2": "Fiabilidad alemana, calidez sudafricana.", "famLede": "Somos una familia germano-sudafricana y gestionamos Be My Guest Lodge nosotros mismos, en persona y con todo el corazón. Conocemos ambos mundos: el deseo de que todo esté limpio y funcione, y el gusto de dedicarse tiempo. Con nosotros tienes las dos cosas. Te recibimos personalmente, compartimos nuestros lugares favoritos y siempre estamos disponibles, en el desayuno o junto al braai.", "promise": [["Bienvenida personal", "Sin cajas de llaves: estamos aquí cuando llegas."], ["Consejos locales", "Desde la mejor sesión de kite hasta la bodega más tranquila."], ["Siempre localizables", "Preguntas por WhatsApp, respuesta normalmente en minutos."]], "famSig": "¡Hasta pronto!", "expEyebrow": "Experiencias con nuestros socios", "expH2": "El Cabo, seleccionado para ti.", "expLede": "Trabajamos con estos proveedores. Reservamos por ti, conocemos a la gente personalmente y nuestros huéspedes suelen recibir un pequeño extra.", "all": "Todo", "sugg": "Sugerencia de socio", "cats": {"water": "Deportes acuáticos", "nature": "Naturaleza", "food": "Gastronomía y vino", "trips": "Excursiones"}, "partners": [["Escuela de kite y wing foil", "Clases para principiantes y avanzados en Kite Beach, equipo incluido.", "10 % para nuestros huéspedes"], ["Teleférico de la Montaña de la Mesa", "Sube en teleférico a la Montaña de la Mesa. Te decimos qué días tienen la mejor vista.", "Entradas a través de nosotros"], ["Bodegas de Durbanville", "Sauvignon blanc con brisa marina: catas en pequeñas bodegas familiares.", "Reserva de mesa"], ["Clases de surf en Big Bay", "Olas suaves para tus primeros intentos, con instructores locales.", "Recogida disponible"], ["Paseo en barco por Table Bay", "Robben Island, focas y, con suerte, delfines: la Montaña de la Mesa desde el mar.", "Picnic preparado por nosotros"], ["Península del Cabo y Boulders Beach", "Excursión al Cabo de Buena Esperanza y a los pingüinos de Simon's Town.", "Conductor bajo petición"]], "blogEyebrow": "Blog · Ciudad del Cabo y alrededores", "blogH2": "Historias y consejos del Cabo.", "blogLede": "Lo que contamos a nuestros huéspedes en el desayuno lo escribimos aquí: excursiones, estaciones, playas y pequeños descubrimientos alrededor de Table View.", "posts": [["Playa y mar", "Por qué la Montaña de la Mesa se ve mejor desde Table View", "Todos conocen la vista de postal, pero ¿cuándo es mejor la luz y dónde colocarse? Nuestra pequeña guía fotográfica para los atardeceres en la playa.", "5 min de lectura"], ["Kitesurf", "Temporada de kite en el Cabo: viento, spots y fechas", "El viento del sureste, conocido como el «Cape Doctor», convierte la zona en uno de los destinos de kite más conocidos del mundo. Lo que deben saber los principiantes.", "6 min de lectura"], ["Excursiones", "Un día en la West Coast: de Blouberg a Langebaan", "Restaurantes de marisco en la playa, flores silvestres en primavera y lagunas con flamencos: nuestra ruta favorita hacia el norte.", "4 min de lectura"]], "revEyebrow": "Lo que dicen nuestros huéspedes", "revH2": "Valorados en las plataformas que conoces.", "revNote": "Provisional: las citas de abajo se sustituirán por opiniones reales.", "revPh": "Provisional", "revQuote": "Aquí irá una opinión real de un huésped en {p}, por ejemplo sobre la bienvenida personal, el desayuno o la vista de la Montaña de la Mesa.", "revWho": "Nombre, país · Mes año", "revScore": "Valoración", "revCount": "opiniones", "ctEyebrow": "Reserva directa", "ctH2": "Reservar directamente es lo más personal.", "ctP": "Nuestro sistema de reservas muestra las habitaciones disponibles en tiempo real y te permite reservar sin intermediarios. Para preguntas sobre la llegada, el kitesurf o estancias largas, escríbenos por WhatsApp.", "ctBtn1": "Ir al sistema de reservas", "ctBtn2": "Abrir chat de WhatsApp", "ctH3": "Contacto", "ctAddr": "Dirección", "ctIn": "de 14:00 a 19:00", "ctOut": "hasta las 10:00", "ctNote": "¿Llegas más tarde? Es posible la llegada tardía, avísanos con antelación por WhatsApp o correo electrónico.", "mapsCta": "Abrir en Google Maps", "legal": "Aviso legal · Privacidad · Condiciones de reserva", "waFloat": "¿Preguntas? WhatsApp", "waText": "Hola Be My Guest Lodge, me interesa una estancia.", "readMore": "Leer artículo →", "backBlog": "← Todos los artículos", "artNote": "Este artículo está disponible por ahora en inglés."};
+DICT.zh={"ctFloat": "联系", "draft": "<strong>草稿：</strong>评价和合作伙伴优惠仍为占位内容。", "draftBtn": "隐藏", "langLabel": "语言", "navAcc": "客房", "navArea": "周边", "navLoc": "位置", "navHosts": "房东", "navExp": "体验", "navRev": "评价", "navBook": "立即预订", "heroEyebrow": "开普敦 Table View 民宿", "heroH1": "你在<em>开普敦</em>的家。", "heroSub": "五间舒适客房和一座家庭小屋，位于安静社区，距海滩仅几分钟，坐拥城中最美的桌山景观。", "heroCta1": "查看空房", "heroCta2": "WhatsApp 咨询", "heroHand": "欢迎，Welkom，Welcome！", "soundOn": "开启声音", "soundOff": "关闭声音", "replay": "播放视频", "f1": "间客房，3 种房型", "f2b": "约 25 分钟", "f2": "至市中心和 V&amp;A 海滨", "f3b": "约 5 分钟", "f3": "至 Table View 海滩", "f4": "毗邻 Kite Beach 和 Big Bay", "introEyebrow": "欢迎来到 Bloubergstrand", "introH2": "让 Be My Guest 成为你在开普敦的家。", "intro1": "Be My Guest Lodge 是一家家庭经营的民宿，位于开普敦大西洋沿岸热门海滨区 Bloubergstrand 的 Bloubergrant（Table View）。罗本岛就在海湾对面，海滩近在咫尺，距开普敦国际机场约 20 分钟车程。", "intro2": "房东 Jan 和 Leona 可接待最多 16 位客人，提供五间舒适客房和一座宽敞的家庭小屋，可选含早餐（B&amp;B）或自助入住。从这里前往开普敦各大景点都很方便：V&amp;A 海滨、桌山和开普半岛。若想沿西海岸一日游前往 Langebaan 或 Lambert's Bay，R27 沿海公路就在门口。", "intro3": "无论是家庭度假、风筝冲浪之旅还是商务出行，Bloubergstrand 都是理想之选。午后风起时，海滨步道成为风筝冲浪者、跑步者和散步者的乐园。观赏桌山的最佳地点就是 Blouberg 海滩：日落时分，山峦染上蓝色和紫色，这正是“Blouberg”（南非荷兰语意为“蓝山”）名字的由来。此时家人们纷纷来到海滩，海滨沿线还有众多餐厅可供选择。", "acc1": "Be My Guest Lodge 可接待最多 16 位客人，提供含早餐或自助入住两种方式：三间 Comfort Double Room、两间 Comfort Twin Room，以及宽敞的两层 Family Cottage。每间客房均设独立卫浴、独立入口和通往花园的露台。", "acc2": "每间客房配有冷暖空调（夏季制冷、冬季供暖）、吊扇、配备 DStv 的平板电视、免费 Wi-Fi、小冰箱、微波炉以及茶和咖啡。Family Cottage 另设设备齐全的厨房、两间浴室和泳池旁的大露台。", "acc3": "户外有郁郁葱葱的花园和游泳池供你享用。两处 braai（南非烧烤）供所有客人使用，非常适合与家人朋友在泳池边度过轻松的南非之夜。价格和空房情况请直接在我们的预订系统中查看。", "areaEyebrow": "Table View 周边", "areaH2": "在大西洋与桌山之间。", "areaLede": "绵长的沙滩、经典的桌山景色、适合风筝冲浪的稳定海风，以及内陆的酒庄：一切从我们的门口开始。", "area": ["从海滩眺望桌山", "日落中的风筝冲浪", "桌山与桌湾", "海滩黄昏", "著名的“桌布云”", "Durbanville 酒庄", "开普敦市中心"], "houseEyebrow": "民宿", "houseH2": "到达，放松，多住几天。", "houseLede": "花园、露台、共享的早餐桌，还有供所有客人在温暖夜晚使用的泳池和两处 braai 烧烤区。我们的公共区域让你宾至如归，也方便结识其他旅行者。", "house": ["泳池与躺椅", "花园露台", "庭院", "棕榈树下", "露台休息区", "荫凉角落", "花园小径", "花园午餐", "悬挂花园"], "accH2": "三种房型，六处惬意空间。", "accAll": "查看全部客房", "accH1": "选择你的客房。", "accSubLede": "六个住宿单元，三种房型。选择房型即可查看每间客房的照片。", "details": "照片与详情 →", "priceNote": "价格和空房情况请查看预订系统。", "backAll": "← 所有房型", "home": "首页", "photo": "照片", "types": {"comfort-double": {"n": "Comfort Double Room", "count": "3 间", "short": "三间风格各异的双人间，每间都有独立入口和通往花园的露台。安静、明亮、实用，适合情侣和独自旅行者。Room 4 是一间宽敞的开间，配有小厨房和用餐区。", "f": ["双人床，可住 2 人", "独立卫浴", "独立入口和露台", "冷暖空调", "吊扇", "免费 Wi-Fi 和配备 DStv 的平板电视", "小冰箱和微波炉", "茶和咖啡"]}, "comfort-twin": {"n": "Comfort Twin Room", "count": "2 间", "short": "两间客房，每间两张单人床，非常适合朋友、同事或风筝冲浪伙伴。两间都有通往花园的独立入口，Room 6 还拥有棕榈树间的大型私人露台。", "f": ["两张单人床，可住 2 人", "独立卫浴", "独立入口和露台（Room 6：大露台）", "冷暖空调", "吊扇", "免费 Wi-Fi 和配备 DStv 的平板电视", "小冰箱和微波炉", "茶和咖啡"]}, "family-cottage": {"n": "Family Cottage", "count": "1 座 · 约 85 平方米", "short": "泳池旁属于你的两层小屋：约 85 平方米，木梁下的阁楼卧室、开放式客厅和餐厅、完整厨房、两间浴室和面向泳池的露台。最多可住六人，适合家庭和小团体。", "f": ["约 85 平方米，两层", "6 张床，最多 6 人", "独立厨房，可自助烹饪", "2 间浴室", "独立入口和大露台", "冷暖空调", "免费 Wi-Fi 和配备 DStv 的平板电视"]}}, "units": {"Room 2": "海军蓝与白色奠定了 Room 2 的基调，洗手台配有代尔夫特风格的蓝色瓷砖，搭配石板灰窗帘。铺着海军蓝毯子的双人床让你在海滩游玩后尽情放松，吊扇、书桌和通往花园的门让房间既实用又温馨。", "Room 3": "Room 3 明亮而宁静：柔和的白墙、绿松石色与金色的银杏画作，以及树叶图案的地毯，营造出柔和的植物氛围。洗手台旁手绘的绿松石色与黄色瓷砖增添了欢快感，安静的花园景色让人轻松放松。", "Room 4": "浓郁的绿色是 Room 4（我们的开间）的主调：热带棕榈墙纸、树叶地毯、祖母绿瓷砖浴室和一幅粉色火烈鸟画，营造出度假氛围。配有小厨房、用餐区和更多空间，非常适合长住。", "Room 5": "深宝蓝色的主题墙和深色木质床头让 Room 5 温暖而经典，复古自行车画和钟表图案靠垫增添趣味。柔软的毯子、舒适的阅读角和绿意环绕的露台使这里成为宁静的休憩之所；浴室采用醒目的黑白瓷砖。", "Room 6": "Room 6 带有一丝野生动物风情：炭灰色主题墙配斑马艺术画、黑白图案、红色点缀和裸露的木梁。藤编扶手椅让人流连，棕榈树和三角梅环绕的大型私人露台非常适合悠闲的早餐和日落时光。", "Family Cottage": "裸露的砖墙、温暖的赤陶色和青绿色调、非洲人物肖像画和色彩缤纷的基里姆地毯，让小屋轻松而温馨。楼上是木梁下的阁楼卧室；楼下的沙发、长餐桌和厨房让全家团聚，泳池就在门外。"}, "svcEyebrow": "设施与服务", "svcH2": "轻松入住所需的一切。", "svcLede": "Be My Guest Lodge 靠近商店、餐厅和海滩，开普敦的精华景点触手可及。以下是我们民宿的设施，以及我们乐意为你安排的服务。", "svcA": "民宿设施", "svcS": "我们的服务", "amen": ["免费不限量 Wi-Fi", "花园中的泳池和躺椅", "两处 braai 烧烤区供所有客人使用", "每间客房配有冷暖空调，夏季制冷、冬季供暖", "配备 DStv 的平板电视", "每间客房配有小冰箱、微波炉、茶和咖啡", "每间客房均有独立入口和露台", "院内安全停车", "安全安静的住宅区", "可刷卡支付"], "serv": ["出租车服务", "洗衣服务","可应要求提供婴儿床和儿童餐椅", "一日游规划", "代订观鲸之旅", "代订笼中观鲨", "可应要求晚到入住"], "locH2": "安静居住，一切近在咫尺。", "locLede": "Table View 位于开普敦以北的大西洋海岸。在这里你可以隔着海湾看到桌山的全貌，罗本岛就在地平线上。我们的民宿位于安静的住宅街道：清晨鸟鸣，夜晚宁静，海滩、餐厅和市区都近在咫尺。", "dist": [["Table View 和 Bloubergstrand 海滩", "约 5 分钟"], ["Kite Beach 和 Big Bay（风筝冲浪、水翼、冲浪）", "约 10 分钟"], ["开普敦市中心和 V&amp;A 海滨", "约 25 分钟"], ["Durbanville 葡萄酒谷", "约 25 分钟"], ["开普敦国际机场", "约 20 分钟"]], "safe": [["安全停车", "院内停车。"], ["安静社区", "适合家庭的住宅区。"], ["房东住在现场", "我们住在这里，随时为你服务。"], ["本地建议", "我们告诉你何时去哪里最好。"]], "mapBay": "桌湾", "mapMtn": "桌山", "mapBeach": "Table View 海滩", "mapCity": "市中心与海滨", "mapAir": "机场", "famTag": "家庭照片", "famCap": "你的房东 Jan 和 Leona", "famH2": "德国的严谨，南非的热情。", "famLede": "我们是一个德国与南非结合的家庭，亲自用心经营 Be My Guest Lodge。我们了解两种文化：对整洁和可靠的追求，以及彼此相处的乐趣。在这里，你两者兼得。我们会亲自迎接你，分享我们最喜欢的去处，无论是早餐时还是烧烤旁，随时乐意与你聊天。", "promise": [["亲自迎接", "没有钥匙盒：你到达时我们就在。"], ["本地推荐", "从最佳风筝冲浪时段到最安静的酒庄。"], ["快速回复", "WhatsApp 提问，通常几分钟内回复。"]], "famSig": "期待与你相见！", "expEyebrow": "与合作伙伴一起体验", "expH2": "精选开普敦体验。", "expLede": "我们与以下服务商合作。我们为你预订，与他们相识，作为我们的客人，你常常还能获得一些小优惠。", "all": "全部", "sugg": "合作伙伴推荐", "cats": {"water": "水上运动", "nature": "自然", "food": "美食美酒", "trips": "一日游"}, "partners": [["风筝冲浪和水翼学校", "在 Kite Beach 为初学者和进阶者授课，含装备。", "本店客人享 9 折"], ["桌山缆车", "乘缆车登上桌山。我们告诉你哪天景色最好。", "可由我们代购门票"], ["Durbanville 酒庄", "伴着海风品尝长相思：在附近的小型家族酒庄品酒。", "代订餐位"], ["Big Bay 冲浪课", "在温和的浪中初次尝试，由本地教练指导。", "可接送"], ["桌湾乘船游", "罗本岛、海豹，运气好还能看到海豚：从海上欣赏桌山。", "我们提供野餐"], ["开普半岛与 Boulders Beach", "前往好望角和西蒙镇企鹅的一日游。", "可应要求安排司机"]], "blogEyebrow": "博客 · 开普敦及周边", "blogH2": "来自开普敦的故事与建议。", "blogLede": "我们在早餐时给客人讲的故事都写在这里：短途旅行、季节、海滩以及 Table View 周边的小发现。", "posts": [["海滩与大海", "为什么从 Table View 看桌山最美", "人人都知道明信片上的景色，但什么时候光线最好？应该站在哪里？我们的海滩日落拍照小指南。", "阅读约 5 分钟"], ["风筝冲浪", "开普敦风筝冲浪季：风、地点与时间", "被当地人称为“Cape Doctor”的东南风，让这里成为世界知名的风筝冲浪胜地。初学者须知。", "阅读约 6 分钟"], ["一日游", "西海岸一日游：从 Blouberg 到 Langebaan", "海滩海鲜餐厅、春天的野花和有火烈鸟的泻湖：我们最爱的北上路线。", "阅读约 4 分钟"]], "revEyebrow": "客人怎么说", "revH2": "在你熟悉的平台上获得好评。", "revNote": "占位内容：以下评论将替换为真实评价。", "revPh": "占位", "revQuote": "这里将展示来自 {p} 的真实客人评价，例如关于亲切的接待、早餐或桌山景色。", "revWho": "名字，国家 · 月份 年份", "revScore": "客人评分", "revCount": "条评价", "ctEyebrow": "直接预订", "ctH2": "直接预订，服务更贴心。", "ctP": "我们的预订系统实时显示空房，让你直接预订。关于抵达、风筝冲浪或长住的问题，欢迎通过 WhatsApp 联系我们。", "ctBtn1": "前往预订系统", "ctBtn2": "打开 WhatsApp 聊天", "ctH3": "联系方式", "ctAddr": "地址", "ctIn": "14:00–19:00", "ctOut": "10:00 前", "ctNote": "晚到？可以安排晚到入住，请提前通过 WhatsApp 或电子邮件告知我们。", "mapsCta": "在 Google 地图中打开", "legal": "法律声明 · 隐私 · 预订条款", "waFloat": "有问题？WhatsApp", "waText": "你好 Be My Guest Lodge，我想咨询住宿。", "readMore": "阅读文章 →", "backBlog": "← 所有文章", "artNote": "本文目前提供英文版本。"};
+Object.assign(DICT.en,{faq:{"eyebrow": "FAQ", "h2": "Good to know before you arrive.", "items": [["Where is Be My Guest Lodge located?", "Be My Guest Lodge is at 51 Porterfield Rd in Bloubergrant, Table View, part of Bloubergstrand on Cape Town's Atlantic coast. The beach is about 5 minutes away, Kite Beach and Big Bay about 10 minutes, and the V&amp;A Waterfront about 25 minutes by car."], ["How far is the lodge from Cape Town International Airport?", "The drive from Cape Town International Airport takes about 20 minutes. On request, we are happy to organise a taxi for you."], ["Is Be My Guest Lodge suitable for families?", "Yes. Our Family Cottage sleeps up to six guests on two floors, with its own kitchen, two bathrooms and a terrace by the pool. Families also enjoy the garden, the swimming pool and the two braais (barbecues), and the beach is just minutes away. A baby cot and a high chair are available on request."], ["Is the lodge a good base for kitesurfing in Cape Town?", "Yes. Kite Beach and Big Bay in Bloubergstrand are about 10 minutes away, and the main kite season runs roughly from November to March. Every room has a private entrance and patio where you can rinse and dry your gear, and we are happy to help you find lessons or rental equipment."], ["Can we stay on a B&amp;B or self-catering basis?", "Both are possible. All rooms have a mini fridge, microwave and tea and coffee facilities, Room 4 has a kitchenette, and the Family Cottage has a fully equipped kitchen."], ["Do the rooms have air conditioning?", "Yes. Every room has air conditioning that cools in summer and heats in winter, plus a ceiling fan, free Wi-Fi and a flat-screen TV with DStv."], ["Is there secure parking?", "Yes. Parking is right on the property, in a quiet and safe residential neighbourhood."], ["What are the check-in and check-out times?", "Check-in is between 2 pm and 7 pm, and check-out is until 10 am. Late check-in is possible, just let us know in advance via WhatsApp or email."], ["How can we book directly?", "You can book directly in our online booking system, which shows available rooms in real time. For questions, message us on WhatsApp at +27 72 838 4490 or email info@bemyguestlodge.co.za."]]}});
+Object.assign(DICT.de,{faq:{"eyebrow": "FAQ", "h2": "Gut zu wissen vor eurer Anreise.", "items": [["Wo liegt die Be My Guest Lodge?", "Die Be My Guest Lodge liegt in der 51 Porterfield Rd in Bloubergrant, Table View, im Küstenort Bloubergstrand an der Atlantikküste von Kapstadt. Der Strand ist etwa 5 Minuten entfernt, Kite Beach und Big Bay rund 10 Minuten und die V&amp;A Waterfront etwa 25 Autominuten."], ["Wie weit ist es zum Flughafen Kapstadt?", "Vom Flughafen Cape Town International sind es rund 20 Autominuten. Auf Wunsch organisieren wir euch gern ein Taxi."], ["Ist die Be My Guest Lodge für Familien geeignet?", "Ja. Unser Family Cottage bietet auf zwei Etagen Platz für bis zu sechs Gäste, mit eigener Küche, zwei Bädern und Terrasse am Pool. Familien genießen außerdem den Garten, den Pool und die zwei Braais (Grillplätze), und der Strand ist nur wenige Minuten entfernt. Auf Wunsch stellen wir ein Kinderbett und einen Hochstuhl bereit."], ["Ist die Lodge ein guter Ausgangspunkt zum Kitesurfen in Kapstadt?", "Ja. Kite Beach und Big Bay in Bloubergstrand sind rund 10 Minuten entfernt, die Hauptsaison läuft etwa von November bis März. Jedes Zimmer hat einen eigenen Eingang und ein Patio, wo ihr euer Material abspülen und trocknen könnt. Gern helfen wir bei der Suche nach Kursen oder Leihmaterial."], ["Können wir mit Frühstück oder als Selbstversorger buchen?", "Beides ist möglich. Alle Zimmer haben Minikühlschrank, Mikrowelle sowie Kaffee und Tee, Room 4 hat eine Küchenzeile und das Family Cottage eine voll ausgestattete Küche."], ["Haben die Zimmer eine Klimaanlage?", "Ja. Jedes Zimmer hat eine Klimaanlage, die im Sommer kühlt und im Winter heizt, dazu Deckenventilator, kostenloses WLAN und Flachbild-TV mit DStv."], ["Gibt es sichere Parkplätze?", "Ja. Ihr parkt direkt auf dem Grundstück, in einer ruhigen und sicheren Wohngegend."], ["Wann sind Check-in und Check-out?", "Check-in ist zwischen 14:00 und 19:00 Uhr, Check-out bis 10:00 Uhr. Late Check-in ist möglich, sagt uns einfach vorab per WhatsApp oder E-Mail Bescheid."], ["Wie können wir direkt buchen?", "Direkt über unser Online-Buchungssystem, das freie Zimmer in Echtzeit anzeigt. Bei Fragen erreicht ihr uns per WhatsApp unter +27 72 838 4490 oder per E-Mail an info@bemyguestlodge.co.za."]]}});
+const HOME_TITLES={"en": "Be My Guest Lodge | Family-Run Guesthouse in Bloubergstrand, Cape Town", "de": "Be My Guest Lodge | Familiengeführtes Gästehaus in Bloubergstrand, Kapstadt", "fr": "Be My Guest Lodge | Maison d'hôtes familiale à Bloubergstrand, Le Cap", "es": "Be My Guest Lodge | Casa de huéspedes familiar en Bloubergstrand, Ciudad del Cabo", "af": "Be My Guest Lodge | Familiebestuurde gastehuis in Bloubergstrand, Kaapstad", "zh": "Be My Guest Lodge | 开普敦 Bloubergstrand 家庭经营民宿"};
+const SLIDE_ALTS=[["area", 0], ["house", 1], ["area", 2], ["house", 0], ["area", 3], ["house", 6], ["area", 4], ["house", 4], ["area", 1], ["house", 2], ["house", 5]];
+const BLOG_SLUGS=["table-mountain-view", "kitesurfing-cape-town", "west-coast-day-trip"];
+
+(function(){
+  let LANG = "en";
+  try{ const s = localStorage.getItem("bmg-lang"); if(s && DICT[s]) LANG = s; else { const nl=(navigator.language||"").slice(0,2); if(DICT[nl]) LANG=nl; } }catch(e){}
+  const t = (k)=> (DICT[LANG][k] ?? DICT.en[k]);
+
+  // draft banner
+  const d = document.getElementById("draft");
+  try{ if(localStorage.getItem("bmg-draft-hidden")==="1") d.hidden = true; }catch(e){}
+  document.getElementById("draftClose").addEventListener("click",()=>{ d.hidden = true; try{localStorage.setItem("bmg-draft-hidden","1")}catch(e){} });
+
+  const I = {
+    pool:'<path d="M4 34c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/><path d="M4 42c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/><path d="M16 28V10a4 4 0 0 1 8 0M32 28V10a4 4 0 0 1 8 0M16 18h16M16 24h16"/>',
+    garden:'<path d="M24 44V22"/><path d="M24 22c0-8 6-14 14-14 0 8-6 14-14 14zM24 28c0-6-5-11-12-11 0 6 5 11 12 11z"/><path d="M8 44h32"/>',
+    coffee:'<path d="M8 18h26v10a12 12 0 0 1-12 12h-2A12 12 0 0 1 8 28z"/><path d="M34 22h3a5 5 0 0 1 0 10h-3M15 6c-2 3 2 5 0 8M22 6c-2 3 2 5 0 8"/>',
+    sofa:'<path d="M6 30v-6a4 4 0 0 1 8 0v2h20v-2a4 4 0 0 1 8 0v6"/><path d="M6 30h36v8H6zM10 38v4M38 38v4M12 22v-6a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v6"/>',
+    fire:'<path d="M24 42c-8 0-12-5-12-11 0-7 7-10 7-18 5 3 6 8 6 11 2-2 3-4 3-7 5 4 8 9 8 14 0 6-4 11-12 11z"/><path d="M10 44h28"/>',
+    sun:'<circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"/>',
+    bed:'<path d="M4 36V12M4 28h40v8M44 36V24a6 6 0 0 0-6-6H20v10"/><circle cx="12" cy="22" r="4"/>'
+  };
+  const icon = (k)=>`<svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]}</svg>`;
+  const plain = (s)=>s.replace(/&amp;/g,"&");
+  const slot = (src,label,bg,ic,cls="",tag="figure")=>
+    `<${tag} class="ph ${cls}" style="background:${bg};margin:0"${tag==="button"?' type="button"':''}><img class="real" src="${src}" alt="${plain(label)}" loading="lazy"><span class="tag">${t("photo")}</span>${ic?icon(ic):""}<span class="cap">${label}</span></${tag}>`;
+  const hydrate = (root)=>root.querySelectorAll("img.real").forEach(i=>{
+    const kill=()=>i.remove();
+    if(i.complete && !i.naturalWidth) kill(); else i.addEventListener("error",kill,{once:true});
+  });
+
+  /* ---------- static data ---------- */
+  const G = [["g1","pool","linear-gradient(150deg,#5CB6BE,#1F6F78 70%)"],["g2","sun","linear-gradient(150deg,#F0B45A,#C23F64)"],["g3","coffee","linear-gradient(150deg,#C9A27A,#7A5640)"],["g4","garden","linear-gradient(150deg,#7FA27A,#3E5E44)"],["g5","sofa","linear-gradient(150deg,#8F6A7A,#4A3346)"],["g6","fire","linear-gradient(150deg,#E39B33,#8A3B1E)"],["g7","garden","linear-gradient(150deg,#2B4F5A,#10303A)"],["g8","coffee","linear-gradient(150deg,#C9A27A,#7A5640)"],["g9","garden","linear-gradient(150deg,#7FA27A,#3E5E44)"]];
+  const A = [["sun","linear-gradient(150deg,#F3B57C,#8F6A7A)"],["pool","linear-gradient(150deg,#5CB6BE,#1F6F78)"],["pool","linear-gradient(150deg,#2B6F8E,#10303A)"],["sun","linear-gradient(150deg,#E39B33,#C23F64)"],["garden","linear-gradient(150deg,#C23F64,#5B2440)"],["garden","linear-gradient(150deg,#7FA27A,#2F4A35)"],["bed","linear-gradient(150deg,#8F6A7A,#10303A)"]];
+  const T = [
+    {id:"comfort-double",units:["Room 2","Room 3","Room 4"],bg:"linear-gradient(140deg,#8F6A7A,#10303A)",ic:"bed",n_img:9},
+    {id:"comfort-twin",units:["Room 5","Room 6"],bg:"linear-gradient(140deg,#5CB6BE,#1F6F78)",ic:"bed",n_img:9},
+    {id:"family-cottage",units:["Family Cottage"],bg:"linear-gradient(140deg,#7FA27A,#2F4A35)",ic:"garden",n_img:13}
+  ];
+  const PM = [["water",["#5CB6BE","#1F6F78"],"kite"],["nature",["#8F6A7A","#3A2638"],"mountain"],["food",["#C23F64","#5B2440"],"wine"],["water",["#E39B33","#A85A2A"],"surf"],["trips",["#2B6F8E","#10303A"],"boat"],["trips",["#7FA27A","#2F4A35"],"penguin"]];
+  const S = {
+    kite:'<path d="M170 60 Q215 35 260 62 L252 72 Q215 50 178 72Z" fill="#fff" opacity=".85"/><path d="M0 220 Q150 190 300 215 L300 300 L0 300Z" fill="#fff" opacity=".12"/>',
+    mountain:'<path d="M0 230 L60 170 L90 120 L210 118 L240 160 L300 200 L300 300 L0 300Z" fill="#000" opacity=".22"/>',
+    wine:'<g fill="#000" opacity=".2"><path d="M0 240 Q75 200 150 235 T300 225 L300 300 L0 300Z"/></g><g stroke="#fff" stroke-width="2" opacity=".35"><path d="M20 270 L120 230M60 285 L170 238M110 298 L230 240"/></g>',
+    boat:'<path d="M0 220 L300 220 L300 300 L0 300Z" fill="#fff" opacity=".12"/><path d="M110 205 L190 205 L178 220 L122 220Z" fill="#fff" opacity=".8"/><path d="M150 120 L150 205 L195 200Z" fill="#fff" opacity=".7"/>',
+    penguin:'<ellipse cx="220" cy="190" rx="26" ry="42" fill="#000" opacity=".3"/><ellipse cx="220" cy="198" rx="15" ry="30" fill="#fff" opacity=".5"/><circle cx="220" cy="140" r="16" fill="#000" opacity=".3"/>',
+    surf:'<path d="M0 200 Q60 150 120 200 T240 200 T300 190 L300 300 L0 300Z" fill="#fff" opacity=".15"/><ellipse cx="200" cy="120" rx="70" ry="12" transform="rotate(-30 200 120)" fill="#fff" opacity=".6"/>'
+  };
+  const scene = (a,b,shape,i)=>`<svg class="bg" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="pg${i}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><rect width="300" height="300" fill="url(#pg${i})"/>${shape}</svg>`;
+  const BIMG = ["img/slides/1.jpg","img/slides/9.jpg","img/slides/5.jpg"];
+  const BG = ["linear-gradient(160deg,#F3B57C,#8F6A7A)","linear-gradient(160deg,#5CB6BE,#1F6F78)","linear-gradient(160deg,#7FA27A,#2F4A35)"];
+  const PL = RATINGS.map(r=>[r.n,r.c]);
+  let filter = "all";
+
+  const slug = (u)=>u.toLowerCase().replace(/\s+/g,"-");
+  const typeCard = (x)=>{ const L=t("types")[x.id]; return `<a class="type" href="#${x.id}">${slot(`img/rooms/${x.id}-cover.jpg`,L.n,x.bg,x.ic)}<div class="body"><span class="count">${L.count} · ${x.units.join(", ")}</span><h3>${L.n}</h3><p>${L.short}</p><span class="go">${t("details")}</span></div></a>`; };
+
+  /* ---------- render home ---------- */
+  function renderHome(){
+    document.querySelectorAll("[data-i18n]").forEach(el=>{ const v=t(el.dataset.i18n); if(typeof v==="string") el.innerHTML=v; });
+    const wa = `https://wa.me/${CONFIG.wa}?text=${encodeURIComponent(t("waText"))}`;
+    document.querySelectorAll(".wa-link").forEach(a=>a.href=wa);
+    document.querySelector(".ct-float").setAttribute("aria-label", plain(t("ctFloat")));
+    document.querySelectorAll(".book-link").forEach(a=>a.href=CONFIG.book);
+    document.getElementById("gallery").innerHTML = G.map(([c,ic,bg],i)=>slot(`img/house/${i+1}.jpg`,t("house")[i],bg,ic,c)).join("");
+    document.getElementById("area").innerHTML = A.map(([ic,bg],i)=>slot(`img/area/${i+1}.jpg`,t("area")[i],bg,ic,i===0?"a1":"")).join("");
+    document.getElementById("typesHome").innerHTML = T.map(typeCard).join("");
+    document.getElementById("svcAmen").innerHTML = t("amen").map(x=>`<li>${x}</li>`).join("");
+    document.getElementById("svcServ").innerHTML = t("serv").map(x=>`<li>${x}</li>`).join("");
+    document.getElementById("dist").innerHTML = t("dist").map(([a,b])=>`<li><span>${a}</span><b>${b}</b></li>`).join("");
+    document.getElementById("safe").innerHTML = t("safe").map(([a,b])=>`<div><strong>${a}</strong>${b}</div>`).join("");
+    document.getElementById("promise").innerHTML = t("promise").map(([a,b])=>`<div><strong>${a}</strong>${b}</div>`).join("");
+    const cats = ["all","water","nature","food","trips"];
+    document.getElementById("filters").innerHTML = cats.map(c=>`<button type="button" id="f-${c}" aria-pressed="${c===filter}" data-c="${c}">${c==="all"?t("all"):t("cats")[c]}</button>`).join("");
+    document.getElementById("partners").innerHTML = PM.map(([c,g,s],i)=>{ const [n,dsc,perk]=t("partners")[i];
+      return `<article class="partner" data-c="${c}"${filter!=="all"&&filter!==c?" hidden":""}>${scene(g[0],g[1],S[s],i)}<span class="cat">${t("cats")[c]} · ${t("sugg")}</span><h3>${n}</h3><p>${dsc}</p><span class="perk">${perk}</span></article>`; }).join("");
+    document.getElementById("posts").innerHTML = t("posts").map(([k,ti,p,m],i)=>`<a class="post${i===0?" feature":""}" href="#${BLOG_SLUGS[i]}"><div class="art" style="background:url(${BIMG[i]}) center/cover,${BG[i]}"></div><div class="txt"><span class="kicker">${k}</span><h3>${ti}</h3><p>${p}</p><span class="read">${m} · ${t("readMore")}</span></div></a>`).join("");
+    const fmt = (v,d)=>v==null?"–":Number(v).toLocaleString(LANG==="de"?"de-DE":"en-GB",{minimumFractionDigits:d,maximumFractionDigits:d});
+    document.getElementById("platforms").innerHTML = RATINGS.map(r=>{
+      const inner = `<span class="mark" style="color:${r.c}">${r.n}</span><span class="score">${fmt(r.score,r.d)}<span class="of">/${r.scale}</span><small>${r.count?fmt(r.count,0)+" "+t("revCount"):t("revScore")}</small></span>`;
+      return r.url?`<a class="plat" href="${r.url}" target="_blank" rel="noopener">${inner}</a>`:`<div class="plat">${inner}</div>`; }).join("");
+    document.getElementById("reviews").innerHTML = [0,1,3,2].map(i=>{ const [n,c]=PL[i];
+      return `<figure class="rev" style="--c:${c};margin:0"><span class="ph-note">${t("revPh")}</span><blockquote>${t("revQuote").replace("{p}",n)}</blockquote><figcaption class="who"><span>${t("revWho")}</span><span class="src">${n}</span></figcaption></figure>`; }).join("");
+    const F = DICT[LANG].faq; const fs = document.getElementById("faq");
+    if(F){ fs.hidden=false; document.getElementById("faqEyebrow").innerHTML=F.eyebrow; document.getElementById("faqH2").innerHTML=F.h2;
+      document.getElementById("faqList").innerHTML = F.items.map(([q,a],i)=>`<details${i===0?" open":""}><summary>${q}</summary><p>${a}</p></details>`).join(""); }
+    else fs.hidden=true;
+    slides.forEach((im,k)=>{ const [key,ix]=SLIDE_ALTS[k]||[]; if(key) im.alt = plain(t(key)[ix]) + " – Be My Guest Lodge, Bloubergstrand"; });
+    hydrate(document.getElementById("top"));
+    setVidLabels();
+  }
+  document.getElementById("filters").addEventListener("click",e=>{
+    const b=e.target.closest("button"); if(!b) return; filter=b.dataset.c;
+    document.querySelectorAll("#filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+    document.querySelectorAll(".partner").forEach(p=>p.hidden = !(filter==="all"||p.dataset.c===filter));
+  });
+
+  /* ---------- hero: video first, then photo slideshow ---------- */
+  const hero = document.getElementById("hero"), hs = document.getElementById("heroSlides"), hd = document.getElementById("heroDots");
+  const vid = document.getElementById("heroVid"), bSnd = document.getElementById("vidSound"), bRep = document.getElementById("vidReplay");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const slides = []; let si = 0, timer = null, vidActive = false;
+  function setVidLabels(){ bSnd.textContent = vid.muted ? t("soundOn") : t("soundOff"); bRep.textContent = t("replay"); }
+  const showSlide = (n)=>{ si=n; slides.forEach((im,k)=>im.classList.toggle("on",k===n)); hd.querySelectorAll("button").forEach((b,k)=>b.setAttribute("aria-pressed",k===n)); };
+  const dots = ()=>{ hd.innerHTML = slides.length>1 ? slides.map((_,k)=>`<button type="button" aria-label="${k+1}" aria-pressed="${k===si}"></button>`).join("") : ""; };
+  const startSlides = ()=>{ if(!slides.length) return; hero.classList.add("has-photo"); showSlide(si); if(!timer && !reduce) timer=setInterval(()=>{ if(!vidActive && slides.length>1) showSlide((si+1)%slides.length); },5500); };
+  hd.addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b) return; showSlide([...hd.children].indexOf(b)); });
+  // slideshow photos: load 1, 2, 3 … one after another until a number is missing; show as soon as the first arrives
+  const loadSlide = (k)=>{
+    if(k>CONFIG.slides) return;
+    const im = new Image(); const sa = SLIDE_ALTS[k-1]; im.alt = sa ? plain(t(sa[0])[sa[1]]) + " – Be My Guest Lodge, Bloubergstrand" : ""; im.decoding = "async";
+    im.onload = ()=>{ slides.push(im); hs.appendChild(im); dots(); if(slides.length===1 && !vidActive) startSlides(); else if(slides.length===1) showSlide(0); loadSlide(k+1); };
+    im.onerror = ()=>{};
+    im.src = `img/slides/${k}.jpg`;
+  };
+  loadSlide(1);
+  // video: muted inline autoplay (works on iOS/Android); if the device refuses autoplay, go straight to the slideshow
+  vid.muted = true; vid.defaultMuted = true; vid.playsInline = true;
+  vid.setAttribute("muted",""); vid.setAttribute("playsinline",""); vid.setAttribute("webkit-playsinline",""); vid.setAttribute("autoplay","");
+  let vidOk = false;
+  const toSlides = ()=>{ vidActive=false; vid.classList.add("off"); hero.classList.remove("has-video"); bRep.hidden=false; startSlides(); };
+  const fallback = ()=>{ if(!vidOk) toSlides(); };
+  vid.addEventListener("playing",()=>{ vidOk=true; vidActive=true; vid.classList.remove("off"); hero.classList.add("has-photo","has-video"); bRep.hidden=true; });
+  vid.addEventListener("error",()=>{ vid.remove(); bSnd.remove(); toSlides(); bRep.remove(); },{once:true});
+  vid.addEventListener("ended",()=>{ vidOk=false; toSlides(); });
+  hero.classList.add("has-photo");
+  vid.src = CONFIG.video;
+  if(reduce){ fallback(); }
+  else { const pr = vid.play(); if(pr && pr.catch) pr.catch(fallback); setTimeout(fallback, 4000); }
+  bSnd.addEventListener("click",()=>{ vid.muted=!vid.muted; setVidLabels(); });
+  bRep.addEventListener("click",()=>{ vid.currentTime=0; vid.play().catch(()=>{}); });
+
+  /* ---------- sub pages ---------- */
+  const sub = document.getElementById("sub"), home = document.getElementById("top");
+  const crumbs = (items)=>`<nav class="crumbs">${items.map((it,i)=>i<items.length-1?`<a href="#${it[1]}">${it[0]}</a><span aria-hidden="true">/</span>`:`<span aria-current="page">${it[0]}</span>`).join("")}</nav>`;
+  const bookBar = ()=>`<div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-book" href="${CONFIG.book}" target="_blank" rel="noopener">${t("heroCta1")}</a><a class="btn btn-ghost" href="https://wa.me/${CONFIG.wa}?text=${encodeURIComponent(t("waText"))}" target="_blank" rel="noopener">${t("heroCta2")}</a></div>`;
+  const renderAcc = ()=>`<div class="wrap">${crumbs([[t("home"),"home"],[t("navAcc")]])}
+    <div class="sub-head"><p class="eyebrow">${t("navAcc")}</p><h1>${t("accH1")}</h1><p class="lede">${t("accSubLede")}</p></div>
+    <div class="types">${T.map(typeCard).join("")}</div><div style="margin-top:40px">${bookBar()}</div></div>`;
+  const renderType = (x)=>{ const L=t("types")[x.id]; return `<div class="wrap">${crumbs([[t("home"),"home"],[t("navAcc"),"accommodation"],[L.n]])}
+    <div class="sub-head"><p class="eyebrow">${L.count} · ${x.units.join(", ")}</p><h1>${L.n}</h1>
+    <div class="type-nav">${T.map(y=>`<a href="#${y.id}"${y.id===x.id?' aria-current="page"':''}>${t("types")[y.id].n}</a>`).join("")}</div></div>
+    <div class="type-hero">${slot(`img/rooms/${x.id}-cover.jpg`,L.n,x.bg,x.ic)}
+      <div class="type-info"><p class="lede">${L.short}</p><ul>${L.f.map(f=>`<li>${f}</li>`).join("")}</ul>
+      <p style="font-size:.9rem;color:var(--muted)">${t("priceNote")}</p>${bookBar()}</div></div>
+    ${x.units.map(u=>`<section class="unit" id="${slug(u)}" style="padding-bottom:0"><div class="unit-head"><h2>${u}</h2><span style="color:var(--muted);font-size:.92rem">${L.n}</span></div>${t("units")&&t("units")[u]?`<p class="lede" style="margin-bottom:20px">${t("units")[u]}</p>`:""}
+      <div class="rgal">${Array.from({length:x.n_img},(_,k)=>slot(`img/rooms/${slug(u)}-${k+1}.jpg`,`${u} · ${t("photo")} ${k+1}`,x.bg,k===0?x.ic:"","","button")).join("")}</div></section>`).join("")}
+    <div style="margin-top:56px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center"><a href="#accommodation" style="font-weight:700">${t("backAll")}</a>${bookBar()}</div></div>`; };
+
+  const renderPost = (i)=>{ const [k,ti,p,m]=t("posts")[i]; const slug=BLOG_SLUGS[i];
+    const own = DICT[LANG].articles && DICT[LANG].articles[slug];
+    const body = (own || DICT.en.articles[slug]).join("");
+    return `<div class="wrap">${crumbs([[t("home"),"home"],["Blog","blog"],[ti]])}
+    <article class="article"><p class="eyebrow">${k} · ${m}</p><h1>${ti}</h1><p class="lede">${p}</p>
+    <div class="art-hero" style="background:url(${BIMG[i]}) center/cover,${BG[i]}"></div>
+    ${!own && t("artNote") ? `<p class="ph-note">${t("artNote")}</p>` : ""}
+    <div class="art-body">${body}</div>
+    <div style="margin-top:40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center"><a href="#blog" style="font-weight:700">${t("backBlog")}</a>${bookBar()}</div></article></div>`; };
+  /* scroll to a section, leaving room for the sticky header (works in every browser) */
+  const goTo = (el)=>{ const hd=document.querySelector("header.nav"); const off=(hd?hd.getBoundingClientRect().height:70)+28;
+    const tgt = el.classList.contains("family") ? el : (el.querySelector(".eyebrow, h2") || el);
+    window.scrollTo({top: tgt.getBoundingClientRect().top + window.scrollY - (tgt===el && el.classList.contains("family") ? off-28 : off), behavior: reduce ? "auto" : "smooth"}); };
+  document.addEventListener("click",e=>{
+    const a=e.target.closest('a[href^="#"]'); if(!a) return; const id=a.getAttribute("href").slice(1);
+    const el=id && document.getElementById(id); if(!el || !home.contains(el) || home.hidden) return;
+    e.preventDefault(); goTo(el); try{ history.replaceState(null,"","#"+id); }catch(_){} });
+  const SUB = ["accommodation",...T.map(x=>x.id),...BLOG_SLUGS];
+  function route(scroll=true){
+    const h = location.hash.slice(1);
+    if(SUB.includes(h)){
+      const x = T.find(y=>y.id===h); const bi = BLOG_SLUGS.indexOf(h);
+      sub.innerHTML = bi>-1 ? renderPost(bi) : x ? renderType(x) : renderAcc();
+      hydrate(sub); home.hidden = true; sub.hidden = false; if(scroll) window.scrollTo(0,0);
+      document.title = (bi>-1 ? t("posts")[bi][1].replace(/&amp;/g,"&") : x ? t("types")[x.id].n : t("navAcc")) + " · Be My Guest Lodge";
+      if(!vid.paused) vid.pause();
+    } else {
+      const wasSub = !sub.hidden;
+      sub.hidden = true; home.hidden = false; document.title = HOME_TITLES[LANG] || HOME_TITLES.en;
+      if(vidActive && vid.paused && !reduce) vid.play().catch(()=>{});
+      const el = h && h!=="home" ? document.getElementById(h) : null;
+      if(!scroll) return;
+      if(el) goTo(el); else if(wasSub || h==="home") window.scrollTo(0,0);
+    }
+  }
+  addEventListener("hashchange",()=>route(true));
+
+  /* ---------- language ---------- */
+  const sel = document.getElementById("lang");
+  function setLang(l){
+    LANG = DICT[l] ? l : "en"; sel.value = LANG; document.documentElement.lang = LANG==="zh"?"zh-Hans":LANG;
+    try{ localStorage.setItem("bmg-lang",LANG); }catch(e){}
+    renderHome(); if(!sub.hidden || SUB.includes(location.hash.slice(1))) route(false);
+  }
+  sel.addEventListener("change",()=>setLang(sel.value));
+
+  /* ---------- lightbox ---------- */
+  const lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), lbCap = document.getElementById("lbCap");
+  let lbSet = [], lbI = 0;
+  const lbShow = (n)=>{ lbI=(n+lbSet.length)%lbSet.length; lbImg.src=lbSet[lbI].src; lbImg.alt=lbSet[lbI].alt; lbCap.textContent=lbSet[lbI].alt; };
+  sub.addEventListener("click",e=>{
+    const b = e.target.closest(".rgal .ph"); if(!b) return;
+    const own = b.querySelector("img.real"); if(!own) return;
+    lbSet = [...b.parentElement.querySelectorAll("img.real")]; lb.hidden=false; lbShow(lbSet.indexOf(own)); document.getElementById("lbX").focus();
+  });
+  document.getElementById("lbX").onclick = ()=>{ lb.hidden=true; };
+  document.getElementById("lbP").onclick = ()=>lbShow(lbI-1);
+  document.getElementById("lbN").onclick = ()=>lbShow(lbI+1);
+  lb.addEventListener("click",e=>{ if(e.target===lb) lb.hidden=true; });
+  addEventListener("keydown",e=>{ if(lb.hidden) return; if(e.key==="Escape") lb.hidden=true; if(e.key==="ArrowLeft") lbShow(lbI-1); if(e.key==="ArrowRight") lbShow(lbI+1); });
+
+  setLang(LANG);
+  route(true);
+})();
+</script>
+</body>
+</html>
