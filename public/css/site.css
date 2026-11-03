@@ -370,3 +370,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .event img{width:100%;height:auto;border-radius:10px;margin-top:12px;max-width:420px}
 .empty{color:var(--muted);font-size:1.05rem;max-width:60ch}
 @media (max-width:640px){.event{grid-template-columns:1fr}.event .when{justify-self:start;padding:8px 14px}}
+.srcq{display:grid;gap:6px;font-size:.88rem;margin-top:8px;max-width:420px}
+.srcq small{opacity:.8}
+.srcq select{font:inherit;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:#fff;color:#15303C}
+.srcq-thanks{font-weight:700}
+.art-book{margin:8px 0}

@@ -37,13 +37,19 @@ const TAGS = {
   food: ["Food", "Essen & Trinken"], events: ["Events", "Veranstaltungen"], seasons: ["Seasons", "Jahreszeiten"], nature: ["Nature", "Natur"],
   "lodge-news": ["Lodge news", "Neues aus der Lodge"],
 };
+Object.assign(TAGS, { "cape-town": ["Cape Town", "Kapstadt"], bloubergstrand: ["Bloubergstrand", "Bloubergstrand"], "table-view": ["Table View", "Table View"], "king-of-the-air": ["King of the Air", "King of the Air"] });
+// German or variant tag names are mapped to one language-independent tag, so EN and DE posts share the same filters
+const TAG_ALIASES = { kitesurfen: "kitesurfing", kiten: "kitesurfing", strand: "beaches", straende: "beaches", strände: "beaches", beach: "beaches", tafelberg: "table-mountain",
+  ausfluege: "day-trips", ausflüge: "day-trips", ausflug: "day-trips", westkueste: "west-coast", westküste: "west-coast", wein: "wine", familie: "family", essen: "food",
+  veranstaltungen: "events", event: "events", jahreszeiten: "seasons", natur: "nature", kapstadt: "cape-town", "lodge-neuigkeiten": "lodge-news", blouberg: "bloubergstrand" };
+const tagLabel = (t, lang) => (TAGS[t] ? TAGS[t][lang === "de" ? 1 : 0] : t.split("-").map((w, i) => (i === 0 ? w[0].toUpperCase() + w.slice(1) : w)).join(" "));
 const T = {
-  en: { all: "All", allPosts: "All articles →", whatsOn: "What's on in Cape Town →", whatsOnH1: "What's on in Cape Town & Blouberg", whatsOnTitle: "What's on: events in Cape Town & Bloubergstrand",
+  en: { book: "Book direct", walk: (n) => `${n} min walk from the lodge`, all: "All", allPosts: "All articles →", whatsOn: "What's on in Cape Town →", whatsOnH1: "What's on in Cape Town & Blouberg", whatsOnTitle: "What's on: events in Cape Town & Bloubergstrand",
     whatsOnLede: "Events, festivals and sport near Be My Guest Lodge in Table View, Bloubergstrand. Planning a visit? Book your stay directly with us.", whatsOnDesc: "Upcoming events, festivals and sport in Cape Town, Table View and Bloubergstrand, close to Be My Guest Lodge.",
     noEvents: "No events listed right now. Ask us on WhatsApp what's on during your stay.", more: "More info", read: (n) => `${n} min read`, ctaH: "Stay with us in Bloubergstrand",
     ctaP: "Book directly with Jan & Leona, or ask us anything on WhatsApp.", blogTitle: "Blog: stories and tips from Cape Town & Bloubergstrand", draft: "Draft", future: "Scheduled",
     preview: "Preview – not live. Drafts and scheduled posts are visible here only.", rss: "RSS feed", locale: "en-GB" },
-  de: { all: "Alle", allPosts: "Alle Artikel →", whatsOn: "Veranstaltungen in Kapstadt →", whatsOnH1: "Veranstaltungen in Kapstadt & Blouberg", whatsOnTitle: "Veranstaltungen in Kapstadt & Bloubergstrand",
+  de: { book: "Jetzt direkt buchen", walk: (n) => `${n} Min. zu Fuß von der Lodge`, all: "Alle", allPosts: "Alle Artikel →", whatsOn: "Veranstaltungen in Kapstadt →", whatsOnH1: "Veranstaltungen in Kapstadt & Blouberg", whatsOnTitle: "Veranstaltungen in Kapstadt & Bloubergstrand",
     whatsOnLede: "Events, Festivals und Sport rund um die Be My Guest Lodge in Table View, Bloubergstrand. Ihr plant einen Besuch? Bucht euren Aufenthalt direkt bei uns.", whatsOnDesc: "Aktuelle Veranstaltungen, Festivals und Sport in Kapstadt, Table View und Bloubergstrand, nahe der Be My Guest Lodge.",
     noEvents: "Gerade sind keine Termine eingetragen. Fragt uns per WhatsApp, was während eures Aufenthalts los ist.", more: "Mehr Infos", read: (n) => `${n} Min. Lesezeit`, ctaH: "Übernachtet bei uns in Bloubergstrand",
     ctaP: "Bucht direkt bei Jan & Leona oder fragt uns per WhatsApp.", blogTitle: "Blog: Geschichten und Tipps aus Kapstadt & Bloubergstrand", draft: "Entwurf", future: "Geplant",
@@ -53,6 +59,21 @@ const HOME_LINKS = {
   en: ["All articles →", "What's on in Cape Town →"], de: ["Alle Artikel →", "Veranstaltungen in Kapstadt →"], af: ["Alle artikels (Engels) →", "Wat gebeur in Kaapstad (Engels) →"],
   fr: ["Tous les articles (en anglais) →", "Agenda au Cap (en anglais) →"], es: ["Todos los artículos (en inglés) →", "Agenda en Ciudad del Cabo (en inglés) →"], zh: ["全部文章（英文）→", "开普敦活动（英文）→"],
 };
+
+const SRCQ = {
+  q: { en: "How did you hear about us?", de: "Wie habt ihr von uns erfahren?", af: "Hoe het julle van ons gehoor?", fr: "Comment nous avez-vous connus ?", es: "¿Cómo nos conociste?", zh: "您是如何了解到我们的？" },
+  opt: { en: "optional", de: "optional", af: "opsioneel", fr: "facultatif", es: "opcional", zh: "可选" },
+  thanks: { en: "Thank you!", de: "Danke!", af: "Dankie!", fr: "Merci !", es: "¡Gracias!", zh: "谢谢！" },
+  answers: [
+    ["google", { en: "Google" }], ["instagram", { en: "Instagram" }], ["facebook", { en: "Facebook" }], ["tiktok", { en: "TikTok" }],
+    ["portal", { en: "Booking.com, Airbnb or another portal", de: "Booking.com, Airbnb oder anderes Portal", af: "Booking.com, Airbnb of 'n ander portaal", fr: "Booking.com, Airbnb ou autre plateforme", es: "Booking.com, Airbnb u otro portal", zh: "Booking.com、Airbnb 或其他平台" }],
+    ["friends", { en: "Recommendation from friends", de: "Empfehlung von Freunden", af: "Aanbeveling van vriende", fr: "Recommandation d'amis", es: "Recomendación de amigos", zh: "朋友推荐" }],
+    ["partner", { en: "Partner (kite school, agent …)", de: "Partner (Kite-Schule, Makler …)", af: "Vennoot (kiteskool, agent …)", fr: "Partenaire (école de kite, agence …)", es: "Socio (escuela de kite, agencia …)", zh: "合作伙伴（风筝冲浪学校、中介等）" }],
+    ["returning", { en: "We've stayed here before", de: "Wir waren schon mal hier", af: "Ons was al voorheen hier", fr: "Nous sommes déjà venus", es: "Ya hemos estado aquí", zh: "以前入住过" }],
+    ["other", { en: "Other", de: "Sonstiges", af: "Ander", fr: "Autre", es: "Otro", zh: "其他" }],
+  ],
+};
+const sourceQuestion = (lang) => `<label class="srcq"><span>${esc(SRCQ.q[lang])} <small>(${SRCQ.opt[lang]})</small></span><select data-srcq><option value="">–</option>${SRCQ.answers.map(([k, L]) => `<option value="${k}">${esc(L[lang] || L.en)}</option>`).join("")}</select><span class="srcq-thanks" hidden>✓ ${SRCQ.thanks[lang]}</span></label>`;
 
 const errors = [], warnings = [];
 const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -66,6 +87,10 @@ const isDate = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s) && !isNaN(Date.parse(s + "T0
 const dstr = (v) => (v instanceof Date ? v.toISOString().slice(0, 10) : v == null ? "" : String(v).trim());
 const fmtDate = (d, lang) => new Date(d + "T12:00:00Z").toLocaleDateString(T[lang].locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 const wa = (lang) => `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(strip(DATA.ui[lang].waText))}`;
+
+/* image references: "images/x.jpg" → content/blog/images/x.jpg, "/images/blog/x.jpg" → public/images/blog/x.jpg */
+const imgPath = (ref) => (ref.startsWith("/") ? path.join(ROOT, "public", ref) : path.join(CONTENT, "blog", ref));
+const imgShow = (ref) => (ref.startsWith("/") ? `public${ref}` : `content/blog/${ref}`);
 
 /* ---------------- posts: read and validate ---------------- */
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -81,21 +106,21 @@ for (const lang of BLOG_LANGS) {
     const p = {
       file: rel, title: String(fm.title || "").trim(), slug: String(fm.slug || "").trim(), lang: String(fm.lang || "").trim(),
       translation_of: String(fm.translation_of || "").trim(), date: dstr(fm.date), description: String(fm.description || "").trim(),
-      tags: Array.isArray(fm.tags) ? fm.tags.map(String) : [], hero_image: String(fm.hero_image || "").trim(), hero_alt: String(fm.hero_alt || "").trim(),
+      tags: Array.isArray(fm.tags) ? [...new Set(fm.tags.map((t) => { t = String(t).trim().toLowerCase(); return TAG_ALIASES[t] || t; }))] : [], hero_image: String(fm.hero_image || "").trim(), hero_alt: String(fm.hero_alt || "").trim(),
       status: String(fm.status || "").trim(), body,
     };
     for (const k of ["title", "slug", "lang", "date", "description", "hero_image", "hero_alt", "status"]) if (!p[k]) err(`required field "${k}" is missing or empty`);
     if (p.slug && !SLUG.test(p.slug)) err(`slug "${p.slug}" may only contain lowercase letters, digits and single hyphens`);
-    if (p.slug && p.slug !== file.replace(/\.md$/, "")) err(`file name must equal the slug ("${p.slug}.md")`);
+    const base = file.replace(/\.md$/, "");
+    if (p.slug && base !== p.slug && base !== `${p.date}-${p.slug}`) err(`file name must be "${p.slug}.md" or "${p.date}-${p.slug}.md"`);
     if (p.lang && p.lang !== lang) err(`lang "${p.lang}" does not match the folder "${lang}"`);
     if (p.date && !isDate(p.date)) err(`date "${p.date}" must be YYYY-MM-DD`);
     if (p.status && !["draft", "approved"].includes(p.status)) err(`status must be "draft" or "approved"`);
     if (p.description.length > 160) err(`description has ${p.description.length} characters (max. 160)`);
     if (!p.tags.length) err(`at least one tag is required`);
-    for (const t of p.tags) if (!TAGS[t]) err(`unknown tag "${t}" (allowed: ${Object.keys(TAGS).join(", ")})`);
-    if (p.hero_image && !fs.existsSync(path.join(CONTENT, "blog", p.hero_image))) err(`hero_image "${p.hero_image}" not found in content/blog/`);
+    for (const t of p.tags) if (!SLUG.test(t)) err(`tag "${t}" may only contain lowercase letters, digits and hyphens`);
+    if (p.hero_image && !fs.existsSync(imgPath(p.hero_image))) err(`hero_image "${p.hero_image}" not found (${imgShow(p.hero_image)})`);
     if (/^#\s/m.test(body)) err(`no level-1 headings (# …) in the text – the title is the H1; use ## for sections`);
-    if (p.translation_of && lang === "en") err(`translation_of must be empty for English originals`);
     if (p.title.length > 90) warnings.push(`${rel}: title is long (${p.title.length} characters)`);
     posts.push(p);
   }
@@ -105,10 +130,8 @@ for (const lang of BLOG_LANGS) {
   for (const p of posts.filter((x) => x.lang === lang)) { if (seen.has(p.slug)) errors.push(`${p.file}: slug "${p.slug}" is used twice`); seen.add(p.slug); }
 }
 for (const p of posts.filter((x) => x.translation_of)) {
-  const en = posts.find((x) => x.lang === "en" && x.slug === p.translation_of);
-  if (!en) errors.push(`${p.file}: translation_of "${p.translation_of}" – no English post with this slug in content/blog/en/`);
-  const twins = posts.filter((x) => x.lang === p.lang && x.translation_of === p.translation_of);
-  if (twins.length > 1) errors.push(`${p.file}: more than one ${p.lang} translation of "${p.translation_of}"`);
+  const other = p.lang === "en" ? "de" : "en";
+  if (!posts.some((x) => x.lang === other && x.slug === p.translation_of)) warnings.push(`${p.file}: translation_of "${p.translation_of}" – no ${other.toUpperCase()} post with this slug yet (language switch links to the blog overview until it exists)`);
 }
 
 /* ---------------- events: read and validate ---------------- */
@@ -119,11 +142,15 @@ if (fs.existsSync(evFile)) {
   catch (e) { errors.push(`content/events/events.json: ${e.message}`); events = []; }
   events.forEach((e, i) => {
     const err = (m) => errors.push(`content/events/events.json, entry ${i + 1}: ${m}`);
-    for (const k of ["title_en", "date", "location"]) if (!e[k]) err(`required field "${k}" is missing`);
-    if (e.date && !isDate(e.date)) err(`date "${e.date}" must be YYYY-MM-DD`);
-    if (e.end_date && !isDate(e.end_date)) err(`end_date "${e.end_date}" must be YYYY-MM-DD`);
+    e.date = dstr(e.start || e.date); e.end_date = dstr(e.end || e.end_date); e.title_en = e.title_en || e.title_de;
+    if (!e.title_en) err(`required field "title_en" (or "title_de") is missing`);
+    if (!e.date) err(`required field "start" is missing`);
+    if (!e.location) err(`required field "location" is missing`);
+    if (e.date && !isDate(e.date)) err(`start "${e.date}" must be YYYY-MM-DD`);
+    if (e.end_date && !isDate(e.end_date)) err(`end "${e.end_date}" must be YYYY-MM-DD`);
+    if (e.walk_min != null && e.walk_min !== "" && !(Number(e.walk_min) > 0)) err(`walk_min must be a number of minutes`);
     if (e.url && !/^https?:\/\//.test(e.url)) err(`url must start with https://`);
-    if (e.image && !fs.existsSync(path.join(CONTENT, "blog", e.image))) err(`image "${e.image}" not found in content/blog/`);
+    if (e.image && !fs.existsSync(imgPath(e.image))) err(`image "${e.image}" not found (${imgShow(e.image)})`);
   });
 }
 
@@ -137,10 +164,7 @@ warnings.forEach((w) => console.warn("  ! " + w));
 const live = (p) => p.status === "approved" && p.date <= TODAY;
 const published = posts.filter((p) => PREVIEW || live(p)).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : a.slug.localeCompare(b.slug)));
 const byLang = (lang) => published.filter((p) => p.lang === lang);
-const counterpart = (p) => {
-  if (p.lang === "en") return published.find((x) => x.lang === "de" && x.translation_of === p.slug);
-  return p.translation_of ? published.find((x) => x.lang === "en" && x.slug === p.translation_of) : null;
-};
+const counterpart = (p) => published.find((x) => x.lang !== p.lang && ((p.translation_of && x.slug === p.translation_of) || x.translation_of === p.slug)) || null;
 const upcoming = events.filter((e) => (e.end_date || e.date) >= TODAY).sort((a, b) => a.date.localeCompare(b.date));
 
 /* ---------------- output: static files ---------------- */
@@ -151,13 +175,13 @@ copyDir(path.join(ROOT, "public"), OUT);
 const imgCache = new Map();
 async function image(rel) {
   if (imgCache.has(rel)) return imgCache.get(rel);
-  const src = path.join(CONTENT, "blog", rel);
+  const src = imgPath(rel);
   const name = path.basename(rel).replace(/\.[^.]+$/, "").toLowerCase().replace(/[^a-z0-9-]+/g, "-");
-  if (fs.statSync(src).size > 5 * 1024 * 1024) warnings.push(`content/blog/${rel}: larger than 5 MB`);
+  if (fs.statSync(src).size > 5 * 1024 * 1024) warnings.push(`${imgShow(rel)}: larger than 5 MB`);
   mkdirp(path.join(OUT, "img/blog"));
   const meta = await sharp(src).rotate().metadata();
   const w0 = meta.autoOrient ? meta.autoOrient.width : meta.width, h0 = meta.autoOrient ? meta.autoOrient.height : meta.height;
-  if (w0 < 1200) warnings.push(`content/blog/${rel}: only ${w0}px wide (recommended: at least 1600px)`);
+  if (w0 < 1200) warnings.push(`${imgShow(rel)}: only ${w0}px wide (recommended: at least 1600px)`);
   const out = { w: {}, ratio: h0 / w0 };
   for (const w of [800, 1600]) {
     const ww = Math.min(w, w0);
@@ -174,8 +198,8 @@ const imgTag = (im, P, alt, cls, sizes, eager) =>
 
 /* ---------------- markdown ---------------- */
 async function renderBody(p, P) {
-  const refs = [...p.body.matchAll(/!\[[^\]]*\]\((images\/[^)\s]+)/g)].map((m) => m[1]);
-  for (const r of refs) { if (!fs.existsSync(path.join(CONTENT, "blog", r))) { errors.push(`${p.file}: image "${r}" not found`); continue; } await image(r); }
+  const refs = [...p.body.matchAll(/!\[[^\]]*\]\(((?:\/images\/|images\/)[^)\s]+)/g)].map((m) => m[1]);
+  for (const r of refs) { if (!fs.existsSync(imgPath(r))) { errors.push(`${p.file}: image "${r}" not found`); continue; } await image(r); }
   const md = new Marked({ gfm: true });
   md.use({ renderer: {
     image({ href, title, text }) {
@@ -190,7 +214,11 @@ async function renderBody(p, P) {
     },
     html({ text }) { return ""; }, // raw HTML from content files is not allowed
   } });
-  return md.parse(p.body);
+  // placeholder **[Jetzt direkt buchen →]** / **[Book direct →]** → booking button
+  const body = p.body.replace(/\*\*\[\s*(Jetzt direkt buchen|Direkt buchen|Book direct)\s*→?\s*\]\*\*/g, "@@BOOK@@");
+  return md.parse(body)
+    .replace(/<p>@@BOOK@@<\/p>/g, `<p class="art-book">${bookBtn(p.lang, "blog-inline")}</p>`)
+    .replace(/@@BOOK@@/g, bookBtn(p.lang, "blog-inline"));
 }
 const readMin = (p) => Math.max(1, Math.ceil(p.body.split(/\s+/).filter(Boolean).length / 200));
 
@@ -215,8 +243,9 @@ const og = ({ type, title, desc, url, img, lang }) => [
 const ld = (graph) => `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c")}</script>`;
 const crumbsHtml = (items) => `<nav class="crumbs" aria-label="Breadcrumb">${items.map(([n, u], i) => (i < items.length - 1 ? `<a href="${u}">${esc(n)}</a><span aria-hidden="true">/</span>` : `<span aria-current="page">${esc(n)}</span>`)).join("")}</nav>`;
 const crumbsLd = (items) => ({ "@type": "BreadcrumbList", itemListElement: items.map(([n, u], i) => ({ "@type": "ListItem", position: i + 1, name: n, item: u })) });
-const rssLinks = (P) => BLOG_LANGS.map((l) => `<link rel="alternate" type="application/rss+xml" hreflang="${l}" title="Be My Guest Lodge Blog (${l.toUpperCase()})" href="${BASE}/${l}/blog/feed.xml">`).join("\n");
-const bookBar = (lang) => `<div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-book" href="${CFG.book}" target="_blank" rel="noopener">${DATA.ui[lang].navBook}</a><a class="btn btn-ghost" href="${wa(lang)}" target="_blank" rel="noopener">${DATA.ui[lang].heroCta2}</a></div>`;
+const rssLinks = (P) => BLOG_LANGS.map((l) => `<link rel="alternate" type="application/rss+xml" hreflang="${l}" title="Be My Guest Lodge Blog (${l.toUpperCase()})" href="${BASE}/${l}/blog/rss.xml">`).join("\n");
+const bookBtn = (lang, pos) => `<a class="btn btn-book" href="${esc(CFG.book)}" data-umami-event="book_click" data-umami-event-position="${pos}">${T[lang].book}</a>`;
+const bookBar = (lang, pos) => `<div style="display:flex;gap:12px;flex-wrap:wrap">${bookBtn(lang, pos)}<a class="btn btn-ghost" href="${wa(lang)}" target="_blank" rel="noopener">${DATA.ui[lang].heroCta2}</a></div>`;
 const badge = (p, lang) => (p.status !== "approved" ? `<span class="badge-draft">${T[lang].draft}</span>` : p.date > TODAY ? `<span class="badge-draft">${T[lang].future} ${p.date}</span>` : "");
 
 /* ---------------- post cards ---------------- */
@@ -224,7 +253,7 @@ async function card(p, P, feature, uiLang) {
   const im = await image(p.hero_image);
   const lang = p.lang;
   const attr = uiLang !== lang ? ` lang="${HREFLANG[lang]}"` : "";
-  return `<a class="post${feature ? " feature" : ""}" href="${P}${lang}/blog/${p.slug}/${S}" data-tags="${p.tags.join(" ")}"${attr}>${imgTag(im, P, p.hero_alt, "art", feature ? "(max-width: 900px) 100vw, 640px" : "(max-width: 900px) 100vw, 420px", false)}<div class="txt"><span class="kicker">${esc(TAGS[p.tags[0]][lang === "de" ? 1 : 0])}</span>${badge(p, lang)}<h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><span class="read">${T[lang].read(readMin(p))} · ${DATA.ui[lang].readMore}</span></div></a>`;
+  return `<a class="post${feature ? " feature" : ""}" href="${P}${lang}/blog/${p.slug}/${S}" data-tags="${p.tags.join(" ")}"${attr}>${imgTag(im, P, p.hero_alt, "art", feature ? "(max-width: 900px) 100vw, 640px" : "(max-width: 900px) 100vw, 420px", false)}<div class="txt"><span class="kicker">${esc(tagLabel(p.tags[0], lang))}</span>${badge(p, lang)}<h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><span class="read">${T[lang].read(readMin(p))} · ${DATA.ui[lang].readMore}</span></div></a>`;
 }
 
 const sitemap = [];
@@ -241,21 +270,21 @@ for (const p of published) {
   const pairs = [[lang, url]]; if (other) pairs.push([other.lang, abs(other.lang, `blog/${other.slug}/`)]);
   const main = `<div class="wrap">${crumbsHtml(items)}
 <article class="article">
-<p class="eyebrow">${esc(p.tags.map((t) => TAGS[t][lang === "de" ? 1 : 0]).slice(0, 2).join(" · "))} · ${T[lang].read(readMin(p))}</p>${badge(p, lang)}
+<p class="eyebrow">${esc(p.tags.map((t) => tagLabel(t, lang)).slice(0, 2).join(" · "))} · ${T[lang].read(readMin(p))}</p>${badge(p, lang)}
 <h1>${esc(p.title)}</h1>
 <p class="lede">${esc(p.description)}</p>
 <p class="art-meta"><time datetime="${p.date}">${fmtDate(p.date, lang)}</time> · Jan &amp; Leona, Be My Guest Lodge</p>
 ${imgTag(im, P, p.hero_alt, "art-hero", "(max-width: 800px) 100vw, 760px", true)}
 <div class="art-body">${html}</div>
-<ul class="tags">${p.tags.map((t) => `<li><a href="${P}${lang}/blog/${S}#${t}">${esc(TAGS[t][lang === "de" ? 1 : 0])}</a></li>`).join("")}</ul>
-<aside class="art-cta"><h2>${T[lang].ctaH}</h2><p>${T[lang].ctaP}</p>${bookBar(lang)}</aside>
-<div class="art-foot"><a href="${P}${lang}/blog/${S}" style="font-weight:700">${DATA.ui[lang].backBlog}</a><a href="${P}${lang}/whats-on/${S}" style="font-weight:700">${T[lang].whatsOn}</a></div>
+<ul class="tags">${p.tags.map((t) => `<li><a href="${P}${lang}/blog/${S}#${t}">${esc(tagLabel(t, lang))}</a></li>`).join("")}</ul>
+<aside class="art-cta"><h2>${T[lang].ctaH}</h2><p>${T[lang].ctaP}</p>${bookBar(lang, "blog-footer")}</aside>
+<div class="art-foot"><a href="${P}${lang}/blog/${S}" style="font-weight:700">${DATA.ui[lang].backBlog}</a><a href="${P}${lang}/events/${S}" style="font-weight:700">${T[lang].whatsOn}</a></div>
 </article></div>`;
   const head = [`<link rel="canonical" href="${url}">`, alternates(pairs, enUrl), og({ type: "article", title: p.title, desc: p.description, url, img: `${BASE}/${im.og}`, lang }),
     `<meta property="article:published_time" content="${p.date}">`, rssLinks(P),
     ld([crumbsLd(items.map(([n, u], i) => [n, i === 0 ? abs(lang, "") : i === 1 ? abs(lang, "blog/") : url])),
       { "@type": "BlogPosting", headline: p.title, description: p.description, inLanguage: HREFLANG[lang], url, mainEntityOfPage: url, image: [`${BASE}/${im.og}`, `${BASE}/${im.w[1600].src}`],
-        datePublished: p.date, dateModified: p.date, keywords: p.tags.map((t) => TAGS[t][0]).join(", "),
+        datePublished: p.date, dateModified: p.date, keywords: p.tags.map((t) => tagLabel(t, "en")).join(", "),
         author: { "@type": "Person", name: "Jan & Leona", worksFor: lodgeRef }, publisher: { "@type": "Organization", name: "Be My Guest Lodge", url: BASE, logo: `${BASE}/img/logo.png` },
         about: lodgeRef }])].join("\n");
   const targets = langTargetsFor(P, lang === "en" ? `blog/${p.slug}/` : other ? `blog/${other.slug}/` : "blog/", lang === "de" ? `blog/${p.slug}/` : other ? `blog/${other.slug}/` : "blog/");
@@ -266,15 +295,17 @@ ${imgTag(im, P, p.hero_alt, "art-hero", "(max-width: 800px) 100vw, 760px", true)
 /* ---------------- blog index ---------------- */
 for (const lang of BLOG_LANGS) {
   const P = "../../", list = byLang(lang), url = abs(lang, "blog/");
-  const used = Object.keys(TAGS).filter((t) => list.some((p) => p.tags.includes(t)));
+  const freq = {}; list.forEach((p) => p.tags.forEach((t) => (freq[t] = (freq[t] || 0) + 1)));
+  let used = Object.keys(freq).sort((a, b) => freq[b] - freq[a] || a.localeCompare(b));
+  used = used.slice(0, 10); // the 10 most used tags
   const cards = (await Promise.all(list.map((p) => card(p, P, false, lang)))).join("");
   const items = [[DATA.ui[lang].home, `${P}${lang}/${S}`], ["Blog", url]];
   const main = `<div class="wrap">${crumbsHtml(items)}
 <div class="sub-head"><p class="eyebrow">${DATA.ui[lang].blogEyebrow}</p><h1>${DATA.ui[lang].blogH2}</h1><p class="lede">${DATA.ui[lang].blogLede}</p></div>
-${used.length > 1 ? `<div class="filters" id="tagFilters" role="group"><button type="button" aria-pressed="true" data-tag="all">${T[lang].all}</button>${used.map((t) => `<button type="button" aria-pressed="false" data-tag="${t}">${esc(TAGS[t][lang === "de" ? 1 : 0])}</button>`).join("")}</div>` : ""}
+${used.length > 1 ? `<div class="filters" id="tagFilters" role="group"><button type="button" aria-pressed="true" data-tag="all">${T[lang].all}</button>${used.map((t) => `<button type="button" aria-pressed="false" data-tag="${t}">${esc(tagLabel(t, lang))}</button>`).join("")}</div>` : ""}
 <div class="blog-list">${cards}</div>
-<p class="blog-links"><a href="${P}${lang}/whats-on/${S}">${T[lang].whatsOn}</a><a href="${BASE}/${lang}/blog/feed.xml">${T[lang].rss}</a></p>
-<div style="margin-top:40px">${bookBar(lang)}</div></div>`;
+<p class="blog-links"><a href="${P}${lang}/events/${S}">${T[lang].whatsOn}</a><a href="${BASE}/${lang}/blog/rss.xml">${T[lang].rss}</a></p>
+<div style="margin-top:40px">${bookBar(lang, "blog-index")}</div></div>`;
   const pairs = BLOG_LANGS.map((l) => [l, abs(l, "blog/")]);
   const head = [`<link rel="canonical" href="${url}">`, alternates(pairs, abs("en", "blog/")), og({ type: "website", title: T[lang].blogTitle, desc: strip(DATA.ui[lang].blogLede), url, img: `${BASE}/img/og-image.jpg`, lang }), rssLinks(P),
     ld([crumbsLd([[DATA.ui[lang].home, abs(lang, "")], ["Blog", url]]),
@@ -286,7 +317,7 @@ ${used.length > 1 ? `<div class="filters" id="tagFilters" role="group"><button t
 
 /* ---------------- what's on ---------------- */
 for (const lang of BLOG_LANGS) {
-  const P = "../../", url = abs(lang, "whats-on/");
+  const P = "../../", url = abs(lang, "events/");
   const evs = await Promise.all(upcoming.map(async (e) => {
     const d = new Date(e.date + "T12:00:00Z");
     const day = d.toLocaleDateString(T[lang].locale, { day: "numeric", timeZone: "UTC" });
@@ -294,23 +325,23 @@ for (const lang of BLOG_LANGS) {
     const range = e.end_date && e.end_date !== e.date ? `${fmtDate(e.date, lang)} – ${fmtDate(e.end_date, lang)}` : fmtDate(e.date, lang);
     const title = (lang === "de" && e.title_de) || e.title_en, desc = (lang === "de" && e.description_de) || e.description_en || "";
     const im = e.image ? await image(e.image) : null;
-    return `<li class="event"><time class="when" datetime="${e.date}"><b>${day}</b><span>${esc(mon)}</span></time><div><h2>${esc(title)}</h2><p class="where">${esc(range)} · ${esc(e.location)}</p>${desc ? `<p>${esc(desc)}</p>` : ""}${e.url ? `<p><a href="${esc(e.url)}" target="_blank" rel="noopener">${T[lang].more} →</a></p>` : ""}${im ? imgTag(im, P, title, "", "420px", false) : ""}</div></li>`;
+    return `<li class="event"><time class="when" datetime="${e.date}"><b>${day}</b><span>${esc(mon)}</span></time><div><h2>${esc(title)}</h2><p class="where">${esc(range)} · ${esc(e.location)}${Number(e.walk_min) > 0 ? ` · ${T[lang].walk(Number(e.walk_min))}` : ""}</p>${desc ? `<p>${esc(desc)}</p>` : ""}${e.url ? `<p><a href="${esc(e.url)}" target="_blank" rel="noopener">${T[lang].more} →</a></p>` : ""}${im ? imgTag(im, P, title, "", "420px", false) : ""}</div></li>`;
   }));
   const items = [[DATA.ui[lang].home, `${P}${lang}/${S}`], [strip(T[lang].whatsOnH1), url]];
   const main = `<div class="wrap">${crumbsHtml(items)}
 <div class="sub-head"><p class="eyebrow">What's on</p><h1>${esc(T[lang].whatsOnH1)}</h1><p class="lede">${esc(T[lang].whatsOnLede)}</p></div>
 ${evs.length ? `<ol class="events">${evs.join("")}</ol>` : `<p class="empty">${esc(T[lang].noEvents)}</p>`}
 <p class="blog-links"><a href="${P}${lang}/blog/${S}">${T[lang].allPosts}</a></p>
-<div style="margin-top:40px">${bookBar(lang)}</div></div>`;
-  const pairs = BLOG_LANGS.map((l) => [l, abs(l, "whats-on/")]);
+<div style="margin-top:40px">${bookBar(lang, "events-page")}</div></div>`;
+  const pairs = BLOG_LANGS.map((l) => [l, abs(l, "events/")]);
   const evLd = upcoming.map((e) => ({ "@type": "Event", name: (lang === "de" && e.title_de) || e.title_en, startDate: e.date, ...(e.end_date ? { endDate: e.end_date } : {}),
     eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: { "@type": "Place", name: e.location, address: e.location }, ...(e.url ? { url: e.url } : {}),
     ...(((lang === "de" && e.description_de) || e.description_en) ? { description: (lang === "de" && e.description_de) || e.description_en } : {}) }));
-  const head = [`<link rel="canonical" href="${url}">`, alternates(pairs, abs("en", "whats-on/")), og({ type: "website", title: T[lang].whatsOnTitle, desc: T[lang].whatsOnDesc, url, img: `${BASE}/img/og-image.jpg`, lang }),
+  const head = [`<link rel="canonical" href="${url}">`, alternates(pairs, abs("en", "events/")), og({ type: "website", title: T[lang].whatsOnTitle, desc: T[lang].whatsOnDesc, url, img: `${BASE}/img/og-image.jpg`, lang }),
     ld([crumbsLd([[DATA.ui[lang].home, abs(lang, "")], [T[lang].whatsOnH1, url]]), ...evLd])].join("\n");
-  write(`${lang}/whats-on/index.html`, page({ lang, depth: 2, title: `${T[lang].whatsOnTitle} | Be My Guest Lodge`, desc: T[lang].whatsOnDesc, head, main, langTargets: langTargetsFor(P, "whats-on/", "whats-on/") }));
-  sitemap.push({ loc: url, alts: pairs, xdef: abs("en", "whats-on/") });
+  write(`${lang}/events/index.html`, page({ lang, depth: 2, title: `${T[lang].whatsOnTitle} | Be My Guest Lodge`, desc: T[lang].whatsOnDesc, head, main, langTargets: langTargetsFor(P, "events/", "events/") }));
+  sitemap.push({ loc: url, alts: pairs, xdef: abs("en", "events/") });
 }
 
 /* ---------------- core pages (with latest posts on the home page) ---------------- */
@@ -323,13 +354,83 @@ for (const lang of LANGS) {
       const latest = byLang(bl).slice(0, 3);
       const cards = (await Promise.all(latest.map((p, i) => card(p, P, i === 0, lang)))).join("");
       h = h.replace("<!--LATEST_POSTS-->", () => cards)
-        .replace("<!--BLOG_LINKS-->", () => `<p class="blog-links"><a href="${P}${bl}/blog/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_LINKS[lang][0]}</a><a href="${P}${bl}/whats-on/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_LINKS[lang][1]}</a></p>`);
+        .replace("<!--BLOG_LINKS-->", () => `<p class="blog-links"><a href="${P}${bl}/blog/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_LINKS[lang][0]}</a><a href="${P}${bl}/events/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_LINKS[lang][1]}</a></p>`);
     }
+    h = h.replace("<!--SOURCE_QUESTION-->", () => sourceQuestion(lang));
     h = h.replace("<!--ROBOTS-->", robots(false)).replace("<!--HEAD-->", BLOG_LANGS.includes(lang) && pth === "" ? rssLinks(P) : "").replace(/__S__/g, S);
     if (PREVIEW) h = h.replace(/(<body[^>]*>)/, `$1<div class="preview-bar">${esc((T[lang] || T.en).preview)}</div>`);
     write(`${lang}/${pth}index.html`, h);
     sitemap.push({ loc: abs(lang, pth), alts: LANGS.map((l) => [l, abs(l, pth)]), xdef: pth === "" ? `${BASE}/` : abs("en", pth) });
   }
+}
+
+/* ---------------- link-in-bio page /hello/ ---------------- */
+{
+  const P = "../";
+  const H = {
+    en: { book: "Book direct", wa: "WhatsApp us", latest: "Latest from our blog", events: "What's on in Blouberg →", site: "Visit our website →",
+      tiles: [["Rooms", "5 comfort rooms, each with private entrance", `${P}en/accommodation/${S}`], ["Family Cottage", "Up to 6 guests · own kitchen", `${P}en/accommodation/family-cottage/${S}`],
+        ["Whole lodge", "Exclusive for groups of up to 16", `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent("Hello Be My Guest Lodge, we would like to book the whole lodge for a group.")}`]] },
+    de: { book: "Direkt buchen", wa: "WhatsApp schreiben", latest: "Neu im Blog", events: "Was ist los in Blouberg →", site: "Zur Website →",
+      tiles: [["Zimmer", "5 Comfort-Zimmer mit eigenem Eingang", `${P}de/accommodation/${S}`], ["Family Cottage", "Bis 6 Personen · eigene Küche", `${P}de/accommodation/family-cottage/${S}`],
+        ["Ganze Lodge", "Exklusiv für Gruppen bis 16 Personen", `https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent("Hallo Be My Guest Lodge, wir möchten die ganze Lodge für eine Gruppe buchen.")}`]] },
+  };
+  const IMG = ["img/rooms/comfort-double-cover.webp", "img/rooms/family-cottage-cover.webp", "img/house/1.webp"];
+  const block = async (lang) => {
+    const L = H[lang];
+    const posts = await Promise.all(byLang(lang).slice(0, 3).map(async (p) => { const im = await image(p.hero_image);
+      return `<a class="hp" href="${P}${lang}/blog/${p.slug}/${S}"><img src="${P}${im.w[800].src}" width="${im.w[800].width}" height="${im.w[800].height}" alt="${esc(p.hero_alt)}" loading="lazy"><span><b>${esc(p.title)}</b><small>${T[lang].read(readMin(p))}</small></span></a>`; }));
+    return `<section data-l="${lang}" lang="${lang}"${lang === "de" ? " hidden" : ""}>
+<a class="b book" href="${esc(CFG.book)}" data-umami-event="book_click" data-umami-event-position="hello-top">${L.book}</a>
+<a class="b wa" href="${wa(lang)}" target="_blank" rel="noopener">${L.wa}</a>
+<div class="tiles">${L.tiles.map(([t, d, u], i) => `<a class="tile" href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}><img src="${P}${IMG[i]}" alt="" loading="lazy"><span><b>${t}</b><small>${d}</small></span></a>`).join("")}</div>
+${posts.length ? `<h2>${L.latest}</h2><div class="posts">${posts.join("")}</div>` : ""}
+<a class="b ghost" href="${P}${lang}/events/${S}">${L.events}</a>
+<a class="b ghost" href="${P}${lang}/${S}">${L.site}</a>
+${sourceQuestion(lang)}
+</section>`;
+  };
+  const html = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Be My Guest Lodge – Home away from home | Bloubergstrand, Cape Town</title>
+<meta name="description" content="Book direct, chat on WhatsApp and discover our rooms, the Family Cottage and tips from Bloubergstrand – Be My Guest Lodge, Table View, Cape Town.">
+${robots(false)}
+<link rel="canonical" href="${BASE}/hello/">
+<link rel="icon" type="image/png" href="${P}img/favicon.png">
+<meta property="og:title" content="Be My Guest Lodge – Home away from home"><meta property="og:image" content="${BASE}/img/og-image.jpg"><meta property="og:url" content="${BASE}/hello/">
+<style>
+*{box-sizing:border-box;margin:0}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#F3F5F2;color:#15303C;line-height:1.4}
+main{max-width:480px;margin:0 auto;padding:22px 18px 40px;display:grid;gap:14px}
+.top{display:flex;align-items:center;gap:12px}.top img{border-radius:50%}.top h1{font:600 1.35rem Georgia,serif}.top p{color:#5b6b72;font-size:.95rem}
+.sw{margin-left:auto;display:flex;border:1px solid #cfd8d6;border-radius:999px;overflow:hidden}.sw button{border:0;background:none;padding:6px 11px;font:600 .8rem system-ui;color:#15303C;cursor:pointer}.sw button[aria-pressed=true]{background:#15303C;color:#fff}
+section{display:grid;gap:12px}section[hidden]{display:none}
+.b{display:block;text-align:center;padding:15px;border-radius:14px;font-weight:700;text-decoration:none;font-size:1.05rem}
+.book{background:#C23F64;color:#fff;font-size:1.2rem;padding:18px}.wa{background:#1F8F55;color:#fff}.ghost{border:1.5px solid #15303C;color:#15303C}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.tile{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:3/4;color:#fff;text-decoration:none;background:#3D6A80}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.tile span{position:absolute;inset:auto 0 0;padding:8px;background:linear-gradient(transparent,rgba(0,0,0,.75));display:grid}
+.tile b{font-size:.9rem}.tile small{font-size:.7rem;opacity:.9}
+h2{font:600 1.05rem Georgia,serif;margin-top:6px}.posts{display:grid;gap:8px}
+.hp{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #dde4e2;border-radius:12px;overflow:hidden;color:inherit;text-decoration:none}
+.hp img{width:88px;height:66px;object-fit:cover;flex:none}.hp span{display:grid;padding:6px 8px 6px 0}.hp b{font-size:.92rem}.hp small{color:#5b6b72}
+.srcq{display:grid;gap:6px;font-size:.85rem;color:#5b6b72;margin-top:6px}.srcq select{font:inherit;padding:9px;border-radius:10px;border:1px solid #cfd8d6;background:#fff;color:#15303C}
+footer{text-align:center;color:#5b6b72;font-size:.8rem;margin-top:10px}footer a{color:inherit}
+</style>
+<script defer src="${P}js/site.js"></script>
+</head><body><main>
+<div class="top"><img src="${P}img/logo-180.png" width="56" height="56" alt="Be My Guest Lodge Logo"><div><h1>Be My Guest Lodge</h1><p>Home away from home</p></div>
+<div class="sw" role="group" aria-label="Language"><button type="button" data-sw="en" aria-pressed="true">EN</button><button type="button" data-sw="de" aria-pressed="false">DE</button></div></div>
+${await block("en")}
+${await block("de")}
+<footer>51 Porterfield Rd, Bloubergrant, Table View, Cape Town · <a href="mailto:${CFG.email}">${CFG.email}</a></footer>
+</main>
+<script>(function(){var q=new URLSearchParams(location.search).get("lang"),l=q||((navigator.language||"").slice(0,2)==="de"?"de":"en");
+function set(x){document.querySelectorAll("section[data-l]").forEach(function(s){s.hidden=s.getAttribute("data-l")!==x});document.documentElement.lang=x;
+document.querySelectorAll("[data-sw]").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-sw")===x)})}
+document.querySelectorAll("[data-sw]").forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-sw"))})});set(l==="de"?"de":"en");})();</script>
+</body></html>
+`;
+  write("hello/index.html", PREVIEW ? html.replace("<main>", `<main><div style="background:#C23F64;color:#fff;padding:6px;border-radius:8px;text-align:center;font-size:.8rem">${T.en.preview}</div>`) : html);
+  sitemap.push({ loc: `${BASE}/hello/`, alts: [] });
 }
 
 /* ---------------- RSS feeds ---------------- */
@@ -346,25 +447,26 @@ for (const lang of BLOG_LANGS) {
 <guid isPermaLink="true">${url}</guid>
 <pubDate>${new Date(p.date + "T08:00:00+02:00").toUTCString()}</pubDate>
 <description>${esc(p.description)}</description>
-${p.tags.map((t) => `<category>${esc(TAGS[t][lang === "de" ? 1 : 0])}</category>`).join("")}
+${p.tags.map((t) => `<category>${esc(tagLabel(t, lang))}</category>`).join("")}
 <media:content url="${BASE}/${im.og}" medium="image" type="image/jpeg" width="1200" height="630"><media:description>${esc(p.hero_alt)}</media:description></media:content>
 <content:encoded>${cdata(`<p><img src="${BASE}/${im.w[1600].src}" alt="${esc(p.hero_alt)}"></p>` + body)}</content:encoded>
 </item>
 `;
   }
-  write(`${lang}/blog/feed.xml`, `<?xml version="1.0" encoding="UTF-8"?>
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
 <channel>
 <title>${esc(T[lang].blogTitle)} – Be My Guest Lodge</title>
 <link>${abs(lang, "blog/")}</link>
-<atom:link href="${abs(lang, "blog/feed.xml")}" rel="self" type="application/rss+xml"/>
+<atom:link href="${abs(lang, "blog/rss.xml")}" rel="self" type="application/rss+xml"/>
 <description>${esc(strip(DATA.ui[lang].blogLede))}</description>
 <language>${lang === "de" ? "de-DE" : "en-ZA"}</language>
 <image><url>${BASE}/img/logo-180.png</url><title>Be My Guest Lodge</title><link>${abs(lang, "")}</link></image>
 ${list[0] ? `<lastBuildDate>${new Date(list[0].date + "T08:00:00+02:00").toUTCString()}</lastBuildDate>` : ""}
 ${items}</channel>
 </rss>
-`);
+`;
+  write(`${lang}/blog/rss.xml`, feed); write(`${lang}/blog/feed.xml`, feed);
 }
 
 /* ---------------- sitemap ---------------- */
@@ -408,7 +510,10 @@ write("llms.txt", `# Be My Guest Lodge
 - Booking (direct): ${CFG.book}
 - WhatsApp: +27 72 838 4490 · Email: ${CFG.email}
 - Check-in 14:00–19:00, check-out until 10:00; late check-in on request
-- Distances (approx. by car): beach 5 min, Kite Beach/Big Bay 10 min, V&A Waterfront 25 min, Durbanville wine estates 25 min, Cape Town International Airport 20 min
+- Distances: beach approx. 5 min walk; Kite Beach a good 10 min walk (3–4 min by car); by car: V&A Waterfront and CTICC approx. 25 min, Durbanville wine estates approx. 25 min, Cape Town International Airport approx. 20 min
+- Whole lodge (up to 16 guests) can be booked exclusively for groups; discount for longer stays on request
+- Pets welcome in the Family Cottage (more than one pet on request)
+- B&B (with breakfast) or self-catering
 - In every room: private bathroom, private entrance and patio, air conditioning (cooling and heating), ceiling fan, free Wi-Fi, flat-screen TV with DStv, mini fridge, microwave, tea and coffee
 - Shared: swimming pool, garden, two braais (barbecues), secure off-street parking
 - Services: taxi service, laundry, baby cot and high chair on request, day-trip planning, whale watching and shark cage diving bookings
@@ -420,8 +525,9 @@ ${Object.entries(E.types).map(([id, x]) => `- [${x.n}](${BASE}/en/accommodation/
 
 ## Guides (blog)
 ${byLang("en").filter(live).map((p) => `- [${p.title}](${abs("en", `blog/${p.slug}/`)}): ${p.description}`).join("\n")}
-- All articles: ${BASE}/en/blog/ · RSS: ${BASE}/en/blog/feed.xml
-- Events near the lodge: ${BASE}/en/whats-on/
+- All articles: ${BASE}/en/blog/ · RSS: ${BASE}/en/blog/rss.xml
+- Events near the lodge: ${BASE}/en/events/
+- Quick links (book, WhatsApp, rooms, latest posts): ${BASE}/hello/
 
 ## FAQ
 ${E.faq.map(([q, a]) => `- **${q}** ${a}`).join("\n")}
@@ -460,6 +566,31 @@ write("_headers", `/*
   Cache-Control: public, max-age=86400
 `);
 if (fs.existsSync(path.join(ROOT, "redirects.txt"))) fs.copyFileSync(path.join(ROOT, "redirects.txt"), path.join(OUT, "_redirects"));
+
+/* ---------------- final pass: booking link, click tracking, Umami ---------------- */
+{
+  const BOOK = esc(CFG.book);
+  const walkHtml = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walkHtml(path.join(d, e.name)) : e.name.endsWith(".html") ? [path.join(d, e.name)] : []));
+  for (const f of walkHtml(OUT)) {
+    const rel = path.relative(OUT, f).split(path.sep).join("/");
+    const pos = rel.startsWith("hello/") ? "hello-top" : /\/blog\/[^/]+\/index\.html$/.test(rel) ? "blog-footer" : /\/blog\/index\.html$/.test(rel) ? "blog-index"
+      : /\/events\//.test(rel) ? "events-page" : /\/accommodation\//.test(rel) ? "room-page" : "home";
+    let html = fs.readFileSync(f, "utf8").replace(/https:\/\/book\.nightsbridge\.com\/28083(?:\?[^"\s<]*)?/g, BOOK);
+    const headerEnd = html.indexOf("</header>");
+    html = html.replace(/<a\b[^>]*>/g, (tag, offset) => {
+      const href = (tag.match(/\shref="([^"]*)"/) || [])[1] || "";
+      let t = tag;
+      const add = (ev, extra = "") => { if (!/data-umami-event=/.test(t)) t = t.replace(/^<a\b/, `<a data-umami-event="${ev}"${extra}`); };
+      if (href === BOOK) { t = t.replace(/\s(?:target="_blank"|rel="noopener")/g, ""); add("book_click", ` data-umami-event-position="${headerEnd > -1 && offset < headerEnd ? "header" : pos}"`); }
+      else if (href.startsWith("https://wa.me/")) add("whatsapp_click");
+      else if (href.startsWith("mailto:")) add("email_click");
+      else if (href.startsWith("tel:")) add("phone_click");
+      return t;
+    });
+    if (CFG.umamiWebsiteId) html = html.replace("</head>", `<script defer src="https://cloud.umami.is/script.js" data-website-id="${esc(CFG.umamiWebsiteId)}" data-domains="${new URL(BASE).hostname}"></script>\n</head>`);
+    fs.writeFileSync(f, html);
+  }
+}
 
 if (errors.length) { console.error(`\nBUILD STOPPED:\n` + errors.map((e) => "  ✗ " + e).join("\n")); process.exit(1); }
 warnings.forEach((w) => console.warn("  ! " + w));
