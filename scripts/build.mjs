@@ -37,11 +37,12 @@ const TAGS = {
   food: ["Food", "Essen & Trinken"], events: ["Events", "Veranstaltungen"], seasons: ["Seasons", "Jahreszeiten"], nature: ["Nature", "Natur"],
   "lodge-news": ["Lodge news", "Neues aus der Lodge"],
 };
-Object.assign(TAGS, { "cape-town": ["Cape Town", "Kapstadt"], bloubergstrand: ["Bloubergstrand", "Bloubergstrand"], "table-view": ["Table View", "Table View"], "king-of-the-air": ["King of the Air", "King of the Air"] });
+Object.assign(TAGS, { "cape-town": ["Cape Town", "Kapstadt"], bloubergstrand: ["Bloubergstrand", "Bloubergstrand"], "table-view": ["Table View", "Table View"], "king-of-the-air": ["King of the Air", "King of the Air"],
+  business: ["Business", "Business"], pets: ["Pets", "Mit Haustier"], groups: ["Groups", "Gruppen"] });
 // German or variant tag names are mapped to one language-independent tag, so EN and DE posts share the same filters
 const TAG_ALIASES = { kitesurfen: "kitesurfing", kiten: "kitesurfing", strand: "beaches", straende: "beaches", strände: "beaches", beach: "beaches", tafelberg: "table-mountain",
   ausfluege: "day-trips", ausflüge: "day-trips", ausflug: "day-trips", westkueste: "west-coast", westküste: "west-coast", wein: "wine", familie: "family", essen: "food",
-  veranstaltungen: "events", event: "events", jahreszeiten: "seasons", natur: "nature", kapstadt: "cape-town", "lodge-neuigkeiten": "lodge-news", blouberg: "bloubergstrand" };
+  veranstaltungen: "events", haustiere: "pets", "mit-haustier": "pets", gruppen: "groups", geschaeftsreise: "business", event: "events", jahreszeiten: "seasons", natur: "nature", kapstadt: "cape-town", "lodge-neuigkeiten": "lodge-news", blouberg: "bloubergstrand" };
 const tagLabel = (t, lang) => (TAGS[t] ? TAGS[t][lang === "de" ? 1 : 0] : t.split("-").map((w, i) => (i === 0 ? w[0].toUpperCase() + w.slice(1) : w)).join(" "));
 const T = {
   en: { book: "Book direct", walk: (n) => `${n} min walk from the lodge`, all: "All", allPosts: "All articles →", whatsOn: "What's on in Cape Town →", whatsOnH1: "What's on in Cape Town & Blouberg", whatsOnTitle: "What's on: events in Cape Town & Bloubergstrand",
@@ -540,7 +541,7 @@ write("llms.txt", `# Be My Guest Lodge
 - WhatsApp: +27 72 838 4490 · Email: ${CFG.email}
 - Check-in 14:00–19:00, check-out until 10:00; late check-in on request
 - Distances: beach approx. 5 min walk; Kite Beach a good 10 min walk (3–4 min by car); by car: V&A Waterfront and CTICC approx. 25 min, Durbanville wine estates approx. 25 min, Cape Town International Airport approx. 20 min
-- Whole lodge (up to 16 guests) can be booked exclusively for groups; discount for longer stays on request
+- Whole lodge (up to 16 guests) can be booked exclusively for groups; tailored rates for longer stays on request
 - Pets welcome in the Family Cottage (more than one pet on request)
 - B&B (with breakfast) or self-catering
 - In every room: private bathroom, private entrance and patio, air conditioning (cooling and heating), ceiling fan, free Wi-Fi, flat-screen TV with DStv, mini fridge, microwave, tea and coffee
