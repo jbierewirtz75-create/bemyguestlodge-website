@@ -6,6 +6,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # daily at 04:15 UTC (06:15 South Africa): scheduled posts appear, past events disappear.
+  # Once hosting is connected, the deploy step / deploy hook is added here as well.
+  schedule:
+    - cron: "15 4 * * *"
 jobs:
   build:
     runs-on: ubuntu-latest

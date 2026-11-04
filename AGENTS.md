@@ -11,7 +11,7 @@ Agreed interface: `docs/marketing-schnittstelle.md` (from the marketing project)
 2. Change files **only** in `content/blog/`, `content/events/` and `public/images/blog/`.
 3. Open a pull request (template is filled in automatically). `main` is protected: direct pushes are rejected.
 4. The check **"build"** must be green. If it is red, open the log: it names the file and the problem. Fix it in the same branch.
-5. Jan reviews the preview and merges. Merged = published with the next build (posts dated in the future appear from that day on).
+5. Jan reviews the preview and merges. Merged = published with the next build. Posts dated in the future appear on that day (daily scheduled build at 04:15 UTC = 06:15 SAST, active once hosting/deploy is connected).
 
 ## Blog posts
 
@@ -42,7 +42,7 @@ status: approved                       # draft | approved – only approved post
   Every post also gets booking and WhatsApp buttons at the end automatically.
 - Images: JPG or PNG, at least 1600 px wide, max. 5 MB, own photos of the lodge or licensed images. They are resized to WebP automatically; social preview = hero_image (1200 × 630).
 - **Tags:** lowercase with hyphens. Use the shared English tags so EN and DE posts share the same filters:
-  `kitesurfing`, `beaches`, `table-mountain`, `day-trips`, `west-coast`, `wine`, `family`, `food`, `events`, `seasons`, `nature`, `lodge-news`, `cape-town`, `bloubergstrand`, `table-view`.
+  `kitesurfing`, `beaches`, `table-mountain`, `day-trips`, `west-coast`, `wine`, `family`, `food`, `events`, `seasons`, `nature`, `lodge-news`, `cape-town`, `bloubergstrand`, `table-view`, `business`, `pets`, `groups`.
   Other tags are allowed (e.g. `king-of-the-air`); common German tags (`kitesurfen`, `kapstadt`, `strand` …) are mapped automatically.
 
 ## Events – `content/events/events.json` → `/en/events/`, `/de/events/`
@@ -69,12 +69,13 @@ Required: a title, `start`, `location`. `end`, `url`, `walk_min`, descriptions a
 ## Facts that must be correct
 
 - Check-in 14:00–19:00, check-out until 10:00, late check-in on request
-- Beach approx. 5 min walk · Kite Beach a good 10 min walk (3–4 min by car) · city/CTICC/V&A Waterfront approx. 25 min · airport approx. 20 min by car
-- 5 comfort rooms (3 Comfort Double, 2 Comfort Twin with two single beds) + Family Cottage (approx. 85 m², up to 6 guests); whole lodge up to 16 guests, bookable exclusively for groups
-- Breakfast (B&B) or self-catering · garden with palm tree · pool · two braais · good Wi-Fi · secure parking on the property (**no gate** – do not mention one)
-- Pets welcome in the Family Cottage (more than one pet on request) · discount for longer stays on request
+- Beach approx. 5 min walk · Kite Beach a good 10 min walk (3–4 min by car or Uber) · city/CTICC/V&A Waterfront approx. 25 min · airport approx. 20 min by car
+- 5 comfort rooms = 3 doubles (Comfort Double) + 2 twins (Comfort Twin, two single beds) – never "5 double rooms" – plus the Family Cottage (approx. 85 m², up to 6 guests); whole lodge up to 16 guests, bookable exclusively for groups
+- Breakfast (B&B) or self-catering · garden with palm tree · pool · two braais · very good Wi-Fi · secure parking on the property (**no gate** – do not mention one)
+- Pets welcome in the Family Cottage (more than one pet on request)
+- Longer stays: "Ask us for a tailored rate" – never state a percentage
 - **Taxi service** on request – there is **no airport shuttle** · baby cot and high chair on request
-- **Do not advertise backup power** (not installed yet)
+- **Do not mention backup power or solar** (not installed yet)
 - Direct booking: use the booking button/placeholder (the link is maintained centrally in `site.config.json`; currently https://book.nightsbridge.com/28083 – the `?nbid=` variant does not work) · WhatsApp +27 72 838 4490 · info@bemyguestlodge.co.za
 - Slogan: "Home away from home"
 - German address form: informal singular **"du/dich/dein"** (website and blog)
