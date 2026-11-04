@@ -8,7 +8,7 @@
 //   core/<lang>/index.html, core/<lang>/accommodation/…   30 static core pages (6 languages × 5 pages)
 //   core/_shell/<lang>.html                               page frame for blog and "What's on" pages
 //   core/_data.json                                       texts needed by build.mjs (titles, FAQ, UI strings)
-//   public/css/site.css                                   styles from source/index.html + source/extra.css
+//   public/css/site.css                                   fonts (source/fonts.css) + styles from source/index.html + source/extra.css
 //
 // Tokens left for build.mjs: __S__ (link suffix), and in the shell __P__ (path prefix), __TITLE__, __DESC__,
 // <!--HEAD-->, <!--MAIN-->, __LANG_xx__ (language switch targets).
@@ -91,6 +91,7 @@ function transform({ lang, pg, P, S, TYPES, m, ld, BASE, HREFLANG, OGLOCALE, LAN
   if (pg.kind === "home") doc.getElementById("sub").remove(); else { doc.getElementById("top").remove(); doc.getElementById("sub").hidden = false; }
   doc.querySelectorAll("script").forEach((s) => s.remove());
   doc.querySelectorAll("style").forEach((s) => s.remove());
+  doc.querySelectorAll('link[href="fonts.css"]').forEach((l) => l.remove()); // fonts are bundled into css/site.css
   doc.querySelectorAll("[data-i18n]").forEach((e) => e.removeAttribute("data-i18n"));
   const hero = doc.getElementById("hero");
   if (hero) {
@@ -185,7 +186,8 @@ function transform({ lang, pg, P, S, TYPES, m, ld, BASE, HREFLANG, OGLOCALE, LAN
       const css = await p.evaluate(() => Array.from(document.querySelectorAll("style")).map((s) => s.textContent).join("\n"));
       const extra = fs.readFileSync(path.join(SRC, "extra.css"), "utf8");
       mkdirp(path.join(PUB, "css"));
-      fs.writeFileSync(path.join(PUB, "css/site.css"), css.trim() + "\n\n/* ---- blog, events (source/extra.css) ---- */\n" + extra);
+      const fonts = fs.readFileSync(path.join(SRC, "fonts.css"), "utf8");
+      fs.writeFileSync(path.join(PUB, "css/site.css"), fonts + "\n" + css.trim() + "\n\n/* ---- blog, events (source/extra.css) ---- */\n" + extra);
     }
     return { ctx, p };
   };

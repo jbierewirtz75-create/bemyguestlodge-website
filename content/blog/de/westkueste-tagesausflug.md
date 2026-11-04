@@ -19,7 +19,7 @@ Rund eine Autostunde nördlich liegt Langebaan an einer riesigen, türkisfarbene
 
 ## West Coast National Park
 
-Der West Coast National Park umschließt die Lagune und eignet sich wunderbar für eine Rundfahrt mit vielen Stopps. Haltet Ausschau nach Antilopen, Straußen und Schildkröten. Im späten Winter und Frühling, meist im August und September, verwandelt sich der Parkteil Postberg in ein Meer aus Wildblumen, einer der schönsten Anblicke Südafrikas.
+Der West Coast National Park umschließt die Lagune und eignet sich wunderbar für eine Rundfahrt mit vielen Stopps. Halte Ausschau nach Antilopen, Straußen und Schildkröten. Im späten Winter und Frühling, meist im August und September, verwandelt sich der Parkteil Postberg in ein Meer aus Wildblumen, einer der schönsten Anblicke Südafrikas.
 
 ## Paternoster
 
@@ -27,4 +27,4 @@ Wer etwas mehr Zeit hat, fährt weiter nach Paternoster, ein malerisches Fischer
 
 ## Unser Tipp
 
-Fahrt nach dem Frühstück los, nehmt die Küstenstraße und seid rechtzeitig zum Sonnenuntergang über dem Tafelberg zurück am Strand von Blouberg. Wir helfen euch gern bei der Routenplanung und verraten euch unsere Lieblingsplätze fürs Mittagessen.
+Fahr nach dem Frühstück los, nimm die Küstenstraße und sei rechtzeitig zum Sonnenuntergang über dem Tafelberg zurück am Strand von Blouberg. Wir helfen dir gern bei der Routenplanung und verraten dir unsere Lieblingsplätze fürs Mittagessen.

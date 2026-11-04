@@ -99,6 +99,16 @@
     if (location.hash.length > 1) applyTag(decodeURIComponent(location.hash.slice(1)));
   }
 
+  /* "How did you hear about us?" – optional answer sent to Umami (no personal data) */
+  Array.prototype.forEach.call(document.querySelectorAll("select[data-srcq]"), function (sel) {
+    sel.addEventListener("change", function () {
+      if (!sel.value) return;
+      try { if (window.umami && umami.track) umami.track("source_answer", { answer: sel.value }); } catch (e) {}
+      var th = sel.parentNode.querySelector(".srcq-thanks"); if (th) th.hidden = false;
+      sel.disabled = true;
+    });
+  });
+
   /* partner filter */
   var fEl = document.getElementById("filters");
   if (fEl) fEl.addEventListener("click", function (e) {

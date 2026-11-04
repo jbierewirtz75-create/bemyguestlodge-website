@@ -23,8 +23,8 @@ Die Hauptsaison läuft etwa von November bis März. In diesen Monaten weht an vi
 
 ## Was Einsteiger wissen sollten
 
-Der Atlantik ist hier auch im Sommer kalt, ein guter Neoprenanzug (4/3 mm oder dicker) ist Pflicht. Der Wind kann stark und böig sein, nehmt also Unterricht bei einer zertifizierten Schule vor Ort, statt allein loszuziehen. Viele Schulen verleihen komplettes Material, ihr müsst also nichts mitbringen.
+Der Atlantik ist hier auch im Sommer kalt, ein guter Neoprenanzug (4/3 mm oder dicker) ist Pflicht. Der Wind kann stark und böig sein, nimm also Unterricht bei einer zertifizierten Schule vor Ort, statt allein loszuziehen. Viele Schulen verleihen komplettes Material, du musst also nichts mitbringen.
 
 ## Kiten mit der Be My Guest Lodge
 
-Unsere Zimmer haben eigene Eingänge und Patios, wo ihr euer Material abspülen und trocknen könnt, und die Spots sind nur Minuten entfernt. Unsere Comfort Twin Rooms sind bei Kite-Buddies besonders beliebt. Schreibt uns per WhatsApp, wir helfen gern bei der Suche nach Kursen oder Leihmaterial.
+Unsere Zimmer haben eigene Eingänge und Patios, wo du dein Material abspülen und trocknen kannst, und die Spots sind nur Minuten entfernt. Unsere Comfort Twin Rooms sind bei Kite-Buddies besonders beliebt. Schreib uns per WhatsApp, wir helfen gern bei der Suche nach Kursen oder Leihmaterial.

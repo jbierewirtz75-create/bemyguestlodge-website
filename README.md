@@ -8,12 +8,16 @@ Live-Adresse: https://bemyguestlodge.co.za
 | Was | Wo |
 |---|---|
 | Blogbeiträge (EN/DE) | `content/blog/en/`, `content/blog/de/` (Markdown) |
-| Bilder zu Beiträgen/Events | `content/blog/images/` (werden beim Bauen automatisch verkleinert, WebP) |
-| Veranstaltungen („What's on“) | `content/events/events.json` |
+| Bilder zu Beiträgen/Events | `public/images/blog/` oder `content/blog/images/` (werden beim Bauen automatisch verkleinert, WebP) |
+| Veranstaltungen („What's on“, `/en/events/`, `/de/events/`) | `content/events/events.json` |
+| Link-in-Bio-Seite für Social Media | `/hello/` (wird automatisch erzeugt, DE/EN nach Browsersprache) |
+| Vereinbarung mit dem Marketing-Projekt | `docs/marketing-schnittstelle.md` |
+| Impressum / Datenschutz (EN, DE) | `content/legal/en/`, `content/legal/de/` (Markdown; offene Angaben sind als `{{TODO: …}}` markiert und erscheinen gelb) |
+| Schriften | selbst gehostet in `public/fonts/` (keine Verbindung zu Google Fonts) |
 | Regeln für die Marketing-Agenten | `AGENTS.md` |
 | Kernseiten (Startseite, Zimmer) | `core/` – erzeugt aus `source/index.html` |
 | Bilder, Video, CSS, JS der Kernseiten | `public/` |
-| Domain, Buchungslink, WhatsApp | `site.config.json` |
+| Domain, **Buchungslink** (`book`), WhatsApp, **Umami-Website-ID** (`umamiWebsiteId`) | `site.config.json` – einzige Stelle; alle Buchen-Buttons der Website werden beim Bauen darauf gesetzt |
 | Alte Adressen → neue Adressen (301) | `redirects.txt` (anlegen, sobald die alte URL-Liste vorliegt) |
 
 ## So kommt ein Blogbeitrag online
@@ -46,6 +50,14 @@ Die Website ist reines HTML/CSS/JS – keine Datenbank, kein PHP.
 **Domain/DNS:** Die Domain liegt derzeit bei xneelo. Beim Umzug müssen die E-Mail-Einträge (MX, SPF, DKIM, DMARC) unverändert bleiben.
 Die Hauptadresse ist in `site.config.json` festgelegt (`https://bemyguestlodge.co.za`, ohne www). Die jeweils andere Variante (www / ohne www) per 301 auf die Hauptadresse weiterleiten.
 
+## Statistik (Umami, ohne Cookies)
+
+Sobald in `site.config.json` eine `umamiWebsiteId` eingetragen ist, bindet der Build das Umami-Script auf allen Seiten ein
+(nur aktiv auf der Live-Domain, nicht in Vorschauen). Klicks werden automatisch markiert:
+`book_click` (mit Position `header`, `home`, `room-page`, `blog-footer`, `blog-inline`, `blog-index`, `events-page`, `hello-top`),
+`whatsapp_click`, `email_click`, `phone_click`, sowie `source_answer` (Feld „Wie habt ihr von uns erfahren?“ im Kontaktbereich und auf `/hello/`).
+Buchen-Buttons öffnen im selben Tab.
+
 ## Befehle
 
 ```bash
@@ -59,7 +71,7 @@ npm run prerender       # nur nach Änderungen an source/index.html (benötigt P
 
 ## Was beim Bauen entsteht
 
-30 Kernseiten (6 Sprachen), Blog-Übersicht und Beiträge (EN/DE) mit Tag-Filter, „What's on“-Seiten, RSS-Feeds
-(`/en/blog/feed.xml`, `/de/blog/feed.xml`), `sitemap.xml` mit hreflang, `robots.txt` (KI-Crawler erlaubt), `llms.txt`,
+30 Kernseiten (6 Sprachen), Blog-Übersicht und Beiträge (EN/DE) mit Tag-Filter, Veranstaltungsseiten (`/en/events/`, `/de/events/`),
+Link-in-Bio-Seite `/hello/`, RSS-Feeds (`/en/blog/rss.xml`, `/de/blog/rss.xml`; gleicher Inhalt auch unter `feed.xml`), `sitemap.xml` mit hreflang, `robots.txt` (KI-Crawler erlaubt), `llms.txt`,
 strukturierte Daten (BedAndBreakfast, FAQ, BlogPosting, Event, Breadcrumbs), Sprachweiche auf `/`, `404.html`.
 Fehlerhafte Beiträge (fehlende Felder, unbekannte Tags, fehlende Bilder …) stoppen den Build mit klarer Meldung.
