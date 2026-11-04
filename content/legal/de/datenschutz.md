@@ -24,7 +24,7 @@ Wir sind „Responsible Party“ nach dem südafrikanischen Datenschutzgesetz Pr
 
 **Schriften.** Die Schriftarten werden von unserem eigenen Server geladen; es besteht keine Verbindung zu externen Schriftdiensten.
 
-**Besucherstatistik (Umami).** Um zu verstehen, wie unsere Website genutzt wird, setzen wir Umami ein, einen datensparsamen Statistikdienst. Umami arbeitet ohne Cookies, speichert keine vollständigen IP-Adressen und bildet keine Nutzerprofile. Wir sehen nur zusammengefasste Zahlen, etwa Seitenaufrufe, die verweisende Website oder Kampagne (UTM-Parameter), Gerätetyp, Browser, Land und Klicks auf Schaltflächen wie „Direkt buchen“ oder WhatsApp. Die Daten verarbeitet Umami (umami.is) auf Servern in {{TODO: in Umami Cloud gewählte Region, z. B. EU}}. Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung unserer Website (POPIA Section 11(1)(f); Art. 6 Abs. 1 lit. f DSGVO).
+**Besucherstatistik (Umami).** Um zu verstehen, wie unsere Website genutzt wird, setzen wir Umami ein, einen datensparsamen Statistikdienst. Umami arbeitet ohne Cookies, speichert keine vollständigen IP-Adressen und bildet keine Nutzerprofile. Wir sehen nur zusammengefasste Zahlen, etwa Seitenaufrufe, die verweisende Website oder Kampagne (UTM-Parameter), Gerätetyp, Browser, Land und Klicks auf Schaltflächen wie „Direkt buchen“ oder WhatsApp. Die Daten verarbeitet Umami (umami.is) auf Servern in der Europäischen Union (EU). Rechtsgrundlage ist unser berechtigtes Interesse an der Verbesserung unserer Website (POPIA Section 11(1)(f); Art. 6 Abs. 1 lit. f DSGVO).
 
 **„Wie hast du von uns erfahren?“** Wenn du diese freiwillige Frage beantwortest, wird nur deine Antwort (zum Beispiel „Instagram“) als anonyme Statistik erfasst, ohne Bezug zu deiner Person.
 

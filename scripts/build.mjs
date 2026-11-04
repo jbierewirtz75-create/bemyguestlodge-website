@@ -619,7 +619,7 @@ if (fs.existsSync(path.join(ROOT, "redirects.txt"))) fs.copyFileSync(path.join(R
       else if (href.startsWith("tel:")) add("phone_click");
       return t;
     });
-    if (CFG.umamiWebsiteId) html = html.replace("</head>", `<script defer src="https://cloud.umami.is/script.js" data-website-id="${esc(CFG.umamiWebsiteId)}" data-domains="${new URL(BASE).hostname}"></script>\n</head>`);
+    if (CFG.umamiWebsiteId) html = html.replace("</head>", `<script defer src="https://cloud.umami.is/script.js" data-website-id="${esc(CFG.umamiWebsiteId)}" data-domains="${new URL(BASE).hostname},www.${new URL(BASE).hostname}"></script>\n</head>`);
     fs.writeFileSync(f, html);
   }
 }
