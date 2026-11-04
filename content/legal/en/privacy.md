@@ -24,7 +24,7 @@ We are the "responsible party" under the South African Protection of Personal In
 
 **Fonts.** The fonts are loaded from our own server; no connection to third-party font services is made.
 
-**Visitor statistics (Umami).** To understand how our website is used, we use Umami, a privacy-friendly analytics service. Umami works without cookies, does not store full IP addresses and does not create personal profiles. We only see aggregated figures, such as page views, the referring website or campaign (UTM parameters), device type, browser, country and clicks on buttons such as "Book direct" or WhatsApp. The data is processed by Umami (umami.is) on servers in {{TODO: region chosen in Umami Cloud, e.g. the EU}}. Legal basis: our legitimate interest in improving our website (POPIA section 11(1)(f); GDPR Art. 6(1)(f)).
+**Visitor statistics (Umami).** To understand how our website is used, we use Umami, a privacy-friendly analytics service. Umami works without cookies, does not store full IP addresses and does not create personal profiles. We only see aggregated figures, such as page views, the referring website or campaign (UTM parameters), device type, browser, country and clicks on buttons such as "Book direct" or WhatsApp. The data is processed by Umami (umami.is) on servers in the European Union (EU). Legal basis: our legitimate interest in improving our website (POPIA section 11(1)(f); GDPR Art. 6(1)(f)).
 
 **"How did you hear about us?"** If you answer this optional question, only your answer (for example "Instagram") is recorded as an anonymous statistic, without any link to your person.
 
