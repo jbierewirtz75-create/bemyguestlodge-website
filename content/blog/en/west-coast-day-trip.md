@@ -6,8 +6,8 @@ translation_of: ""
 date: "2026-10-30"
 description: "Seafood restaurants on the beach, wildflowers in spring and lagoons with flamingos: our favourite route north."
 tags: ["day-trips", "west-coast", "nature"]
-hero_image: "images/evening-beach-bloubergstrand.jpg"
-hero_alt: "Evening on the beach at Bloubergstrand on Cape Town's Atlantic coast"
+hero_image: "images/langebaan-beach-sunset.jpg"
+hero_alt: "Sunset over the beach in Langebaan on the West Coast, with the hills across the bay"
 status: "approved"
 ---
 
@@ -16,6 +16,10 @@ Most visitors head south from Cape Town, to the Cape Peninsula and Cape Point. B
 ## Langebaan and the lagoon
 
 About an hour's drive north, the town of Langebaan sits on a huge, turquoise lagoon. The shallow, calm water is perfect for families, swimming and learning to kitesurf, and it is home to many water birds, including flamingos. Have lunch at one of the relaxed restaurants overlooking the water.
+
+![Harbour of Langebaan at sunset, with the whale-tail sculpture and lamp posts against a pink sky](images/langebaan-harbour-sunset.jpg)
+
+![Glass of white wine held up against the setting sun on the beach in Langebaan](images/langebaan-sundowner-wine.jpg)
 
 ## West Coast National Park
 
