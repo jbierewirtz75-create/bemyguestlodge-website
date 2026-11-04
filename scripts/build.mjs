@@ -305,7 +305,7 @@ for (const lang of BLOG_LANGS) {
 <div class="sub-head"><p class="eyebrow">${DATA.ui[lang].blogEyebrow}</p><h1>${DATA.ui[lang].blogH2}</h1><p class="lede">${DATA.ui[lang].blogLede}</p></div>
 ${used.length > 1 ? `<div class="filters" id="tagFilters" role="group"><button type="button" aria-pressed="true" data-tag="all">${T[lang].all}</button>${used.map((t) => `<button type="button" aria-pressed="false" data-tag="${t}">${esc(tagLabel(t, lang))}</button>`).join("")}</div>` : ""}
 <div class="blog-list">${cards}</div>
-<p class="blog-links"><a href="${P}${lang}/events/${S}">${T[lang].whatsOn}</a><a href="${BASE}/${lang}/blog/rss.xml">${T[lang].rss}</a></p>
+<p class="blog-links"><a href="${P}${lang}/events/${S}">${T[lang].whatsOn}</a><a href="${P}${lang}/blog/rss.xml" type="application/rss+xml">${T[lang].rss}</a></p>
 <div style="margin-top:40px">${bookBar(lang, "blog-index")}</div></div>`;
   const pairs = BLOG_LANGS.map((l) => [l, abs(l, "blog/")]);
   const head = [`<link rel="canonical" href="${url}">`, alternates(pairs, abs("en", "blog/")), og({ type: "website", title: T[lang].blogTitle, desc: strip(DATA.ui[lang].blogLede), url, img: `${BASE}/img/og-image.jpg`, lang }), rssLinks(P),
