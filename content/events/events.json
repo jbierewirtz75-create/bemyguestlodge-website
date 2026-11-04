@@ -2,12 +2,13 @@
   {
     "title_en": "Red Bull King of the Air 2026",
     "title_de": "Red Bull King of the Air 2026",
-    "date": "2026-11-21",
-    "end_date": "2026-12-06",
+    "start": "2026-11-21",
+    "end": "2026-12-06",
     "location": "Kite Beach, Bloubergstrand",
+    "url": "https://www.redbull.com/ng-en/events/red-bull-king-of-the-air",
+    "walk_min": 10,
     "description_en": "The world's best Big Air kiters compete at Kite Beach. Free to watch; competition days are called at short notice depending on wind and swell.",
     "description_de": "Die besten Big-Air-Kiter der Welt am Kite Beach. Zuschauen kostenlos; Wettkampftage werden je nach Wind und Wellen kurzfristig ausgerufen.",
-    "url": "https://www.redbull.com/ng-en/events/red-bull-king-of-the-air",
     "image": "images/kite-sunset-silhouette.jpg"
   }
 ]
