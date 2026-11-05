@@ -1,5 +1,16 @@
 [
   {
+    "title_en": "Africa Tech Festival (AfricaCom)",
+    "title_de": "Africa Tech Festival (AfricaCom)",
+    "start": "2026-11-17",
+    "end": "2026-11-19",
+    "location": "CTICC, Cape Town",
+    "url": "https://www.cticc.co.za/whats_on_events/africa-tech-festival-3/",
+    "description_en": "Africa's big telecoms and tech event with an expo, AI, cloud and cybersecurity talks. The CTICC is about 25 minutes from the lodge by car.",
+    "description_de": "Afrikas große Telekom- und Tech-Messe mit Expo und Vorträgen zu KI, Cloud und Cybersecurity. Zum CTICC fährst du von der Lodge ca. 25 Minuten.",
+    "image": "images/cticc-waterfront-road-sign.jpg"
+  },
+  {
     "title_en": "Red Bull King of the Air 2026",
     "title_de": "Red Bull King of the Air 2026",
     "start": "2026-11-21",
@@ -10,5 +21,53 @@
     "description_en": "The world's best Big Air kiters compete at Kite Beach. Free to watch; competition days are called at short notice depending on wind and swell.",
     "description_de": "Die besten Big-Air-Kiter der Welt am Kite Beach. Zuschauen kostenlos; Wettkampftage werden je nach Wind und Wellen kurzfristig ausgerufen.",
     "image": "images/kite-sunset-silhouette.jpg"
+  },
+  {
+    "title_en": "Taste of Cape Town",
+    "title_de": "Taste of Cape Town",
+    "start": "2026-11-28",
+    "end": "2026-11-29",
+    "location": "Green Point Cricket Club, Cape Town",
+    "url": "https://www.quicket.co.za/events/359707-taste-of-cape-town-2026/",
+    "description_en": "A weekend food festival with chef demos, wine tastings and a family area. About 25 minutes from the lodge by car.",
+    "description_de": "Food-Festival am Wochenende mit Koch-Demos, Weinverkostungen und Familienbereich. Ca. 25 Minuten mit dem Auto von der Lodge."
+  },
+  {
+    "title_en": "Cape Town Toy Run",
+    "title_de": "Cape Town Toy Run",
+    "start": "2026-11-29",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://www.quicket.co.za/organisers/2449-toy-run-cape-town",
+    "description_en": "Thousands of bikers ride for children in need and finish at Killarney, just around the corner. Your entry ticket is a toy donation.",
+    "description_de": "Tausende Biker fahren für Kinder in Not und kommen am Killarney Raceway an – gleich um die Ecke. Dein Eintritt ist eine Spielzeugspende."
+  },
+  {
+    "title_en": "HSBC SVNS Cape Town (Rugby Sevens)",
+    "title_de": "HSBC SVNS Cape Town (Rugby Sevens)",
+    "start": "2026-12-05",
+    "end": "2026-12-06",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://springboks.rugby/video-hub/hsbc-svns-cape-town-cape-towns-biggest-party-is-back-5-6-december-2026",
+    "description_en": "Two days of world-class sevens rugby, men's and women's teams, and Cape Town's biggest stadium party. About 25 minutes from the lodge.",
+    "description_de": "Zwei Tage Siebener-Rugby der Weltspitze mit Männer- und Frauenteams – und Kapstadts größte Stadionparty. Ca. 25 Minuten von der Lodge."
+  },
+  {
+    "title_en": "South Africa vs England – 3rd Test",
+    "title_de": "Südafrika gegen England – 3. Test",
+    "start": "2027-01-03",
+    "end": "2027-01-07",
+    "location": "Newlands Cricket Ground, Cape Town",
+    "url": "https://newlandscricket.com/world-sports-betting-newlands-to-host-blockbuster-2026-27-international-summer/",
+    "description_en": "The Proteas host England for the final Test of the series at Newlands. About 35 minutes from the lodge by car.",
+    "description_de": "Die Proteas empfangen England zum letzten Test der Serie in Newlands. Ca. 35 Minuten mit dem Auto von der Lodge."
+  },
+  {
+    "title_en": "South Africa vs England – 1st ODI",
+    "title_de": "Südafrika gegen England – 1. ODI",
+    "start": "2027-01-10",
+    "location": "Boland Park, Paarl",
+    "url": "https://www.ecb.co.uk/news/4455456/fixtures-for-england-mens-202627-tour-to-south-africa-announced",
+    "description_en": "One-day international in the heart of the Winelands. Combine it with a wine farm visit – Paarl is about 50 minutes from the lodge.",
+    "description_de": "Eintagesspiel mitten im Weinland. Perfekt kombinierbar mit einem Weingut-Besuch – Paarl liegt ca. 50 Minuten von der Lodge entfernt."
   }
 ]
