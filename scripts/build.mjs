@@ -45,17 +45,36 @@ const TAG_ALIASES = { kitesurfen: "kitesurfing", kiten: "kitesurfing", strand: "
   veranstaltungen: "events", haustiere: "pets", "mit-haustier": "pets", gruppen: "groups", geschaeftsreise: "business", event: "events", jahreszeiten: "seasons", natur: "nature", kapstadt: "cape-town", "lodge-neuigkeiten": "lodge-news", blouberg: "bloubergstrand" };
 const tagLabel = (t, lang) => (TAGS[t] ? TAGS[t][lang === "de" ? 1 : 0] : t.split("-").map((w, i) => (i === 0 ? w[0].toUpperCase() + w.slice(1) : w)).join(" "));
 const T = {
-  en: { book: "Book direct", walk: (n) => `${n} min walk from the lodge`, all: "All", allPosts: "All articles →", whatsOn: "What's on in Cape Town →", whatsOnH1: "What's on in Cape Town & Blouberg", whatsOnTitle: "What's on: events in Cape Town & Bloubergstrand",
+  en: { book: "Book direct", walk: (n) => `${n} min walk from the lodge`, all: "All", allPosts: "All articles →", whatsOn: "Event calendar: what's on in Cape Town →", whatsOnH1: "What's on in Cape Town & Blouberg", whatsOnTitle: "What's on: events in Cape Town & Bloubergstrand",
     whatsOnLede: "Events, festivals and sport near Be My Guest Lodge in Table View, Bloubergstrand. Planning a visit? Book your stay directly with us.", whatsOnDesc: "Upcoming events, festivals and sport in Cape Town, Table View and Bloubergstrand, close to Be My Guest Lodge.",
     noEvents: "No events listed right now. Ask us on WhatsApp what's on during your stay.", more: "More info", read: (n) => `${n} min read`, ctaH: "Stay with us in Bloubergstrand",
     ctaP: "Book directly with Jan & Leona, or ask us anything on WhatsApp.", blogTitle: "Blog: stories and tips from Cape Town & Bloubergstrand", draft: "Draft", future: "Scheduled",
     preview: "Preview – not live. Drafts and scheduled posts are visible here only.", rss: "RSS feed", locale: "en-GB" },
-  de: { book: "Jetzt direkt buchen", walk: (n) => `${n} Min. zu Fuß von der Lodge`, all: "Alle", allPosts: "Alle Artikel →", whatsOn: "Veranstaltungen in Kapstadt →", whatsOnH1: "Veranstaltungen in Kapstadt & Blouberg", whatsOnTitle: "Veranstaltungen in Kapstadt & Bloubergstrand",
+  de: { book: "Jetzt direkt buchen", walk: (n) => `${n} Min. zu Fuß von der Lodge`, all: "Alle", allPosts: "Alle Artikel →", whatsOn: "Event-Kalender: Was ist los in Kapstadt →", whatsOnH1: "Veranstaltungen in Kapstadt & Blouberg", whatsOnTitle: "Veranstaltungen in Kapstadt & Bloubergstrand",
     whatsOnLede: "Events, Festivals und Sport rund um die Be My Guest Lodge in Table View, Bloubergstrand. Du planst einen Besuch? Buch deinen Aufenthalt direkt bei uns.", whatsOnDesc: "Aktuelle Veranstaltungen, Festivals und Sport in Kapstadt, Table View und Bloubergstrand, nahe der Be My Guest Lodge.",
     noEvents: "Gerade sind keine Termine eingetragen. Frag uns per WhatsApp, was während deines Aufenthalts los ist.", more: "Mehr Infos", read: (n) => `${n} Min. Lesezeit`, ctaH: "Übernachte bei uns in Bloubergstrand",
     ctaP: "Buch direkt bei Jan & Leona oder frag uns per WhatsApp.", blogTitle: "Blog: Geschichten und Tipps aus Kapstadt & Bloubergstrand", draft: "Entwurf", future: "Geplant",
     preview: "Vorschau – nicht live. Entwürfe und geplante Beiträge sind nur hier sichtbar.", rss: "RSS-Feed", locale: "de-DE" },
 };
+const EV_CATS = {
+  sport: ["Sport", "Sport"], kite: ["Kite & water sports", "Kite & Wassersport"], food: ["Food & drink", "Essen & Trinken"],
+  music: ["Music & culture", "Musik & Kultur"], business: ["Business & conferences", "Business & Kongresse"], family: ["Family", "Familie"],
+  markets: ["Markets", "Märkte"], nature: ["Nature & outdoors", "Natur & Outdoor"],
+};
+const EV_T = {
+  en: { h1: "Event calendar: what's on in Cape Town & Blouberg", eyebrow: "Event calendar · updated daily", week: "Next 7 days", all: "All", free: "Free entry", freeF: "Free",
+    addCal: "Add to calendar", sub: "Subscribe to the whole calendar (.ics)", drive: (n) => `${n} min drive from the lodge`, ongoing: "now on", more: "Event website",
+    stayH: "Coming for an event?", stayP: "Be My Guest Lodge is in Table View, Bloubergstrand: a 5-minute walk to the beach, a good 10 minutes on foot to Kite Beach and about 25 minutes by car to the city, CTICC and the stadiums. Book directly with Jan & Leona." },
+  de: { h1: "Event-Kalender: Was ist los in Kapstadt & Blouberg", eyebrow: "Event-Kalender · täglich aktualisiert", week: "In den nächsten 7 Tagen", all: "Alle", free: "Eintritt frei", freeF: "Kostenlos",
+    addCal: "In Kalender eintragen", sub: "Ganzen Kalender abonnieren (.ics)", drive: (n) => `${n} Min. mit dem Auto von der Lodge`, ongoing: "läuft gerade", more: "Zur Event-Website",
+    stayH: "Du kommst zu einem Event?", stayP: "Die Be My Guest Lodge liegt in Table View, Bloubergstrand: 5 Minuten zu Fuß zum Strand, gut 10 Minuten zu Fuß zum Kite Beach und rund 25 Minuten mit dem Auto in die City, zum CTICC und zu den Stadien. Buch direkt bei Jan & Leona." },
+};
+const HOME_EV = {
+  en: ["Coming up in Cape Town & Blouberg", "Full event calendar →"], de: ["Demnächst in Kapstadt & Blouberg", "Zum Event-Kalender →"],
+  af: ["Binnekort in Kaapstad en Blouberg", "Volledige gebeurekalender (Engels) →"], fr: ["Prochainement au Cap et à Blouberg", "Agenda complet (en anglais) →"],
+  es: ["Próximamente en Ciudad del Cabo y Blouberg", "Calendario completo (en inglés) →"], zh: ["开普敦与 Blouberg 近期活动", "完整活动日历（英文）→"],
+};
+const LOCALE = { en: "en-GB", de: "de-DE", af: "af-ZA", fr: "fr-FR", es: "es-ES", zh: "zh-CN" };
 const HOME_LINKS = {
   en: ["All articles →", "What's on in Cape Town →"], de: ["Alle Artikel →", "Veranstaltungen in Kapstadt →"], af: ["Alle artikels (Engels) →", "Wat gebeur in Kaapstad (Engels) →"],
   fr: ["Tous les articles (en anglais) →", "Agenda au Cap (en anglais) →"], es: ["Todos los artículos (en inglés) →", "Agenda en Ciudad del Cabo (en inglés) →"], zh: ["全部文章（英文）→", "开普敦活动（英文）→"],
@@ -150,6 +169,10 @@ if (fs.existsSync(evFile)) {
     if (e.date && !isDate(e.date)) err(`start "${e.date}" must be YYYY-MM-DD`);
     if (e.end_date && !isDate(e.end_date)) err(`end "${e.end_date}" must be YYYY-MM-DD`);
     if (e.walk_min != null && e.walk_min !== "" && !(Number(e.walk_min) > 0)) err(`walk_min must be a number of minutes`);
+    if (e.drive_min != null && e.drive_min !== "" && !(Number(e.drive_min) > 0)) err(`drive_min must be a number of minutes`);
+    if (e.category && !EV_CATS[e.category]) err(`unknown category "${e.category}" (allowed: ${Object.keys(EV_CATS).join(", ")})`);
+    if (!e.category) warnings.push(`content/events/events.json, entry ${i + 1} (${e.title_en}): no category – shown under "All" only`);
+    if (e.free != null && typeof e.free !== "boolean") err(`free must be true or false`);
     if (e.url && !/^https?:\/\//.test(e.url)) err(`url must start with https://`);
     if (e.image && !fs.existsSync(imgPath(e.image))) err(`image "${e.image}" not found (${imgShow(e.image)})`);
   });
@@ -316,34 +339,86 @@ ${used.length > 1 ? `<div class="filters" id="tagFilters" role="group"><button t
   sitemap.push({ loc: url, lastmod: list.filter(live)[0]?.date, alts: pairs, xdef: abs("en", "blog/") });
 }
 
-/* ---------------- what's on ---------------- */
+/* ---------------- event calendar ---------------- */
+const evId = (e) => `${e.title_en.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 50)}-${e.date}`;
+const evTitle = (e, lang) => (lang === "de" && e.title_de) || e.title_en;
+const evDesc = (e, lang) => (lang === "de" && e.description_de) || e.description_en || "";
+const addDays = (d, n) => new Date(Date.parse(d + "T12:00:00Z") + n * 864e5).toISOString().slice(0, 10);
+const in7 = addDays(TODAY, 7);
+const evRange = (e, lang) => {
+  const o = { day: "numeric", month: "long", timeZone: "UTC" }, oy = { ...o, year: "numeric" }, L = LOCALE[lang] || "en-GB";
+  const f = (d, opt) => new Date(d + "T12:00:00Z").toLocaleDateString(L, opt);
+  if (!e.end_date || e.end_date === e.date) return f(e.date, { weekday: "short", ...oy });
+  return `${f(e.date, e.date.slice(0, 4) === e.end_date.slice(0, 4) ? o : oy)} – ${f(e.end_date, oy)}`;
+};
+// iCalendar files (all-day events): one per event and language, plus a subscribable feed per language
+const icsEsc = (t) => String(t).replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
+const icsFold = (line) => { const out = []; let l = line; while (Buffer.byteLength(l) > 74) { let n = 74; while (Buffer.byteLength(l.slice(0, n)) > 74) n--; out.push(l.slice(0, n)); l = " " + l.slice(n); } out.push(l); return out.join("\r\n"); };
+const icsEvent = (e, lang) => [
+  "BEGIN:VEVENT", `UID:${evId(e)}@bemyguestlodge.co.za`, `DTSTAMP:${TODAY.replace(/-/g, "")}T040000Z`,
+  `DTSTART;VALUE=DATE:${e.date.replace(/-/g, "")}`, `DTEND;VALUE=DATE:${addDays(e.end_date || e.date, 1).replace(/-/g, "")}`,
+  `SUMMARY:${icsEsc(evTitle(e, lang))}`, `LOCATION:${icsEsc(e.location)}`,
+  `DESCRIPTION:${icsEsc([evDesc(e, lang), e.url ? `${EV_T[lang].more}: ${e.url}` : "", `${EV_T[lang].stayH} ${BASE}/${lang}/events/`].filter(Boolean).join("\n"))}`,
+  ...(e.url ? [`URL:${e.url}`] : []), "END:VEVENT"].map(icsFold);
+const icsCal = (evs, lang, name) => ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Be My Guest Lodge//Events//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+  icsFold(`X-WR-CALNAME:${icsEsc(name)}`), "X-WR-TIMEZONE:Africa/Johannesburg", ...evs.flatMap((e) => icsEvent(e, lang)), "END:VCALENDAR", ""].join("\r\n");
+
 for (const lang of BLOG_LANGS) {
-  const P = "../../", url = abs(lang, "events/");
-  const evs = await Promise.all(upcoming.map(async (e) => {
-    const d = new Date(e.date + "T12:00:00Z");
-    const day = d.toLocaleDateString(T[lang].locale, { day: "numeric", timeZone: "UTC" });
-    const mon = d.toLocaleDateString(T[lang].locale, { month: "short", timeZone: "UTC" });
-    const range = e.end_date && e.end_date !== e.date ? `${fmtDate(e.date, lang)} – ${fmtDate(e.end_date, lang)}` : fmtDate(e.date, lang);
-    const title = (lang === "de" && e.title_de) || e.title_en, desc = (lang === "de" && e.description_de) || e.description_en || "";
-    const im = e.image ? await image(e.image) : null;
-    return `<li class="event"><time class="when" datetime="${e.date}"><b>${day}</b><span>${esc(mon)}</span></time><div><h2>${esc(title)}</h2><p class="where">${esc(range)} · ${esc(e.location)}${Number(e.walk_min) > 0 ? ` · ${T[lang].walk(Number(e.walk_min))}` : ""}</p>${desc ? `<p>${esc(desc)}</p>` : ""}${e.url ? `<p><a href="${esc(e.url)}" target="_blank" rel="noopener">${T[lang].more} →</a></p>` : ""}${im ? imgTag(im, P, title, "", "420px", false) : ""}</div></li>`;
-  }));
-  const items = [[DATA.ui[lang].home, `${P}${lang}/${S}`], [strip(T[lang].whatsOnH1), url]];
+  const P = "../../", url = abs(lang, "events/"), X = EV_T[lang], li = lang === "de" ? 1 : 0;
+  for (const e of upcoming) write(`calendar/${lang}/${evId(e)}.ics`, icsCal([e], lang, evTitle(e, lang)));
+  write(`calendar/${lang}.ics`, icsCal(upcoming, lang, `Be My Guest Lodge – ${X.h1}`));
+  const evCard = async (e, compact) => {
+    const d = new Date(e.date + "T12:00:00Z"), L = LOCALE[lang];
+    const now = e.date <= TODAY;
+    const day = now ? "●" : d.toLocaleDateString(L, { day: "numeric", timeZone: "UTC" });
+    const mon = now ? X.ongoing : d.toLocaleDateString(L, { month: "short", timeZone: "UTC" });
+    const title = evTitle(e, lang), desc = evDesc(e, lang);
+    const im = !compact && e.image ? await image(e.image) : null;
+    const dist = [Number(e.walk_min) > 0 ? T[lang].walk(Number(e.walk_min)) : "", Number(e.drive_min) > 0 ? X.drive(Number(e.drive_min)) : ""].filter(Boolean).join(" · ");
+    return `<li class="event" data-cat="${e.category || ""}" data-free="${e.free === true}"><time class="when${now ? " now" : ""}" datetime="${e.date}"><b>${day}</b><span>${esc(mon)}</span></time><div>
+<p class="ev-tags">${e.category ? `<span class="chip">${esc(EV_CATS[e.category][li])}</span>` : ""}${e.free === true ? `<span class="chip free">${X.free}</span>` : ""}</p>
+<h3>${esc(title)}</h3><p class="where">${esc(evRange(e, lang))} · ${esc(e.location)}</p>${dist ? `<p class="dist">${esc(dist)}</p>` : ""}
+${desc && !compact ? `<p>${esc(desc)}</p>` : ""}
+<p class="ev-links">${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${X.more} ↗</a>` : ""}<a href="${P}calendar/${lang}/${evId(e)}.ics" download>＋ ${X.addCal}</a></p>
+${im ? imgTag(im, P, title, "", "420px", false) : ""}</div></li>`;
+  };
+  const week = upcoming.filter((e) => e.date <= in7);
+  const months = new Map();
+  for (const e of upcoming) { const k = (e.date < TODAY ? TODAY : e.date).slice(0, 7); if (!months.has(k)) months.set(k, []); months.get(k).push(e); }
+  const usedCats = Object.keys(EV_CATS).filter((c) => upcoming.some((e) => e.category === c));
+  const filters = upcoming.length > 3 ? `<div class="filters" id="evFilters" role="group"><button type="button" aria-pressed="true" data-cat="all">${X.all}</button>${usedCats.map((c) => `<button type="button" aria-pressed="false" data-cat="${c}">${esc(EV_CATS[c][li])}</button>`).join("")}${upcoming.some((e) => e.free === true) ? `<button type="button" aria-pressed="false" data-cat="free">${X.freeF}</button>` : ""}</div>` : "";
+  let monthHtml = "";
+  for (const [k, evs] of months) {
+    const label = new Date(k + "-15T12:00:00Z").toLocaleDateString(LOCALE[lang], { month: "long", year: "numeric", timeZone: "UTC" });
+    monthHtml += `<div class="ev-month"><h2>${esc(label)}</h2><ol class="events">${(await Promise.all(evs.map((e) => evCard(e, false)))).join("")}</ol></div>`;
+  }
+  const stay = `<aside class="art-cta ev-stay"><h2>${X.stayH}</h2><p>${X.stayP}</p>${bookBar(lang, "events-page")}</aside>`;
+  const items = [[DATA.ui[lang].home, `${P}${lang}/${S}`], ["Events", url]];
   const main = `<div class="wrap">${crumbsHtml(items)}
-<div class="sub-head"><p class="eyebrow">What's on</p><h1>${esc(T[lang].whatsOnH1)}</h1><p class="lede">${esc(T[lang].whatsOnLede)}</p></div>
-${evs.length ? `<ol class="events">${evs.join("")}</ol>` : `<p class="empty">${esc(T[lang].noEvents)}</p>`}
-<p class="blog-links"><a href="${P}${lang}/blog/${S}">${T[lang].allPosts}</a></p>
-<div style="margin-top:40px">${bookBar(lang, "events-page")}</div></div>`;
+<div class="sub-head"><p class="eyebrow">${X.eyebrow}</p><h1>${esc(X.h1)}</h1><p class="lede">${esc(T[lang].whatsOnLede)}</p></div>
+${upcoming.length ? `${week.length ? `<div class="ev-week"><h2>${X.week}</h2><ol class="events compact">${(await Promise.all(week.map((e) => evCard(e, true)))).join("")}</ol></div>` : ""}
+${filters}${monthHtml}
+<p class="blog-links"><a href="${P}calendar/${lang}.ics" download>📅 ${X.sub}</a><a href="${P}${lang}/blog/${S}">${T[lang].allPosts}</a></p>` : `<p class="empty">${esc(T[lang].noEvents)}</p>`}
+${stay}</div>`;
   const pairs = BLOG_LANGS.map((l) => [l, abs(l, "events/")]);
-  const evLd = upcoming.map((e) => ({ "@type": "Event", name: (lang === "de" && e.title_de) || e.title_en, startDate: e.date, ...(e.end_date ? { endDate: e.end_date } : {}),
+  const evLd = upcoming.map((e) => ({ "@type": "Event", name: evTitle(e, lang), startDate: e.date, ...(e.end_date ? { endDate: e.end_date } : {}),
     eventStatus: "https://schema.org/EventScheduled", eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: { "@type": "Place", name: e.location, address: e.location }, ...(e.url ? { url: e.url } : {}),
-    ...(((lang === "de" && e.description_de) || e.description_en) ? { description: (lang === "de" && e.description_de) || e.description_en } : {}) }));
-  const head = [`<link rel="canonical" href="${url}">`, alternates(pairs, abs("en", "events/")), og({ type: "website", title: T[lang].whatsOnTitle, desc: T[lang].whatsOnDesc, url, img: `${BASE}/img/og-image.jpg`, lang }),
-    ld([crumbsLd([[DATA.ui[lang].home, abs(lang, "")], [T[lang].whatsOnH1, url]]), ...evLd])].join("\n");
-  write(`${lang}/events/index.html`, page({ lang, depth: 2, title: `${T[lang].whatsOnTitle} | Be My Guest Lodge`, desc: T[lang].whatsOnDesc, head, main, langTargets: langTargetsFor(P, "events/", "events/") }));
+    ...(e.free === true ? { isAccessibleForFree: true } : {}), ...(evDesc(e, lang) ? { description: evDesc(e, lang) } : {}) }));
+  const head = [`<link rel="canonical" href="${url}">`, alternates(pairs, abs("en", "events/")), og({ type: "website", title: X.h1, desc: T[lang].whatsOnDesc, url, img: `${BASE}/img/og-image.jpg`, lang }),
+    `<link rel="alternate" type="text/calendar" title="${esc(X.h1)}" href="${BASE}/calendar/${lang}.ics">`,
+    ld([crumbsLd([[DATA.ui[lang].home, abs(lang, "")], ["Events", url]]), ...evLd])].join("\n");
+  write(`${lang}/events/index.html`, page({ lang, depth: 2, title: `${X.h1} | Be My Guest Lodge`, desc: T[lang].whatsOnDesc, head, main, langTargets: langTargetsFor(P, "events/", "events/") }));
   sitemap.push({ loc: url, alts: pairs, xdef: abs("en", "events/") });
 }
+// compact "coming up" list for the home pages and /hello/
+const evTeaser = (lang, P, n) => {
+  const el = lang === "de" ? "de" : "en", L = LOCALE[lang] || "en-GB";
+  return upcoming.slice(0, n).map((e) => {
+    const d = new Date((e.date < TODAY ? TODAY : e.date) + "T12:00:00Z");
+    return `<a class="ev-mini" href="${P}${el}/events/${S}"${el !== lang ? ' hreflang="en"' : ""}><time datetime="${e.date}"><b>${d.toLocaleDateString(L, { day: "numeric", timeZone: "UTC" })}</b><span>${esc(d.toLocaleDateString(L, { month: "short", timeZone: "UTC" }))}</span></time><span><strong>${esc(evTitle(e, el))}</strong><small>${esc(e.location)}</small></span></a>`;
+  }).join("");
+};
 
 /* ---------------- legal pages (content/legal/{en,de}/*.md) ---------------- */
 const LEGAL_LABELS = { en: ["Legal notice", "Privacy policy"], de: ["Impressum", "Datenschutz"], af: ["Wetlike kennisgewing", "Privaatheidsbeleid"],
@@ -384,7 +459,8 @@ for (const lang of LANGS) {
       const latest = byLang(bl).slice(0, 3);
       const cards = (await Promise.all(latest.map((p, i) => card(p, P, i === 0, lang)))).join("");
       h = h.replace("<!--LATEST_POSTS-->", () => cards)
-        .replace("<!--BLOG_LINKS-->", () => `<p class="blog-links"><a href="${P}${bl}/blog/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_LINKS[lang][0]}</a><a href="${P}${bl}/events/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_LINKS[lang][1]}</a></p>`);
+        .replace("<!--BLOG_LINKS-->", () => `<p class="blog-links"><a href="${P}${bl}/blog/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_LINKS[lang][0]}</a></p>`
+          + (upcoming.length ? `<div class="home-events" id="events"><div class="home-ev-head"><h3>${HOME_EV[lang][0]}</h3><a href="${P}${bl}/events/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_EV[lang][1]}</a></div><div class="ev-strip">${evTeaser(lang, P, 4)}</div></div>` : ""));
     }
     h = h.replace("<!--SOURCE_QUESTION-->", () => sourceQuestion(lang));
     h = h.replace("<!--ROBOTS-->", robots(false)).replace("<!--HEAD-->", BLOG_LANGS.includes(lang) && pth === "" ? rssLinks(P) : "").replace(/__S__/g, S);
@@ -415,6 +491,7 @@ for (const lang of LANGS) {
 <a class="b wa" href="${wa(lang)}" target="_blank" rel="noopener">${L.wa}</a>
 <div class="tiles">${L.tiles.map(([t, d, u], i) => `<a class="tile" href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}><img src="${P}${IMG[i]}" alt="" loading="lazy"><span><b>${t}</b><small>${d}</small></span></a>`).join("")}</div>
 ${posts.length ? `<h2>${L.latest}</h2><div class="posts">${posts.join("")}</div>` : ""}
+${upcoming.length ? `<h2>${lang === "de" ? "Demnächst in Kapstadt" : "Coming up in Cape Town"}</h2><div class="posts">${evTeaser(lang, P, 3)}</div>` : ""}
 <a class="b ghost" href="${P}${lang}/events/${S}">${L.events}</a>
 <a class="b ghost" href="${P}${lang}/${S}">${L.site}</a>
 ${sourceQuestion(lang)}
@@ -441,7 +518,10 @@ section{display:grid;gap:12px}section[hidden]{display:none}
 .tile b{font-size:.9rem}.tile small{font-size:.7rem;opacity:.9}
 h2{font:600 1.05rem Georgia,serif;margin-top:6px}.posts{display:grid;gap:8px}
 .hp{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #dde4e2;border-radius:12px;overflow:hidden;color:inherit;text-decoration:none}
-.hp img{width:88px;height:66px;object-fit:cover;flex:none}.hp span{display:grid;padding:6px 8px 6px 0}.hp b{font-size:.92rem}.hp small{color:#5b6b72}
+.hp img{width:88px;height:66px;object-fit:cover;flex:none}
+.ev-mini{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #dde4e2;border-radius:12px;padding:8px 10px;color:inherit;text-decoration:none}
+.ev-mini time{display:grid;text-align:center;min-width:46px;background:#15303C;color:#fff;border-radius:8px;padding:4px;line-height:1.1}.ev-mini time b{font-size:1.1rem}.ev-mini time span{font-size:.65rem;text-transform:uppercase}
+.ev-mini>span{display:grid}.ev-mini strong{font-size:.92rem}.ev-mini small{color:#5b6b72}.hp span{display:grid;padding:6px 8px 6px 0}.hp b{font-size:.92rem}.hp small{color:#5b6b72}
 .srcq{display:grid;gap:6px;font-size:.85rem;color:#5b6b72;margin-top:6px}.srcq select{font:inherit;padding:9px;border-radius:10px;border:1px solid #cfd8d6;background:#fff;color:#15303C}
 footer{text-align:center;color:#5b6b72;font-size:.8rem;margin-top:10px}footer a{color:inherit}
 </style>
@@ -556,7 +636,8 @@ ${Object.entries(E.types).map(([id, x]) => `- [${x.n}](${BASE}/en/accommodation/
 ## Guides (blog)
 ${byLang("en").filter(live).map((p) => `- [${p.title}](${abs("en", `blog/${p.slug}/`)}): ${p.description}`).join("\n")}
 - All articles: ${BASE}/en/blog/ · RSS: ${BASE}/en/blog/rss.xml
-- Events near the lodge: ${BASE}/en/events/
+- Event calendar (updated daily): ${BASE}/en/events/ · iCal: ${BASE}/calendar/en.ics
+${upcoming.slice(0, 10).map((e) => `  - ${e.date}${e.end_date && e.end_date !== e.date ? " to " + e.end_date : ""}: ${e.title_en} (${e.location})`).join("\n")}
 - Quick links (book, WhatsApp, rooms, latest posts): ${BASE}/hello/
 
 ## FAQ

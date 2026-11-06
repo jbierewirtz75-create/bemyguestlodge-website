@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 const OUT = path.join(path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."), "dist");
-const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".mp4": "video/mp4", ".xml": "application/xml", ".txt": "text/plain; charset=utf-8" };
+const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".mp4": "video/mp4", ".xml": "application/xml", ".txt": "text/plain; charset=utf-8", ".ics": "text/calendar; charset=utf-8", ".woff2": "font/woff2" };
 const port = Number(process.env.PORT) || 8080;
 http.createServer((q, r) => {
   let f = path.join(OUT, decodeURIComponent(q.url.split("?")[0]));

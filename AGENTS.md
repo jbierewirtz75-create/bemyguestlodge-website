@@ -57,14 +57,25 @@ status: approved                       # draft | approved – only approved post
     "location": "Kite Beach, Bloubergstrand",
     "url": "https://www.redbull.com/…",
     "walk_min": 10,
+    "drive_min": 4,
+    "category": "kite",
+    "free": true,
     "description_en": "Optional, max. 200 characters.",
     "description_de": "Optional, max. 200 Zeichen.",
     "image": "/images/blog/king-of-the-air.jpg"
   }
 ]
 ```
-Required: a title, `start`, `location`. `end`, `url`, `walk_min`, descriptions and `image` are optional.
-(`date`/`end_date` are accepted as older names for `start`/`end`.) Past events disappear automatically.
+Required: a title, `start`, `location`. Recommended: `category`, `url`, `description_en`/`description_de`.
+Optional: `end`, `walk_min`, `drive_min` (minutes from the lodge), `free` (true = free entry), `image`.
+`category` is one of: `sport`, `kite` (kite & water sports), `food` (food & drink), `music` (music & culture), `business` (business & conferences), `family`, `markets`, `nature` (nature & outdoors).
+(`date`/`end_date` are accepted as older names for `start`/`end`.) Past events disappear automatically (daily build).
+
+**Please list every relevant event, not only those with a blog post** – the calendar is meant to be a complete, always-current guide
+(sport, festivals, markets, concerts, conferences at the CTICC, family events, Kite Beach events, wine events within ~1 hour).
+The website generates: the calendar `/en/events/` and `/de/events/` (grouped by month, "next 7 days", category filter),
+"add to calendar" files per event, subscribable feeds `/calendar/en.ics` and `/calendar/de.ics`, structured data (Event),
+and teasers on the home pages and `/hello/`.
 
 ## Facts that must be correct
 

@@ -119,6 +119,7 @@ function transform({ lang, pg, P, S, TYPES, m, ld, BASE, HREFLANG, OGLOCALE, LAN
     let to = null;
     if (h === "") return;
     if (h === "blog" && a.closest("header")) to = linkTo(lang === "de" ? "de" : "en", "blog/"); // menu item "Blog" → blog overview (EN for AF/FR/ES/ZH)
+    else if (h === "events") to = linkTo(lang === "de" ? "de" : "en", "events/"); // menu item + floating button "Events" → event calendar
     else if (h === "home" || h === "top") to = linkTo(lang, "");
     else if (h === "accommodation") to = linkTo(lang, "accommodation/");
     else if (TYPES.includes(h)) to = linkTo(lang, `accommodation/${h}/`);
