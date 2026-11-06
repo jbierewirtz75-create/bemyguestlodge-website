@@ -109,6 +109,18 @@
     });
   });
 
+  /* event calendar: filter by category / free entry */
+  var ef = document.getElementById("evFilters");
+  if (ef) ef.addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    var c = b.getAttribute("data-cat");
+    Array.prototype.forEach.call(ef.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", x === b); });
+    Array.prototype.forEach.call(document.querySelectorAll(".ev-month .event"), function (li) {
+      li.hidden = !(c === "all" || (c === "free" ? li.getAttribute("data-free") === "true" : li.getAttribute("data-cat") === c));
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".ev-month"), function (m) { m.hidden = !m.querySelector(".event:not([hidden])"); });
+  });
+
   /* partner filter */
   var fEl = document.getElementById("filters");
   if (fEl) fEl.addEventListener("click", function (e) {
