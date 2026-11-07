@@ -9,6 +9,7 @@
 //   Netlify deploy previews (CONTEXT=deploy-preview) and Cloudflare Pages branch builds (CF_PAGES_BRANCH≠main)
 //   are detected automatically as previews.
 import fs from "node:fs";
+import crypto from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import matter from "gray-matter";
@@ -683,12 +684,15 @@ if (fs.existsSync(path.join(ROOT, "redirects.txt"))) fs.copyFileSync(path.join(R
 /* ---------------- final pass: booking link, click tracking, Umami ---------------- */
 {
   const BOOK = esc(CFG.book);
+  // cache busting: css/js URLs carry a content hash, so browsers fetch the new file after every change
+  const ver = (rel) => { const f = path.join(OUT, rel); return fs.existsSync(f) ? crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex").slice(0, 10) : ""; };
+  const VER = { "css/site.css": ver("css/site.css"), "js/site.js": ver("js/site.js") };
   const walkHtml = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walkHtml(path.join(d, e.name)) : e.name.endsWith(".html") ? [path.join(d, e.name)] : []));
   for (const f of walkHtml(OUT)) {
     const rel = path.relative(OUT, f).split(path.sep).join("/");
     const pos = rel.startsWith("hello/") ? "hello-top" : /\/blog\/[^/]+\/index\.html$/.test(rel) ? "blog-footer" : /\/blog\/index\.html$/.test(rel) ? "blog-index"
       : /\/events\//.test(rel) ? "events-page" : /\/accommodation\//.test(rel) ? "room-page" : "home";
-    let html = fs.readFileSync(f, "utf8").replace(/https:\/\/book\.nightsbridge\.com\/28083(?:\?[^"\s<]*)?/g, BOOK);
+    let html = fs.readFileSync(f, "utf8").replace(/((?:\.\.\/)*|\/)(css\/site\.css|js\/site\.js)(?:\?v=[0-9a-f]+)?"/g, (m, pre, file) => `${pre}${file}${VER[file] ? "?v=" + VER[file] : ""}"`).replace(/https:\/\/book\.nightsbridge\.com\/28083(?:\?[^"\s<]*)?/g, BOOK);
     const seg = rel.split("/")[0], lang = LANGS.includes(seg) ? seg : "en", P = "../".repeat(rel.split("/").length - 1);
     html = html.replace("<!--LEGAL_LINKS-->", () => ["legal", "privacy"].map((pair, i) => { const lp = legalPath(lang, pair); return lp ? `<a href="${P}${lp}${S}"${lp.startsWith(lang + "/") ? "" : ' hreflang="en"'}>${LEGAL_LABELS[lang][i]}</a>` : ""; }).filter(Boolean).join(" · "));
     const headerEnd = html.indexOf("</header>");
