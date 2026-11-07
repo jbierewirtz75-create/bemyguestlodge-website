@@ -153,3 +153,22 @@
     });
   }
 })();
+
+/* mobile menu */
+(function () {
+  "use strict";
+  var hd = document.querySelector("header.nav"), bt = hd && hd.querySelector(".nav-toggle"), menu = document.getElementById("navMenu");
+  if (!hd || !bt || !menu) return;
+  /* very narrow screens: the language switch moves into the menu */
+  var ls = hd.querySelector(".lang-sel"), book = hd.querySelector(".btn-book"), li = document.createElement("li");
+  li.className = "nav-lang"; menu.appendChild(li);
+  var mq = window.matchMedia && matchMedia("(max-width:480px)");
+  var place = function () { if (!ls) return; if (mq && mq.matches) { if (ls.parentNode !== li) li.appendChild(ls); } else if (ls.parentNode === li) hd.querySelector(".wrap").insertBefore(ls, book); };
+  place(); if (mq) { if (mq.addEventListener) mq.addEventListener("change", place); else if (mq.addListener) mq.addListener(place); }
+  var set = function (open) { hd.classList.toggle("open", open); document.documentElement.classList.toggle("menu-open", open); bt.setAttribute("aria-expanded", open ? "true" : "false"); };
+  bt.addEventListener("click", function () { set(!hd.classList.contains("open")); });
+  menu.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && hd.classList.contains("open")) { set(false); bt.focus(); } });
+  document.addEventListener("click", function (e) { if (hd.classList.contains("open") && !hd.contains(e.target)) set(false); });
+  window.addEventListener("resize", function () { if (window.innerWidth > 1180) set(false); });
+})();
