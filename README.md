@@ -45,6 +45,7 @@ Die Website ist reines HTML/CSS/JS – keine Datenbank, kein PHP.
 | Täglicher Neubau | GitHub Action „Build & check“ läuft täglich 04:15 UTC und ruft den Deploy-Hook auf (Repository-Secret `DEPLOY_HOOK_URL`) |
 
 **Varianten**
+- **Cloudflare Workers (aktuell eingerichtet):** Projekt `bemyguestlodge-website`, Build-Befehl `npm run build`, Deploy-Befehl `npx wrangler deploy` (Konfiguration in `wrangler.jsonc`), Build-Variable `NOINDEX=1` bis zum Domain-Umzug. Branches und Pull Requests bekommen automatisch eigene Vorschau-Adressen.
 - **Cloudflare Pages oder Netlify** (empfohlen): Repository verbinden, Werte oben eintragen. Header kommen aus `dist/_headers`, Weiterleitungen aus `redirects.txt` → `dist/_redirects`.
 - **Eigener Webserver (Apache/Nginx):** GitHub Action ergänzen, die nach jedem Merge auf `main` baut und `dist/` per SFTP/rsync hochlädt. Für Apache liegt eine `.htaccess` bei (404-Seite, Caching).
 - **Täglicher Neubau** (für geplante Beiträge und abgelaufene Events): Deploy-Hook des Hosters einmal täglich aufrufen (z. B. per geplanter GitHub Action).
