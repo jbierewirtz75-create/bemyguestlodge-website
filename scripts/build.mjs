@@ -77,6 +77,19 @@ const HOME_EV = {
   af: ["Binnekort in Kaapstad en Blouberg", "Volledige gebeurekalender (Engels) →"], fr: ["Prochainement au Cap et à Blouberg", "Agenda complet (en anglais) →"],
   es: ["Próximamente en Ciudad del Cabo y Blouberg", "Calendario completo (en inglés) →"], zh: ["开普敦与 Blouberg 近期活动", "完整活动日历（英文）→"],
 };
+const HUB = {
+  en: ["From the blog", "Subscribe to the calendar (.ics)"], de: ["Aus dem Blog", "Kalender abonnieren (.ics)"], af: ["Uit die blog", "Teken in op die kalender (.ics)"],
+  fr: ["Sur le blog", "S'abonner à l'agenda (.ics)"], es: ["Del blog", "Suscribirse al calendario (.ics)"], zh: ["博客精选", "订阅日历 (.ics)"],
+};
+// home page: section head for the combined events + blog block [eyebrow, h2, lede]
+const HUB_HEAD = {
+  en: ["Events &amp; blog · Cape Town &amp; surroundings", "What’s on, and what we love.", "The next events around Table View and in the city, plus the stories and tips we share with our guests over breakfast."],
+  de: ["Events &amp; Blog · Kapstadt &amp; Umgebung", "Was los ist – und was wir lieben.", "Die nächsten Events rund um Table View und in der City, dazu Geschichten und Tipps, die wir unseren Gästen beim Frühstück erzählen."],
+  af: ["Gebeure en blog · Kaapstad en omgewing", "Wat aangaan, en wat ons liefhet.", "Die volgende gebeure rondom Table View en in die stad, plus die stories en wenke wat ons by ontbyt met ons gaste deel."],
+  fr: ["Agenda et blog · Le Cap et ses environs", "Ce qui se passe, et ce que nous aimons.", "Les prochains événements autour de Table View et en ville, et les histoires et conseils que nous partageons avec nos hôtes au petit-déjeuner."],
+  es: ["Agenda y blog · Ciudad del Cabo y alrededores", "Qué pasa, y lo que nos encanta.", "Los próximos eventos en Table View y en la ciudad, y las historias y consejos que compartimos con nuestros huéspedes en el desayuno."],
+  zh: ["活动与博客 · 开普敦及周边", "近期活动与我们的推荐", "Table View 及市区的近期活动，以及我们在早餐时与客人分享的故事和建议。"],
+};
 const LOCALE = { en: "en-GB", de: "de-DE", af: "af-ZA", fr: "fr-FR", es: "es-ES", zh: "zh-CN" };
 const HOME_LINKS = {
   en: ["All articles →", "What's on in Cape Town →"], de: ["Alle Artikel →", "Veranstaltungen in Kapstadt →"], af: ["Alle artikels (Engels) →", "Wat gebeur in Kaapstad (Engels) →"],
@@ -461,9 +474,16 @@ for (const lang of LANGS) {
       const bl = BLOG_LANGS.includes(lang) && byLang(lang).length ? lang : "en";
       const latest = byLang(bl).slice(0, 3);
       const cards = (await Promise.all(latest.map((p, i) => card(p, P, i === 0, lang)))).join("");
-      h = h.replace("<!--LATEST_POSTS-->", () => cards)
-        .replace("<!--BLOG_LINKS-->", () => `<p class="blog-links"><a href="${P}${bl}/blog/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_LINKS[lang][0]}</a></p>`
-          + (upcoming.length ? `<div class="home-events" id="events"><div class="home-ev-head"><h3>${HOME_EV[lang][0]}</h3><a href="${P}${bl}/events/${S}"${bl !== lang ? ' hreflang="en"' : ""}>${HOME_EV[lang][1]}</a></div><div class="ev-strip">${evTeaser(lang, P, 4)}</div></div>` : ""));
+      const el = lang === "de" ? "de" : "en", hl = (x) => (x !== lang ? ' hreflang="en"' : "");
+      const evBox = upcoming.length ? `<div class="hub-ev" id="events"><h3>${HOME_EV[lang][0]}</h3><div class="ev-list">${evTeaser(lang, P, 5)}</div>`
+        + `<p class="hub-links"><a href="${P}${el}/events/${S}"${hl(el)}>${HOME_EV[lang][1]}</a><a href="${P}calendar/${el}.ics" type="text/calendar">${HUB[lang][1]}</a></p></div>` : "";
+      const blogBox = `<div class="hub-blog"><h3>${HUB[lang][0]}</h3><div class="blog hub-posts">${cards}</div><p class="hub-links"><a href="${P}${bl}/blog/${S}"${hl(bl)}>${HOME_LINKS[lang][0]}</a></p></div>`;
+      { const sec = h.indexOf('<section id="blog"'), end = h.indexOf("</section>", sec);
+        if (sec > -1 && upcoming.length) h = h.slice(0, sec) + h.slice(sec, end)
+          .replace(/(<p class="eyebrow"[^>]*>)[\s\S]*?(<\/p>)/, (m, a, b) => a + HUB_HEAD[lang][0] + b)
+          .replace(/(<h2[^>]*>)[\s\S]*?(<\/h2>)/, (m, a, b) => a + HUB_HEAD[lang][1] + b)
+          .replace(/(<p class="lede"[^>]*>)[\s\S]*?(<\/p>)/, (m, a, b) => a + HUB_HEAD[lang][2] + b) + h.slice(end); }
+      h = h.replace('<div class="blog" id="posts"><!--LATEST_POSTS--></div><!--BLOG_LINKS-->', () => `<div class="hub${evBox ? "" : " hub-noev"}">${evBox}${blogBox}</div>`);
     }
     h = h.replace("<!--SOURCE_QUESTION-->", () => sourceQuestion(lang));
     h = h.replace("<!--ROBOTS-->", robots(false)).replace("<!--HEAD-->", BLOG_LANGS.includes(lang) && pth === "" ? rssLinks(P) : "").replace(/__S__/g, S);
