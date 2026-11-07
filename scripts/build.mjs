@@ -24,6 +24,8 @@ const CONTENT = path.join(ROOT, "content");
 const S = process.env.LINK_SUFFIX || "";
 const env = process.env;
 const PREVIEW = !!(env.SHOW_DRAFTS || env.CONTEXT === "deploy-preview" || env.CONTEXT === "branch-deploy" || (env.CF_PAGES_BRANCH && env.CF_PAGES_BRANCH !== "main"));
+// NOINDEX=1: live content, but hidden from search engines (e.g. test hosting on *.pages.dev before the domain moves)
+const NOINDEX = PREVIEW || !!env.NOINDEX;
 const TODAY = env.BUILD_DATE || new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Johannesburg" }).format(new Date());
 
 const LANGS = ["en", "de", "af", "fr", "es", "zh"];
@@ -248,7 +250,7 @@ const readMin = (p) => Math.max(1, Math.ceil(p.body.split(/\s+/).filter(Boolean)
 
 /* ---------------- page frame ---------------- */
 const SHELL = Object.fromEntries(BLOG_LANGS.map((l) => [l, read(`core/_shell/${l}.html`)]));
-const robots = (noindex) => `<meta name="robots" content="${PREVIEW || noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large"}">`;
+const robots = (noindex) => `<meta name="robots" content="${NOINDEX || noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large"}">`;
 const previewBar = (lang) => (PREVIEW ? `<div class="preview-bar">${esc(T[lang].preview)}</div>` : "");
 function page({ lang, depth, title, desc, head, main, langTargets }) {
   const P = "../".repeat(depth);
@@ -589,7 +591,7 @@ for (const u of sitemap) {
 write("sitemap.xml", sm + `</urlset>\n`);
 
 /* ---------------- robots.txt ---------------- */
-write("robots.txt", PREVIEW ? `# Preview build – not for search engines\nUser-agent: *\nDisallow: /\n` : `# Be My Guest Lodge – all search engines and AI assistants are welcome
+write("robots.txt", NOINDEX ? `# Preview/test build – not for search engines\nUser-agent: *\nDisallow: /\n` : `# Be My Guest Lodge – all search engines and AI assistants are welcome
 User-agent: *
 Allow: /
 
@@ -708,4 +710,4 @@ if (fs.existsSync(path.join(ROOT, "redirects.txt"))) fs.copyFileSync(path.join(R
 if (errors.length) { console.error(`\nBUILD STOPPED:\n` + errors.map((e) => "  ✗ " + e).join("\n")); process.exit(1); }
 warnings.forEach((w) => console.warn("  ! " + w));
 const count = (d) => fs.readdirSync(d, { withFileTypes: true }).reduce((n, e) => n + (e.isDirectory() ? count(path.join(d, e.name)) : e.name.endsWith(".html") ? 1 : 0), 0);
-console.log(`✓ Build ${PREVIEW ? "(PREVIEW: drafts visible, noindex)" : "(live)"} ${TODAY}: ${count(OUT)} HTML pages, ${published.length} posts (${byLang("en").length} EN / ${byLang("de").length} DE), ${upcoming.length} upcoming events → dist/`);
+console.log(`✓ Build ${PREVIEW ? "(PREVIEW: drafts visible, noindex)" : NOINDEX ? "(live content, NOINDEX)" : "(live)"} ${TODAY}: ${count(OUT)} HTML pages, ${published.length} posts (${byLang("en").length} EN / ${byLang("de").length} DE), ${upcoming.length} upcoming events → dist/`);

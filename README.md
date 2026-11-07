@@ -41,6 +41,8 @@ Die Website ist reines HTML/CSS/JS – keine Datenbank, kein PHP.
 | Ausgabeordner | `dist/` |
 | Vorschau-Builds (Pull Requests) | `npm ci && npm run build:preview` – wird bei Netlify (Deploy Previews) und Cloudflare Pages (Branch-Builds) automatisch erkannt |
 | Datei-basierte Vorschau ohne Webserver | `LINK_SUFFIX=index.html npm run build` |
+| Test-Hosting ohne Suchmaschinen (z. B. auf `*.pages.dev` vor dem Domain-Umzug) | Umgebungsvariable `NOINDEX=1` |
+| Täglicher Neubau | GitHub Action „Build & check“ läuft täglich 04:15 UTC und ruft den Deploy-Hook auf (Repository-Secret `DEPLOY_HOOK_URL`) |
 
 **Varianten**
 - **Cloudflare Pages oder Netlify** (empfohlen): Repository verbinden, Werte oben eintragen. Header kommen aus `dist/_headers`, Weiterleitungen aus `redirects.txt` → `dist/_redirects`.
