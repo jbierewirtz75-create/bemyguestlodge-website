@@ -23,7 +23,7 @@ const OUT = path.join(ROOT, "dist");
 const CONTENT = path.join(ROOT, "content");
 const S = process.env.LINK_SUFFIX || "";
 const env = process.env;
-const PREVIEW = !!(env.SHOW_DRAFTS || env.CONTEXT === "deploy-preview" || env.CONTEXT === "branch-deploy" || (env.CF_PAGES_BRANCH && env.CF_PAGES_BRANCH !== "main"));
+const PREVIEW = !!(env.SHOW_DRAFTS || env.CONTEXT === "deploy-preview" || env.CONTEXT === "branch-deploy" || (env.CF_PAGES_BRANCH && env.CF_PAGES_BRANCH !== "main") || (env.WORKERS_CI_BRANCH && env.WORKERS_CI_BRANCH !== "main"));
 // NOINDEX=1: live content, but hidden from search engines (e.g. test hosting on *.pages.dev before the domain moves)
 const NOINDEX = PREVIEW || !!env.NOINDEX;
 const TODAY = env.BUILD_DATE || new Intl.DateTimeFormat("en-CA", { timeZone: "Africa/Johannesburg" }).format(new Date());
