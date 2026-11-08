@@ -586,3 +586,6 @@ html.menu-open .ev-float,html.menu-open .ct-float,html.menu-open .wa-float{opaci
   .hub-ev .ev-mini:nth-child(n+4){display:none}
   .hub-posts .post p:not(.read){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 }
+/* hero: keyword line inside the h1 (looks like the former eyebrow) */
+.hero h1 .hero-eyebrow{display:block;font-family:var(--body);font-size:.78rem;line-height:1.4;letter-spacing:.14em;margin:0 0 4px;max-width:none}
+.hero h1 .hero-h1{display:block}

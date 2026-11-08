@@ -37,10 +37,31 @@ const cut = (t, n = 158) => { t = strip(t); if (t.length <= n) return t; const c
 const abs = (lang, p) => `${BASE}/${lang}/${p}`;
 const mkdirp = (p) => fs.mkdirSync(p, { recursive: true });
 
+// hand-written search snippets (EN/DE); other languages fall back to the page text
+const SEO = {
+  en: {
+    home: "Family-run guesthouse in Table View, Bloubergstrand: 5 rooms and a family cottage for up to 16 guests, pool, 5 min walk to the beach. Book direct.",
+    acc: ["Rooms & Family Cottage in Table View, Cape Town", "Three comfort double rooms, two twin rooms and a two-storey Family Cottage for up to 16 guests in Table View, Bloubergstrand. B&B or self-catering."],
+    "comfort-double": ["Double Room in Table View, Cape Town", "Comfort double rooms with private entrance, patio and air conditioning, a 5-minute walk from the beach in Table View, Bloubergstrand. Book direct."],
+    "comfort-twin": ["Twin Room in Table View, Cape Town", "Twin rooms with two single beds, private entrance and patio: ideal for friends, colleagues and kitesurfers, a 10-minute walk from Kite Beach."],
+    "family-cottage": ["Family Cottage for 6 in Table View, Cape Town", "Two-storey cottage of about 85 m² by the pool: sleeps 6, full kitchen, 2 bathrooms, terrace. Pets welcome. Table View, Bloubergstrand."],
+  },
+  de: {
+    home: "Familiengeführtes Gästehaus in Table View, Kapstadt: 5 Zimmer und Family Cottage für bis zu 16 Gäste, Pool, Strand 5 Min. zu Fuß. Gastgeber sprechen Deutsch.",
+    acc: ["Zimmer & Family Cottage in Table View, Kapstadt", "Drei Doppel-, zwei Twin-Zimmer und ein Family Cottage für bis zu 16 Gäste in Table View, Bloubergstrand. Mit Frühstück oder als Selbstversorger."],
+    "comfort-double": ["Doppelzimmer in Table View, Kapstadt", "Doppelzimmer mit eigenem Eingang, Patio und Klimaanlage, 5 Minuten zu Fuß zum Strand in Table View, Bloubergstrand. Direkt bei den Gastgebern buchen."],
+    "comfort-twin": ["Twin-Zimmer in Table View, Kapstadt", "Twin-Zimmer mit zwei Einzelbetten, eigenem Eingang und Patio: ideal für Freunde, Kollegen und Kitesurfer, 10 Minuten zu Fuß zum Kite Beach."],
+    "family-cottage": ["Family Cottage für 6 in Table View, Kapstadt", "Rund 85 m² auf zwei Etagen direkt am Pool: Platz für 6, eigene Küche, 2 Bäder, Terrasse. Haustiere willkommen. Table View, Bloubergstrand."],
+  },
+};
+
 function meta(D, lang, pg) {
+  const X = SEO[lang];
   const t = (k) => (D[lang][k] !== undefined ? D[lang][k] : D.en[k]);
   const brand = "Be My Guest Lodge";
-  if (pg.kind === "home") return { title: D.HOME_TITLES[lang], desc: cut(t("intro1")), img: "img/og-image.jpg" };
+  if (pg.kind === "home") return { title: D.HOME_TITLES[lang], desc: X ? X.home : cut(t("intro1")), img: "img/og-image.jpg" };
+  if (pg.kind === "acc" && X) return { title: `${X.acc[0]} | ${brand}`, desc: X.acc[1], img: "img/rooms/comfort-double-cover.jpg" };
+  if (pg.kind === "type" && X) return { title: `${X[pg.id][0]} | ${brand}`, desc: X[pg.id][1], img: `img/rooms/${pg.id}-cover.jpg` };
   if (pg.kind === "acc") return { title: `${strip(t("navAcc"))}: ${strip(t("types")["comfort-double"].n)}, ${strip(t("types")["comfort-twin"].n)}, ${strip(t("types")["family-cottage"].n)} | ${brand}`, desc: cut(t("acc1")), img: "img/rooms/comfort-double-cover.jpg" };
   const L = t("types")[pg.id];
   return { title: `${strip(L.n)} – Bloubergstrand, ${CITY[lang]} | ${brand}`, desc: cut(L.short), img: `img/rooms/${pg.id}-cover.jpg` };
@@ -54,7 +75,9 @@ function lodging(D, lang) {
     description: strip(t("intro1")), telephone: "+27728384490", email: "info@bemyguestlodge.co.za",
     address: { "@type": "PostalAddress", streetAddress: "51 Porterfield Rd", addressLocality: "Bloubergrant, Table View", addressRegion: "Western Cape", postalCode: "7441", addressCountry: "ZA" },
     hasMap: "https://www.google.com/maps/search/?api=1&query=51+Porterfield+Rd%2C+Bloubergrant%2C+Cape+Town%2C+7441",
-    checkinTime: "14:00", checkoutTime: "10:00", numberOfRooms: 6, availableLanguage: ["English", "German", "Afrikaans"],
+    checkinTime: "14:00", checkoutTime: "10:00", numberOfRooms: 6, availableLanguage: ["English", "German", "Afrikaans"], knowsLanguage: ["en", "de", "af"],
+    petsAllowed: "Pets are welcome in the Family Cottage",
+    keywords: "guesthouse Table View, B&B Bloubergstrand, accommodation Cape Town, kitesurf accommodation Blouberg, family cottage, group accommodation for 16, German-speaking hosts",
     amenityFeature: ["Free Wi-Fi", "Swimming pool", "Braai (barbecue) area", "Air conditioning", "Free on-site parking", "Laundry service", "Self-catering kitchen (Family Cottage)"].map((n) => ({ "@type": "LocationFeatureSpecification", name: n, value: true })),
     containsPlace: TYPES.map((id) => ({ "@type": "HotelRoom", name: strip(D.en.types[id].n), url: abs("en", `accommodation/${id}/`), occupancy: { "@type": "QuantitativeValue", maxValue: id === "family-cottage" ? 6 : 2 } })),
     potentialAction: { "@type": "ReserveAction", target: "https://book.nightsbridge.com/28083" },
