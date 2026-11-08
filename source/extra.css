@@ -139,3 +139,6 @@ html.menu-open .ev-float,html.menu-open .ct-float,html.menu-open .wa-float{opaci
 .hero h1 .hero-h1{display:block}
 .g-review{display:inline-block;margin-top:14px;font-weight:700;font-size:.92rem;color:var(--sea)}
 .cta-card .g-review{color:#fff;text-underline-offset:3px}
+.wa-de{display:grid;gap:6px;justify-items:start;margin:4px 0 10px}
+.wa-de small{font-size:.82rem;opacity:.9;max-width:46ch}
+.cta-card .wa-de .btn{color:#fff;border-color:#fff}
