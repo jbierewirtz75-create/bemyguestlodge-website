@@ -19,7 +19,8 @@ const ROOT = path.resolve(__dirname, "..");
 const SRC = path.join(ROOT, "source");
 const PUB = path.join(ROOT, "public");
 const OUT = path.join(ROOT, "core");
-const BASE = require(path.join(ROOT, "site.config.json")).base;
+const SITECFG = require(path.join(ROOT, "site.config.json"));
+const BASE = SITECFG.base;
 const LANGS = ["en", "de", "af", "fr", "es", "zh"];
 const SHELL_LANGS = ["en", "de"];
 const HREFLANG = { en: "en", de: "de", af: "af", fr: "fr", es: "es", zh: "zh-Hans" };
@@ -74,13 +75,14 @@ function lodging(D, lang) {
     url: abs(lang, ""), logo: `${BASE}/img/logo.png`, image: [`${BASE}/img/og-image.jpg`, `${BASE}/img/rooms/family-cottage-cover.jpg`, `${BASE}/img/rooms/comfort-double-cover.jpg`],
     description: strip(t("intro1")), telephone: "+27728384490", email: "info@bemyguestlodge.co.za",
     address: { "@type": "PostalAddress", streetAddress: "51 Porterfield Rd", addressLocality: "Bloubergrant, Table View", addressRegion: "Western Cape", postalCode: "7441", addressCountry: "ZA" },
-    hasMap: "https://www.google.com/maps/search/?api=1&query=51+Porterfield+Rd%2C+Bloubergrant%2C+Cape+Town%2C+7441",
+    hasMap: "https://maps.google.com/?cid=7581304276358776578",
     checkinTime: "14:00", checkoutTime: "10:00", numberOfRooms: 6, availableLanguage: ["English", "German", "Afrikaans"], knowsLanguage: ["en", "de", "af"],
     petsAllowed: "Pets are welcome in the Family Cottage",
     keywords: "guesthouse Table View, B&B Bloubergstrand, accommodation Cape Town, kitesurf accommodation Blouberg, family cottage, group accommodation for 16, German-speaking hosts",
     amenityFeature: ["Free Wi-Fi", "Swimming pool", "Braai (barbecue) area", "Air conditioning", "Free on-site parking", "Laundry service", "Self-catering kitchen (Family Cottage)"].map((n) => ({ "@type": "LocationFeatureSpecification", name: n, value: true })),
     containsPlace: TYPES.map((id) => ({ "@type": "HotelRoom", name: strip(D.en.types[id].n), url: abs("en", `accommodation/${id}/`), occupancy: { "@type": "QuantitativeValue", maxValue: id === "family-cottage" ? 6 : 2 } })),
     potentialAction: { "@type": "ReserveAction", target: "https://book.nightsbridge.com/28083" },
+    ...(SITECFG.googleMaps ? { sameAs: [SITECFG.googleMaps] } : {}),
   };
 }
 

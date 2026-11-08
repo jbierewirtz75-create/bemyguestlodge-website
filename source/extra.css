@@ -137,3 +137,5 @@ html.menu-open .ev-float,html.menu-open .ct-float,html.menu-open .wa-float{opaci
 /* hero: keyword line inside the h1 (looks like the former eyebrow) */
 .hero h1 .hero-eyebrow{display:block;font-family:var(--body);font-size:.78rem;line-height:1.4;letter-spacing:.14em;margin:0 0 4px;max-width:none}
 .hero h1 .hero-h1{display:block}
+.g-review{display:inline-block;margin-top:14px;font-weight:700;font-size:.92rem;color:var(--sea)}
+.cta-card .g-review{color:#fff;text-underline-offset:3px}
