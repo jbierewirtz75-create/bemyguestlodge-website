@@ -1,7 +1,7 @@
 {
  "HOME_TITLES": {
-  "en": "Be My Guest Lodge | Family-Run Guesthouse in Bloubergstrand, Cape Town",
-  "de": "Be My Guest Lodge | Familiengeführtes Gästehaus in Bloubergstrand, Kapstadt",
+  "en": "Bloubergstrand & Table View Guesthouse, Cape Town | Be My Guest Lodge",
+  "de": "Gästehaus in Kapstadt-Bloubergstrand (Table View) | Be My Guest Lodge",
   "fr": "Be My Guest Lodge | Maison d'hôtes familiale à Bloubergstrand, Le Cap",
   "es": "Be My Guest Lodge | Casa de huéspedes familiar en Bloubergstrand, Ciudad del Cabo",
   "af": "Be My Guest Lodge | Familiebestuurde gastehuis in Bloubergstrand, Kaapstad",
@@ -121,6 +121,18 @@
     "Yes. Kite Beach in Bloubergstrand is a good 10-minute walk or 3–4 minutes by car, and the main kite season runs roughly from November to March. Every room has a private entrance and patio where you can rinse and dry your gear, and we are happy to help you find lessons or rental equipment."
    ],
    [
+    "Do you speak German?",
+    "Yes. We are a German-South African family, so you can talk to us in German or English, from your first WhatsApp message to the tips at breakfast."
+   ],
+   [
+    "Is the lodge a good base for business trips to Cape Town?",
+    "Yes. The CTICC and the city centre are about 25 minutes by car, the airport about 20 minutes. Every room has its own entrance, free Wi-Fi and air conditioning, and our twin rooms work well for colleagues travelling together."
+   ],
+   [
+    "Should I stay in the city or in Bloubergstrand?",
+    "Stay in Bloubergstrand if you want the beach on your doorstep, the classic view of Table Mountain, kitesurfing and a quieter neighbourhood. The city centre and V&A Waterfront are about 25 minutes away by car, and MyCiTi buses connect Table View with the city."
+   ],
+   [
     "Can we stay on a B&B or self-catering basis?",
     "Both are possible. All rooms have a mini fridge, microwave and tea and coffee facilities, Room 4 has a kitchenette, and the Family Cottage has a fully equipped kitchen."
    ],
@@ -185,6 +197,13 @@
    "German",
    "Afrikaans"
   ],
+  "knowsLanguage": [
+   "en",
+   "de",
+   "af"
+  ],
+  "petsAllowed": "Pets are welcome in the Family Cottage",
+  "keywords": "guesthouse Table View, B&B Bloubergstrand, accommodation Cape Town, kitesurf accommodation Blouberg, family cottage, group accommodation for 16, German-speaking hosts",
   "amenityFeature": [
    {
     "@type": "LocationFeatureSpecification",
