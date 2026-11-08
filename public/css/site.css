@@ -555,3 +555,34 @@ header.nav.open .nav-toggle .l3{transform:translateY(-5px) rotate(-45deg)}
 .contact dd{min-width:0;overflow-wrap:anywhere}
 @media (max-width:520px){.contact>*{padding-left:20px;padding-right:20px}}
 html.menu-open .ev-float,html.menu-open .ct-float,html.menu-open .wa-float{opacity:0;pointer-events:none}
+/* home: combined events + blog block */
+.hub{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.75fr);gap:40px;align-items:start}
+.hub.hub-noev{grid-template-columns:1fr}
+.hub h3{font-size:1.45rem;margin:0 0 14px}
+.hub-ev .ev-list{display:grid;gap:10px}
+.hub-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin:16px 0 0;font-weight:700;font-size:.95rem}
+.hub-links a{color:var(--sea)}
+.hub-posts.blog{grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:16px}
+.hub-posts .post.feature{grid-row:span 2}
+.hub-posts .post.feature .art{height:230px}
+.hub-posts .post:not(.feature){display:grid;grid-template-columns:120px 1fr;align-items:stretch}
+.hub-posts .post:not(.feature) .art{height:100%;min-height:150px}
+.hub-posts .post:not(.feature) .txt{padding:14px 16px;gap:6px}
+.hub-posts .post:not(.feature) h3{font-size:1.08rem}
+.hub-posts .post:not(.feature) p{display:none}
+.hub-posts .post.feature h3{font-size:1.4rem}
+@media (max-width:1100px){.hub{grid-template-columns:minmax(0,1fr);gap:34px}}
+@media (max-width:760px){
+  .hub-posts.blog{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -20px;padding:0 20px 8px;scrollbar-width:none}
+  .hub-posts.blog::-webkit-scrollbar{display:none}
+  .hub-posts .post,.hub-posts .post:not(.feature){flex:0 0 82%;scroll-snap-align:start;display:flex;flex-direction:column}
+  .hub-posts .post .art,.hub-posts .post.feature .art,.hub-posts .post:not(.feature) .art{height:170px;min-height:0}
+  .hub-posts .post p{display:block}
+  .hub-posts .post h3,.hub-posts .post.feature h3,.hub-posts .post:not(.feature) h3{font-size:1.2rem}
+  .hub-posts .post .txt,.hub-posts .post:not(.feature) .txt{padding:16px}
+}
+@media (max-width:760px){
+  .hub-posts.blog{scroll-padding-left:20px}
+  .hub-ev .ev-mini:nth-child(n+4){display:none}
+  .hub-posts .post p:not(.read){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+}
