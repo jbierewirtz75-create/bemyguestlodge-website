@@ -188,7 +188,7 @@
    "postalCode": "7441",
    "addressCountry": "ZA"
   },
-  "hasMap": "https://www.google.com/maps/search/?api=1&query=51+Porterfield+Rd%2C+Bloubergrant%2C+Cape+Town%2C+7441",
+  "hasMap": "https://maps.google.com/?cid=7581304276358776578",
   "checkinTime": "14:00",
   "checkoutTime": "10:00",
   "numberOfRooms": 6,
@@ -273,6 +273,9 @@
   "potentialAction": {
    "@type": "ReserveAction",
    "target": "https://book.nightsbridge.com/28083"
-  }
+  },
+  "sameAs": [
+   "https://maps.google.com/?cid=7581304276358776578"
+  ]
  }
 }

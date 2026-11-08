@@ -109,6 +109,8 @@ const SRCQ = {
     ["other", { en: "Other", de: "Sonstiges", af: "Ander", fr: "Autre", es: "Otro", zh: "其他" }],
   ],
 };
+const REVIEW_LABEL = { en: "★ Review us on Google", de: "★ Bewerte uns bei Google", af: "★ Resenseer ons op Google", fr: "★ Laissez-nous un avis sur Google", es: "★ Déjanos una reseña en Google", zh: "★ 在 Google 上评价我们" };
+const reviewLink = (lang) => (CFG.googleReview ? `<a class="g-review" href="${esc(CFG.googleReview)}" target="_blank" rel="noopener" data-umami-event="google_review_click">${REVIEW_LABEL[lang] || REVIEW_LABEL.en}</a>` : "");
 const sourceQuestion = (lang) => `<label class="srcq"><span>${esc(SRCQ.q[lang])} <small>(${SRCQ.opt[lang]})</small></span><select data-srcq><option value="">–</option>${SRCQ.answers.map(([k, L]) => `<option value="${k}">${esc(L[lang] || L.en)}</option>`).join("")}</select><span class="srcq-thanks" hidden>✓ ${SRCQ.thanks[lang]}</span></label>`;
 
 const errors = [], warnings = [];
@@ -485,7 +487,7 @@ for (const lang of LANGS) {
           .replace(/(<p class="lede"[^>]*>)[\s\S]*?(<\/p>)/, (m, a, b) => a + HUB_HEAD[lang][2] + b) + h.slice(end); }
       h = h.replace('<div class="blog" id="posts"><!--LATEST_POSTS--></div><!--BLOG_LINKS-->', () => `<div class="hub${evBox ? "" : " hub-noev"}">${evBox}${blogBox}</div>`);
     }
-    h = h.replace("<!--SOURCE_QUESTION-->", () => sourceQuestion(lang));
+    h = h.replace("<!--SOURCE_QUESTION-->", () => sourceQuestion(lang) + reviewLink(lang));
     h = h.replace("<!--ROBOTS-->", robots(false)).replace("<!--HEAD-->", BLOG_LANGS.includes(lang) && pth === "" ? rssLinks(P) : "").replace(/__S__/g, S);
     if (PREVIEW) h = h.replace(/(<body[^>]*>)/, `$1<div class="preview-bar">${esc((T[lang] || T.en).preview)}</div>`);
     write(`${lang}/${pth}index.html`, h);
@@ -517,6 +519,7 @@ ${posts.length ? `<h2>${L.latest}</h2><div class="posts">${posts.join("")}</div>
 ${upcoming.length ? `<h2>${lang === "de" ? "Demnächst in Kapstadt" : "Coming up in Cape Town"}</h2><div class="posts">${evTeaser(lang, P, 3)}</div>` : ""}
 <a class="b ghost" href="${P}${lang}/events/${S}">${L.events}</a>
 <a class="b ghost" href="${P}${lang}/${S}">${L.site}</a>
+${CFG.googleReview ? `<a class="b ghost" href="${esc(CFG.googleReview)}" target="_blank" rel="noopener" data-umami-event="google_review_click">${REVIEW_LABEL[lang]}</a>` : ""}
 ${sourceQuestion(lang)}
 </section>`;
   };
