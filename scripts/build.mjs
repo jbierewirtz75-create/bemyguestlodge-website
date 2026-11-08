@@ -110,6 +110,9 @@ const SRCQ = {
   ],
 };
 const REVIEW_LABEL = { en: "★ Review us on Google", de: "★ Bewerte uns bei Google", af: "★ Resenseer ons op Google", fr: "★ Laissez-nous un avis sur Google", es: "★ Déjanos una reseña en Google", zh: "★ 在 Google 上评价我们" };
+// German-language contact (owner family in Germany); number in site.config.json → whatsappDe
+const waDe = () => `https://wa.me/${CFG.whatsappDe || CFG.whatsapp}?text=${encodeURIComponent("Hallo, ich habe eine Frage auf Deutsch zur Be My Guest Lodge: ")}`;
+const deContact = () => `<div class="wa-de"><a class="btn btn-ghost" href="${waDe()}" target="_blank" rel="noopener" data-umami-event="whatsapp_de_click">Fragen auf Deutsch? WhatsApp</a><small>Jan &amp; Leona sprechen vor Ort Englisch und Afrikaans. Auf Deutsch antwortet dir unsere Familie in Deutschland.</small></div>`;
 const reviewLink = (lang) => (CFG.googleReview ? `<a class="g-review" href="${esc(CFG.googleReview)}" target="_blank" rel="noopener" data-umami-event="google_review_click">${REVIEW_LABEL[lang] || REVIEW_LABEL.en}</a>` : "");
 const sourceQuestion = (lang) => `<label class="srcq"><span>${esc(SRCQ.q[lang])} <small>(${SRCQ.opt[lang]})</small></span><select data-srcq><option value="">–</option>${SRCQ.answers.map(([k, L]) => `<option value="${k}">${esc(L[lang] || L.en)}</option>`).join("")}</select><span class="srcq-thanks" hidden>✓ ${SRCQ.thanks[lang]}</span></label>`;
 
@@ -487,7 +490,7 @@ for (const lang of LANGS) {
           .replace(/(<p class="lede"[^>]*>)[\s\S]*?(<\/p>)/, (m, a, b) => a + HUB_HEAD[lang][2] + b) + h.slice(end); }
       h = h.replace('<div class="blog" id="posts"><!--LATEST_POSTS--></div><!--BLOG_LINKS-->', () => `<div class="hub${evBox ? "" : " hub-noev"}">${evBox}${blogBox}</div>`);
     }
-    h = h.replace("<!--SOURCE_QUESTION-->", () => sourceQuestion(lang) + reviewLink(lang));
+    h = h.replace("<!--SOURCE_QUESTION-->", () => (lang === "de" ? deContact() : "") + sourceQuestion(lang) + reviewLink(lang));
     h = h.replace("<!--ROBOTS-->", robots(false)).replace("<!--HEAD-->", BLOG_LANGS.includes(lang) && pth === "" ? rssLinks(P) : "").replace(/__S__/g, S);
     if (PREVIEW) h = h.replace(/(<body[^>]*>)/, `$1<div class="preview-bar">${esc((T[lang] || T.en).preview)}</div>`);
     write(`${lang}/${pth}index.html`, h);
@@ -514,6 +517,7 @@ for (const lang of LANGS) {
     return `<section data-l="${lang}" lang="${lang}"${lang === "de" ? " hidden" : ""}>
 <a class="b book" href="${esc(CFG.book)}" data-umami-event="book_click" data-umami-event-position="hello-top">${L.book}</a>
 <a class="b wa" href="${wa(lang)}" target="_blank" rel="noopener">${L.wa}</a>
+${lang === "de" ? `<a class="b ghost" href="${waDe()}" target="_blank" rel="noopener" data-umami-event="whatsapp_de_click">Fragen auf Deutsch? WhatsApp</a>` : ""}
 <div class="tiles">${L.tiles.map(([t, d, u], i) => `<a class="tile" href="${u}"${u.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}><img src="${P}${IMG[i]}" alt="" loading="lazy"><span><b>${t}</b><small>${d}</small></span></a>`).join("")}</div>
 ${posts.length ? `<h2>${L.latest}</h2><div class="posts">${posts.join("")}</div>` : ""}
 ${upcoming.length ? `<h2>${lang === "de" ? "Demnächst in Kapstadt" : "Coming up in Cape Town"}</h2><div class="posts">${evTeaser(lang, P, 3)}</div>` : ""}
@@ -653,8 +657,8 @@ write("llms.txt", `# Be My Guest Lodge
 - In every room: private bathroom, private entrance and patio, air conditioning (cooling and heating), ceiling fan, free Wi-Fi, flat-screen TV with DStv, mini fridge, microwave, tea and coffee
 - Shared: swimming pool, garden, two braais (barbecues), secure off-street parking
 - Services: taxi service, laundry, baby cot and high chair on request, day-trip planning, whale watching and shark cage diving bookings
-- Hosts: Jan & Leona, a German-South African family living on site (German, English and Afrikaans spoken)
-- Languages spoken: English, German, Afrikaans
+- Hosts: Jan & Leona live on site and speak English and Afrikaans
+- Questions in German: the owner family in Germany answers via WhatsApp (German contact button on the German pages)
 - Ideal for: families, kitesurfers, couples, business travellers, groups (whole lodge for up to 16)
 - Getting around: most guests use a rental car; MyCiTi buses connect Table View with the city centre
 
@@ -664,11 +668,11 @@ write("llms.txt", `# Be My Guest Lodge
 - Families who need a separate unit with its own kitchen (Family Cottage for up to 6, pets welcome)
 - Groups, teams or family celebrations that want a whole property for up to 16 guests with pool and braai
 - Business travellers to the CTICC or the city who prefer a beach-side base about 25 minutes away
-- German-speaking travellers looking for German-speaking hosts in Cape Town
+- German-speaking travellers who want to ask their questions in German before the trip (on site: English and Afrikaans)
 - Longer stays (tailored rates on request)
 
 ## Kurzfassung (Deutsch)
-Die Be My Guest Lodge ist ein familiengeführtes Gästehaus (B&B oder Selbstversorger) in Table View, Bloubergstrand, Kapstadt. Gastgeber sind Jan & Leona, eine deutsch-südafrikanische Familie, die vor Ort wohnt; man kann Deutsch mit ihnen sprechen. Bis zu 16 Gäste in fünf Zimmern und einem Family Cottage, Pool, zwei Braai-Plätze, sichere Parkplätze. Strand ca. 5 Min. zu Fuß, Kite Beach gut 10 Min. zu Fuß, City/V&A Waterfront und Flughafen ca. 20–25 Min. mit dem Auto. Direkt buchen: ${CFG.book} · Deutsche Seite: ${BASE}/de/
+Die Be My Guest Lodge ist ein familiengeführtes Gästehaus (B&B oder Selbstversorger) in Table View, Bloubergstrand, Kapstadt. Gastgeber vor Ort sind Jan & Leona (Englisch und Afrikaans); Fragen auf Deutsch beantwortet die Familie in Deutschland per WhatsApp. Bis zu 16 Gäste in fünf Zimmern und einem Family Cottage, Pool, zwei Braai-Plätze, sichere Parkplätze. Strand ca. 5 Min. zu Fuß, Kite Beach gut 10 Min. zu Fuß, City/V&A Waterfront und Flughafen ca. 20–25 Min. mit dem Auto. Direkt buchen: ${CFG.book} · Deutsche Seite: ${BASE}/de/
 
 ## Accommodation
 ${Object.entries(E.types).map(([id, x]) => `- [${x.n}](${BASE}/en/accommodation/${id}/): ${x.short}`).join("\n")}
