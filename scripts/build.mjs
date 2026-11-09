@@ -330,7 +330,7 @@ ${imgTag(im, P, p.hero_alt, "art-hero", "(max-width: 800px) 100vw, 760px", true)
     ld([crumbsLd(items.map(([n, u], i) => [n, i === 0 ? abs(lang, "") : i === 1 ? abs(lang, "blog/") : url])),
       { "@type": "BlogPosting", headline: p.title, description: p.description, inLanguage: HREFLANG[lang], url, mainEntityOfPage: url, image: [`${BASE}/${im.og}`, `${BASE}/${im.w[1600].src}`],
         datePublished: p.date, dateModified: p.date, keywords: p.tags.map((t) => tagLabel(t, "en")).join(", "),
-        author: { "@type": "Person", name: "Jan & Leona", worksFor: lodgeRef }, publisher: { "@type": "Organization", name: "Be My Guest Lodge", url: BASE, logo: `${BASE}/img/logo.png` },
+        author: { "@type": "Person", name: "Jan & Leona", worksFor: lodgeRef }, publisher: { "@type": "Organization", name: "Be My Guest Lodge", url: BASE, logo: `${BASE}/img/logo-v2.png` },
         about: lodgeRef }])].join("\n");
   const targets = langTargetsFor(P, lang === "en" ? `blog/${p.slug}/` : other ? `blog/${other.slug}/` : "blog/", lang === "de" ? `blog/${p.slug}/` : other ? `blog/${other.slug}/` : "blog/");
   write(`${lang}/blog/${p.slug}/index.html`, page({ lang, depth: 3, title: `${p.title} | Be My Guest Lodge`, desc: p.description, head, main, langTargets: targets }));
@@ -533,7 +533,7 @@ ${sourceQuestion(lang)}
 <meta name="description" content="Book direct, chat on WhatsApp and discover our rooms, the Family Cottage and tips from Bloubergstrand – Be My Guest Lodge, Table View, Cape Town.">
 ${robots(false)}
 <link rel="canonical" href="${BASE}/hello/">
-<link rel="icon" type="image/png" href="${P}img/favicon.png">
+<link rel="icon" type="image/png" href="${P}img/favicon-v2.png">
 <meta property="og:title" content="Be My Guest Lodge – Home away from home"><meta property="og:image" content="${BASE}/img/og-image.jpg"><meta property="og:url" content="${BASE}/hello/">
 <style>
 *{box-sizing:border-box;margin:0}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#F3F5F2;color:#15303C;line-height:1.4}
@@ -557,7 +557,7 @@ footer{text-align:center;color:#5b6b72;font-size:.8rem;margin-top:10px}footer a{
 </style>
 <script defer src="${P}js/site.js"></script>
 </head><body><main>
-<div class="top"><img src="${P}img/logo-180.png" width="56" height="56" alt="Be My Guest Lodge Logo"><div><h1>Be My Guest Lodge</h1><p>Home away from home</p></div>
+<div class="top"><img src="${P}img/logo-v2-180.png" width="56" height="56" alt="Be My Guest Lodge Logo"><div><h1>Be My Guest Lodge</h1><p>Home away from home</p></div>
 <div class="sw" role="group" aria-label="Language"><button type="button" data-sw="en" aria-pressed="true">EN</button><button type="button" data-sw="de" aria-pressed="false">DE</button></div></div>
 ${await block("en")}
 ${await block("de")}
@@ -601,7 +601,7 @@ ${p.tags.map((t) => `<category>${esc(tagLabel(t, lang))}</category>`).join("")}
 <atom:link href="${abs(lang, "blog/rss.xml")}" rel="self" type="application/rss+xml"/>
 <description>${esc(strip(DATA.ui[lang].blogLede))}</description>
 <language>${lang === "de" ? "de-DE" : "en-ZA"}</language>
-<image><url>${BASE}/img/logo-180.png</url><title>Be My Guest Lodge</title><link>${abs(lang, "")}</link></image>
+<image><url>${BASE}/img/logo-v2-180.png</url><title>Be My Guest Lodge</title><link>${abs(lang, "")}</link></image>
 ${list[0] ? `<lastBuildDate>${new Date(list[0].date + "T08:00:00+02:00").toUTCString()}</lastBuildDate>` : ""}
 ${items}</channel>
 </rss>
@@ -701,10 +701,10 @@ ${robots(false)}
 <link rel="canonical" href="${BASE}/">
 ${LANGS.map((l) => `<link rel="alternate" hreflang="${HREFLANG[l]}" href="${BASE}/${l}/">`).join("\n")}
 <link rel="alternate" hreflang="x-default" href="${BASE}/">
-<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="icon" type="image/png" href="img/favicon-v2.png">
 <script>(function(){var L=${JSON.stringify(LANGS)},l="en";try{var s=localStorage.getItem("bmg-lang");if(L.indexOf(s)>-1)l=s;else{var n=(navigator.language||"").slice(0,2);if(L.indexOf(n)>-1)l=n;}}catch(e){}location.replace(l+"/${S}");})();</script>
 <style>body{font-family:system-ui,sans-serif;background:#F3F5F2;color:#15303C;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#3D6A80;margin:0 8px}</style>
-</head><body><main><p><img src="img/logo-180.png" width="90" height="90" alt="Be My Guest Lodge Logo"></p><h1>Be My Guest Lodge</h1><p>${LANGS.map((l) => `<a href="${l}/${S}" hreflang="${HREFLANG[l]}">${NAMES[l]}</a>`).join(" ")}</p></main></body></html>
+</head><body><main><p><img src="img/logo-v2-180.png" width="90" height="90" alt="Be My Guest Lodge Logo"></p><h1>Be My Guest Lodge</h1><p>${LANGS.map((l) => `<a href="${l}/${S}" hreflang="${HREFLANG[l]}">${NAMES[l]}</a>`).join(" ")}</p></main></body></html>
 `);
 write("404.html", `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | Be My Guest Lodge</title><meta name="robots" content="noindex"><style>body{font-family:system-ui,sans-serif;background:#F3F5F2;color:#15303C;display:grid;place-items:center;min-height:100vh;margin:0;text-align:center}a{color:#C23F64;font-weight:700}</style></head><body><main><h1>Page not found</h1><p>Sorry, this page does not exist (anymore).</p><p><a href="/">Back to Be My Guest Lodge</a></p></main></body></html>\n`);
 // Netlify / Cloudflare Pages: headers and redirects (Apache: see .htaccess in public/)

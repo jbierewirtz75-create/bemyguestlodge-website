@@ -72,7 +72,7 @@ function lodging(D, lang) {
   const t = (k) => (D[lang][k] !== undefined ? D[lang][k] : D.en[k]);
   return {
     "@type": "BedAndBreakfast", "@id": `${BASE}/#lodge`, name: "Be My Guest Lodge",
-    url: abs(lang, ""), logo: `${BASE}/img/logo.png`, image: [`${BASE}/img/og-image.jpg`, `${BASE}/img/rooms/family-cottage-cover.jpg`, `${BASE}/img/rooms/comfort-double-cover.jpg`],
+    url: abs(lang, ""), logo: `${BASE}/img/logo-v2.png`, image: [`${BASE}/img/og-image.jpg`, `${BASE}/img/rooms/family-cottage-cover.jpg`, `${BASE}/img/rooms/comfort-double-cover.jpg`],
     description: strip(t("intro1")), telephone: "+27728384490", email: "info@bemyguestlodge.co.za",
     address: { "@type": "PostalAddress", streetAddress: "51 Porterfield Rd", addressLocality: "Bloubergrant, Table View", addressRegion: "Western Cape", postalCode: "7441", addressCountry: "ZA" },
     hasMap: "https://maps.google.com/?cid=7581304276358776578",
