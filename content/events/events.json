@@ -9,7 +9,8 @@
     "description_en": "Africa's big telecoms and tech event with an expo, AI, cloud and cybersecurity talks. The CTICC is about 25 minutes from the lodge by car.",
     "description_de": "Afrikas große Telekom- und Tech-Messe mit Expo und Vorträgen zu KI, Cloud und Cybersecurity. Zum CTICC fährst du von der Lodge ca. 25 Minuten.",
     "image": "images/cticc-waterfront-road-sign.jpg",
-    "category": "business"
+    "category": "business",
+    "drive_min": 25
   },
   {
     "title_en": "Red Bull King of the Air 2026",
@@ -23,7 +24,19 @@
     "description_de": "Die besten Big-Air-Kiter der Welt am Kite Beach. Zuschauen kostenlos; Wettkampftage werden je nach Wind und Wellen kurzfristig ausgerufen.",
     "image": "images/kite-sunset-silhouette.jpg",
     "category": "kite",
-    "free": true
+    "free": true,
+    "drive_min": 4
+  },
+  {
+    "title_en": "Kirstenbosch Summer Sunset Concerts: Mi Casa (season opener)",
+    "title_de": "Kirstenbosch Sommerkonzerte: Mi Casa (Saisonauftakt)",
+    "start": "2026-11-22",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/kirstenbosch-summer-sunset-concerts-2026/",
+    "drive_min": 35,
+    "description_en": "Mi Casa opens the 2026/27 season of Sunday picnic concerts in the botanical garden below Table Mountain. Gates 16:00, music from 17:30.",
+    "description_de": "Mi Casa eröffnet die Saison der Sonntags-Picknickkonzerte im botanischen Garten unterm Tafelberg. Einlass 16 Uhr, Musik ab 17:30 Uhr – nimm deine Decke mit.",
+    "category": "music"
   },
   {
     "title_en": "Taste of Cape Town",
@@ -34,7 +47,8 @@
     "url": "https://www.quicket.co.za/events/359707-taste-of-cape-town-2026/",
     "description_en": "A weekend food festival with chef demos, wine tastings and a family area. About 25 minutes from the lodge by car.",
     "description_de": "Food-Festival am Wochenende mit Koch-Demos, Weinverkostungen und Familienbereich. Ca. 25 Minuten mit dem Auto von der Lodge.",
-    "category": "food"
+    "category": "food",
+    "drive_min": 25
   },
   {
     "title_en": "Cape Town Toy Run",
@@ -44,7 +58,19 @@
     "url": "https://www.quicket.co.za/organisers/2449-toy-run-cape-town",
     "description_en": "Thousands of bikers ride for children in need and finish at Killarney, just around the corner. Your entry ticket is a toy donation.",
     "description_de": "Tausende Biker fahren für Kinder in Not und kommen am Killarney Raceway an – gleich um die Ecke. Dein Eintritt ist eine Spielzeugspende.",
-    "category": "family"
+    "category": "family",
+    "drive_min": 5
+  },
+  {
+    "title_en": "Kirstenbosch Concert: Booshle G & Freshlyground",
+    "title_de": "Kirstenbosch-Konzert: Booshle G & Freshlyground",
+    "start": "2026-11-29",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/kirstenbosch-summer-sunset-concerts-2026/",
+    "drive_min": 35,
+    "description_en": "Freshlyground and Booshle G live at sunset in Kirstenbosch. Bring a blanket and a picnic – no alcohol is sold on site.",
+    "description_de": "Freshlyground und Booshle G live zum Sonnenuntergang in Kirstenbosch. Pack Decke und Picknick ein – vor Ort wird kein Alkohol verkauft.",
+    "category": "music"
   },
   {
     "title_en": "HSBC SVNS Cape Town (Rugby Sevens)",
@@ -55,7 +81,41 @@
     "url": "https://springboks.rugby/video-hub/hsbc-svns-cape-town-cape-towns-biggest-party-is-back-5-6-december-2026",
     "description_en": "Two days of world-class sevens rugby, men's and women's teams, and Cape Town's biggest stadium party. About 25 minutes from the lodge.",
     "description_de": "Zwei Tage Siebener-Rugby der Weltspitze mit Männer- und Frauenteams – und Kapstadts größte Stadionparty. Ca. 25 Minuten von der Lodge.",
+    "category": "sport",
+    "drive_min": 25
+  },
+  {
+    "title_en": "Proteas vs Bangladesh – 3rd ODI",
+    "title_de": "Proteas gegen Bangladesch – 3. ODI",
+    "start": "2026-12-07",
+    "location": "Newlands Cricket Ground, Cape Town",
+    "url": "https://tickets.cricket.co.za/event/south-africa-vs-bangladesh-a52pmi",
+    "drive_min": 35,
+    "description_en": "One-day international at Newlands with Table Mountain as the backdrop. Play starts at 13:30.",
+    "description_de": "Eintages-Länderspiel in Newlands mit dem Tafelberg im Hintergrund. Spielbeginn ist um 13:30 Uhr.",
     "category": "sport"
+  },
+  {
+    "title_en": "Kirstenbosch Concert: The Billy Joel Experience",
+    "title_de": "Kirstenbosch-Konzert: The Billy Joel Experience",
+    "start": "2026-12-13",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/kirstenbosch-summer-sunset-concerts-2026/",
+    "drive_min": 35,
+    "description_en": "Piano Man classics on a summer Sunday evening in Kirstenbosch garden.",
+    "description_de": "Piano-Man-Klassiker an einem Sommer-Sonntagabend im botanischen Garten Kirstenbosch.",
+    "category": "music"
+  },
+  {
+    "title_en": "Kirstenbosch New Year's Eve Concert: Matthew Mole & Congo Cowboys",
+    "title_de": "Kirstenbosch-Silvesterkonzert: Matthew Mole & Congo Cowboys",
+    "start": "2026-12-31",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/kirstenbosch-summer-sunset-concerts-2026/",
+    "drive_min": 35,
+    "description_en": "Ring in 2027 in the garden: Matthew Mole and Congo Cowboys play from 20:30 until just after midnight.",
+    "description_de": "Rutsch im Garten ins neue Jahr: Matthew Mole und Congo Cowboys spielen ab 20:30 Uhr bis kurz nach Mitternacht.",
+    "category": "music"
   },
   {
     "title_en": "South Africa vs England – 3rd Test",
@@ -66,7 +126,8 @@
     "url": "https://newlandscricket.com/world-sports-betting-newlands-to-host-blockbuster-2026-27-international-summer/",
     "description_en": "The Proteas host England for the final Test of the series at Newlands. About 35 minutes from the lodge by car.",
     "description_de": "Die Proteas empfangen England zum letzten Test der Serie in Newlands. Ca. 35 Minuten mit dem Auto von der Lodge.",
-    "category": "sport"
+    "category": "sport",
+    "drive_min": 35
   },
   {
     "title_en": "South Africa vs England – 1st ODI",
@@ -76,6 +137,29 @@
     "url": "https://www.ecb.co.uk/news/4455456/fixtures-for-england-mens-202627-tour-to-south-africa-announced",
     "description_en": "One-day international in the heart of the Winelands. Combine it with a wine farm visit – Paarl is about 50 minutes from the lodge.",
     "description_de": "Eintagesspiel mitten im Weinland. Perfekt kombinierbar mit einem Weingut-Besuch – Paarl liegt ca. 50 Minuten von der Lodge entfernt.",
-    "category": "sport"
+    "category": "sport",
+    "drive_min": 50
+  },
+  {
+    "title_en": "Kirstenbosch Concert: Kurt Darren & Me and Mr Green",
+    "title_de": "Kirstenbosch-Konzert: Kurt Darren & Me and Mr Green",
+    "start": "2027-01-10",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/kirstenbosch-summer-sunset-concerts-2026/",
+    "drive_min": 35,
+    "description_en": "A singalong Sunday in Kirstenbosch with Kurt Darren and Me and Mr Green.",
+    "description_de": "Ein Sonntag zum Mitsingen in Kirstenbosch mit Kurt Darren und Me and Mr Green.",
+    "category": "music"
+  },
+  {
+    "title_en": "Broadway at Kirstenbosch: Jessica Vosk & Cape Town Philharmonic",
+    "title_de": "Broadway in Kirstenbosch: Jessica Vosk & Cape Town Philharmonic",
+    "start": "2027-01-31",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/kirstenbosch-summer-sunset-concerts-2026/",
+    "drive_min": 35,
+    "description_en": "Broadway star Jessica Vosk sings with the Cape Town Philharmonic Orchestra under the open sky.",
+    "description_de": "Broadway-Star Jessica Vosk singt mit dem Cape Town Philharmonic Orchestra unter freiem Himmel.",
+    "category": "music"
   }
 ]
