@@ -1,5 +1,16 @@
 [
   {
+    "title_en": "Power Series Round 9 – Season Finale",
+    "title_de": "Power Series Runde 9 – Saisonfinale",
+    "start": "2026-11-14",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "The Western Cape's top circuit racing series crowns its 2026 champions at Killarney, just a few minutes from the lodge.",
+    "description_de": "Saisonfinale der Power Series auf Killarney: Rundstreckenrennen fast vor unserer Haustür – du bist in rund 5 Minuten an der Strecke.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
     "title_en": "Africa Tech Festival (AfricaCom)",
     "title_de": "Africa Tech Festival (AfricaCom)",
     "start": "2026-11-17",
@@ -26,6 +37,18 @@
     "category": "kite",
     "free": true,
     "drive_min": 4
+  },
+  {
+    "title_en": "Italy in Town 2026",
+    "title_de": "Italy in Town 2026 – italienisches Straßenfest",
+    "start": "2026-11-21",
+    "end": "2026-11-22",
+    "location": "Castle of Good Hope, Foreshore",
+    "url": "https://www.quicket.co.za/events/340274-italy-in-town-2026/",
+    "description_en": "A weekend Italian street festival at the Castle with food, wine, live music, pasta classes and a kids zone.",
+    "description_de": "Italienisches Straßenfest im Castle of Good Hope: Pasta, Wein, Live-Musik, Kochkurse und ein Bereich für Kinder – ein Wochenende lang.",
+    "category": "food",
+    "drive_min": 25
   },
   {
     "title_en": "Kirstenbosch Summer Sunset Concerts: Mi Casa (season opener)",
@@ -73,6 +96,18 @@
     "category": "music"
   },
   {
+    "title_en": "Festive Lights Switch-On",
+    "title_de": "Festive Lights Switch-On (Weihnachtsbeleuchtung)",
+    "start": "2026-11-29",
+    "location": "Grand Parade & Adderley Street, City Centre",
+    "url": "https://www.capetown.gov.za/general/festive-lights-switch-on",
+    "description_en": "Free music and entertainment on the Grand Parade as the city switches on its festive lights along Adderley Street.",
+    "description_de": "Gratis-Musikfest auf der Grand Parade, wenn die Stadt die Weihnachtsbeleuchtung in der Adderley Street einschaltet.",
+    "category": "family",
+    "free": true,
+    "drive_min": 25
+  },
+  {
     "title_en": "HSBC SVNS Cape Town (Rugby Sevens)",
     "title_de": "HSBC SVNS Cape Town (Rugby Sevens)",
     "start": "2026-12-05",
@@ -94,6 +129,17 @@
     "description_en": "One-day international at Newlands with Table Mountain as the backdrop. Play starts at 13:30.",
     "description_de": "Eintages-Länderspiel in Newlands mit dem Tafelberg im Hintergrund. Spielbeginn ist um 13:30 Uhr.",
     "category": "sport"
+  },
+  {
+    "title_en": "WPMC 8 Hour Endurance Race",
+    "title_de": "WPMC 8-Stunden-Rennen",
+    "start": "2026-12-12",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://sites.google.com/view/wpmcshortcircuit/endurance-series",
+    "description_en": "The 44th running of Killarney's classic 8-hour endurance race – a full day of motorsport around the corner from the lodge.",
+    "description_de": "Zum 44. Mal: das klassische 8-Stunden-Rennen auf Killarney – ein ganzer Tag Motorsport, nur 5 Minuten von der Lodge.",
+    "category": "sport",
+    "drive_min": 5
   },
   {
     "title_en": "Kirstenbosch Concert: The Billy Joel Experience",
@@ -150,6 +196,19 @@
     "description_en": "A singalong Sunday in Kirstenbosch with Kurt Darren and Me and Mr Green.",
     "description_de": "Ein Sonntag zum Mitsingen in Kirstenbosch mit Kurt Darren und Me and Mr Green.",
     "category": "music"
+  },
+  {
+    "title_en": "Jazzathon",
+    "title_de": "Jazzathon",
+    "start": "2027-01-15",
+    "end": "2027-01-17",
+    "location": "Amphitheatre, V&A Waterfront",
+    "url": "https://www.waterfront.co.za/events/jazzathon-2027-01-08",
+    "description_en": "A free open-air jazz weekend at the V&A Waterfront amphitheatre, with local bands playing by the harbour.",
+    "description_de": "Gratis-Jazz unter freiem Himmel: ein Wochenende lang Live-Musik im Amphitheater an der V&A Waterfront.",
+    "category": "music",
+    "free": true,
+    "drive_min": 25
   },
   {
     "title_en": "Broadway at Kirstenbosch: Jessica Vosk & Cape Town Philharmonic",
