@@ -24,6 +24,17 @@
     "drive_min": 25
   },
   {
+    "title_en": "Robot Racing at Killarney",
+    "title_de": "Robot Racing auf Killarney",
+    "start": "2026-11-18",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "Midweek night drag racing under the lights at Killarney – loud, fast and just five minutes from the lodge.",
+    "description_de": "Nacht-Dragracing unter Flutlicht mitten in der Woche – laut, schnell und nur 5 Minuten von der Lodge entfernt.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
     "title_en": "Red Bull King of the Air 2026",
     "title_de": "Red Bull King of the Air 2026",
     "start": "2026-11-21",
@@ -49,6 +60,28 @@
     "description_de": "Italienisches Straßenfest im Castle of Good Hope: Pasta, Wein, Live-Musik, Kochkurse und ein Bereich für Kinder – ein Wochenende lang.",
     "category": "food",
     "drive_min": 25
+  },
+  {
+    "title_en": "Killarney Rallycross: Judgement Day",
+    "title_de": "Killarney Rallycross: Judgement Day (Saisonfinale)",
+    "start": "2026-11-21",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "The Western Cape rallycross title is decided on a mixed tar-and-gravel track – close racing all day, around the corner from us.",
+    "description_de": "Das Rallycross-Saisonfinale auf Asphalt und Schotter – enge Duelle den ganzen Tag, gleich bei uns um die Ecke.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
+    "title_en": "Killarney Drag Day: The Final Showdown",
+    "title_de": "Killarney Drag Day: Das große Finale",
+    "start": "2026-11-21",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "The last round of the Western Province Drag Racing Championship – quarter-mile sprints five minutes from the lodge.",
+    "description_de": "Die letzte Runde der Western-Province-Dragster-Meisterschaft – Viertelmeilen-Sprints, 5 Minuten von der Lodge.",
+    "category": "sport",
+    "drive_min": 5
   },
   {
     "title_en": "Kirstenbosch Summer Sunset Concerts: Mi Casa (season opener)",
@@ -108,6 +141,17 @@
     "drive_min": 25
   },
   {
+    "title_en": "Leon Bridges Live at Kirstenbosch",
+    "title_de": "Leon Bridges live in Kirstenbosch",
+    "start": "2026-11-30",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/leon-bridges-live-at-kirstenbosch-national-botanical-garden-cape-town/",
+    "description_en": "US soul and R&B star Leon Bridges plays a special Monday evening concert in the botanical garden below Table Mountain.",
+    "description_de": "Soul-Star Leon Bridges gibt ein Sonderkonzert am Montagabend im botanischen Garten unterm Tafelberg.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
     "title_en": "HSBC SVNS Cape Town (Rugby Sevens)",
     "title_de": "HSBC SVNS Cape Town (Rugby Sevens)",
     "start": "2026-12-05",
@@ -117,6 +161,18 @@
     "description_en": "Two days of world-class sevens rugby, men's and women's teams, and Cape Town's biggest stadium party. About 25 minutes from the lodge.",
     "description_de": "Zwei Tage Siebener-Rugby der Weltspitze mit Männer- und Frauenteams – und Kapstadts größte Stadionparty. Ca. 25 Minuten von der Lodge.",
     "category": "sport",
+    "drive_min": 25
+  },
+  {
+    "title_en": "ASLM 2026 Conference",
+    "title_de": "ASLM 2026 Konferenz (Labormedizin)",
+    "start": "2026-12-06",
+    "end": "2026-12-11",
+    "location": "CTICC, Cape Town",
+    "url": "https://www.cticc.co.za/whats_on_events/aslm-2026-7th-biennial-conference/",
+    "description_en": "The African Society for Laboratory Medicine's biennial conference brings health and lab experts from across Africa to the CTICC.",
+    "description_de": "Die Konferenz der African Society for Laboratory Medicine holt Fachleute aus ganz Afrika ins CTICC – 25 Minuten von der Lodge.",
+    "category": "business",
     "drive_min": 25
   },
   {
@@ -153,6 +209,28 @@
     "category": "music"
   },
   {
+    "title_en": "Jack White Live at Kirstenbosch",
+    "title_de": "Jack White live in Kirstenbosch",
+    "start": "2026-12-14",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/jack-white-live-at-kirstenbosch/",
+    "description_en": "Rock icon Jack White plays his first-ever South African shows, including an evening concert in Kirstenbosch garden.",
+    "description_de": "Rocklegende Jack White zum ersten Mal in Südafrika – mit einem Abendkonzert im botanischen Garten Kirstenbosch.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
+    "title_en": "URC: Stormers vs Lions",
+    "title_de": "URC: Stormers gegen Lions",
+    "start": "2026-12-19",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "A South African derby before Christmas: the Stormers host the Lions in the United Rugby Championship.",
+    "description_de": "Rugby-Derby kurz vor Weihnachten: Die Stormers empfangen die Lions in der United Rugby Championship.",
+    "category": "sport",
+    "drive_min": 25
+  },
+  {
     "title_en": "Kirstenbosch New Year's Eve Concert: Matthew Mole & Congo Cowboys",
     "title_de": "Kirstenbosch-Silvesterkonzert: Matthew Mole & Congo Cowboys",
     "start": "2026-12-31",
@@ -174,6 +252,17 @@
     "description_de": "Die Proteas empfangen England zum letzten Test der Serie in Newlands. Ca. 35 Minuten mit dem Auto von der Lodge.",
     "category": "sport",
     "drive_min": 35
+  },
+  {
+    "title_en": "URC: Stormers vs Bulls",
+    "title_de": "URC: Stormers gegen Bulls",
+    "start": "2027-01-03",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "The big South African rugby derby opens the new year in Cape Town.",
+    "description_de": "Das große südafrikanische Rugby-Derby zum Jahresstart – Stormers gegen Bulls im DHL Stadium.",
+    "category": "sport",
+    "drive_min": 25
   },
   {
     "title_en": "South Africa vs England – 1st ODI",
@@ -211,6 +300,39 @@
     "drive_min": 25
   },
   {
+    "title_en": "Champions Cup: Stormers vs Racing 92",
+    "title_de": "Champions Cup: Stormers gegen Racing 92",
+    "start": "2027-01-16",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "European Champions Cup rugby in Cape Town: the Stormers take on Paris side Racing 92.",
+    "description_de": "Europäischer Champions Cup in Kapstadt: Die Stormers treffen auf Racing 92 aus Paris.",
+    "category": "sport",
+    "drive_min": 25
+  },
+  {
+    "title_en": "URC: Stormers vs Cardiff",
+    "title_de": "URC: Stormers gegen Cardiff",
+    "start": "2027-01-23",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "United Rugby Championship: the Stormers host Welsh side Cardiff at the DHL Stadium.",
+    "description_de": "United Rugby Championship: Die Stormers empfangen Cardiff aus Wales im DHL Stadium.",
+    "category": "sport",
+    "drive_min": 25
+  },
+  {
+    "title_en": "URC: Stormers vs Zebre Parma",
+    "title_de": "URC: Stormers gegen Zebre Parma",
+    "start": "2027-01-30",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "United Rugby Championship: the Stormers take on Italy's Zebre Parma in Green Point.",
+    "description_de": "United Rugby Championship: Die Stormers spielen gegen Zebre Parma aus Italien in Green Point.",
+    "category": "sport",
+    "drive_min": 25
+  },
+  {
     "title_en": "Broadway at Kirstenbosch: Jessica Vosk & Cape Town Philharmonic",
     "title_de": "Broadway in Kirstenbosch: Jessica Vosk & Cape Town Philharmonic",
     "start": "2027-01-31",
@@ -220,5 +342,29 @@
     "description_en": "Broadway star Jessica Vosk sings with the Cape Town Philharmonic Orchestra under the open sky.",
     "description_de": "Broadway-Star Jessica Vosk singt mit dem Cape Town Philharmonic Orchestra unter freiem Himmel.",
     "category": "music"
+  },
+  {
+    "title_en": "Cape Grand Prix Revival",
+    "title_de": "Cape Grand Prix Revival",
+    "start": "2027-02-05",
+    "end": "2027-02-07",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "Historic 1960s Grand Prix cars return to Killarney for a weekend of nostalgia – period dress welcome.",
+    "description_de": "Historische Grand-Prix-Wagen der 60er-Jahre zurück auf Killarney – ein Wochenende voller Nostalgie, gern im Retro-Outfit.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
+    "title_en": "Investing in African Mining Indaba 2027",
+    "title_de": "Mining Indaba 2027",
+    "start": "2027-02-08",
+    "end": "2027-02-11",
+    "location": "CTICC, Cape Town",
+    "url": "https://miningindaba.com/event-information",
+    "description_en": "Africa's largest mining investment conference takes over the CTICC – a quiet base by the beach is 25 minutes away.",
+    "description_de": "Afrikas größte Bergbau-Investorenkonferenz im CTICC – deine ruhige Basis am Strand liegt 25 Minuten entfernt.",
+    "category": "business",
+    "drive_min": 25
   }
 ]
