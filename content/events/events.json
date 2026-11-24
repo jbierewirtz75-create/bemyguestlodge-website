@@ -107,6 +107,30 @@
     "drive_min": 25
   },
   {
+    "title_en": "WPMC Motorcycle Track Day",
+    "title_de": "WPMC Motorrad-Trackday",
+    "start": "2026-11-28",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "Motorcycles take to the Killarney circuit in three speed groups on Saturday morning – plenty of engine noise just five minutes from the lodge.",
+    "description_de": "Samstagvormittag drehen Motorräder in drei Tempo-Gruppen ihre Runden auf Killarney – Motorsound pur, nur 5 Minuten von der Lodge.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
+    "title_en": "German-inspired Christmas Market",
+    "title_de": "Deutscher Weihnachtsmarkt in Paarden Eiland",
+    "start": "2026-11-28",
+    "end": "2026-12-19",
+    "location": "Yes! Exclusive Flowers, 33 Section Street, Paarden Eiland",
+    "url": "https://www.quicket.co.za/events/369849-german-inspired-christmas-market-cape-town-paarden-eiland-every-saturday-before/",
+    "description_en": "A German-style Christmas market every Saturday in Advent (28 Nov, 5, 12 and 19 Dec), 9am to 3pm, in a flower warehouse. Free entry.",
+    "description_de": "Weihnachtsmarkt nach deutschem Vorbild an allen Advents-Samstagen (28.11., 5., 12. und 19.12.) von 9 bis 15 Uhr. Eintritt frei – Advent mit Sonnencreme.",
+    "category": "markets",
+    "free": true,
+    "drive_min": 15
+  },
+  {
     "title_en": "Cape Town Toy Run",
     "title_de": "Cape Town Toy Run",
     "start": "2026-11-29",
@@ -311,6 +335,18 @@
     "category": "music"
   },
   {
+    "title_en": "Maynardville: Cape Ballet Africa – The Architecture of Beshert",
+    "title_de": "Maynardville: Cape Ballet Africa – The Architecture of Beshert",
+    "start": "2027-01-13",
+    "end": "2027-01-16",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "Contemporary ballet under the trees opens the Maynardville Open-Air Festival in Wynberg.",
+    "description_de": "Zeitgenössisches Ballett unter alten Bäumen eröffnet das Maynardville-Open-Air-Festival in Wynberg.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
     "title_en": "Jazzathon",
     "title_de": "Jazzathon",
     "start": "2027-01-15",
@@ -335,6 +371,41 @@
     "drive_min": 25
   },
   {
+    "title_en": "Maynardville: Jazz in the Park",
+    "title_de": "Maynardville: Jazz in the Park",
+    "start": "2027-01-19",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "A summer evening of jazz at the open-air theatre in leafy Maynardville Park.",
+    "description_de": "Ein Sommerabend mit Jazz im Freilichttheater im grünen Maynardville Park.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
+    "title_en": "Maynardville: Beethoven Bewitched",
+    "title_de": "Maynardville: Beethoven Bewitched",
+    "start": "2027-01-20",
+    "end": "2027-01-21",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "Beethoven reimagined for a warm summer night outdoors.",
+    "description_de": "Beethoven neu interpretiert – klassische Musik unter freiem Himmel.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
+    "title_en": "Maynardville: Cape Town Philharmonic Orchestra",
+    "title_de": "Maynardville: Cape Town Philharmonic Orchestra",
+    "start": "2027-01-22",
+    "end": "2027-01-23",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "The Cape Town Philharmonic Orchestra plays an open-air programme in Maynardville Park.",
+    "description_de": "Das Cape Town Philharmonic Orchestra spielt open air im Maynardville Park – pack eine Jacke für später ein.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
     "title_en": "URC: Stormers vs Cardiff",
     "title_de": "URC: Stormers gegen Cardiff",
     "start": "2027-01-23",
@@ -344,6 +415,30 @@
     "description_de": "United Rugby Championship: Die Stormers empfangen Cardiff aus Wales im DHL Stadium.",
     "category": "sport",
     "drive_min": 25
+  },
+  {
+    "title_en": "Argus Fertilizer Africa Conference 2027",
+    "title_de": "Argus Fertilizer Africa Conference 2027",
+    "start": "2027-01-25",
+    "end": "2027-01-27",
+    "location": "The Westin Cape Town, Foreshore",
+    "url": "https://www.argusmedia.com/en/events/conferences/fertilizer-africa-conference/venue",
+    "description_en": "Argus brings Africa's fertilizer industry together at the Westin, right next to the CTICC – about 25 minutes from the lodge.",
+    "description_de": "Die afrikanische Düngemittel-Branche trifft sich im Westin direkt neben dem CTICC – von der Lodge fährst du ca. 25 Minuten.",
+    "category": "business",
+    "drive_min": 25
+  },
+  {
+    "title_en": "Maynardville: Cape Town City Ballet – Noir",
+    "title_de": "Maynardville: Cape Town City Ballet – Noir",
+    "start": "2027-01-27",
+    "end": "2027-01-30",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "Cape Town City Ballet dances its new piece Noir on the open-air stage.",
+    "description_de": "Das Cape Town City Ballet tanzt sein Stück „Noir“ auf der Freilichtbühne.",
+    "category": "music",
+    "drive_min": 35
   },
   {
     "title_en": "URC: Stormers vs Zebre Parma",
@@ -380,6 +475,18 @@
     "drive_min": 5
   },
   {
+    "title_en": "Maynardville: Shakespeare's Macbeth",
+    "title_de": "Maynardville: Shakespeares Macbeth",
+    "start": "2027-02-05",
+    "end": "2027-03-13",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "Shakespeare under the stars: Macbeth is this summer's main play at Maynardville, running for five weeks.",
+    "description_de": "Shakespeare unter Sternen: „Macbeth“ ist das große Sommerstück in Maynardville, fünf Wochen lang. Jacke nicht vergessen.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
     "title_en": "Investing in African Mining Indaba 2027",
     "title_de": "Mining Indaba 2027",
     "start": "2027-02-08",
@@ -390,5 +497,17 @@
     "description_de": "Afrikas größte Bergbau-Investorenkonferenz im CTICC – deine ruhige Basis am Strand liegt 25 Minuten entfernt.",
     "category": "business",
     "drive_min": 25
+  },
+  {
+    "title_en": "Maynardville: Sunset Serenades",
+    "title_de": "Maynardville: Sunset Serenades",
+    "start": "2027-02-14",
+    "end": "2027-02-21",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://www.quicket.co.za/events/382480-maynardville-2027-sunset-serenades/",
+    "description_en": "Acoustic love songs and Shakespeare sonnets for Valentine's – two evenings only, on 14 and 21 February.",
+    "description_de": "Akustische Liebeslieder und Shakespeare-Sonette zum Valentinstag – nur an zwei Abenden, am 14. und 21. Februar.",
+    "category": "music",
+    "drive_min": 35
   }
 ]
