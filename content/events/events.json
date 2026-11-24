@@ -129,6 +129,30 @@
     "category": "music"
   },
   {
+    "title_en": "EMEA Cash Cycle Seminar",
+    "title_de": "EMEA Cash Cycle Seminar",
+    "start": "2026-11-30",
+    "end": "2026-12-02",
+    "location": "CTICC, Cape Town",
+    "url": "https://www.cticc.co.za/whats_on_events/emea-cash-cycle-seminar/",
+    "description_en": "Three-day industry seminar on the cash cycle for banks, central banks and cash-handling companies at the CTICC – about 25 minutes from the lodge.",
+    "description_de": "Dreitägiges Fachseminar zum Bargeldkreislauf für Banken, Zentralbanken und Cash-Dienstleister im CTICC – ca. 25 Minuten von der Lodge.",
+    "category": "business",
+    "drive_min": 25
+  },
+  {
+    "title_en": "FAIS Congress 2026 (Federation of African Immunological Societies)",
+    "title_de": "FAIS-Kongress 2026 (Afrikanische Immunologie-Gesellschaften)",
+    "start": "2026-11-30",
+    "end": "2026-12-03",
+    "location": "CTICC 2, Cape Town",
+    "url": "https://www.cticc.co.za/whats_on_events/13th-annual-federation-of-african-immunological-societies-congress/",
+    "description_en": "The 13th congress of the Federation of African Immunological Societies brings researchers and clinicians from across Africa to the CTICC.",
+    "description_de": "Beim 13. Kongress der afrikanischen Immunologie-Gesellschaften treffen sich Forschende und Klinikteams aus ganz Afrika im CTICC.",
+    "category": "business",
+    "drive_min": 25
+  },
+  {
     "title_en": "Festive Lights Switch-On",
     "title_de": "Festive Lights Switch-On (Weihnachtsbeleuchtung)",
     "start": "2026-11-29",
