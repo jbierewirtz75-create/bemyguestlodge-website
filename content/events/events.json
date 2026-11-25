@@ -24,6 +24,17 @@
     "drive_min": 25
   },
   {
+    "title_en": "Robot Racing at Killarney",
+    "title_de": "Robot Racing auf Killarney",
+    "start": "2026-11-18",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "Midweek night drag racing under the lights at Killarney – loud, fast and just five minutes from the lodge.",
+    "description_de": "Nacht-Dragracing unter Flutlicht mitten in der Woche – laut, schnell und nur 5 Minuten von der Lodge entfernt.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
     "title_en": "Red Bull King of the Air 2026",
     "title_de": "Red Bull King of the Air 2026",
     "start": "2026-11-21",
@@ -51,6 +62,28 @@
     "drive_min": 25
   },
   {
+    "title_en": "Killarney Rallycross: Judgement Day",
+    "title_de": "Killarney Rallycross: Judgement Day (Saisonfinale)",
+    "start": "2026-11-21",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "The Western Cape rallycross title is decided on a mixed tar-and-gravel track – close racing all day, around the corner from us.",
+    "description_de": "Das Rallycross-Saisonfinale auf Asphalt und Schotter – enge Duelle den ganzen Tag, gleich bei uns um die Ecke.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
+    "title_en": "Killarney Drag Day: The Final Showdown",
+    "title_de": "Killarney Drag Day: Das große Finale",
+    "start": "2026-11-21",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "The last round of the Western Province Drag Racing Championship – quarter-mile sprints five minutes from the lodge.",
+    "description_de": "Die letzte Runde der Western-Province-Dragster-Meisterschaft – Viertelmeilen-Sprints, 5 Minuten von der Lodge.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
     "title_en": "Kirstenbosch Summer Sunset Concerts: Mi Casa (season opener)",
     "title_de": "Kirstenbosch Sommerkonzerte: Mi Casa (Saisonauftakt)",
     "start": "2026-11-22",
@@ -72,6 +105,30 @@
     "description_de": "Food-Festival am Wochenende mit Koch-Demos, Weinverkostungen und Familienbereich. Ca. 25 Minuten mit dem Auto von der Lodge.",
     "category": "food",
     "drive_min": 25
+  },
+  {
+    "title_en": "WPMC Motorcycle Track Day",
+    "title_de": "WPMC Motorrad-Trackday",
+    "start": "2026-11-28",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "Motorcycles take to the Killarney circuit in three speed groups on Saturday morning – plenty of engine noise just five minutes from the lodge.",
+    "description_de": "Samstagvormittag drehen Motorräder in drei Tempo-Gruppen ihre Runden auf Killarney – Motorsound pur, nur 5 Minuten von der Lodge.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
+    "title_en": "German-inspired Christmas Market",
+    "title_de": "Deutscher Weihnachtsmarkt in Paarden Eiland",
+    "start": "2026-11-28",
+    "end": "2026-12-19",
+    "location": "Yes! Exclusive Flowers, 33 Section Street, Paarden Eiland",
+    "url": "https://www.quicket.co.za/events/369849-german-inspired-christmas-market-cape-town-paarden-eiland-every-saturday-before/",
+    "description_en": "A German-style Christmas market every Saturday in Advent (28 Nov, 5, 12 and 19 Dec), 9am to 3pm, in a flower warehouse. Free entry.",
+    "description_de": "Weihnachtsmarkt nach deutschem Vorbild an allen Advents-Samstagen (28.11., 5., 12. und 19.12.) von 9 bis 15 Uhr. Eintritt frei – Advent mit Sonnencreme.",
+    "category": "markets",
+    "free": true,
+    "drive_min": 15
   },
   {
     "title_en": "Cape Town Toy Run",
@@ -96,6 +153,30 @@
     "category": "music"
   },
   {
+    "title_en": "EMEA Cash Cycle Seminar",
+    "title_de": "EMEA Cash Cycle Seminar",
+    "start": "2026-11-30",
+    "end": "2026-12-02",
+    "location": "CTICC, Cape Town",
+    "url": "https://www.cticc.co.za/whats_on_events/emea-cash-cycle-seminar/",
+    "description_en": "Three-day industry seminar on the cash cycle for banks, central banks and cash-handling companies at the CTICC – about 25 minutes from the lodge.",
+    "description_de": "Dreitägiges Fachseminar zum Bargeldkreislauf für Banken, Zentralbanken und Cash-Dienstleister im CTICC – ca. 25 Minuten von der Lodge.",
+    "category": "business",
+    "drive_min": 25
+  },
+  {
+    "title_en": "FAIS Congress 2026 (Federation of African Immunological Societies)",
+    "title_de": "FAIS-Kongress 2026 (Afrikanische Immunologie-Gesellschaften)",
+    "start": "2026-11-30",
+    "end": "2026-12-03",
+    "location": "CTICC 2, Cape Town",
+    "url": "https://www.cticc.co.za/whats_on_events/13th-annual-federation-of-african-immunological-societies-congress/",
+    "description_en": "The 13th congress of the Federation of African Immunological Societies brings researchers and clinicians from across Africa to the CTICC.",
+    "description_de": "Beim 13. Kongress der afrikanischen Immunologie-Gesellschaften treffen sich Forschende und Klinikteams aus ganz Afrika im CTICC.",
+    "category": "business",
+    "drive_min": 25
+  },
+  {
     "title_en": "Festive Lights Switch-On",
     "title_de": "Festive Lights Switch-On (Weihnachtsbeleuchtung)",
     "start": "2026-11-29",
@@ -108,6 +189,17 @@
     "drive_min": 25
   },
   {
+    "title_en": "Leon Bridges Live at Kirstenbosch",
+    "title_de": "Leon Bridges live in Kirstenbosch",
+    "start": "2026-11-30",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/leon-bridges-live-at-kirstenbosch-national-botanical-garden-cape-town/",
+    "description_en": "US soul and R&B star Leon Bridges plays a special Monday evening concert in the botanical garden below Table Mountain.",
+    "description_de": "Soul-Star Leon Bridges gibt ein Sonderkonzert am Montagabend im botanischen Garten unterm Tafelberg.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
     "title_en": "HSBC SVNS Cape Town (Rugby Sevens)",
     "title_de": "HSBC SVNS Cape Town (Rugby Sevens)",
     "start": "2026-12-05",
@@ -117,6 +209,18 @@
     "description_en": "Two days of world-class sevens rugby, men's and women's teams, and Cape Town's biggest stadium party. About 25 minutes from the lodge.",
     "description_de": "Zwei Tage Siebener-Rugby der Weltspitze mit Männer- und Frauenteams – und Kapstadts größte Stadionparty. Ca. 25 Minuten von der Lodge.",
     "category": "sport",
+    "drive_min": 25
+  },
+  {
+    "title_en": "ASLM 2026 Conference",
+    "title_de": "ASLM 2026 Konferenz (Labormedizin)",
+    "start": "2026-12-06",
+    "end": "2026-12-11",
+    "location": "CTICC, Cape Town",
+    "url": "https://www.cticc.co.za/whats_on_events/aslm-2026-7th-biennial-conference/",
+    "description_en": "The African Society for Laboratory Medicine's biennial conference brings health and lab experts from across Africa to the CTICC.",
+    "description_de": "Die Konferenz der African Society for Laboratory Medicine holt Fachleute aus ganz Afrika ins CTICC – 25 Minuten von der Lodge.",
+    "category": "business",
     "drive_min": 25
   },
   {
@@ -153,6 +257,28 @@
     "category": "music"
   },
   {
+    "title_en": "Jack White Live at Kirstenbosch",
+    "title_de": "Jack White live in Kirstenbosch",
+    "start": "2026-12-14",
+    "location": "Kirstenbosch National Botanical Garden, Newlands",
+    "url": "https://www.sanbi.org/event/jack-white-live-at-kirstenbosch/",
+    "description_en": "Rock icon Jack White plays his first-ever South African shows, including an evening concert in Kirstenbosch garden.",
+    "description_de": "Rocklegende Jack White zum ersten Mal in Südafrika – mit einem Abendkonzert im botanischen Garten Kirstenbosch.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
+    "title_en": "URC: Stormers vs Lions",
+    "title_de": "URC: Stormers gegen Lions",
+    "start": "2026-12-19",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "A South African derby before Christmas: the Stormers host the Lions in the United Rugby Championship.",
+    "description_de": "Rugby-Derby kurz vor Weihnachten: Die Stormers empfangen die Lions in der United Rugby Championship.",
+    "category": "sport",
+    "drive_min": 25
+  },
+  {
     "title_en": "Kirstenbosch New Year's Eve Concert: Matthew Mole & Congo Cowboys",
     "title_de": "Kirstenbosch-Silvesterkonzert: Matthew Mole & Congo Cowboys",
     "start": "2026-12-31",
@@ -174,6 +300,17 @@
     "description_de": "Die Proteas empfangen England zum letzten Test der Serie in Newlands. Ca. 35 Minuten mit dem Auto von der Lodge.",
     "category": "sport",
     "drive_min": 35
+  },
+  {
+    "title_en": "URC: Stormers vs Bulls",
+    "title_de": "URC: Stormers gegen Bulls",
+    "start": "2027-01-03",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "The big South African rugby derby opens the new year in Cape Town.",
+    "description_de": "Das große südafrikanische Rugby-Derby zum Jahresstart – Stormers gegen Bulls im DHL Stadium.",
+    "category": "sport",
+    "drive_min": 25
   },
   {
     "title_en": "South Africa vs England – 1st ODI",
@@ -198,6 +335,18 @@
     "category": "music"
   },
   {
+    "title_en": "Maynardville: Cape Ballet Africa – The Architecture of Beshert",
+    "title_de": "Maynardville: Cape Ballet Africa – The Architecture of Beshert",
+    "start": "2027-01-13",
+    "end": "2027-01-16",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "Contemporary ballet under the trees opens the Maynardville Open-Air Festival in Wynberg.",
+    "description_de": "Zeitgenössisches Ballett unter alten Bäumen eröffnet das Maynardville-Open-Air-Festival in Wynberg.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
     "title_en": "Jazzathon",
     "title_de": "Jazzathon",
     "start": "2027-01-15",
@@ -211,6 +360,98 @@
     "drive_min": 25
   },
   {
+    "title_en": "Champions Cup: Stormers vs Racing 92",
+    "title_de": "Champions Cup: Stormers gegen Racing 92",
+    "start": "2027-01-16",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "European Champions Cup rugby in Cape Town: the Stormers take on Paris side Racing 92.",
+    "description_de": "Europäischer Champions Cup in Kapstadt: Die Stormers treffen auf Racing 92 aus Paris.",
+    "category": "sport",
+    "drive_min": 25
+  },
+  {
+    "title_en": "Maynardville: Jazz in the Park",
+    "title_de": "Maynardville: Jazz in the Park",
+    "start": "2027-01-19",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "A summer evening of jazz at the open-air theatre in leafy Maynardville Park.",
+    "description_de": "Ein Sommerabend mit Jazz im Freilichttheater im grünen Maynardville Park.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
+    "title_en": "Maynardville: Beethoven Bewitched",
+    "title_de": "Maynardville: Beethoven Bewitched",
+    "start": "2027-01-20",
+    "end": "2027-01-21",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "Beethoven reimagined for a warm summer night outdoors.",
+    "description_de": "Beethoven neu interpretiert – klassische Musik unter freiem Himmel.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
+    "title_en": "Maynardville: Cape Town Philharmonic Orchestra",
+    "title_de": "Maynardville: Cape Town Philharmonic Orchestra",
+    "start": "2027-01-22",
+    "end": "2027-01-23",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "The Cape Town Philharmonic Orchestra plays an open-air programme in Maynardville Park.",
+    "description_de": "Das Cape Town Philharmonic Orchestra spielt open air im Maynardville Park – pack eine Jacke für später ein.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
+    "title_en": "URC: Stormers vs Cardiff",
+    "title_de": "URC: Stormers gegen Cardiff",
+    "start": "2027-01-23",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "United Rugby Championship: the Stormers host Welsh side Cardiff at the DHL Stadium.",
+    "description_de": "United Rugby Championship: Die Stormers empfangen Cardiff aus Wales im DHL Stadium.",
+    "category": "sport",
+    "drive_min": 25
+  },
+  {
+    "title_en": "Argus Fertilizer Africa Conference 2027",
+    "title_de": "Argus Fertilizer Africa Conference 2027",
+    "start": "2027-01-25",
+    "end": "2027-01-27",
+    "location": "The Westin Cape Town, Foreshore",
+    "url": "https://www.argusmedia.com/en/events/conferences/fertilizer-africa-conference/venue",
+    "description_en": "Argus brings Africa's fertilizer industry together at the Westin, right next to the CTICC – about 25 minutes from the lodge.",
+    "description_de": "Die afrikanische Düngemittel-Branche trifft sich im Westin direkt neben dem CTICC – von der Lodge fährst du ca. 25 Minuten.",
+    "category": "business",
+    "drive_min": 25
+  },
+  {
+    "title_en": "Maynardville: Cape Town City Ballet – Noir",
+    "title_de": "Maynardville: Cape Town City Ballet – Noir",
+    "start": "2027-01-27",
+    "end": "2027-01-30",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "Cape Town City Ballet dances its new piece Noir on the open-air stage.",
+    "description_de": "Das Cape Town City Ballet tanzt sein Stück „Noir“ auf der Freilichtbühne.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
+    "title_en": "URC: Stormers vs Zebre Parma",
+    "title_de": "URC: Stormers gegen Zebre Parma",
+    "start": "2027-01-30",
+    "location": "DHL Stadium, Green Point",
+    "url": "https://stormers.co.za/",
+    "description_en": "United Rugby Championship: the Stormers take on Italy's Zebre Parma in Green Point.",
+    "description_de": "United Rugby Championship: Die Stormers spielen gegen Zebre Parma aus Italien in Green Point.",
+    "category": "sport",
+    "drive_min": 25
+  },
+  {
     "title_en": "Broadway at Kirstenbosch: Jessica Vosk & Cape Town Philharmonic",
     "title_de": "Broadway in Kirstenbosch: Jessica Vosk & Cape Town Philharmonic",
     "start": "2027-01-31",
@@ -220,5 +461,53 @@
     "description_en": "Broadway star Jessica Vosk sings with the Cape Town Philharmonic Orchestra under the open sky.",
     "description_de": "Broadway-Star Jessica Vosk singt mit dem Cape Town Philharmonic Orchestra unter freiem Himmel.",
     "category": "music"
+  },
+  {
+    "title_en": "Cape Grand Prix Revival",
+    "title_de": "Cape Grand Prix Revival",
+    "start": "2027-02-05",
+    "end": "2027-02-07",
+    "location": "Killarney International Raceway, Table View",
+    "url": "https://wpmc.co.za/upcoming-events/",
+    "description_en": "Historic 1960s Grand Prix cars return to Killarney for a weekend of nostalgia – period dress welcome.",
+    "description_de": "Historische Grand-Prix-Wagen der 60er-Jahre zurück auf Killarney – ein Wochenende voller Nostalgie, gern im Retro-Outfit.",
+    "category": "sport",
+    "drive_min": 5
+  },
+  {
+    "title_en": "Maynardville: Shakespeare's Macbeth",
+    "title_de": "Maynardville: Shakespeares Macbeth",
+    "start": "2027-02-05",
+    "end": "2027-03-13",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://maynardville.co.za/festival-programme/",
+    "description_en": "Shakespeare under the stars: Macbeth is this summer's main play at Maynardville, running for five weeks.",
+    "description_de": "Shakespeare unter Sternen: „Macbeth“ ist das große Sommerstück in Maynardville, fünf Wochen lang. Jacke nicht vergessen.",
+    "category": "music",
+    "drive_min": 35
+  },
+  {
+    "title_en": "Investing in African Mining Indaba 2027",
+    "title_de": "Mining Indaba 2027",
+    "start": "2027-02-08",
+    "end": "2027-02-11",
+    "location": "CTICC, Cape Town",
+    "url": "https://miningindaba.com/event-information",
+    "description_en": "Africa's largest mining investment conference takes over the CTICC – a quiet base by the beach is 25 minutes away.",
+    "description_de": "Afrikas größte Bergbau-Investorenkonferenz im CTICC – deine ruhige Basis am Strand liegt 25 Minuten entfernt.",
+    "category": "business",
+    "drive_min": 25
+  },
+  {
+    "title_en": "Maynardville: Sunset Serenades",
+    "title_de": "Maynardville: Sunset Serenades",
+    "start": "2027-02-14",
+    "end": "2027-02-21",
+    "location": "Maynardville Open-Air Theatre, Wynberg",
+    "url": "https://www.quicket.co.za/events/382480-maynardville-2027-sunset-serenades/",
+    "description_en": "Acoustic love songs and Shakespeare sonnets for Valentine's – two evenings only, on 14 and 21 February.",
+    "description_de": "Akustische Liebeslieder und Shakespeare-Sonette zum Valentinstag – nur an zwei Abenden, am 14. und 21. Februar.",
+    "category": "music",
+    "drive_min": 35
   }
 ]
