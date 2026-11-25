@@ -707,8 +707,13 @@ ${LANGS.map((l) => `<link rel="alternate" hreflang="${HREFLANG[l]}" href="${BASE
 </head><body><main><p><img src="img/logo-v2-180.png" width="90" height="90" alt="Be My Guest Lodge Logo"></p><h1>Be My Guest Lodge</h1><p>${LANGS.map((l) => `<a href="${l}/${S}" hreflang="${HREFLANG[l]}">${NAMES[l]}</a>`).join(" ")}</p></main></body></html>
 `);
 write("404.html", `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page not found | Be My Guest Lodge</title><meta name="robots" content="noindex"><style>body{font-family:system-ui,sans-serif;background:#F3F5F2;color:#15303C;display:grid;place-items:center;min-height:100vh;margin:0;text-align:center}a{color:#C23F64;font-weight:700}</style></head><body><main><h1>Page not found</h1><p>Sorry, this page does not exist (anymore).</p><p><a href="/">Back to Be My Guest Lodge</a></p></main></body></html>\n`);
-// Netlify / Cloudflare Pages: headers and redirects (Apache: see .htaccess in public/)
-write("_headers", `/*
+// Cloudflare Pages (also Workers static assets / Netlify): headers and redirects (Apache: see .htaccess in public/)
+write("_headers", `# Cloudflare Pages: keep the *.pages.dev addresses out of search engines (the real site is www.bemyguestlodge.co.za)
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
+/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 /img/*
@@ -747,7 +752,7 @@ if (fs.existsSync(path.join(ROOT, "redirects.txt"))) fs.copyFileSync(path.join(R
       else if (href.startsWith("tel:")) add("phone_click");
       return t;
     });
-    if (CFG.umamiWebsiteId) html = html.replace("</head>", `<script defer src="https://cloud.umami.is/script.js" data-website-id="${esc(CFG.umamiWebsiteId)}" data-domains="${new URL(BASE).hostname},www.${new URL(BASE).hostname}"></script>\n</head>`);
+    if (CFG.umamiWebsiteId) html = html.replace("</head>", `<script defer src="https://cloud.umami.is/script.js" data-website-id="${esc(CFG.umamiWebsiteId)}" data-domains="${new URL(BASE).hostname.replace(/^www\./, "")},www.${new URL(BASE).hostname.replace(/^www\./, "")}"></script>\n</head>`);
     fs.writeFileSync(f, html);
   }
 }

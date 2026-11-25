@@ -24,7 +24,7 @@ Legal notices may be served at our registered office (see above).
 
 Phone and WhatsApp: [+27 72 838 4490](tel:+27728384490)
 Email: [info@bemyguestlodge.co.za](mailto:info@bemyguestlodge.co.za)
-Website: https://bemyguestlodge.co.za
+Website: https://www.bemyguestlodge.co.za
 
 Information Officer (POPIA): Jan Paul Bierewirtz, contact via the email address above.
 

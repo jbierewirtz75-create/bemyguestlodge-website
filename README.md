@@ -1,7 +1,7 @@
 # Be My Guest Lodge – Website
 
 Statische, mehrsprachige Website (EN, DE, AF, FR, ES, ZH) mit Markdown-Blog und Veranstaltungsseite.
-Live-Adresse: https://bemyguestlodge.co.za
+Live-Adresse (ab Livegang): https://www.bemyguestlodge.co.za
 
 ## Kurz erklärt
 
@@ -45,13 +45,14 @@ Die Website ist reines HTML/CSS/JS – keine Datenbank, kein PHP.
 | Täglicher Neubau | GitHub Action „Build & check“ läuft täglich 04:15 UTC und ruft den Deploy-Hook auf (Repository-Secret `DEPLOY_HOOK_URL`) |
 
 **Varianten**
-- **Cloudflare Workers (aktuell eingerichtet):** Projekt `bemyguestlodge-website`, Build-Befehl `npm run build`, Deploy-Befehl `npx wrangler deploy` (Konfiguration in `wrangler.jsonc`), Build-Variable `NOINDEX=1` bis zum Domain-Umzug. Branches und Pull Requests bekommen automatisch eigene Vorschau-Adressen.
-- **Cloudflare Pages oder Netlify** (empfohlen): Repository verbinden, Werte oben eintragen. Header kommen aus `dist/_headers`, Weiterleitungen aus `redirects.txt` → `dist/_redirects`.
+- **Cloudflare Pages (Ziel-Hosting ab Livegang):** Projekt mit dem GitHub-Repository verbunden, Produktions-Branch `main`, Build-Befehl `npm run build`, Ausgabe-Verzeichnis `dist`, bis zum Livegang Build-Variable `NOINDEX=1`. Eigene Domain `www.bemyguestlodge.co.za` per CNAME beim Domain-Dienstleister (DNS bleibt dort); `bemyguestlodge.co.za` ohne www leitet der Dienstleister per 301 auf `https://www.bemyguestlodge.co.za` um. `*.pages.dev`-Adressen bekommen per `_headers` immer `X-Robots-Tag: noindex`.
+- **Cloudflare Workers (bisherige Test-Adresse, nach dem Livegang abschalten):** Projekt `bemyguestlodge-website`, Build-Befehl `npm run build`, Deploy-Befehl `npx wrangler deploy` (Konfiguration in `wrangler.jsonc`), Build-Variable `NOINDEX=1`.
+- **Netlify** (Alternative): Repository verbinden, Werte oben eintragen. Header kommen aus `dist/_headers`, Weiterleitungen aus `redirects.txt` → `dist/_redirects`.
 - **Eigener Webserver (Apache/Nginx):** GitHub Action ergänzen, die nach jedem Merge auf `main` baut und `dist/` per SFTP/rsync hochlädt. Für Apache liegt eine `.htaccess` bei (404-Seite, Caching).
 - **Täglicher Neubau** (für geplante Beiträge und abgelaufene Events): Deploy-Hook des Hosters einmal täglich aufrufen (z. B. per geplanter GitHub Action).
 
 **Domain/DNS:** Die Domain liegt derzeit bei xneelo. Beim Umzug müssen die E-Mail-Einträge (MX, SPF, DKIM, DMARC) unverändert bleiben.
-Die Hauptadresse ist in `site.config.json` festgelegt (`https://bemyguestlodge.co.za`, ohne www). Die jeweils andere Variante (www / ohne www) per 301 auf die Hauptadresse weiterleiten.
+Die Hauptadresse ist in `site.config.json` festgelegt (`https://www.bemyguestlodge.co.za`, **mit www**, weil die DNS beim Domain-Dienstleister bleibt und die Domain ohne www dort keinen CNAME auf Cloudflare erlaubt). Die Variante ohne www leitet der Dienstleister per 301 auf die Hauptadresse weiter.
 
 ## Statistik (Umami, ohne Cookies)
 
