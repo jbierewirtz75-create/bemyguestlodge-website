@@ -110,8 +110,14 @@ function jsonld(D, lang, pg) {
 }
 
 // in-browser transformation shared by core pages and shells
-function transform({ lang, pg, P, S, TYPES, m, ld, BASE, HREFLANG, OGLOCALE, LANGS, shell }) {
+function transform({ lang, pg, P, S, TYPES, m, ld, BASE, HREFLANG, OGLOCALE, LANGS, shell, showPlaceholders }) {
   const doc = document;
+  // live site: no draft notice, no placeholder partner offers or placeholder guest quotes (site.config.json → showPlaceholders)
+  if (!showPlaceholders) {
+    ["draft", "erleben", "reviews"].forEach((id) => { const e = doc.getElementById(id); if (e) e.remove(); });
+    doc.querySelectorAll(".ph-note").forEach((e) => e.remove());
+    doc.querySelectorAll('a[href="#erleben"]').forEach((a) => (a.closest("li") || a).remove());
+  }
   const linkTo = (l, pth) => P + l + "/" + pth + S;
   if (pg.kind === "home") doc.getElementById("sub").remove(); else { doc.getElementById("top").remove(); doc.getElementById("sub").hidden = false; }
   doc.querySelectorAll("script").forEach((s) => s.remove());
@@ -217,7 +223,7 @@ function transform({ lang, pg, P, S, TYPES, m, ld, BASE, HREFLANG, OGLOCALE, LAN
     }
     return { ctx, p };
   };
-  const common = { S: "__S__", TYPES, BASE, HREFLANG, OGLOCALE, LANGS };
+  const common = { showPlaceholders: !!SITECFG.showPlaceholders, S: "__S__", TYPES, BASE, HREFLANG, OGLOCALE, LANGS };
   for (const lang of LANGS) {
     for (const pg of PAGES) {
       const { ctx, p } = await open(lang, pg.hash);
