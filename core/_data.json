@@ -168,14 +168,14 @@
  },
  "lodging": {
   "@type": "BedAndBreakfast",
-  "@id": "https://bemyguestlodge.co.za/#lodge",
+  "@id": "https://www.bemyguestlodge.co.za/#lodge",
   "name": "Be My Guest Lodge",
-  "url": "https://bemyguestlodge.co.za/en/",
-  "logo": "https://bemyguestlodge.co.za/img/logo-v2.png",
+  "url": "https://www.bemyguestlodge.co.za/en/",
+  "logo": "https://www.bemyguestlodge.co.za/img/logo-v2.png",
   "image": [
-   "https://bemyguestlodge.co.za/img/og-image.jpg",
-   "https://bemyguestlodge.co.za/img/rooms/family-cottage-cover.jpg",
-   "https://bemyguestlodge.co.za/img/rooms/comfort-double-cover.jpg"
+   "https://www.bemyguestlodge.co.za/img/og-image.jpg",
+   "https://www.bemyguestlodge.co.za/img/rooms/family-cottage-cover.jpg",
+   "https://www.bemyguestlodge.co.za/img/rooms/comfort-double-cover.jpg"
   ],
   "description": "Be My Guest Lodge is a family-run guesthouse in Bloubergrant, Table View, part of the popular seaside area of Bloubergstrand on Cape Town's Atlantic coast. Robben Island lies just across the bay, the beach is minutes away, and Cape Town International Airport is about a 20-minute drive.",
   "telephone": "+27728384490",
@@ -244,7 +244,7 @@
    {
     "@type": "HotelRoom",
     "name": "Comfort Double Room",
-    "url": "https://bemyguestlodge.co.za/en/accommodation/comfort-double/",
+    "url": "https://www.bemyguestlodge.co.za/en/accommodation/comfort-double/",
     "occupancy": {
      "@type": "QuantitativeValue",
      "maxValue": 2
@@ -253,7 +253,7 @@
    {
     "@type": "HotelRoom",
     "name": "Comfort Twin Room",
-    "url": "https://bemyguestlodge.co.za/en/accommodation/comfort-twin/",
+    "url": "https://www.bemyguestlodge.co.za/en/accommodation/comfort-twin/",
     "occupancy": {
      "@type": "QuantitativeValue",
      "maxValue": 2
@@ -262,7 +262,7 @@
    {
     "@type": "HotelRoom",
     "name": "Family Cottage",
-    "url": "https://bemyguestlodge.co.za/en/accommodation/family-cottage/",
+    "url": "https://www.bemyguestlodge.co.za/en/accommodation/family-cottage/",
     "occupancy": {
      "@type": "QuantitativeValue",
      "maxValue": 6

@@ -1,6 +1,6 @@
 # Instructions for marketing agents (blog posts & events)
 
-This repository builds the website of **Be My Guest Lodge** (https://bemyguestlodge.co.za), a family-run guesthouse in
+This repository builds the website of **Be My Guest Lodge** (https://www.bemyguestlodge.co.za), a family-run guesthouse in
 Bloubergrant, Table View (Bloubergstrand), Cape Town, hosted by Jan & Leona. Agents may add **blog posts**, **blog images**
 and **events**. Everything else (core pages, layout, scripts) is off-limits unless Jan asks for it explicitly.
 Agreed interface: `docs/marketing-schnittstelle.md` (from the marketing project) – this file describes how it is implemented.
