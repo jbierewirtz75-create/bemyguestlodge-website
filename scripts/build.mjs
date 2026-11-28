@@ -563,7 +563,7 @@ ${await block("en")}
 ${await block("de")}
 <footer>Be My Guest Lodge (Pty) Ltd · 51 Porterfield Rd, Bloubergrant, Table View, Cape Town · <a href="mailto:${CFG.email}">${CFG.email}</a><br><!--LEGAL_LINKS--></footer>
 </main>
-<script>(function(){var q=new URLSearchParams(location.search).get("lang"),l=q||((navigator.language||"").slice(0,2)==="de"?"de":"en");
+<script>(function(){var q=new URLSearchParams(location.search).get("lang"),l=q||"en";
 function set(x){document.querySelectorAll("section[data-l]").forEach(function(s){s.hidden=s.getAttribute("data-l")!==x});document.documentElement.lang=x;
 document.querySelectorAll("[data-sw]").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-sw")===x)})}
 document.querySelectorAll("[data-sw]").forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-sw"))})});set(l==="de"?"de":"en");})();</script>
@@ -702,7 +702,7 @@ ${robots(false)}
 ${LANGS.map((l) => `<link rel="alternate" hreflang="${HREFLANG[l]}" href="${BASE}/${l}/">`).join("\n")}
 <link rel="alternate" hreflang="x-default" href="${BASE}/">
 <link rel="icon" type="image/png" href="img/favicon-v2.png">
-<script>(function(){var L=${JSON.stringify(LANGS)},l="en";try{var s=localStorage.getItem("bmg-lang");if(L.indexOf(s)>-1)l=s;else{var n=(navigator.language||"").slice(0,2);if(L.indexOf(n)>-1)l=n;}}catch(e){}location.replace(l+"/${S}");})();</script>
+<script>(function(){var L=${JSON.stringify(LANGS)},l="en";try{var s=localStorage.getItem("bmg-lang");if(L.indexOf(s)>-1)l=s;}catch(e){}location.replace(l+"/${S}");})();</script>
 <style>body{font-family:system-ui,sans-serif;background:#F3F5F2;color:#15303C;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#3D6A80;margin:0 8px}</style>
 </head><body><main><p><img src="img/logo-v2-180.png" width="90" height="90" alt="Be My Guest Lodge Logo"></p><h1>Be My Guest Lodge</h1><p>${LANGS.map((l) => `<a href="${l}/${S}" hreflang="${HREFLANG[l]}">${NAMES[l]}</a>`).join(" ")}</p></main></body></html>
 `);
