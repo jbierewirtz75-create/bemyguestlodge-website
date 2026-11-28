@@ -11,7 +11,8 @@ const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e
 const files = walk(OUT);
 const exists = (p) => fs.existsSync(p) && (fs.statSync(p).isFile() || fs.existsSync(path.join(p, "index.html")));
 let links = 0;
-for (const f of files.filter((f) => f.endsWith(".html"))) {
+// google<id>.html = Search Console verification files (plain text, not pages)
+for (const f of files.filter((f) => f.endsWith(".html") && !/^google[0-9a-f]+\.html$/.test(path.basename(f)))) {
   const rel = path.relative(OUT, f), html = fs.readFileSync(f, "utf8");
   const refs = [...html.matchAll(/\s(?:href|src|data-href|data-src|data-src-mobile|poster)="([^"]+)"/g)].map((m) => m[1])
     .concat([...html.matchAll(/\ssrcset="([^"]+)"/g)].flatMap((m) => m[1].split(",").map((s) => s.trim().split(/\s+/)[0])))
