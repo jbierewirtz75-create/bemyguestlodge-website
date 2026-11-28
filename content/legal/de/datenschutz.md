@@ -18,7 +18,7 @@ Wir sind „Responsible Party“ nach dem südafrikanischen Datenschutzgesetz Pr
 
 ## 2. Besuch dieser Website
 
-**Serverdaten.** Wenn du unsere Website aufrufst, verarbeitet der Server unseres Hosting-Anbieters ({{TODO: Name des Hosting-Anbieters}}) automatisch technische Daten, die dein Browser übermittelt: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, verweisende Seite, Browser und Betriebssystem. Das ist nötig, um die Website auszuliefern und sicher zu betreiben. Die Daten werden nur kurz gespeichert und nicht mit anderen Daten zusammengeführt.
+**Serverdaten.** Wenn du unsere Website aufrufst, verarbeitet der Server unseres Hosting-Anbieters (Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA – Cloudflare Pages; die Daten können dabei auch in Rechenzentren außerhalb Südafrikas und der EU verarbeitet werden) automatisch technische Daten, die dein Browser übermittelt: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, verweisende Seite, Browser und Betriebssystem. Das ist nötig, um die Website auszuliefern und sicher zu betreiben. Die Daten werden nur kurz gespeichert und nicht mit anderen Daten zusammengeführt.
 
 **Keine Cookies.** Unsere Website verwendet keine Cookies. Dein Browser merkt sich lediglich die gewählte Sprache und ob du einen Hinweis geschlossen hast (im sogenannten Local Storage auf deinem Gerät); diese Angaben werden nicht an uns übertragen.
 

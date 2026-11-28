@@ -18,7 +18,7 @@ We are the "responsible party" under the South African Protection of Personal In
 
 ## 2. Visiting this website
 
-**Server data.** When you open our website, the server of our hosting provider ({{TODO: name of the hosting provider}}) automatically processes technical data that your browser sends: IP address, date and time, the page requested, the referring page, browser and operating system. This is necessary to deliver the website and to keep it secure. The data is stored only for a short time and is not combined with other data.
+**Server data.** When you open our website, the server of our hosting provider (Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA – Cloudflare Pages; data may also be processed in data centres outside South Africa and the EU) automatically processes technical data that your browser sends: IP address, date and time, the page requested, the referring page, browser and operating system. This is necessary to deliver the website and to keep it secure. The data is stored only for a short time and is not combined with other data.
 
 **No cookies.** Our website does not use cookies. Your browser only remembers your chosen language and whether you closed a notice (in so-called local storage on your own device); this information is not sent to us.
 
