@@ -82,7 +82,7 @@ function lodging(D, lang) {
     amenityFeature: ["Free Wi-Fi", "Swimming pool", "Braai (barbecue) area", "Air conditioning", "Free on-site parking", "Laundry service", "Self-catering kitchen (Family Cottage)"].map((n) => ({ "@type": "LocationFeatureSpecification", name: n, value: true })),
     containsPlace: TYPES.map((id) => ({ "@type": "HotelRoom", name: strip(D.en.types[id].n), url: abs("en", `accommodation/${id}/`), occupancy: { "@type": "QuantitativeValue", maxValue: id === "family-cottage" ? 6 : 2 } })),
     potentialAction: { "@type": "ReserveAction", target: "https://book.nightsbridge.com/28083" },
-    ...(SITECFG.googleMaps ? { sameAs: [SITECFG.googleMaps] } : {}),
+    sameAs: [SITECFG.googleMaps, ...(SITECFG.profiles || [])].filter(Boolean),
   };
 }
 
