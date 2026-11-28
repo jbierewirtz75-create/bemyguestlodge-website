@@ -534,6 +534,7 @@ ${sourceQuestion(lang)}
 ${robots(false)}
 <link rel="canonical" href="${BASE}/hello/">
 <link rel="icon" type="image/png" href="${P}img/favicon-v2.png">
+<link rel="icon" type="image/png" sizes="192x192" href="${P}img/favicon-v2-192.png">
 <meta property="og:title" content="Be My Guest Lodge – Home away from home"><meta property="og:image" content="${BASE}/img/og-image.jpg"><meta property="og:url" content="${BASE}/hello/">
 <style>
 *{box-sizing:border-box;margin:0}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#F3F5F2;color:#15303C;line-height:1.4}
@@ -702,6 +703,7 @@ ${robots(false)}
 ${LANGS.map((l) => `<link rel="alternate" hreflang="${HREFLANG[l]}" href="${BASE}/${l}/">`).join("\n")}
 <link rel="alternate" hreflang="x-default" href="${BASE}/">
 <link rel="icon" type="image/png" href="img/favicon-v2.png">
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-v2-192.png">
 <script>(function(){var L=${JSON.stringify(LANGS)},l="en";try{var s=localStorage.getItem("bmg-lang");if(L.indexOf(s)>-1)l=s;}catch(e){}location.replace(l+"/${S}");})();</script>
 <style>body{font-family:system-ui,sans-serif;background:#F3F5F2;color:#15303C;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#3D6A80;margin:0 8px}</style>
 </head><body><main><p><img src="img/logo-v2-180.png" width="90" height="90" alt="Be My Guest Lodge Logo"></p><h1>Be My Guest Lodge</h1><p>${LANGS.map((l) => `<a href="${l}/${S}" hreflang="${HREFLANG[l]}">${NAMES[l]}</a>`).join(" ")}</p></main></body></html>
