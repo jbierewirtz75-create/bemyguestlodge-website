@@ -660,6 +660,7 @@ write("llms.txt", `# Be My Guest Lodge
 - Services: taxi service, laundry, baby cot and high chair on request, day-trip planning, whale watching and shark cage diving bookings
 - Hosts: Jan & Leona live on site and speak English and Afrikaans
 - Questions in German: the owner family in Germany answers via WhatsApp (German contact button on the German pages)
+${(CFG.profiles || []).length ? "- Official profiles: " + [CFG.googleMaps, ...CFG.profiles].filter(Boolean).join(" · ") : ""}
 - Ideal for: families, kitesurfers, couples, business travellers, groups (whole lodge for up to 16)
 - Getting around: most guests use a rental car; MyCiTi buses connect Table View with the city centre
 
